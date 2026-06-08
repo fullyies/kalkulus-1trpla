@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bab 5 — Aplikasi Turunan | Kalkulus 1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
+  <nav class="navbar navbar-expand-lg top-navbar sticky-top" id="topNavbar">
+    <div class="container-fluid px-3 px-lg-4">
+      <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarOffcanvas"><i class="bi bi-list"></i></button>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="brand-icon"><i class="bi bi-journal-text"></i></span>
+        <span class="brand-text"><span class="brand-title">Kalkulus 1</span><span
+            class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span></span>
+      </a>
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <div class="search-wrap d-none d-md-flex"><i class="bi bi-search search-icon"></i><input type="search"
+            id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..." /></div>
+        <button class="btn btn-sm theme-toggle" id="themeToggle"><i class="bi bi-moon-stars-fill"
+            id="themeIcon"></i></button>
+        <div class="d-none d-lg-flex gap-1">
+          <button class="btn btn-sm nav-arrow" id="prevChapterBtn"><i class="bi bi-chevron-left"></i></button>
+          <button class="btn btn-sm nav-arrow" id="nextChapterBtn"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-start sidebar-offcanvas" tabindex="-1" id="sidebarOffcanvas">
+    <div class="offcanvas-header">
+      <h6 class="offcanvas-title"><i class="bi bi-journal-text me-2"></i>Kalkulus 1</h6><button type="button"
+        class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="sidebar-inner" id="sidebarInnerMobile"></div>
+    </div>
+  </div>
+  <div class="main-wrapper">
+    <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
+      <div class="sidebar-inner" id="sidebarInnerDesktop">
+        <div class="sidebar-section-label">Navigasi</div>
+        <nav id="sidebar-nav">
+          <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
+            <li class="sidebar-item"><a href="../index.html#pengantar" class="sidebar-link"><i
+                  class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a></li>
+            <li class="sidebar-item has-submenu"><a href="kelompok1.html" class="sidebar-link"><i
+                  class="bi bi-1-circle sidebar-link-icon"></i>Bab 1 — Bilangan Real &amp; Fungsi</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok1.html#ch1-bilangan" class="submenu-link">1.1 Sistem Bilangan Real</a></li>
+                <li><a href="kelompok1.html#ch1-fungsi" class="submenu-link">1.2 Konsep Fungsi</a></li>
+                <li><a href="kelompok1.html#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok1.html#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok1.html#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu"><a href="kelompok2.html" class="sidebar-link"><i
+                  class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
+                <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
+                <li><a href="kelompok2.html#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok2.html#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu"><a href="kelompok3.html" class="sidebar-link"><i
+                  class="bi bi-3-circle sidebar-link-icon"></i>Bab 3 — Kekontinuan Fungsi</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
+                <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
+                <li><a href="kelompok3.html#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok3.html#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu"><a href="kelompok4.html" class="sidebar-link"><i
+                  class="bi bi-4-circle sidebar-link-icon"></i>Bab 4 — Turunan (Diferensial)</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
+                <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
+                <li><a href="kelompok4.html#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok4.html#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu open"><a href="kelompok5.html" class="sidebar-link"><i
+                  class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Aplikasi Turunan</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
+                <li><a href="#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
+                <li><a href="#ch5-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch5-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch5-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu"><a href="kelompok6.html" class="sidebar-link active"><i
+                  class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
+                <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
+                <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <!-- chapter 7 -->
+          <li class="sidebar-item has-submenu">
+            <a href="pages/kelompok7.html" class="sidebar-link">
+              <i class="bi bi-7-circle sidebar-link-icon"></i>
+              Bab 7 — Aplikasi Integral
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="pages/kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
+              <li><a href="pages/kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
+              <li><a href="pages/kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="pages/kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="pages/kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+
+          <!-- chapter 8 -->
+          <li class="sidebar-item has-submenu">
+            <a href="pages/kelompok8.html" class="sidebar-link">
+              <i class="bi bi-8-circle sidebar-link-icon"></i>
+              Bab 8 — Deret Tak Hingga
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="pages/kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
+              <li><a href="pages/kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
+              <li><a href="pages/kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="pages/kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="pages/kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+
+          <!-- chapter 9 -->
+          <li class="sidebar-item has-submenu">
+            <a href="pages/kelompok9.html" class="sidebar-link">
+              <i class="bi bi-9-circle sidebar-link-icon"></i>
+              Bab 9 — Integral Tak Hingga
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="pages/kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
+              <li><a href="pages/kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
+              <li><a href="pages/kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="pages/kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="pages/kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
+          <div class="progress sidebar-progress mt-2">
+            <div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div>
+          </div>
+          <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content-area" id="mainContent">
+      <div class="content-inner">
+        <section id="chapter-6" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
+          <div class="chapter-header">
+            <div class="chapter-number">Bab 6</div>
+            <h2 class="chapter-title">Aplikasi Turunan</h2>
+            <p class="chapter-meta">
+              <span class="chapter-group-badge">Kelompok 6</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Optimasi</span>
+            </p>
+            <p class="chapter-desc">Turunan memiliki berbagai aplikasi nyata: mencari nilai ekstrem, menganalisis gerak,
+              hingga memecahkan masalah optimasi.</p>
+          </div>
+
+          <div class="card mb-4"
+            style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
+            <div class="card-header"
+              style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
+              <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i><strong
+                style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 6</strong>
+            </div>
+            <div class="card-body py-3">
+              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 6</strong> — Isi nama
+                anggota kelompok di sini.</div>
+            </div>
+          </div>
+
+          <div id="ch6-max-min">
+            <h3 class="subsection-title">6.1 Nilai Maksimum &amp; Minimum</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                6</strong><br>Isi dengan definisi titik kritis, uji turunan pertama, uji turunan kedua, nilai ekstrem
+              lokal dan global.</div>
+            <p><em>[Kelompok 6: isi penjelasan tentang nilai maksimum dan minimum]</em></p>
+            <blockquote class="blockquote-def">
+              <i class="bi bi-quote quote-icon"></i>
+              <p><em>[Kelompok 6: Tambahkan teorema atau definisi penting di sini]</em></p>
+              <footer>— Teorema</footer>
+            </blockquote>
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Uji Turunan Pertama</div>
+              <div class="concept-card-body">
+                <p class="mb-0"><em>[Kelompok 6: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="ch6-optimasi" class="mt-5">
+            <h3 class="subsection-title">6.2 Optimasi</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                6</strong><br>Isi dengan langkah-langkah penyelesaian masalah optimasi, contoh kasus nyata (luas,
+              volume, biaya).</div>
+            <p><em>[Kelompok 6: isi penjelasan langkah-langkah optimasi]</em></p>
+          </div>
+
+          <div id="ch6-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+            <div class="card example-card mt-3">
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 6.1 —
+                Nilai Ekstrem</div>
+              <div class="card-body">
+                <p class="fw-semibold">Soal:</p>
+                <p><em>[Kelompok 6: isi contoh soal nilai ekstrem]</em></p>
+                <hr />
+                <p class="fw-semibold">Penyelesaian:</p>
+                <p><em>[Kelompok 6: isi langkah-langkah]</em></p>
+              </div>
+            </div>
+            <div class="card example-card mt-3">
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 6.2 —
+                Optimasi</div>
+              <div class="card-body">
+                <p class="fw-semibold">Soal:</p>
+                <p><em>[Kelompok 6: isi contoh soal optimasi]</em></p>
+                <hr />
+                <p class="fw-semibold">Penyelesaian:</p>
+                <p><em>[Kelompok 6: isi langkah-langkah]</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="ch6-video" class="mt-5">
+            <h3 class="subsection-title">Video Pembelajaran</h3>
+            <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 6</strong> — Embed video
+              pembelajaran Aplikasi Turunan di sini.</div>
+            <div class="ratio ratio-16x9 mt-3"
+              style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 6" allowfullscreen
+                style="border:0;"></iframe>
+            </div>
+            <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video
+              pembelajaran yang sesuai.</p>
+          </div>
+
+          <div id="ch6-latihan" class="mt-5">
+            <h3 class="subsection-title">Latihan Soal</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 6</strong> — Isi latihan
+              soal di bawah ini.</div>
+            <div class="card"
+              style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 1</p>
+                    <p><em>[Kelompok 6: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
+                        Lihat Jawaban</summary>
+                      <div class="mt-2 p-3"
+                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
+                          soal 1]</em></div>
+                    </details>
+                  </li>
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 2</p>
+                    <p><em>[Kelompok 6: isi soal latihan 2]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
+                        Lihat Jawaban</summary>
+                      <div class="mt-2 p-3"
+                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
+                          soal 2]</em></div>
+                    </details>
+                  </li>
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 3</p>
+                    <p><em>[Kelompok 6: isi soal latihan 3]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
+                        Lihat Jawaban</summary>
+                      <div class="mt-2 p-3"
+                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
+                          soal 3]</em></div>
+                    </details>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div id="ch6-kalkulator" class="mt-5">
+            <div class="calc-section">
+              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 6</div>
+              <div class="calc-body">
+                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 6</strong> — Kembangkan
+                  kalkulator untuk menyelesaikan masalah optimasi.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-nav-bottom">
+            <a href="kelompok5.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 4</a>
+            <a href="kelompok7.html" class="btn btn-chapter-nav">Bab 6 <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </section>
+        <footer class="content-footer">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-8">
+              <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
+              <div class="footer-meta">Disusun oleh 6 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
+            </div>
+            <div class="col-md-4 text-md-end"><a href="#chapter-5" class="btn btn-sm btn-outline-secondary"><i
+                  class="bi bi-arrow-up me-1"></i>Kembali ke Atas</a></div>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script.js"></script>
+</body>
+
+</html>
