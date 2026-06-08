@@ -451,9 +451,26 @@ function showCalcError(el, msg) {
   }, 3000);
 }
 
-// highlight active menu (multi-page)
+// highlight active menu (multi-page FIX)
+function getCurrentPage() {
+  return window.location.pathname.split("/").pop();
+}
+
+const currentPage = getCurrentPage();
+
 document.querySelectorAll(".sidebar a").forEach(link => {
-  if (link.href === window.location.href) {
+
+  const linkPage = link.getAttribute("href").split("#")[0].split("/").pop();
+
+  if (linkPage === currentPage) {
     link.classList.add("active");
+
+    // OPTIONAL: buka parent submenu otomatis
+    const parent = link.closest(".sidebar-item.has-submenu");
+    if (parent) parent.classList.add("open");
+
+  } else {
+    link.classList.remove("active");
   }
+
 });
