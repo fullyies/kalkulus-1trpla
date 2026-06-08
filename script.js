@@ -450,3 +450,10 @@ function showCalcError(el, msg) {
     el.innerHTML = 'Masukkan nilai, lalu klik <strong>Hitung</strong>';
   }, 3000);
 }
+
+// highlight active menu (multi-page)
+document.querySelectorAll(".sidebar a").forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
+  }
+});

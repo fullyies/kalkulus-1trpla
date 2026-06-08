@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bab 1 — Bilangan Real &amp; Fungsi | Kalkulus 1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
+
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-expand-lg top-navbar sticky-top" id="topNavbar">
+  <div class="container-fluid px-3 px-lg-4">
+    <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-label="Buka navigasi">
+      <i class="bi bi-list"></i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <span class="brand-icon"><i class="bi bi-journal-text"></i></span>
+      <span class="brand-text">
+        <span class="brand-title">Kalkulus 1</span>
+        <span class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span>
+      </span>
+    </a>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <div class="search-wrap d-none d-md-flex">
+        <i class="bi bi-search search-icon"></i>
+        <input type="search" id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..."/>
+      </div>
+      <button class="btn btn-sm theme-toggle" id="themeToggle" title="Toggle dark mode">
+        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+      </button>
+      <div class="d-none d-lg-flex gap-1">
+        <button class="btn btn-sm nav-arrow" id="prevChapterBtn" title="Bab sebelumnya">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="btn btn-sm nav-arrow" id="nextChapterBtn" title="Bab berikutnya">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- OFFCANVAS SIDEBAR (Mobile) -->
+<div class="offcanvas offcanvas-start sidebar-offcanvas" tabindex="-1" id="sidebarOffcanvas">
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title"><i class="bi bi-journal-text me-2"></i>Kalkulus 1</h6>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <div class="sidebar-inner" id="sidebarInnerMobile"></div>
+  </div>
+</div>
+
+<!-- MAIN WRAPPER -->
+<div class="main-wrapper">
+
+  <!-- SIDEBAR (Desktop) -->
+  <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
+    <div class="sidebar-inner" id="sidebarInnerDesktop">
+      <div class="sidebar-section-label">Navigasi</div>
+      <nav id="sidebar-nav">
+        <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
+          <li class="sidebar-item">
+            <a href="../index.html#pengantar" class="sidebar-link">
+              <i class="bi bi-book-half sidebar-link-icon"></i>
+              Kata Pengantar
+            </a>
+          </li>
+          <li class="sidebar-item has-submenu open">
+            <a href="kelompok1.html" class="sidebar-link active">
+              <i class="bi bi-1-circle sidebar-link-icon"></i>
+              Bab 1 — Bilangan Real &amp; Fungsi
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="#ch1-bilangan" class="submenu-link">1.1 Sistem Bilangan Real</a></li>
+              <li><a href="#ch1-fungsi" class="submenu-link">1.2 Konsep Fungsi</a></li>
+              <li><a href="#ch1-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+              <li><a href="#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok2.html" class="sidebar-link">
+              <i class="bi bi-2-circle sidebar-link-icon"></i>
+              Bab 2 — Limit Fungsi
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
+              <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
+              <li><a href="kelompok2.html#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok2.html#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok3.html" class="sidebar-link">
+              <i class="bi bi-3-circle sidebar-link-icon"></i>
+              Bab 3 — Kekontinuan Fungsi
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
+              <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
+              <li><a href="kelompok3.html#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok3.html#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok4.html" class="sidebar-link">
+              <i class="bi bi-4-circle sidebar-link-icon"></i>
+              Bab 4 — Turunan (Diferensial)
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
+              <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
+              <li><a href="kelompok4.html#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok4.html#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok5.html" class="sidebar-link">
+              <i class="bi bi-5-circle sidebar-link-icon"></i>
+              Bab 5 — Aplikasi Turunan
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok5.html#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
+              <li><a href="kelompok5.html#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
+              <li><a href="kelompok5.html#ch5-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok5.html#ch5-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok5.html#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok6.html" class="sidebar-link">
+              <i class="bi bi-6-circle sidebar-link-icon"></i>
+              Bab 6 — Integral
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
+              <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
+              <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <!-- chapter 7 -->
+          <li class="sidebar-item has-submenu">
+            <a href="pages/kelompok7.html" class="sidebar-link">
+              <i class="bi bi-7-circle sidebar-link-icon"></i>
+              Bab 7 — Aplikasi Integral
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="pages/kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
+              <li><a href="pages/kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
+              <li><a href="pages/kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="pages/kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="pages/kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+
+          <!-- chapter 8 -->
+          <li class="sidebar-item has-submenu">
+            <a href="pages/kelompok8.html" class="sidebar-link">
+              <i class="bi bi-8-circle sidebar-link-icon"></i>
+              Bab 8 — Deret Tak Hingga
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="pages/kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
+              <li><a href="pages/kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
+              <li><a href="pages/kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="pages/kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="pages/kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+
+          <!-- chapter 9 -->
+          <li class="sidebar-item has-submenu">
+            <a href="pages/kelompok9.html" class="sidebar-link">
+              <i class="bi bi-9-circle sidebar-link-icon"></i>
+              Bab 9 — Integral Tak Hingga
+            </a>
+            <ul class="submenu list-unstyled">
+              <li><a href="pages/kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
+              <li><a href="pages/kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
+              <li><a href="pages/kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="pages/kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="pages/kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-text">
+          <i class="bi bi-mortarboard-fill me-1"></i>
+          Matematika — Semester 1
+        </div>
+        <div class="progress sidebar-progress mt-2" title="Progress membaca">
+          <div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div>
+        </div>
+        <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
+      </div>
+    </div>
+  </aside>
+
+
+
+                                        <!-- MAIN CONTENT -->
+
+
+
+  <main class="content-area" id="mainContent">
+    <div class="content-inner">
+
+      <!-- BAB 1 -->
+      <section id="chapter-1" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
+        <div class="chapter-header">
+          <div class="chapter-number">Bab 1</div>
+          <h2 class="chapter-title">Bilangan Real &amp; Fungsi</h2>
+          <p class="chapter-meta">
+            <span class="chapter-group-badge">Kelompok 1</span>
+            <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Aljabar Dasar</span>
+          </p>
+          <p class="chapter-desc">
+            Bab ini membahas sistem bilangan real sebagai fondasi kalkulus, serta konsep fungsi yang menjadi objek utama kajian kalkulus.
+          </p>
+        </div>
+
+        <!-- Nama Anggota Kelompok -->
+        <div class="card mb-4" style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
+          <div class="card-header" style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
+            <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i>
+            <strong style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 1</strong>
+          </div>
+          <div class="card-body py-3">
+            <div class="placeholder-notice">
+              <i class="bi bi-pencil-square"></i>
+              <strong>Kelompok 1</strong> — Isi nama anggota kelompok di sini.<br>
+              Contoh: 1. Nama Anggota 1 &nbsp;|&nbsp; 2. Nama Anggota 2 &nbsp;|&nbsp; 3. Nama Anggota 3
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.1 Sistem Bilangan Real -->
+        <div id="ch1-bilangan">
+          <h3 class="subsection-title">1.1 Sistem Bilangan Real</h3>
+          <div class="placeholder-notice">
+            <i class="bi bi-pencil-square"></i>
+            <strong>Area Materi — Kelompok 1</strong><br>
+            Isi bagian ini dengan penjelasan tentang sistem bilangan real: bilangan asli, bulat, rasional, irasional, dan sifat-sifatnya.
+          </div>
+          <p>
+            Sistem bilangan real (<strong>ℝ</strong>) mencakup semua bilangan yang dapat ditempatkan pada garis bilangan.
+            <em>[Kelompok 1 melengkapi penjelasan di sini]</em>
+          </p>
+          <h5 class="mt-4">Hierarki Bilangan Real</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm concept-table">
+              <thead>
+                <tr>
+                  <th>Jenis Bilangan</th><th>Notasi</th><th>Contoh</th><th>Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Bilangan Asli</td><td><code>ℕ</code></td><td>1, 2, 3, ...</td><td><em>[Kelompok 1 isi]</em></td></tr>
+                <tr><td>Bilangan Bulat</td><td><code>ℤ</code></td><td>..., −2, −1, 0, 1, 2, ...</td><td><em>[Kelompok 1 isi]</em></td></tr>
+                <tr><td>Bilangan Rasional</td><td><code>ℚ</code></td><td>½, 0.75, −3</td><td><em>[Kelompok 1 isi]</em></td></tr>
+                <tr><td>Bilangan Irasional</td><td><code>ℚ'</code></td><td>√2, π, e</td><td><em>[Kelompok 1 isi]</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p><em>[Kelompok 1: Tambahkan definisi penting tentang bilangan real di sini]</em></p>
+            <footer>— Sumber / Referensi</footer>
+          </blockquote>
+        </div>
+
+        <!-- 1.2 Konsep Fungsi -->
+        <div id="ch1-fungsi" class="mt-5">
+          <h3 class="subsection-title">1.2 Konsep Fungsi</h3>
+          <div class="placeholder-notice">
+            <i class="bi bi-pencil-square"></i>
+            <strong>Area Materi — Kelompok 1</strong><br>
+            Isi bagian ini dengan definisi fungsi, domain, kodomain, range, jenis-jenis fungsi, dan contoh.
+          </div>
+          <p><em>[Kelompok 1 mengisi penjelasan lengkap tentang fungsi di sini]</em></p>
+          <h5 class="mt-3">Contoh Jenis-Jenis Fungsi</h5>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="concept-card">
+                <div class="concept-card-header">Fungsi Linear</div>
+                <div class="concept-card-body">
+                  <code class="formula-display">f(x) = mx + b</code>
+                  <p class="mt-2"><em>[Kelompok 1: isi penjelasan]</em></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="concept-card">
+                <div class="concept-card-header">Fungsi Kuadrat</div>
+                <div class="concept-card-body">
+                  <code class="formula-display">f(x) = ax² + bx + c</code>
+                  <p class="mt-2"><em>[Kelompok 1: isi penjelasan]</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contoh Soal -->
+        <div id="ch1-contoh" class="mt-5">
+          <h3 class="subsection-title">Contoh Soal</h3>
+          <div class="card example-card mt-3">
+            <div class="card-header example-card-header">
+              <i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1.1
+            </div>
+            <div class="card-body">
+              <p class="fw-semibold">Soal:</p>
+              <p><em>[Kelompok 1: isi contoh soal]</em></p>
+              <hr/>
+              <p class="fw-semibold">Penyelesaian:</p>
+              <p><em>[Kelompok 1: isi langkah penyelesaian]</em></p>
+            </div>
+          </div>
+          <div class="card example-card mt-3">
+            <div class="card-header example-card-header">
+              <i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1.2
+            </div>
+            <div class="card-body">
+              <p class="fw-semibold">Soal:</p>
+              <p><em>[Kelompok 1: isi contoh soal kedua]</em></p>
+              <hr/>
+              <p class="fw-semibold">Penyelesaian:</p>
+              <p><em>[Kelompok 1: isi langkah penyelesaian]</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Pembelajaran -->
+        <div id="ch1-video" class="mt-5">
+          <h3 class="subsection-title">Video Pembelajaran</h3>
+          <div class="placeholder-notice">
+            <i class="bi bi-camera-video"></i>
+            <strong>Kelompok 1</strong> — Embed video pembelajaran di sini. Ganti <code>VIDEO_ID</code> dengan ID video YouTube kalian.<br>
+            Contoh: <code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" ...&gt;&lt;/iframe&gt;</code>
+          </div>
+          <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Video Pembelajaran Bab 1 — Bilangan Real &amp; Fungsi"
+                    allowfullscreen
+                    style="border:0;"></iframe>
+          </div>
+          <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video pembelajaran yang sesuai.</p>
+        </div>
+
+        <!-- Latihan Soal -->
+        <div id="ch1-latihan" class="mt-5">
+          <h3 class="subsection-title">Latihan Soal</h3>
+          <div class="placeholder-notice">
+            <i class="bi bi-pencil-square"></i>
+            <strong>Kelompok 1</strong> — Isi latihan soal di bawah ini dengan soal-soal yang relevan dengan materi Bab 1.
+          </div>
+          <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
+            <div class="card-body">
+              <ol class="mb-0">
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Soal 1</p>
+                  <p><em>[Kelompok 1: isi soal latihan 1]</em></p>
+                  <details class="mt-2">
+                    <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                      <em>[Kelompok 1: isi kunci jawaban soal 1]</em>
+                    </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Soal 2</p>
+                  <p><em>[Kelompok 1: isi soal latihan 2]</em></p>
+                  <details class="mt-2">
+                    <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                      <em>[Kelompok 1: isi kunci jawaban soal 2]</em>
+                    </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Soal 3</p>
+                  <p><em>[Kelompok 1: isi soal latihan 3]</em></p>
+                  <details class="mt-2">
+                    <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                      <em>[Kelompok 1: isi kunci jawaban soal 3]</em>
+                    </div>
+                  </details>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kalkulator Bab 1 -->
+        <div id="ch1-kalkulator" class="mt-5">
+          <div class="calc-section">
+            <div class="calc-header">
+              <i class="bi bi-calculator-fill me-2"></i>
+              Kalkulator Interaktif — Fungsi Linear
+            </div>
+            <div class="calc-body">
+              <p class="text-muted small mb-3">Hitung nilai fungsi linear <strong>f(x) = mx + b</strong></p>
+              <div class="row g-2 align-items-end">
+                <div class="col-sm-3">
+                  <label class="form-label small">Gradien (m)</label>
+                  <input type="number" class="form-control form-control-sm" id="ch1-m" value="2" step="0.1"/>
+                </div>
+                <div class="col-sm-3">
+                  <label class="form-label small">Konstanta (b)</label>
+                  <input type="number" class="form-control form-control-sm" id="ch1-b" value="3" step="0.1"/>
+                </div>
+                <div class="col-sm-3">
+                  <label class="form-label small">Nilai x</label>
+                  <input type="number" class="form-control form-control-sm" id="ch1-x" value="5" step="0.1"/>
+                </div>
+                <div class="col-sm-3">
+                  <button class="btn btn-calc w-100" onclick="calcLinear()">Hitung</button>
+                </div>
+              </div>
+              <div class="calc-result mt-3" id="ch1-result">
+                Masukkan nilai, lalu klik <strong>Hitung</strong>
+              </div>
+              <div class="calc-note">
+                💡 Kalkulator ini menghitung f(x) = mx + b. Kelompok 1 dapat mengembangkan kalkulator sesuai topik bab.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-nav-bottom">
+          <a href="../index.html#pengantar" class="btn btn-chapter-nav-outline">
+            <i class="bi bi-arrow-left me-1"></i> Kata Pengantar
+          </a>
+          <a href="kelompok2.html" class="btn btn-chapter-nav">
+            Bab 2 <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="content-footer">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-8">
+            <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
+            <div class="footer-meta">Disusun oleh 6 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <a href="#chapter-1" class="btn btn-sm btn-outline-secondary">
+              <i class="bi bi-arrow-up me-1"></i>Kembali ke Atas
+            </a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

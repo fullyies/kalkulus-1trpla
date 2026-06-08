@@ -922,3 +922,17 @@ code, pre, kbd, .formula-display {
   .content-inner { max-width: 100%; padding: 0; }
   .chapter-header { background: #1a56a8 !important; -webkit-print-color-adjust: exact; }
 }
+
+/* Additional styles for multi-page active menu */
+.sidebar a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar a.active {
+  background: #0d6efd;
+  color: white;
+  border-radius: 6px;
+}
