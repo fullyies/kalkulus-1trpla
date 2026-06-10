@@ -15,7 +15,7 @@ kalkulus-1trpla/
 ├── pages/
 |      |———kelompok.html        # Halaman utama kelompok (edit sesuai kelompok)
 │
-|
+|——— index.html    #template utama (JANGAN DIGANGGU)
 │
 │── style.css    # CSS utama (gunakan CSS yang tersedia)
 │
@@ -68,8 +68,9 @@ Agar tidak terjadi konflik saat dikerjakan bersama:
 ## Jangan mengubah:
 
 ❌ `style.css`
+❌ `index.html`
 
-Karena semua kelompok menggunakan CSS yang sama.
+Karena semua kelompok menggunakan CSS yang sama, dan index merupakan template utama.
 
 ❌ Struktur utama project
 
