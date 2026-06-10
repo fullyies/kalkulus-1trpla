@@ -12,14 +12,15 @@ Setiap kelompok akan mengembangkan bagian masing-masing pada file `kelompok.html
 ```
 kalkulus-1trpla/
 │
-├── kelompok.html        # Halaman utama kelompok (edit sesuai kelompok)
+├── pages/
+|      |———kelompok.html        # Halaman utama kelompok (edit sesuai kelompok)
 │
-├── assets/
-│   ├── css/
-│   │   └── style.css    # CSS utama (gunakan CSS yang tersedia)
-│   │
-│   └── js/
-│       └── script.js    # File JavaScript utama
+|
+│
+│── style.css    # CSS utama (gunakan CSS yang tersedia)
+│
+│
+│── script.js    # File JavaScript utama
 │
 └── README.md
 ```
