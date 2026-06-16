@@ -201,6 +201,7 @@
           </div>
 
           <div id="ch3-definisi">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
             <h3 class="subsection-title">3.1 limit Rasional & Irasional</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
                 3</strong><br><ul>
@@ -237,6 +238,149 @@
               </div>
             </div>
           </div>
+
+          <div class="mb-3">
+    <label class="form-label">Mode Perhitungan</label>
+
+    <select id="modeLimit" class="form-select">
+        <option value="rasional">
+            Limit Rasional
+        </option>
+        
+
+        <option value="irasional">
+            Limit Irasional
+        </option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">
+        Fungsi f(x)
+    </label>
+
+    <input type="text"
+           id="fungsi"
+           class="form-control"
+           placeholder="Contoh: (x^2-4)/(x-2) atau kalau limit irasional sqrt(x^2-4)">
+</div>
+
+<div class="mb-3">
+    <label class="form-label">
+        x mendekati
+    </label>
+
+    <input type="number"
+           id="x0"
+           class="form-control">
+</div>
+
+<button class="btn btn-primary"
+        onclick="hitungLimit()">
+    Hitung
+</button>
+
+<hr>
+
+<h5>Hasil Perhitungan</h5>
+
+<p>
+    <strong>Nilai Limit :</strong>
+    <span id="hasilLimit">-</span>
+</p>
+
+<p>
+    <strong>Analisis :</strong>
+    <span id="analisis">-</span>
+</p>
+
+<script>
+function hitungLimit() {
+
+    const mode =
+        document.getElementById("modeLimit").value;
+
+    const fungsi =
+        document.getElementById("fungsi").value;
+
+    const x0 =
+        parseFloat(
+            document.getElementById("x0").value
+        );
+        
+        if (!fungsi || isNaN(x0)) {
+          document.getElementById("analisis").innerHTML =
+          "Masukkan fungsi dan nilai x";
+          return;
+        }
+
+    try {
+
+        if (
+            mode === "irasional" &&
+            !fungsi.includes("sqrt")
+        ) {
+
+            document.getElementById("analisis").innerHTML =
+                "Mode Irasional harus mengandung sqrt()";
+
+            return;
+        }
+
+        if (
+            mode === "rasional" &&
+            fungsi.includes("sqrt")
+        ) {
+
+            document.getElementById("analisis").innerHTML =
+                "Mode Rasional tidak boleh mengandung sqrt()";
+
+            return;
+        }
+
+        const kiri = math.evaluate(
+            fungsi.replaceAll(
+                "x",
+                `(${x0 - 0.0001})`
+            )
+        );
+
+        const kanan = math.evaluate(
+            fungsi.replaceAll(
+                "x",
+                `(${x0 + 0.0001})`
+            )
+        );
+
+        const limit =
+            (kiri + kanan) / 2;
+
+        document.getElementById("hasilLimit").innerHTML =
+            parseFloat(limit.toFixed(6));
+
+        if (mode === "rasional") {
+
+            document.getElementById("analisis").innerHTML =
+                "Limit Fungsi Rasional";
+
+        } else {
+
+            document.getElementById("analisis").innerHTML =
+                "Limit Fungsi Irasional";
+
+        }
+
+    } catch(err) {
+
+        document.getElementById("hasilLimit").innerHTML =
+            "Error";
+
+        document.getElementById("analisis").innerHTML =
+            "Input tidak valid";
+
+    }
+}
+</script>
 
           <div id="ch3-teorema" class="mt-5">
             <h3 class="subsection-title">3.2 Teorema Nilai Antara</h3>
@@ -331,15 +475,142 @@
             </div>
           </div>
 
-          <div id="ch3-kalkulator" class="mt-5">
-            <div class="calc-section">
-              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 3</div>
-              <div class="calc-body">
-                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 3</strong> — Kembangkan
-                  kalkulator interaktif sesuai topik kekontinuan fungsi di sini.</div>
-              </div>
-            </div>
-          </div>
+<div id="ch3-kalkulator" class="mt-5">
+
+    <!-- MathJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+    <div class="calc-section mt-4">
+
+    <div class="calc-header">
+        <i class="bi bi-calculator-fill me-2"></i>
+        Kalkulator Limit Irasional
+    </div>
+
+    <div class="calc-body">
+
+        <div class="alert alert-success">
+            Contoh: (sqrt(x)-2)/(x-4)
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fungsi Irasional</label>
+            <input type="text"
+                   id="fungsiIrasional"
+                   class="form-control"
+                   placeholder="Contoh: (sqrt(x)-2)/(x-4)">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">x mendekati</label>
+            <input type="number"
+                   id="xIrasional"
+                   class="form-control"
+                   placeholder="Contoh: 4">
+        </div>
+
+        <button class="btn btn-success"
+                onclick="hitungLimitIrasional()">
+            Hitung Limit
+        </button>
+
+        <hr>
+
+        <p>
+            <strong>Limit Kiri :</strong>
+            <span id="kiriIrasional">-</span>
+        </p>
+
+        <p>
+            <strong>Limit Kanan :</strong>
+            <span id="kananIrasional">-</span>
+        </p>
+
+        <p>
+            <strong>Nilai Limit :</strong>
+            <span id="hasilIrasional">-</span>
+        </p>
+
+        <p>
+            <strong>Keterangan :</strong>
+            <span id="analisisIrasional">-</span>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+
+
+function hitungLimitIrasional() {
+
+    const fungsi =
+        document.getElementById("fungsiIrasional").value;
+
+    const x0 =
+        parseFloat(document.getElementById("xIrasional").value);
+
+    try {
+
+        if (!fungsi.includes("sqrt")) {
+
+            document.getElementById("analisisIrasional").innerHTML =
+                "Masukkan fungsi yang mengandung akar (sqrt)";
+
+            return;
+        }
+
+        const kiri = math.evaluate(
+            fungsi.replaceAll("x", `(${x0 - 0.0001})`)
+        );
+
+        const kanan = math.evaluate(
+            fungsi.replaceAll("x", `(${x0 + 0.0001})`)
+        );
+
+        document.getElementById("kiriIrasional").innerHTML =
+            parseFloat(kiri.toFixed(6));
+
+        document.getElementById("kananIrasional").innerHTML =
+            parseFloat(kanan.toFixed(6));
+
+        if (Math.abs(kiri - kanan) < 0.001) {
+
+            const limit = (kiri + kanan) / 2;
+
+            document.getElementById("hasilIrasional").innerHTML =
+                parseFloat(limit.toFixed(6));
+
+            document.getElementById("analisisIrasional").innerHTML =
+                "Limit ada. Fungsi irasional berhasil dihitung.";
+
+        } else {
+
+            document.getElementById("hasilIrasional").innerHTML =
+                "Tidak Ada";
+
+            document.getElementById("analisisIrasional").innerHTML =
+                "Limit kiri dan kanan berbeda.";
+
+        }
+
+    } catch(err) {
+
+        document.getElementById("hasilIrasional").innerHTML =
+            "Error";
+
+        document.getElementById("analisisIrasional").innerHTML =
+            "Input tidak valid";
+
+    }
+
+}
+
+</script>         
+
+
 
           <div class="chapter-nav-bottom">
             <a href="kelompok2.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 2</a>
