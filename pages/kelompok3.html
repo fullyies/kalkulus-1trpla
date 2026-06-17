@@ -191,7 +191,7 @@
                 style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 3</strong>
             </div>
             <div class="card-body py-3">
-              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 3</strong> 
+              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Nama Kelompok</strong> 
                 <p>1. Auriel Disemhadi Pratama
                   <br>2. Idhar Zahwan
                   <br>3. Juha Wirbowo
@@ -201,9 +201,9 @@
           </div>
 
           <div id="ch3-definisi">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
             <h3 class="subsection-title">3.1 limit Rasional & Irasional</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                3</strong><br><ul>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — limit Rasional & Irasional</strong><br><ul>
                   <li>Definisi limit rasional</li>
                     <p>limit yang melibatkan fungsi berbentuk pecahan</p>
                   <li>Definisi limit irasional</li>
@@ -238,12 +238,187 @@
             </div>
           </div>
 
+          <div class="mb-3">
+    <label class="form-label">Mode Perhitungan</label>
+
+    <select id="modeLimit" class="form-select">
+        <option value="rasional">
+            Limit Rasional
+        </option>
+        
+
+        <option value="irasional">
+            Limit Irasional
+        </option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">
+        Fungsi f(x)
+    </label>
+
+    <input type="text"
+           id="fungsi"
+           class="form-control"
+           placeholder="Contoh: (x^2-4)/(x-2) atau kalau limit irasional sqrt(x^2-4)">
+</div>
+
+<div class="mb-3">
+    <label class="form-label">
+        x mendekati
+    </label>
+
+    <input type="number"
+           id="x0"
+           class="form-control">
+</div>
+
+<button class="btn btn-primary"
+        onclick="hitungLimit()">
+    Hitung
+</button>
+
+<hr>
+
+<h5>Hasil Perhitungan</h5>
+
+<p>
+    <strong>Nilai Limit :</strong>
+    <span id="hasilLimit">-</span>
+</p>
+
+<p>
+    <strong>Analisis :</strong>
+    <span id="analisis">-</span>
+</p>
+
+<script>
+function hitungLimit() {
+
+    const mode =
+        document.getElementById("modeLimit").value;
+
+    const fungsi =
+        document.getElementById("fungsi").value;
+
+    const x0 =
+        parseFloat(
+            document.getElementById("x0").value
+        );
+        
+        if (!fungsi || isNaN(x0)) {
+          document.getElementById("analisis").innerHTML =
+          "Masukkan fungsi dan nilai x";
+          return;
+        }
+
+    try {
+
+        if (
+            mode === "irasional" &&
+            !fungsi.includes("sqrt")
+        ) {
+
+            document.getElementById("analisis").innerHTML =
+                "Mode Irasional harus mengandung sqrt()";
+
+            return;
+        }
+
+        if (
+            mode === "rasional" &&
+            fungsi.includes("sqrt")
+        ) {
+
+            document.getElementById("analisis").innerHTML =
+                "Mode Rasional tidak boleh mengandung sqrt()";
+
+            return;
+        }
+
+        const kiri = math.evaluate(
+            fungsi.replaceAll(
+                "x",
+                `(${x0 - 0.0001})`
+            )
+        );
+
+        const kanan = math.evaluate(
+            fungsi.replaceAll(
+                "x",
+                `(${x0 + 0.0001})`
+            )
+        );
+
+        const limit =
+            (kiri + kanan) / 2;
+
+        document.getElementById("hasilLimit").innerHTML =
+            parseFloat(limit.toFixed(6));
+
+        if (mode === "rasional") {
+
+            document.getElementById("analisis").innerHTML =
+                "Limit Fungsi Rasional";
+
+        } else {
+
+            document.getElementById("analisis").innerHTML =
+                "Limit Fungsi Irasional";
+
+        }
+
+    } catch(err) {
+
+        document.getElementById("hasilLimit").innerHTML =
+            "Error";
+
+        document.getElementById("analisis").innerHTML =
+            "Input tidak valid";
+
+    }
+}
+</script>
+
           <div id="ch3-teorema" class="mt-5">
-            <h3 class="subsection-title">3.2 Teorema Nilai Antara</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                3</strong><br>Isi dengan Teorema Nilai Antara (Intermediate Value Theorem), bukti intuitif, dan
-              aplikasinya.</div>
-            <p><em>[Kelompok 3: isi penjelasan Teorema Nilai Antara]</em></p>
+            <h3 class="subsection-title">3.2 limit tak hingga</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — limit tak hingga</strong><br><ul><li>limit yang membahas perilaku suatu fungsi ketika nilai variabel mendekati tak hingga (∞) atau negatif tak hingga (-∞).</li></ul></div>
+            <p><em>bentuk limit tak hingga positif dan negatif</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              \[
+              \lim_{x \to \infty} f(x) \quad \text{atau} \quad \lim_{x \to -\infty} f(x)
+              \]
+              Artinya kita mencari nilai yang didekati fungsi saat x menuju tak hingga.
+            </p>
+            <h6>Aturan dasar Limit Tak Hingga</h6>
+            <ul>
+              <li>
+                <p><strong>pangkat positif</strong></p>
+                <p>
+                  Jika \( f(x) = x^2 \) dengan \( n > 0 \), maka:
+                  \[
+                  \lim_{x \to \infty} f(x) = \infty
+                  \]
+              </li>
+              <li>
+                <p><strong>pangkat negatif</strong></p>
+                <p>
+                  Jika \( f(x) = \frac{1}{x^2} \) dengan \( n < 0 \), maka:
+                  \[
+                  \lim_{x \to \infty} f(x) = 0
+                  \]
+                  kenapa hasilnya 0 karena saat \( x \) mendekati tak hingga, \( f(x) \) mendekati 0.
+                </p>
+              </li>
+              <li><strong>fungsi konstan</strong></li>
+              <p>
+                Jika \( f(x) = 5 \) dengan \( 5 \) adalah konstanta, maka:
+                \[
+                \lim_{x \to \infty} f(x) = 5
+                \]
+              </p>
+            </ul>
           </div>
 
           <div id="ch3-contoh" class="mt-5">
@@ -264,10 +439,20 @@
               </div>
               <div class="card-body">
                 <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 3: isi contoh soal kedua]</em></p>
+                <p><em>
+                  Tentukan limit berikut:
+                  \[
+                  \lim_{x \to \infty} \frac{2x^2 + 5x^ - 1}{x^2 + 3}
+                  \]
+                </em></p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 3: isi langkah-langkah]</em></p>
+                <p><em>1. pecahkan</em>
+                \[
+                \lim_{x \to \infty} \frac{2 + \frac{5}{x} - \frac{1}{x^2}}{1 + \frac{3}{x^2}}
+                \]
+                </p>
+                <p><em>2. karena</em>
               </div>
             </div>
           </div>
@@ -331,15 +516,7 @@
             </div>
           </div>
 
-          <div id="ch3-kalkulator" class="mt-5">
-            <div class="calc-section">
-              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 3</div>
-              <div class="calc-body">
-                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 3</strong> — Kembangkan
-                  kalkulator interaktif sesuai topik kekontinuan fungsi di sini.</div>
-              </div>
-            </div>
-          </div>
+
 
           <div class="chapter-nav-bottom">
             <a href="kelompok2.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 2</a>
