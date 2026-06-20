@@ -206,9 +206,8 @@
             <p><em>[penjelasan Soal]</em></p>
             <blockquote class="blockquote-def">
               <i class="bi bi-quote quote-icon"></i>
-              <p><em>[Langkah Pertama:f(x) = x² - 4x + 3 <br>f'(x) = 2x + 4]<br> Lalu Cari Titik kritisnya<br>f(x) = 2x + 4 = 0 <br> x = 2<br> f"(x) = 2</em></p>
-              <p><em>[Langkah Kedua:Lalu ubah x = 2
-f(x)  = x² -4x + 3<br>f(2)= (2)² - 4(2) +3<br>= 4 - 8 + 3 = -1 <br>Jadi Titik minimun dari f(x) = x² -4x - 3 adalah (2, -1)</em></p>
+              <p><em>[Langkah Pertama: Turunkan fungsi]<br>f(x) = x² - 4x + 3<br>f'(x) = 2x + 4<br> Lalu Cari Titik kritisnya<br>f(x) = 2x + 4 = 0 <br> x = 2<br> f"(x) = 2</em></p>
+              <p><em>[Langkah Kedua:Lalu ubah x = 2]<br>f(x)  = x² -4x + 3<br>f(2)= (2)² - 4(2) +3<br>= 4 - 8 + 3 = -1 <br>Jadi Titik minimun dari f(x) = x² -4x - 3 adalah (2, -1)</em></p>
               <footer>— Teorema</footer>
             </blockquote>
             <div class="concept-card mt-3">
@@ -349,14 +348,46 @@ f(x)  = x² -4x + 3<br>f(2)= (2)² - 4(2) +3<br>= 4 - 8 + 3 = -1 <br>Jadi Titik 
           </div>
 
           <div id="ch7-kalkulator" class="mt-5">
-            <div class="calc-section">
-              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 7</div>
-              <div class="calc-body">
-                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 7</strong> — Kembangkan
-                  kalkulator untuk menyelesaikan masalah integral.</div>
-              </div>
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h4>
+                <i class="bi bi-calculator-fill"></i>
+                Kalkulator Aplikasi Turunan
+            </h4>
+        </div>
+
+        <div class="card-body">
+
+            <p>Masukkan koefisien fungsi:</p>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>a</label>
+                    <input type="number" id="a" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label>b</label>
+                    <input type="number" id="b" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label>c</label>
+                    <input type="number" id="c" class="form-control">
+                </div>
+
             </div>
-          </div>
+
+            <button class="btn btn-success mt-3" onclick="hitungTurunan()">
+                Hitung
+            </button>
+
+            <div id="hasilTurunan" class="mt-4"></div>
+
+        </div>
+    </div>
+</div>
 
           <div class="chapter-nav-bottom">
             <a href="kelompok6.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 6</a>
