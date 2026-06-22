@@ -474,3 +474,81 @@ document.querySelectorAll(".sidebar a").forEach(link => {
   }
 
 });
+
+/* ─────────────────────────────────────────
+   kalkulator kelompok 7 
+───────────────────────────────────────── */
+
+function hitungTurunan() {
+
+    let a = parseFloat(document.getElementById("a").value);
+    let b = parseFloat(document.getElementById("b").value);
+    let c = parseFloat(document.getElementById("c").value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Lengkapi semua nilai!");
+        return;
+    }
+
+    let x = -b / (2 * a);
+    let y = (a * x * x) + (b * x) + c;
+
+    let jenis = "";
+    let warna = "";
+
+    if (a > 0) {
+        jenis = "Titik Minimum";
+        warna = "success";
+    } else {
+        jenis = "Titik Maksimum";
+        warna = "danger";
+    }
+
+    document.getElementById("hasilTurunan").innerHTML = `
+    
+    <div class="card border-${warna}">
+        <div class="card-header bg-${warna} text-white">
+            Hasil Perhitungan
+        </div>
+
+        <div class="card-body">
+
+            <h5>Fungsi</h5>
+            <p>
+                f(x) = ${a}x² + (${b})x + (${c})
+            </p>
+
+            <hr>
+
+            <h5>Langkah 1 - Turunan Pertama</h5>
+            <p>
+                f'(x) = ${2*a}x + (${b})
+            </p>
+
+            <h5>Langkah 2 - Titik Kritis</h5>
+            <p>
+                ${2*a}x + (${b}) = 0
+            </p>
+
+            <p>
+                x = ${x.toFixed(2)}
+            </p>
+
+            <h5>Langkah 3 - Nilai Fungsi</h5>
+
+            <p>
+                f(${x.toFixed(2)}) = ${y.toFixed(2)}
+            </p>
+
+            <hr>
+
+            <div class="alert alert-${warna}">
+                <strong>${jenis}</strong><br>
+                Titik Stasioner = (${x.toFixed(2)}, ${y.toFixed(2)})
+            </div>
+
+        </div>
+    </div>
+    
+    `;
+}
