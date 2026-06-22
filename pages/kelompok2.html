@@ -8,6 +8,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+          // Menambahkan konfigurasi delimiter custom
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false}, 
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false
+        });">
+  </script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
 
@@ -76,10 +94,49 @@
           </li>
           <li class="sidebar-item has-submenu open">
             <a href="kelompok2.html" class="sidebar-link active"><i class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
-            <ul class="submenu list-unstyled">
-              <li><a href="#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
-              <li><a href="#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
-              <li><a href="#ch2-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+            <ul class="submenu list-unstyled overflow-auto pe-2 ">
+              <li><a href="#ch2-Fungsi1" class="submenu-link">2.1 Fungsi Linear</a></li>
+          
+              <li><a href="#ch2-Fungsi2" class="submenu-link">2.2 Fungsi Kuadrat</a></li>
+             
+              <li><a href="#ch2-Fungsi3" class="submenu-link">2.3 Fungsi Eksponensial</a></li>
+
+              <li><a href="#ch2-Pertumbuhan" class="submenu-link">2.4 Pertumbuhan Fungsi</a></li>
+            
+              <li><a href="#ch2-Meningkat" class="submenu-link">2.5 Fungsi Meningkat</a></li>
+
+              <li><a href="#ch2-Menurun" class="submenu-link">2.6 Fungsi Menurun</a></li>
+
+              <li><a href="#ch2-Stabilitas" class="submenu-link">2.7 Stabilitas Fungsi</a></li>
+
+              <li><a href="#ch2-Stabil" class="submenu-link">2.8 Perubahan Stabil</a></li>
+              
+              <li><a href="#ch2-Tidak-stabil" class="submenu-link">2.9 Perubahan Tidak Stabil</a></li>
+
+              <li><a href="#ch2-Kecil" class="submenu-link">2.10 Interpretasi Input Kecil</a></li>
+              
+              <li><a href="#ch2-Besar" class="submenu-link">2.11 Interprestasi lnput Besar</a></li>
+              
+              <li><a href="#ch2-Maksimum" class="submenu-link">2.12 Titik Kritis Maksimum</a></li>
+
+              <li><a href="#ch2-Minimum" class="submenu-link">2.13 Titik Kritis Minimum</a></li>
+
+              <li><a href="#ch2-Belok" class="submenu-link">2.14 Titik Belok</a></li>
+
+              <li><a href="#ch2-Definisi" class="submenu-link">2.15 Definisi Limit</a></li>
+
+              <li><a href="#ch2-Kiri" class="submenu-link">2.16 Limit Kiri dan Limit Kanan</a></li>
+
+              <li><a href="#ch2-Sifat" class="submenu-link">2.17 Sifat-Sifat Limit</a></li>
+
+              <li><a href="#ch2-Hingga" class="submenu-link">2.18 Limit Hingga dan Limit Tak HIngga</a></li>
+
+              <li><a href="#ch2-Titik" class="submenu-link">2.19 Titik Kritis Fungsi dan Karakteristik Drafik</a></li>
+
+              <li><a href="#ch2-Representasi" class="submenu-link">2.20 Representasi dan Metodologi Penentuan Limit</a></li>
+
+              <li><a href="#ch2-interpretasi-perilaku" class="submenu-link">2.21 Interpretasi Perilaku Fungsi di Sekitar Titik Kritis</a></li>
+              
               <li><a href="#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
               <li><a href="#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
               <li><a href="#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
@@ -182,7 +239,7 @@
   <main class="content-area" id="mainContent">
     <div class="content-inner">
 
-      <section id="chapter-2" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
+      <section id="" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
         <div class="chapter-header">
           <div class="chapter-number">Bab 2</div>
           <h2 class="chapter-title">Limit Fungsi</h2>
@@ -190,9 +247,10 @@
             <span class="chapter-group-badge">Kelompok 2</span>
             <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Limit &amp; Kontinu</span>
           </p>
-          <p class="chapter-desc">Limit adalah konsep inti kalkulus yang menjelaskan perilaku fungsi ketika input mendekati suatu nilai tertentu.</p>
+          <p class="chapter-desc text-justify">Limit adalah konsep inti kalkulus yang menjelaskan perilaku fungsi ketika input mendekati suatu nilai tertentu.</p>
         </div>
 
+       
         <!-- Nama Anggota Kelompok -->
         <div class="card mb-4" style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
           <div class="card-header" style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
@@ -200,74 +258,510 @@
             <strong style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 2</strong>
           </div>
           <div class="card-body py-3">
-            <div class="placeholder-notice">
-              <i class="bi bi-pencil-square"></i>
-              <strong>Kelompok 2</strong> — Isi nama anggota kelompok di sini.
+            
+              <strong>Kelompok 2</strong> : <br>1.Ahmad Rafi <br>2.M.RIDUAN ALDO SETIAWAN<br>3.MUHAMMAD DIKKO MULIA SAPUTRA<br>4.NUR IHSAN HABIBI
+            
+          </div>
+        </div>
+
+        <div id="ch2-Fungsi1" class="mt-5">
+          <h3 class="subsection-title">2.1 FUNGSI LINEAR</h3>
+          <div class="concept-card mt-3">
+            
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <code class="formula-display">f(x)<sub>ax+b</sub></code>
+              <p class="mt-2"> keteranngan:<br>a = gradien<br>b = titik potong dengan sumbu y </p>
             </div>
           </div>
         </div>
 
-        <div id="ch2-definisi">
-          <h3 class="subsection-title">2.1 Definisi Limit</h3>
-          <div class="placeholder-notice">
-            <i class="bi bi-pencil-square"></i>
-            <strong>Area Materi — Kelompok 2</strong><br>
-            Isi dengan definisi formal limit (ε-δ), limit satu sisi, dan contoh-contoh.
+         <div id="ch2-Fungsi2" class="mt-5">
+          <h3 class="subsection-title">2.2 FUNGSI KUADRAT</h3>
+          <div class="placeholder-notice text-justify" >Fungsi kuadrat adalah fungsi yang memiliki pangkat tertinggi variabel sama dengan 2.
+Berbeda dengan fungsi linear, perubahan pada fungsi kuadrat tidak tetap</div>
+          <div class="concept-card mt-3">
+
+            <div class="concept-card-header">fungsi </div>
+            <div class="concept-card-body">
+              <code class="formula-display">  f(x) = ax+bx+c<sub></sub></code>
+              <p class="mt-2"> keteranngan:<br>a,b,c = konstanta != 0 </p>
+            </div>
           </div>
+        </div>
+
+               <div id="ch2-Fungsi3" class="mt-5">
+          <h3 class="subsection-title">2.3 FUNGSI EKSPONENSIAL</h3>
+          <div class="placeholder-notice text-justify">
+            Fungsi eksponensial adalah fungsi yang variabelnya berada pada pangkat.Secara konsep digunakan untuk menggambarkan pertumbuhan atau peluruhan yang sangat cepat.
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <code class="formula-display">  f(x) = a.b^x  <sub></sub></code>
+              <p class="mt-2"> keterangan:<br>a = nilai awal<br>b = basis </p>
+            </div>
+          </div>
+        </div>
+
+               <div id="ch2-Pertumbuhan" class="mt-5">
+          <h3 class="subsection-title">2.4 PERTUMBUHAN FUNGSI</h3>
+          <div class="placeholder-notice text-justify">
+        Pertumbuhan fungsi menunjukkan bagaimana nilai fungsi berubah ketika nilai x bertambah.
+          </div>
+          <div class="concept-card mt-3">
+        </div>
+
+        <div id="ch2-Meningkat" class="mt-5">
+          <h3 class="subsection-title">2.5 Fungsi Meningkat</h3>
+          <div class="placeholder-notice text-justify">
+       Fungsi meningkat jika semakin besar x maka semakin besar nilai f(x).
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2"> ciri-cirinya = <br>Grafik bergerak naik dari kiri ke kanan.<br>Nilai fungsi terus bertambah. </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Menurun" class="mt-5">
+          <h3 class="subsection-title">2.6 Fungsi Menurun</h3>
+          <div class="placeholder-notice" text-justify>
+       Fungsi menurun jika semakin besar x maka semakin kecil nilai f(x).
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2"> ciri-cirinya = <br>Grafik bergerak turun dari kiri ke kanan.<br>Nilai fungsi terus berkurang. </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Stabilitas" class="mt-5">
+          <h3 class="subsection-title">2.7 STABILITAS FUNGSI</h3>
+          <div class="placeholder-notice text-justify" >
+      Stabilitas fungsi menunjukkan apakah perubahan nilai fungsi berlangsung tetap atau tidak.
+          </div>
+          <div class="concept-card mt-3">
+        </div>
+
+        <div id="ch2-Stabil" class="mt-5">
+          <h3 class="subsection-title">2.8 perubahan Stabil</h3>
+          <div class="placeholder-notice text-justify">
+     Perubahan stabil terjadi jika selisih perubahan selalu sama.
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi </div>
+            <div class="concept-card-body">
+              <p class="mt-2"> contoh = <br>f(x) = 3x<br>karena, setiap nilai x naik 1, hasil dari f(x) naik 3 </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Tidak-stabil" class="mt-5">
+          <h3 class="subsection-title ">2.9 perubahan tidak Stabil</h3>
+          <div class="placeholder-notice text-justify">
+    Perubahan tidak stabil terjadi jika selisih perubahan berbeda-beda.
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2"> contoh = <br>f(x) =x^2<br>dari x = 1 ke 2 selisihnya 3<br>dari x = 2 ke 3 selisihnya  5<br>jadi, perubahan dikatakan tidak stabil saat selisih x1 ke 2 dengan x2 ke 3 tidak sama </p>
+            </div>
+          </div>
+        </div>
+
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">contoh soal</div>
+            <div class="concept-card-body">
+              <p class="mt-2 text-justify"> 1) f(x) = 5x - 2<br>jawaban: fungsi meningkat secara stabil, karena x positif 5 jadi setiap nilai x naik maka nilai  ‘n f(x) ikut naik .
+              <br>2) f(x) = x<br>fungsi meningkat tapi tidak stabil, karena saat f(1) = 1, f(3) = 9, f(5) = 25 memiliki selisih 2 dan 16. </p>
+            </div>
+          </div>
+        </div>
+
+                  <div id="ch2-Kecil" class="mt-5">
+          <h3 class="subsection-title">2.10 INTERPRETASI INPUT KECIL</h3>
+          <div class="placeholder-notice text-justify">
+            Saat x mendekati nol, nilai fungsi juga semakin kecil. Ini menunjukkan bahwa fungsi kuadrat “mengecil lebih cepat” dari inputnya. Analisis ini penting untuk melihat kondisi awal suatu model.
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2" text-justify> contoh = <br>f(x) = X²<br>jika : x = 0,1 maka f(x) = 0,01<br>kenapa  f(x) = 0,01, karena  X² jadinya 0,1*0,1 yang hasilnya 0,01 </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Besar" class="mt-5">
+          <h3 class="subsection-title">2.11 INTERPRETASI INPUT BESAR</h3>
+          <div class="placeholder-notice">
+             input besar: x → ∞ Semakin besar nilai x, hasilnya meningkat sangat cepat. Ini menunjukkan bahwa fungsi kuadrat memiliki pertumbuhan yang tinggi.
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2"> contoh f(x) =  X²<br>jika x = 10 → f(x) = 100 <br>kenapa  f(x) = 100, karena X² jadi 10*10 yang hasilnya 100 </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Maksimum" class="mt-5">
+          <h3 class="subsection-title text-justify">2.12 TITIK KRITIS MAKSIMUM</h3>
+          <div class="placeholder-notice text-justify">
+            Terjadi jika  f'(x)=0 dan tanda  f'(x) berubah dari positif (+) menjadi negatif (-) saat melewati 
+            (polanya naik lalu turun).
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2" text-justify> contohf(x) = - X²<br>
+              titik kritis: x= 0<br>
+              jawab: <br>
+              f(−1)=−(−1)²=−1  <br>
+              f(0)=−(0)²= 0 <br>
+              f(1)=−(1)²=−1 <br>
+              disitu bisa dilihat polanya naik turun,kenapa bisa?karena dari -1 ke 0 itu naik dan dari 0 ke -1 itu turun.jadi ini adalah titik maksimum </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Minimum" class="mt-5 text-justify" >
+          <h3 class="subsection-title">2.13 TITIK KRITIS MINIMUM</h3>
+          <div class="placeholder-notice">
+            Terjadi jika  f'(x)=0 dan tanda  f'(x) berubah dari negatif(-) menjadi positif (+) saat melewati 
+            (polanya turun lalu naik).
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2">
+                 contoh:
+                  f(x) = X²<br>
+                  turunan:  f'(x) = 2x<br>
+                  titik kritis: x=0<br>
+                  jawab: <br>
+                  ambil kiri:f(−1)= (−1)²= 1<br>
+                  titik; f(0)=−(0)²=0<br>
+                  ambil kanan: f(1)= (1)²= 1<br>
+                  polanya bisa dilihat dari 1 ke 0 itu turun lalu  dari 0 ke 1 itu naik. jadi titiknya minimum
+                 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ch2-Belok" class="mt-5">
+          <h3 class="subsection-title">2.14 TITIK BELOK</h3>
+          <div class="placeholder-notice">
+              adalah titik pada grafik fungsi dimana terjadi perubahan bentuk lengkungan grafik.contoh sederhana :
+              titik kiri melengkung kebawah (negatif) dan kanan melengkung ke atas(posiif)
+          </div>
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">fungsi</div>
+            <div class="concept-card-body">
+              <p class="mt-2"> contoh:
+              f(x) = X³<br>
+              turunan:  f'(x) = 3x<br>
+              turunan ke 2: f''(x) =6x<br>
+              ambil kiri f''(-1) = 6(-1)= -6 <br>
+              titik  f''(0) = 0<br>
+              ambil kanan  f''(1) = 6(1)= 6<br>
+              lihat polanya -6 ke 0 naik lalu 0 ke 6 naik.
+              walaupun naik terus ini tetap titik belok karena nilai kiri negatif(-6) dan nilai kanan positif(6)/em></p>
+            </div>
+          </div>
+        
+        <div id="ch2-Definisi" class="mt-5">
+          <h3 class="subsection-title">2.15 Definisi Limit</h3>
           <blockquote class="blockquote-def">
             <i class="bi bi-quote quote-icon"></i>
-            <p><em>[Kelompok 2: Tambahkan definisi formal limit ε-δ di sini]</em></p>
+            <p class="text-justify">Untuk mencapai akurasi matematis yang objektif, kalkulus menggunakan definisi formal epsilon-delta. Definisi ini menyatakan bahwa limit fungsi f(x) saat x mendekati c adalah L jika untuk setiap tingkat toleransi vertikal epsilon > 0 sekecil apa pun di sekitar L, selalu dapat ditemukan tingkat toleransi horizontal delta > 0 di sekitar c. Artinya, apabila kondisi 0 < |x - c| < delta terpenuhi, maka kondisi |f(x) - L| < epsilon secara otomatis juga harus terpenuhi. Pemahaman konsep limit ini merupakan dasar utama untuk mempelajari materi kalkulus lanjutan, seperti turunan dan integral.</p>
             <footer>— Definisi Limit</footer>
           </blockquote>
-          <p><em>[Kelompok 2: isi penjelasan lengkap tentang definisi limit]</em></p>
+          
+          <p class="text-justify">Konsep limit dalam matematika menjelaskan perilaku suatu fungsi saat variabel inputnya bergerak mendekati suatu nilai tertentu, tanpa harus benar-benar menyentuh nilai tersebut. Secara sederhana, limit mencari tahu ke mana arah kecenderungan nilai fungsi f(x) saat variabel x semakin merapat ke sebuah angka konstan c. Pendekatan ini sangat penting dalam analisis matematika karena memungkinkan kita untuk menganalisis kondisi di mana fungsi secara substitusi langsung tidak terdefinisi—seperti menghasilkan bentuk tak tentu 0/0—namun grafik di sekitar titik tersebut tetap memiliki kecenderungan nilai yang jelas.</p>
+          
           <div class="concept-card mt-3">
             <div class="concept-card-header">Notasi Limit</div>
             <div class="concept-card-body">
               <code class="formula-display">lim<sub>x→a</sub> f(x) = L</code>
-              <p class="mt-2"><em>[Kelompok 2: isi arti notasi ini]</em></p>
+              <p class="mt-2 text-justify">Notasi di atas dibaca sebagai <strong>"limit dari fungsi f(x) ketika x mendekati a adalah L"</strong>. Notasi tersebut menegaskan bahwa jika kita memilih nilai x yang letaknya semakin dekat dengan a, maka nilai dari fungsi f(x) juga akan bergerak semakin mendekati nilai konstan L. Hal penting yang perlu digarisbawahi adalah fokus utama limit hanya memperhatikan nilai fungsi di sekitar titik a, bukan nilai fungsi tepat di titik a itu sendiri. Oleh karena itu, sebuah fungsi tetap dapat memiliki nilai limit di suatu titik tertentu meskipun fungsi tersebut berlubang atau tidak terdefinisi di titik yang dimaksud.</p>
             </div>
           </div>
         </div>
 
-        <div id="ch2-sifat" class="mt-5">
-          <h3 class="subsection-title">2.2 Sifat-Sifat Limit</h3>
-          <div class="placeholder-notice">
-            <i class="bi bi-pencil-square"></i>
-            <strong>Area Materi — Kelompok 2</strong><br>
-            Isi dengan teorema-teorema limit: penjumlahan, perkalian, pembagian, komposisi, dsb.
+        <div id="ch2-Kiri" class="mt-5">
+          <h3 class="subsection-title">2.16 Limit Kiri dan Limit Kanan</h3>
+          <p class="text-justify mt-2">Pada grafik fungsi, tidak semua kurva berbentuk garis mulus yang menyambung. Kita sering menjumpai fungsi sepotong-sepotong (piecewise function) yang memiliki karakteristik melompat atau terputus pada koordinat tertentu. Di sinilah konsep limit kiri dan limit kanan digunakan. Konsep ini berfungsi untuk menganalisis perilaku grafik di sekitar titik tersebut dengan cara memisahkan arah pendekatan variabel input. Melalui metode ini, kita dapat mendeteksi apakah jalur grafik dari kedua arah menuju ke satu titik yang sama atau terpisah.</p>
+          
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Notasi Limit Satu Sisi</div>
+            <div class="concept-card-body">
+              <code class="formula-display">lim<sub>x→c<sup>−</sup></sub> f(x) = L<sub>1</sub> &nbsp;dan&nbsp; lim<sub>x→c<sup>+</sup></sub> f(x) = L<sub>2</sub></code>
+              <p class="mt-2 text-justify">Notasi di atas masing-masing dibaca sebagai <strong>"limit dari fungsi f(x) ketika x mendekati c dari arah kiri adalah L1"</strong>, dan <strong>"limit dari fungsi f(x) ketika x mendekati c dari arah kanan adalah L2"</strong>. Tanda minus (-) dan plus (+) pada posisi pangkat variabel menunjukkan batasan arah pendekatan domain yang digunakan. Perbedaannya terletak pada wilayah evaluasi: limit kiri hanya mengevaluasi nilai fungsi pada interval x < c, sedangkan limit kanan memfokuskan analisisnya pada interval x > c. Melalui pemisahan ini, kita dapat mengidentifikasi letak patahan atau lompatan pada grafik fungsi secara akurat.</p>
+            </div>
           </div>
+
+           <div class="card example-card mt-3 text-justify">
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1 </div>
+              <div class="card-body">
+                <p class="fw-semibold">Soal:</p>
+                <p>  
+                  Diberikan sebuah fungsi $f(x)$ sebagai berikut:$$f(x) = \begin{cases} 
+                  2x + 1, & \text{jika } x < 2 \\ 
+                  x^2 - 1, & \text{jika } x \ge 2 
+                  \end{cases}$$
+                  <br><strong>Tentukan:</strong>
+                  <br>1. $\lim_{x \to 2^-} f(x)$ (Limit Kiri)
+                  <br>2. $\lim_{x \to 2^+} f(x)$ (Limit Kanan)
+                  <br>3. Apakah $\lim_{x \to 2} f(x)$ ada? Jelaskan! </p>
+                <hr/><p class="fw-semibold">Penyelesaian:</p><p> 1. Mencari Limit Kiri ($\lim_{x \to 2^-} f(x)$)Limit kiri artinya kita mendekati nilai $x = 2$ dari arah kiri (nilai $x$ yang lebih kecil dari 2).
+                  Berdasarkan definisi fungsi di atas, untuk $x < 2$, fungsi yang digunakan adalah $f(x) = 2x + 1$.
+                  <br>$$\lim_{x \to 2^-} f(x) = \lim_{x \to 2} (2x + 1)$$Substitusikan nilai $x = 2$ ke dalam fungsi tersebut:
+                  <br>$$= 2(2) + 1$$
+                  $$= 4 + 1 = 5$$Jadi, nilai limit kirinya adalah 5.
+                  <br>2. Mencari Limit Kanan ($\lim_{x \to 2^+} f(x)$)Limit kanan artinya kita mendekati nilai $x = 2$ dari arah kanan (nilai $x$ yang lebih besar atau sama dengan 2).
+                  Berdasarkan definisi fungsi di atas, untuk $x \ge 2$, fungsi yang digunakan adalah $f(x) = x^2 - 1$.
+                  $$\lim_{x \to 2^+} f(x) = \lim_{x \to 2} (x^2 - 1)$$
+                  <br>Substitusikan nilai $x = 2$ ke dalam fungsi tersebut:
+                  $$= (2)^2 - 1$$$$= 4 - 1 = 3$$
+                  <br>Jadi, nilai limit kanannya adalah 3.
+                  <br>3. Apakah $\lim_{x \to 2} f(x)$ ada?Syarat utama agar suatu limit di satu titik dikatakan ada (exist) adalah nilai limit kiri harus sama dengan nilai limit kanan.
+                  <br>$$\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) = L$$
+                  <br>Mari kita cek hasil yang sudah kita dapatkan:
+                  <br>Limit Kiri = $5$
+                  <br>Limit Kanan = $3$
+                  <br>Karena $\lim_{x \to 2^-} f(x) \neq \lim_{x \to 2^+} f(x)$ (yaitu $5 \neq 3$), maka dapat disimpulkan bahwa:$\lim_{x \to 2} f(x)$ TIDAK ADA.
+                  <br>Jika digambarkan pada grafik, kurva dari arah kiri dan kanan tidak bertemu di satu titik yang sama pada $x = 2$ (terjadi lompatan/diskontinuitas). </p>
+              </div>
+            </div>
+        </div>
+
+        <div id="ch2-Sifat" class="mt-5">
+          <h3 class="subsection-title">2.17 Sifat-Sifat Limit</h3>
           <div class="table-responsive mt-3">
             <table class="table table-bordered concept-table">
-              <thead><tr><th>Sifat</th><th>Rumus</th><th>Keterangan</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>Sifat Fungis</th>
+                  <th>Rumus Matematika</th>
+                  <th>Keterangan Operasional</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>Penjumlahan</td><td><code>lim[f(x)+g(x)] = lim f(x) + lim g(x)</code></td><td><em>[Kelompok 2 isi]</em></td></tr>
-                <tr><td>Perkalian</td><td><code>lim[f(x)·g(x)] = lim f(x) · lim g(x)</code></td><td><em>[Kelompok 2 isi]</em></td></tr>
-                <tr><td>Pembagian</td><td><code>lim[f(x)/g(x)] = lim f(x) / lim g(x)</code></td><td><em>[Kelompok 2 isi]</em></td></tr>
-                <tr><td>Pangkat</td><td><code>lim[f(x)]ⁿ = [lim f(x)]ⁿ</code></td><td><em>[Kelompok 2 isi]</em></td></tr>
+                <tr>
+                  <td><strong>Konstanta</strong></td>
+                  <td>lim<sub>x→c</sub> k = k</td>
+                  <td class="text-justify">Limit dari suatu fungsi konstanta k untuk x mendekati c akan selalu menghasilkan konstanta k itu sendiri. Hal ini terjadi karena tidak ada variabel x di dalam fungsi tersebut, sehingga nilainya tidak dipengaruhi oleh angka yang didekati oleh x.</td>
+                </tr>
+                <tr>
+                  <td><strong>Identitas</strong></td>
+                  <td>lim<sub>x→c</sub> x = c</td>
+                  <td class="text-justify">Limit dari fungsi identitas f(x) = x saat x mendekati c adalah nilai c itu sendiri. Sifat ini merupakan aturan substitusi paling dasar, di mana kita langsung mengganti variabel x dengan angka target yang ditujunya.</td>
+                </tr>
+                <tr>
+                  <td><strong>Perkalian Skalar</strong></td>
+                  <td>lim<sub>x→c</sub> [k · f(x)] = k · lim<sub>x→c</sub> f(x)</td>
+                  <td class="text-justify">Jika sebuah fungsi dikalikan dengan konstanta k, maka konstanta tersebut dapat dikeluarkan dari operasi limit. Kita dapat mencari nilai limit fungsinya terlebih dahulu, baru kemudian mengalikan hasil akhirnya dengan konstanta k.</td>
+                </tr>
+                <tr>
+                  <td><strong>Penjumlahan</strong></td>
+                  <td>lim<sub>x→c</sub> [f(x) + g(x)] = lim<sub>x→c</sub> f(x) + lim<sub>x→c</sub> g(x)</td>
+                  <td class="text-justify">Limit dari operasi penjumlahan dua fungsi atau lebih dapat dipecah menjadi operasi penjumlahan dari masing-masing limit fungsinya. Nilai limit tiap suku fungsi dapat dievaluasi secara terpisah sebelum dijumlahkan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Pengurangan</strong></td>
+                  <td>lim<sub>x→c</sub> [f(x) - g(x)] = lim<sub>x→c</sub> f(x) - lim<sub>x→c</sub> g(x)</td>
+                  <td class="text-justify">Sifat ini serupa dengan sifat penjumlahan, di mana limit dari selisih dua fungsi dihitung dengan cara mendistribusikan limit ke masing-masing fungsi, kemudian mengurangkan hasil akhirnya.</td>
+                </tr>
+                <tr>
+                  <td><strong>Perkalian</strong></td>
+                  <td>lim<sub>x→c</sub> [f(x) · g(x)] = lim<sub>x→c</sub> f(x) · lim<sub>x→c</sub> g(x)</td>
+                  <td class="text-justify">Limit dari hasil perkalian dua fungsi adalah hasil kali dari masing-masing nilai limit fungsi tersebut. Sifat ini menunjukkan bahwa operasi limit bersifat distributif terhadap perkalian aljabar.</td>
+                </tr>
+                <tr>
+                  <td><strong>Pembagian</strong></td>
+                  <td>lim<sub>x→c</sub> [f(x) / g(x)] = [lim<sub>x→c</sub> f(x)] / [lim<sub>x→c</sub> g(x)]</td>
+                  <td class="text-justify">Limit dari fungsi pecahan (pembagian) sama dengan hasil bagi dari nilai limit pembilang dibagi dengan nilai limit penyebutnya. Syarat mutlaknya adalah nilai limit dari fungsi penyebut tidak boleh bernilai nol (lim<sub>x→c</sub> g(x) ≠ 0).</td>
+                </tr>
+                <tr>
+                  <td><strong>Pangkat</strong></td>
+                  <td>lim<sub>x→c</sub> [f(x)]<sup>n</sup> = (lim<sub>x→c</sub> f(x))<sup>n</sup></td>
+                  <td class="text-justify">Limit dari suatu fungsi yang dipangkatkan dengan bilangan bulat positif n sama dengan nilai limit fungsi tersebut yang kemudian dipangkatkan n. Operasi limit dapat dimasukkan ke dalam kurung untuk mengevaluasi fungsi basisnya terlebih dahulu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Akar Pangkat</strong></td>
+                  <td>lim<sub>x→c</sub> <sup>n</sup>√f(x) = <sup>n</sup>√(lim<sub>x→c</sub> f(x))</td>
+                  <td class="text-justify">Limit dari akar pangkat n suatu fungsi adalah akar pangkat n dari nilai limit fungsi tersebut. Jika indeks akar n merupakan bilangan genap, maka nilai limit di dalam akar harus berupa bilangan positif agar terdefinisi dalam bilangan real.</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Contoh Soal -->
-        <div id="ch2-contoh" class="mt-5">
-          <h3 class="subsection-title">Contoh Soal</h3>
-          <div class="card example-card mt-3">
-            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 2.1</div>
-            <div class="card-body">
-              <p class="fw-semibold">Soal:</p><p><em>[Kelompok 2: isi contoh soal limit]</em></p>
-              <hr/><p class="fw-semibold">Penyelesaian:</p><p><em>[Kelompok 2: isi langkah-langkah]</em></p>
+        <div id="ch2-Hingga" class="mt-4">
+          <h3 class="subsection-title">2.18 Limit Hingga dan Limit Tak Hingga</h3>
+          <p class="text-justify">Evaluasi limit tidak hanya terbatas pada pendekatan titik-titik berhingga, melainkan juga menjangkau perilaku fungsi saat bergerak menuju kondisi ekstrem tanpa batas. Analisis ini memisahkan karakter fungsi menjadi dua fenomena asimtotik yang berbeda, yaitu ketika hasil pendekatan bernilai konstan atau ketika nilai fungsi itu sendiri yang bergerak menuju tak hingga. Perilaku fungsi pada limit tak hingga ini digunakan sebagai instrumen utama untuk mendeteksi keberadaan garis asimtot vertikal pada grafik.</p>
+          
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Klasifikasi Limit Asimtotik</div>
+            <div class="concept-card-body text-justify">
+              <p ><strong>1. Limit Hingga:</strong> Kondisi di mana pergerakan variabel input x menuju suatu nilai tertentu menghasilkan nilai fungsi f(x) yang semakin stabil dan konvergen mendekati suatu bilangan real konstan L.</p>
+              <hr class="my-3" style="opacity: 0.15;">
+              <p><strong>2. Limit Tak Hingga:</strong> Kondisi di mana saat x bergerak merapat ke suatu titik konstan c, nilai fungsi f(x) justru mengalami lonjakan ekstrem yang membesar tanpa batas (∞) atau mengecil tanpa batas (-∞).</p>
+              
+              <div class="formula-display" style="text-align: center; font-size: 1.2rem; margin: 15px 0;">
+                lim<sub>x→c</sub> f(x) = ∞
+              </div>
+              <p class="mt-2">Notasi di atas menegaskan bahwa semakin dekat jarak variabel terhadap titik c, maka nilai fungsi akan bergerak meningkat secara vertikal tanpa batas.</p>
             </div>
           </div>
           <div class="card example-card mt-3">
-            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 2.2</div>
-            <div class="card-body">
-              <p class="fw-semibold">Soal:</p><p><em>[Kelompok 2: isi contoh soal kedua]</em></p>
-              <hr/><p class="fw-semibold">Penyelesaian:</p><p><em>[Kelompok 2: isi langkah-langkah]</em></p>
+            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1 </div>
+            <div class="card-body text-justify">
+              <p class="fw-semibold">Soal:</p><p> Diberikan sebuah fungsi rasional $f(x)$ sebagai berikut:$$f(x) = \frac{7x^4 - 3x^2 + 2}{2x^4 + 5x^3 - 1}$$Tentukan nilai dari $\lim_{x \to \infty} f(x)$ dan jelaskan karakteristik grafik fungsi tersebut dalam jangka panjang berdasarkan hasil limit yang diperoleh. </p>
+              <hr/><p class="fw-semibold">Penyelesaian:</p><p> Untuk menentukan nilai limit fungsi rasional saat $x$ menuju tak hingga, bagi setiap suku pada pembilang dan penyebut dengan variabel pangkat tertinggi, yaitu $x^4$:$$\lim_{x \to \infty} \frac{\frac{7x^4}{x^4} - \frac{3x^2}{x^4} + \frac{2}{x^4}}{\frac{2x^4}{x^4} + \frac{5x^3}{x^4} - \frac{1}{x^4}} = \lim_{x \to \infty} \frac{7 - \frac{3}{x^2} + \frac{2}{x^4}}{2 + \frac{5}{x} - \frac{1}{x^4}}$$Menggunakan teorema limit tak hingga, di mana $\lim_{x \to \infty} \frac{k}{x^n} = 0$ untuk setiap konstanta $k$ dan $n > 0$, maka substitusi nilai limit menghasilkan:$$\frac{7 - 0 + 0}{2 + 0 - 0} = \frac{7}{2}$$Interpretasi Geometris:Karena nilai limitnya menghasilkan konstanta $L = \frac{7}{2}$, hal ini menunjukkan bahwa fungsi konvergen (mendekati satu nilai pasti). Garis horizontal $y = \frac{7}{2}$ merupakan asimtot horizontal dari fungsi $f(x)$. Artinya, saat nilai $x$ semakin membesar ke arah kanan, grafik fungsi akan bergerak semakin dekat menuju garis $y = \frac{7}{2}$. </p>
+            </div>
+          </div>
+          <div class="card example-card mt-3">
+            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 2</div>
+            <div class="card-body text-justify">
+              <p class="fw-semibold">Soal:</p><p> Tentukan nilai limit dari fungsi rasional berikut:$$\lim_{x \to \infty} \frac{3x^2 + 5x - 2}{9x^2 - 1}$$ </p>
+              <hr/><p class="fw-semibold">Penyelesaian:</p><p> Bagi seluruh suku pembilang dan penyebut dengan variabel pangkat tertinggi, yaitu $x^2$:$$\lim_{x \to \infty} \frac{\frac{3x^2}{x^2} + \frac{5x}{x^2} - \frac{2}{x^2}}{\frac{9x^2}{x^2} - \frac{1}{x^2}} = \lim_{x \to \infty} \frac{3 + \frac{5}{x} - \frac{2}{x^2}}{9 - \frac{1}{x^2}}$$Terapkan aturan limit tak hingga di mana setiap suku pecahan yang penyebutnya mengandung variabel $x$ akan tereliminasi menjadi 0:$$\frac{3 + 0 - 0}{9 - 0} = \frac{3}{9} = \frac{1}{3}$$Interpretasi Geometris: Grafik fungsi memiliki asimtot horizontal pada garis $y = \frac{1}{3}$. Kurva akan mendatar dan mendekati nilai $\frac{1}{3}$ dalam jangka panjang. </p>
             </div>
           </div>
         </div>
 
+        <div id="ch2-Titik" class="mt-5 text-justify">
+          <h3 class="subsection-title">2.19 Titik Kritis Fungsi dan Karakteristik Grafik</h3>
+          <p>Analisis grafik terhadap sebuah fungsi memerlukan identifikasi pada titik-titik khusus di mana fungsi tersebut mengalami anomali, perubahan sifat, atau pemutusan jalur. Titik-titik transisi ini dikategorikan sebagai titik kritis fungsi, yang membedakan antara area kurva yang kontinu dan area yang mengalami diskontinuitas atau perubahan arah.</p>
+          
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Kategori Utama Titik Kritis</div>
+            <div class="concept-card-body">
+              <p><strong>A. Titik Tak Terdefinisi:</strong> Nilai input x yang secara matematis menghasilkan operasi yang tidak valid dalam semesta bilangan real, seperti pembagian dengan nilai nol. Titik ini secara otomatis dikeluarkan dari domain alami fungsi. Contoh pada fungsi rasional berikut:</p>
+              
+              <div class="formula-display" style="text-align: center; font-size: 1.2rem; margin: 15px 0;">
+                f(x) = 1 / (x - 2)
+              </div>
+              <p>Titik x = 2 adalah titik tak terdefinisi karena mengakibatkan operasi pembagian terhadap nol yang membuat fungsi tidak memiliki nilai real.</p>
+              
+              <hr class="my-3" style="opacity: 0.15;">
+              
+              <p><strong>B. Titik Diskontinu (Keterputusan Grafik):</strong> Sebuah fungsi dikatakan memiliki sifat kontinuitas di titik c apabila kurvanya tersambung mulus tanpa ada jeda. Ketika syarat formal kontinuitas tersebut dilanggar, titik c diklasifikasikan sebagai titik diskontinu, yang terbagi atas tiga kategori utama:</p>
+              <ul>
+                <li><strong>Diskontinu Dapat Dihapus (Removable Discontinuity):</strong> Terjadi ketika nilai limit fungsi di titik c ada dan konvergen, namun nilai fungsi tepat di titik f(c) tidak terdefinisi atau berbeda. Kondisi ini menciptakan satu titik berlubang pada grafik.</li>
+                <li><strong>Diskontinu Loncat (Jump Discontinuity):</strong> Terjadi akibat adanya perbedaan nilai yang signifikan antara limit kiri dan limit kanan, sehingga jalur grafik terputus secara vertikal dan menciptakan lompatan nilai koordinat.</li>
+                <li><strong>Diskontinu Tak Hingga (Infinite Discontinuity):</strong> Kondisi di mana kurva fungsi bergerak menuju nilai tak hingga di sekitar titik c, sehingga grafik terpisah oleh sebuah garis asimtot vertikal.</li>
+              </ul>
+              
+              <hr class="my-3" style="opacity: 0.15;">
+              
+              <p><strong>C. Titik Perubahan Perilaku Grafik:</strong> Selain keterputusan fisik, titik kritis juga mencakup titik stasioner (saat turunan pertama f'(x) = 0) di mana grafik mencapai nilai maksimum lokal atau minimum lokal, serta titik belok yang menandai perubahan orientasi kelengkungan kurva.</p>
+            </div>
+          </div>
+          <div class="card example-card mt-3">
+            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal</div>
+            <div class="card-body">
+              <p class="fw-semibold">Soal:</p><p> Diberikan fungsi  $g(x) = \frac{x^2 - 36}{x - 6}$. Tentukan titik kritis fungsi tersebut dan klasifikasikan jenis diskontinuitasnya. </p>
+              <hr/><p class="fw-semibold">Penyelesaian:</p><p> 1. Titik kritis terjadi saat fungsi tidak terdefinisi, yaitu ketika bagian penyebut bernilai nol:$$x - 6 = 0 \implies x = 6$$Jadi, titik kritis fungsi terletak pada $x = 6$.
+              <br> 2. Uji nilai limit di sekitar titik kritis $x = 6$ dengan menjabarkan pembilang menggunakan teknik faktorisasi:$$\lim_{x \to 6} \frac{x^2 - 36}{x - 6} = \lim_{x \to 6} \frac{(x - 6)(x + 6)}{x - 6}$$Suku $(x - 6)$ pada pembilang dan penyebut saling membagi, sehingga menyisakan:$$\lim_{x \to 6} (x + 6) = 6 + 6 = 12$$
+              <br><strong>Kesimpulan:</strong> <br>Karena nilai limitnya ada (bernilai 12) tetapi nilai fungsi tepat di titik $x = 6$ tidak terdefinisi, maka titik kritis ini termasuk jenis Diskontinu Dapat Dihapus (Removable Discontinuity). Grafik fungsi berupa garis lurus yang berlubang tepat di koordinat $(6,12)$. </p>
+            
+          </div>
+        </div>
+
+        <div id="ch2-Representasi" class="mt-5 text-justify">
+          <h3 class="subsection-title">2.20 Representasi dan Metodologi Penentuan Limit</h3>
+          <p>Untuk mengevaluasi eksistensi nilai limit secara akurat, kalkulus menyediakan tiga metode pendekatan utama yang memiliki sudut pandang berbeda. Pendekatan numerik memberikan pemahaman berbasis data angka, pendekatan grafik memberikan representasi visual, sedangkan pendekatan aljabar memberikan kepastian melalui perhitungan simbolik.</p>
+          
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Tiga Pilar Penentuan Nilai Limit</div>
+            <div class="concept-card-body">
+              <p><strong>1. Pendekatan Numerik (Analisis Tabel):</strong> Metode ini dilakukan dengan menguji kecenderungan nilai fungsi melalui penyusunan tabel koordinat. Kita memilih sampel nilai x secara progresif yang posisinya semakin merapat menuju titik target c dari arah kiri maupun kanan, lalu mengamati konvergensi angka hasil fungsi yang diperoleh.</p>
+              
+              <hr class="my-3" style="opacity: 0.15;">
+
+              <p><strong>2. Pendekatan Grafik (Analisis Visual):</strong> Metode evaluasi geometris dengan menggunakan grafik fungsi pada diagram Kartesius. Fokus analisis diarahkan pada koordinat vertikal (sumbu y) yang dituju oleh ujung-ujung kurva saat koordinat horizontalnya (sumbu x) memampat mendekati titik target.</p>
+              
+              <hr class="my-3" style="opacity: 0.15;">
+
+              <p><strong>3. Pendekatan Aljabar (Analisis Analitis):</strong> Metode yang menggunakan manipulasi aljabar untuk menyelesaikan bentuk-bentuk tak tentu. Terdapat tiga teknik dasar yang diimplementasikan secara berjenjang:</p>
+              <ul>
+                <li><strong>Substitusi Langsung:</strong> Langkah awal dengan memasukkan nilai c secara langsung ke dalam fungsi. Jika menghasilkan bilangan real pasti, maka evaluasi selesai.</li>
+                <li><strong>Faktorisasi Aljabar:</strong> Apabila substitusi langsung menghasilkan bentuk tak tentu 0/0, struktur fungsi harus diuraikan lewat pemfaktoran untuk mengeliminasi komponen pembuat nol pada pembilang dan penyebut.</li>
+                <li><strong>Perkalian Sekawan:</strong> Strategi manipulasi aljabar yang diaplikasikan khusus untuk merasionalkan fungsi-fungsi yang memuat operasi akar agar dapat disederhanakan secara analitis.</li>
+              </ul>
+            </div>
+          </div>
+                    <div class="card example-card mt-3">
+            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1</div>
+            <div class="card-body">
+              <p class="fw-semibold">Soal:</p><p> Hitunglah nilai limit dari fungsi berikut:$$\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}$$ </p>
+              <hr/><p class="fw-semibold">Penyelesaian:</p><p> Substitusi langsung nilai $x = 4$ menghasilkan bentuk tak tentu $\frac{0}{0}$. Untuk menyelesaikannya, kalikan fungsi pembilang dan penyebut dengan bentuk sekawan dari pembilang:$$\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4} \times \frac{\sqrt{x} + 2}{\sqrt{x} + 2}$$Sederhanakan pembilang menggunakan sifat selisih kuadrat $(a-b)(a+b) = a^2 - b^2$:$$\lim_{x \to 4} \frac{(\sqrt{x})^2 - 2^2}{(x - 4)(\sqrt{x} + 2)} = \lim_{x \to 4} \frac{x - 4}{(x - 4)(\sqrt{x} + 2)}$$Coret suku pembuat nol $(x - 4)$ pada pembilang dan penyebut, lalu substitusikan nilai $x = 4$:$$\lim_{x \to 4} \frac{1}{\sqrt{x} + 2} = \frac{1}{\sqrt{4} + 2} = \frac{1}{2 + 2} = \frac{1}{4}$$Jadi, nilai limit fungsi tersebut adalah $\frac{1}{4}$. </p>
+            </div>
+          </div>
+          <div class="card example-card mt-3">
+            <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 2</div>
+            <div class="card-body">
+              <p class="fw-semibold">Soal:</p><p> Tentukan nilai limit dari fungsi berikut:$$\lim_{x \to 1} \frac{x - 1}{\sqrt{x + 3} - 2}$$ </p>
+              <hr/><p class="fw-semibold">Penyelesaian:</p><p> Substitusi langsung $x = 1$ menghasilkan bentuk tak tentu $\frac{0}{0}$. Kalikan pembilang dan penyebut dengan bentuk sekawan dari fungsi penyebut:$$\lim_{x \to 1} \frac{x - 1}{\sqrt{x + 3} - 2} \times \frac{\sqrt{x + 3} + 2}{\sqrt{x + 3} + 2}$$Jabarkan bagian penyebut menggunakan aturan selisih kuadrat:$$\lim_{x \to 1} \frac{(x - 1)(\sqrt{x + 3} + 2)}{(\sqrt{x + 3})^2 - 2^2} = \lim_{x \to 1} \frac{(x - 1)(\sqrt{x + 3} + 2)}{(x + 3) - 4}$$$$\lim_{x \to 1} \frac{(x - 1)(\sqrt{x + 3} + 2)}{x - 1}$$Eliminasi suku pembuat nol $(x - 1)$, kemudian lakukan substitusi langsung nilai $x = 1$:$$\lim_{x \to 1} (\sqrt{x + 3} + 2) = \sqrt{1 + 3} + 2 = \sqrt{4} + 2 = 2 + 2 = 4$$Jadi, nilai limit fungsi tersebut adalah 4. </p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div id="ch2-interpretasi-perilaku" class="mt-5 text-justify">
+          <h3 class="subsection-title">2.21 Interpretasi Perilaku Fungsi di Sekitar Titik Kritis</h3>
+          <p>Sintesis antara konsep limit dan titik kritis memberikan kemampuan untuk membaca perilaku fungsi pada zona-zona ekstrem. Melalui pendekatan limit, anomali pada grafik dapat didefinisikan sebagai karakteristik unik yang teratur secara matematis.</p>
+          
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Analisis Perilaku pada Kondisi Ekstrem</div>
+            <div class="concept-card-body">
+              <p><strong>• Interpretasi Asimtot Vertikal:</strong> Melalui evaluasi limit satu sisi yang menghasilkan nilai tak hingga, kita dapat menyimpulkan bahwa garis vertikal x = c bertindak sebagai asimtot vertikal. Grafik fungsi akan bergerak mendekati garis ini secara tak terbatas, namun secara teoretis tidak akan pernah menyentuh atau melintasi garis tersebut.</p>
+              
+              <hr class="my-3" style="opacity: 0.15;">
+
+              <p><strong>• Interpretasi Titik Lubang (Removable Discontinuity):</strong> Melalui analisis limit aljabar, kita dapat membuktikan bahwa keberadaan titik tak terdefinisi tipe ini tidak merusak stabilitas fungsi di sekitarnya. Jalur grafik dari kiri dan kanan tetap bergerak menuju satu titik pertemuan yang sama, sehingga anomali lubang tersebut bersifat lokal dan dapat dihilangkan dengan mendefinisikan ulang fungsi secara sepotong-sepotong.</p>
+
+              <hr class="my-3" style="opacity: 0.15;">
+              
+              <p><strong>• Interpretasi Perilaku Jangka Panjang (Asimtot Horizontal):</strong> Saat kita menguji variabel input berjalan tanpa batas menuju tak hingga (lim f(x) saat x → ∞), nilai limit yang dihasilkan (misalkan L) menunjukkan masa depan grafik tersebut. Kurva akan mengalami pelandaian dan bergerak stabil menyusuri garis horizontal y = L, yang menunjukkan sifat kestabilan sistem dalam jangka panjang.</p>
+            </div>
+
+          </div>
+            <div class="card example-card mt-3">
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1 </div>
+              <div class="card-body">
+                <p class="fw-semibold">Soal:</p><p>  Diberikan fungsi $h(x) = \frac{2}{x - 3}$. Hitung nilai limit satu sisi saat $x$ mendekati 3 dan simpulkan karakteristik grafiknya. </p>
+                <hr/><p class="fw-semibold">Penyelesaian:</p><p> Substitusi langsung $x = 3$ menghasilkan bentuk $\frac{2}{0}$ (konstanta dibagi nol) yang menandakan nilai limit menuju tak hingga. Lakukan analisis arah grafik menggunakan pendekatan limit satu sisi:
+                <br><br>
+                  Limit Kiri ($\lim_{x \to 3^-}$): Saat $x$ mendekati 3 dari arah kiri (nilai $x$ sedikit lebih kecil dari 3, misal $2,99$), nilai penyebut $(x - 3)$ menjadi bilangan negatif yang sangat dekat dengan nol ($0^-$). Konstanta positif dibagi bilangan negatif mendekati nol menghasilkan negatif tak hingga:$$\lim_{x \to 3^-} \frac{2}{x - 3} = -\infty$$
+                  <br>
+                  Limit Kanan ($\lim_{x \to 3^+}$): Saat $x$ mendekati 3 dari arah kanan (nilai $x$ sedikit lebih besar dari 3, misal $3,01$), nilai penyebut $(x - 3)$ menjadi bilangan positif yang sangat dekat dengan nol ($0^+$). Konstanta positif dibagi bilangan positif mendekati nol menghasilkan positif tak hingga:$$\lim_{x \to 3^+} \frac{2}{x - 3} =    \infty$$
+                <br>
+                <strong>Kesimpulan:</strong> Karena hasil limit satu sisi menghasilkan nilai tak hingga ($-\infty$ dan $\infty$), maka garis vertikal $x = 3$ merupakan asimtot vertikal bagi fungsi $h(x)$. Grafik akan terbagi di $x = 3$, di mana kurva dari kiri turun tanpa batas dan kurva dari kanan naik tanpa batas. </p>
+              </div>
+            </div>
+            <div class="card example-card mt-3">
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 2</div>
+              <div class="card-body">
+                <p class="fw-semibold">Soal:</p><p>  Gunakan analisis limit satu sisi untuk menentukan apakah fungsi $h(x) = \frac{5}{x + 4}$ memiliki asimtot vertikal pada titik kritisnya. </p>
+                <hr/><p class="fw-semibold">Penyelesaian:</p><p> Titik kritis fungsi berada pada $x = -4$ karena membuat penyebut menjadi nol. Uji perilaku grafik di sekitar $x = -4$ menggunakan limit satu sisi:
+                <br><br>
+                Limit Kiri ($\lim_{x \to -4^-}$): Saat $x$ mendekati $-4$ dari arah kiri (nilai $x$ sedikit lebih kecil dari $-4$, misal $-4,01$), nilai penyebut $(x + 4)$ akan bernilai negatif yang sangat mendekati nol ($0^-$):$$\lim_{x \to -4^-} \frac{5}{x + 4} = -\infty$$
+                <br>
+                Limit Kanan ($\lim_{x \to -4^+}$): Saat $x$ mendekati $-4$ dari arah kanan (nilai $x$ sedikit lebih besar dari $-4$, misal $-3,99$), nilai penyebut $(x + 4)$ akan bernilai positif yang sangat mendekati nol ($0^+$):$$\lim_{x \to -4^+} \frac{5}{x + 4} = \infty$$
+                <br>
+                <strong>Kesimpulan:</strong> Kedua hasil limit satu sisi menunjukkan nilai divergen menuju tak hingga. Hal ini membuktikan secara matematis bahwa garis vertikal $x = -4$ bertindak sebagai asimtot vertikal bagi fungsi tersebut. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
         <!-- Video Pembelajaran -->
         <div id="ch2-video" class="mt-5">
           <h3 class="subsection-title">Video Pembelajaran</h3>
@@ -289,21 +783,125 @@
             <div class="card-body">
               <ol class="mb-0">
                 <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 1</p><p><em>[Kelompok 2: isi soal latihan 1]</em></p>
+                  <p class="fw-semibold mb-1">Fungsi linear</p><p> Diketahui fungsi linear f(x) = 2x + 4. Jelaskan mengapa fungsi tersebut termasuk fungsi linear dan tentukan nilai gradien serta titik potongnya dengan sumbu Y! </p>
                   <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban soal 1]</em></div>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> Fungsi f(x) = 2x+4 termasuk fungsi linear karena memiliki bentuk umum f(x) = ax+b dan pangkat tertinggi variabel x adalah 1.
+                    <br>Gradien (a) = 2 Titik potong dengan sumbu Y (b) = 4
+                    <br>
+                    Jadi, grafik fungsi tersebut memotong sumbu Y di titik (0,4) dan memiliki kemiringan (gradien) sebesar 2.  </div>
                   </details>
                 </li>
                 <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 2</p><p><em>[Kelompok 2: isi soal latihan 2]</em></p>
+                  <p class="fw-semibold mb-1">Fungsi Kuadrat</p><p> Diketahui fungsi kuadrat f(x) = x²+4x+3 . Jelaskan mengapa fungsi tersebut termasuk fungsi kuadrat dan tentukan nilai konstanta a, b, dan c!
+                   </p>
                   <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban soal 2]</em></div>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> Fungsi tersebut termasuk fungsi kuadrat karena pangkat tertinggi variabel x adalah 2.
+                    <br>a = 1
+                    <br>b = 4
+                    <br>c = 3 </div>
                   </details>
                 </li>
                 <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 3</p><p><em>[Kelompok 2: isi soal latihan 3]</em></p>
+                  <p class="fw-semibold mb-1">Fungsi Eksponensial</p><p> 
+                    Diketahui fungsi eksponensial  f(x) = 5.3^x Jelaskan mengapa fungsi tersebut termasuk fungsi eksponensial dan tentukan nilai awal serta basisnya!
+                   </p>
                   <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban soal 3]</em></div>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">  
+                    Fungsi tersebut termasuk fungsi eksponensial karena variabel x berada pada pangkat.
+
+                    <br>Nilai awal (a) = 5
+                    <br>Basis (b) = 3
+                    <br>Karena b > 0 dan b tidak sama dengan 1, fungsi tersebut memenuhi syarat sebagai fungsi eksponensial. 
+                   </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Pertumbuhan fungsi</p><p> 
+                Tentukan apakah fungsi f(x) = -2x + 5 merupakan fungsi meningkat atau fungsi menurun!
+                    </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> Fungsi f(x) = -2x + 5 merupakan fungsi menurun karena saat nilai x bertambah, nilai f(x) semakin kecil. Contohnya:
+                    <br>f(1) = 3
+                    <br>f(2) = 1
+                    <br>Karena f(2) < f(1), maka fungsi tersebut menurun  </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Stabilitas fungsi</p><p>
+                  Perhatikan fungsi f(x) = x². Apakah perubahan fungsi tersebut stabil atau tidak stabil? Jelaskan secara singkat!
+                 </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> 
+                    Perubahan fungsi f(x) = x² tidak stabil, karena kenaikan nilai f(x) tidak selalu sama untuk setiap kenaikan 1 pada nilai x. Misalnya, dari x = 1 ke x = 2 naik 3, sedangkan dari x = 2 ke x = 3 naik 5. Jadi, besar perubahannya tidak tetap </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Analisis Limit Kiri dan Limit Kanan (Fungsi Sepotong)</p><p> Diketahui sebuah fungsi sepotong-sepotong (piecewise function) $f(x)$ didefinisikan sebagai berikut:
+                  <br>
+                  $$f(x) = \begin{cases} 2x + 3 & \text{jika } x < 1 \\ 5 & \text{jika } x = 1 \\ x^2 + 4 & \text{jika } x > 1 \end{cases}$$
+                  <br>Berdasarkan fungsi di atas, tentukan:
+                  <br>1.Nilai dari $\lim_{x \to 1^-} f(x)$
+                  <br>2. Nilai dari $\lim_{x \to 1^+} f(x)$
+                  <br>3/ Apakah nilai limit umum $\lim_{x \to 1} f(x)$ ada? Jelaskan alasannya! </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                      <strong>1. Mencari Limit Kiri ($\lim_{x \to 1^-} f(x)$):</strong>
+                      <br>Pendekatan dilakukan dari arah kiri ($x < 1$), sehingga rumus fungsi yang kita gunakan adalah bagian pertama, yaitu $2x + 3$.$$\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (2x + 3) = 2(1) + 3 = 5$$
+                      <br><strong>2. Mencari Limit Kanan ($\lim_{x \to 1^+} f(x)$):</strong>
+                      <br>Pendekatan dilakukan dari arah kanan ($x > 1$), sehingga rumus fungsi yang kita gunakan adalah bagian ketiga, yaitu $x^2 + 4$.$$\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (x^2 + 4) = (1)^2 + 4 = 5$$
+                      <br><strong>3. Analisis Keberadaan Limit Umum ($\lim_{x \to 1} f(x)$):</strong>
+                      <br>Berdasarkan Teorema Keberadaan Limit, syarat limit umum ada adalah nilai limit kiri harus sama dengan nilai limit kanan. Karena hasil pengujian menunjukkan:$$\lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x) = 5$$
+                      <br>
+                      Maka, nilai $\lim_{x \to 1} f(x)$ dinyatakan ADA dan bernilai 5.
+                      <br>(Catatan tambahan : Nilai $f(1) = 5$ kebetulan sama, namun nilai tepat di titik tersebut tidak memengaruhi keberadaan limit fungsinya). </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                 <p class="fw-semibold mb-1">Penerapan Sifat-Sifat Teorema Limit</p><p> Jika diketahui nilai limit dari dua fungsi di suatu titik adalah $\lim_{x \to 3} f(x) = 4$ dan $\lim_{x \to 3} g(x) = -2$, hitunglah nilai dari operasi limit kompleks berikut menggunakan teorema limit:
+                  <br>$$\lim_{x \to 3} \frac{[f(x)]^2 - 3g(x)}{\sqrt{f(x) - g(x)}}$$ </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">Untuk menyelesaikan soal ini, kita distribusikan operasi limit ke setiap suku menggunakan Teorema Pembagian, Penjumlahan, Perkalian Skalar, Perpangkatan, dan Penarikan Akar:
+                    <br>$$\text{Hasil} = \frac{\left(\lim_{x \to 3} f(x)\right)^2 - 3\left(\lim_{x \to 3} g(x)\right)}{\sqrt{\lim_{x \to 3} f(x) - \lim_{x \to 3} g(x)}}$$
+                    <br>Substitusikan nilai limit yang sudah diketahui ($\lim_{x \to 3} f(x) = 4$ dan $\lim_{x \to 3} g(x) = -2$) ke dalam rumus tersebut:
+                    <br>$$\text{Hasil} = \frac{(4)^2 - 3(-2)}{\sqrt{4 - (-2)}} = \frac{16 + 6}{\sqrt{4 + 2}} = \frac{22}{\sqrt{6}}$$
+                    <br>Rasionalkan bentuk akar pada penyebut pecahan dengan mengalikan
+                    <br> $\frac{\sqrt{6}}{\sqrt{6}}$:$$\text{Hasil} = \frac{22}{\sqrt{6}} \cdot \frac{\sqrt{6}}{\sqrt{6}} = \frac{22\sqrt{6}}{6} = \frac{11}{3}\sqrt{6}$$ </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Pembuktian Formal Definisi Limit $\varepsilon$-$\delta$</p><p> Buktikan secara formal menggunakan definisi epsilon-delta ($\varepsilon$-$\delta$) bahwa pernyataan limit berikut adalah benar dan valid:
+                  <br>$$\lim_{x \to 2} (3x - 1) = 5$$ </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><strong>Analisis Awal (Mencari Hubungan $\delta$ dan $\varepsilon$):</strong> 
+                    <br>Kita ingin mencari bilangan $\delta > 0$ sedemikian rupa sehingga jika $0 < |x - 2| < \delta$, maka $|(3x - 1) - 5| < \varepsilon$.
+                    <br>Mari kita jabarkan dan sederhanakan bentuk pertidaksamaan fungsi di sebelah kanan:
+                    <br>$$|(3x - 1) - 5| < \varepsilon$$$$
+                    <br>|3x - 6| < \varepsilon$$$$
+                    <br>3|x - 2| < \varepsilon$$$$
+                    <br>|x - 2| < \frac{\varepsilon}{3}$$
+                    <br>Dari analisis aljabar di atas, kita dapat memilih nilai hubungan $\delta = \frac{\varepsilon}{3}$.
+                    <br><strong>Bukti Formal:</strong> 
+                    <br>Diberikan bilangan toleransi $\varepsilon > 0$. Pilih nilai $\delta = \frac{\varepsilon}{3}$.Jika kondisi $0 < |x - 2| < \delta$ terpenuhi, maka kita dapat melakukan pembuktian berjalan mundur sebagai berikut:
+                    <br>$$|f(x) - L| = |(3x - 1) - 5| = |3x - 6| = 3|x - 2|$$
+                    <br>Karena diketahui di awal bahwa $|x - 2| < \delta$, maka:
+                    <br>$$3|x - 2| < 3\delta$$
+                    <br>Substitusikan nilai pemisalan $\delta = \frac{\varepsilon}{3}$ ke dalam pertidaksamaan:
+                    <br>$$3\delta = 3\left(\frac{\varepsilon}{3}\right) = \varepsilon$$
+                    <br>Dengan demikian, terbukti secara sah bahwa jika $0 < |x - 2| < \delta$, maka $|(3x - 1) - 5| < \varepsilon$. Pernyataan $\lim_{x \to 2} (3x - 1) = 5$ Terbukti Benar. </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Limit Tak Hingga dan Limit di Tak Hingga</p><p> Selesaikan kedua soal limit di bawah ini dan tentukan jenis asimtot (tegak atau datar) yang terbentuk dari perilaku grafik fungsinya:
+                  <br> 1. $\lim_{x \to 3^+} \frac{2}{x - 3}
+                  <br>2. $$\lim_{x \to \infty} \frac{4x^2 - 1}{2x^2 + 3x}$ </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> [Jawaban soal 3] </div>
+                  </details>
+                </li>
+                <li class="mb-3">
+                  <p class="fw-semibold mb-1">Soal 3</p><p> [Kelompok 2: isi soal latihan 3] </p>
+                  <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> [Jawaban soal 3] </div>
                   </details>
                 </li>
               </ol>
