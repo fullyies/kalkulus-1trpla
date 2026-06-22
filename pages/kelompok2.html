@@ -778,7 +778,6 @@ Berbeda dengan fungsi linear, perubahan pada fungsi kuadrat tidak tetap</div>
         <!-- Latihan Soal -->
         <div id="ch2-latihan" class="mt-5">
           <h3 class="subsection-title">Latihan Soal</h3>
-          <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 2</strong> — Isi latihan soal di bawah ini.</div>
           <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
             <div class="card-body">
               <ol class="mb-0">
@@ -873,35 +872,65 @@ Berbeda dengan fungsi linear, perubahan pada fungsi kuadrat tidak tetap</div>
                   <br>$$\lim_{x \to 2} (3x - 1) = 5$$ </p>
                   <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
                     <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><strong>Analisis Awal (Mencari Hubungan $\delta$ dan $\varepsilon$):</strong> 
-                    <br>Kita ingin mencari bilangan $\delta > 0$ sedemikian rupa sehingga jika $0 < |x - 2| < \delta$, maka $|(3x - 1) - 5| < \varepsilon$.
-                    <br>Mari kita jabarkan dan sederhanakan bentuk pertidaksamaan fungsi di sebelah kanan:
-                    <br>$$|(3x - 1) - 5| < \varepsilon$$$$
-                    <br>|3x - 6| < \varepsilon$$$$
-                    <br>3|x - 2| < \varepsilon$$$$
-                    <br>|x - 2| < \frac{\varepsilon}{3}$$
-                    <br>Dari analisis aljabar di atas, kita dapat memilih nilai hubungan $\delta = \frac{\varepsilon}{3}$.
-                    <br><strong>Bukti Formal:</strong> 
-                    <br>Diberikan bilangan toleransi $\varepsilon > 0$. Pilih nilai $\delta = \frac{\varepsilon}{3}$.Jika kondisi $0 < |x - 2| < \delta$ terpenuhi, maka kita dapat melakukan pembuktian berjalan mundur sebagai berikut:
-                    <br>$$|f(x) - L| = |(3x - 1) - 5| = |3x - 6| = 3|x - 2|$$
-                    <br>Karena diketahui di awal bahwa $|x - 2| < \delta$, maka:
-                    <br>$$3|x - 2| < 3\delta$$
-                    <br>Substitusikan nilai pemisalan $\delta = \frac{\varepsilon}{3}$ ke dalam pertidaksamaan:
-                    <br>$$3\delta = 3\left(\frac{\varepsilon}{3}\right) = \varepsilon$$
-                    <br>Dengan demikian, terbukti secara sah bahwa jika $0 < |x - 2| < \delta$, maka $|(3x - 1) - 5| < \varepsilon$. Pernyataan $\lim_{x \to 2} (3x - 1) = 5$ Terbukti Benar. </div>
+                      <br>Kita ingin mencari bilangan $\delta > 0$ sedemikian rupa sehingga jika $0 < |x - 2| < \delta$, maka $|(3x - 1) - 5| < \varepsilon$.
+                      <br>Mari kita jabarkan dan sederhanakan bentuk pertidaksamaan fungsi di sebelah kanan:
+                      <br>$$|(3x - 1) - 5| < \varepsilon$$
+                      <br>$$|3x - 6| < \varepsilon$$
+                      <br>$$3|x - 2| < \varepsilon$$
+                      <br>$$|x - 2| < \frac{\varepsilon}{3}$$
+                      <br>Dari analisis aljabar di atas, kita dapat memilih nilai hubungan $\delta = \frac{\varepsilon}{3}$.
+                      <br><strong>Bukti Formal:</strong> 
+                      <br>Diberikan bilangan toleransi $\varepsilon > 0$. Pilih nilai $\delta = \frac{\varepsilon}{3}$. Jika kondisi $0 < |x - 2| < \delta$ terpenuhi, maka kita dapat melakukan pembuktian berjalan mundur sebagai berikut:
+                      <br>$$|f(x) - L| = |(3x - 1) - 5| = |3x - 6| = 3|x - 2|$$
+                      <br>Karena diketahui di awal bahwa $|x - 2| < \delta$, maka:
+                      <br>$$3|x - 2| < 3\delta$$
+                      <br>Substitusikan nilai pemisalan $\delta = \frac{\varepsilon}{3}$ ke dalam pertidaksamaan:
+                      <br>$$3\delta = 3\left(\frac{\varepsilon}{3}\right) = \varepsilon$$
+                      <br>Dengan demikian, terbukti secara sah bahwa jika $0 < |x - 2| < \delta$, maka $|(3x - 1) - 5| < \varepsilon$. Pernyataan $\lim_{x \to 2} (3x - 1) = 5$ Terbukti Benar. </div>
                   </details>
                 </li>
                 <li class="mb-3">
                   <p class="fw-semibold mb-1">Limit Tak Hingga dan Limit di Tak Hingga</p><p> Selesaikan kedua soal limit di bawah ini dan tentukan jenis asimtot (tegak atau datar) yang terbentuk dari perilaku grafik fungsinya:
-                  <br> 1. $\lim_{x \to 3^+} \frac{2}{x - 3}
-                  <br>2. $$\lim_{x \to \infty} \frac{4x^2 - 1}{2x^2 + 3x}$ </p>
+                  <br> 1. $$\lim_{x \to 3^+} \frac{2}{x - 3}$$
+                  <br>2. $$\lim_{x \to \infty} \frac{4x^2 - 1}{2x^2 + 3x}$$ </p>
                   <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> [Jawaban soal 3] </div>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                      <strong>1. Evaluasi $\lim_{x \to 3^+} \frac{2}{x - 3}$ (Limit Tak Hingga):></strong>
+                      <br>Saat nilai $x$ mendekati angka 3 dari arah kanan (misalkan nilainya adalah 3,001), maka penyebut $(x - 3)$ akan menghasilkan bilangan positif yang nilainya sangat kecil sekali mendekati angka nol (kita simbolkan dengan $+0$)
+                      <br>.$$\lim_{x \to 3^+} \frac{2}{x - 3} = \frac{2}{+0} = \infty$$
+                      <br>Kesimpulan Geometris: Karena nilai limitnya menghasilkan tak hingga, maka grafik fungsi ini memiliki Asimtot Tegak pada garis $x = 3$.
+                      <br> <br>
+                      <strong>2. Evaluasi $\lim_{x \to \infty} \frac{4x^2 - 1}{2x^2 + 3x}$ (Limit di Tak Hingga):</strong>
+                      <br>untuk menyelesaikan limit menuju tak hingga pada bentuk pecahan aljabar, kita bagi seluruh suku pembilang dan penyebut dengan variabel pangkat tertinggi, yaitu $x^2$.
+                      <br>$$\lim_{x \to \infty} \frac{\frac{4x^2}{x^2} - \frac{1}{x^2}}{\frac{2x^2}{x^2} + \frac{3x}{x^2}} = \lim_{x \to \infty} \frac{4 - \frac{1}{x^2}}{2 + \frac{3}{x}}$$
+                      <br>Berdasarkan sifat limit tak hingga di mana nilai $\lim_{x \to \infty} \frac{1}{x^n} = 0$, maka fungsinya menjadi:
+                      <br>$$\frac{4 - 0}{2 + 0} = \frac{4}{2} = 2$$
+                      <br><strong>Kesimpulan Geometris:</strong> Karena limit menuju tak hingganya menghasilkan sebuah angka konstan berupa 2, maka grafik fungsi ini memiliki Asimtot Datar pada garis $y = 2$. </div>
                   </details>
                 </li>
                 <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 3</p><p> [Kelompok 2: isi soal latihan 3] </p>
+                  <p class="fw-semibold mb-1">Evaluasi Limit Aljabar dengan Metode Perkalian Sekawan</p><p> Hitunglah nilai dari limit fungsi aljabar berikut ini:
+                  <br>$$\lim_{x \to 1} \frac{x^2 - 1}{\sqrt{x + 3} - 2}$$ </p>
                   <details class="mt-2"><summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> [Jawaban soal 3] </div>
+                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"> <strong>Langkah 1: Uji Substitusi Langsung</strong>
+                    <br>Sebelum menggunakan metode aljabar lanjut, kita harus selalu menguji fungsi dengan memasukkan langsung nilai $x = 1$ ke dalam fungsi (substitusi langsung) untuk memeriksa hasilnya:
+                    <br>$$\frac{(1)^2 - 1}{\sqrt{1 + 3} - 2} = \frac{1 - 1}{\sqrt{4} - 2} = \frac{0}{2 - 2} = \frac{0}{0}$$
+                    <br>Karena hasil substitusi langsung menghasilkan Bentuk Tak Tentu ($\frac{0}{0}$), maka kita tidak boleh langsung mengambil kesimpulan tersebut sebagai hasil akhir. Kita harus menyederhanakan fungsinya terlebih dahulu. Karena terdapat bentuk akar pada penyebut, metode yang paling tepat adalah <strong >Perkalian Sekawan.</strong>
+                    <br><strong>Langkah 2: Mengalikan dengan Bentuk Sekawann</strong>  <br>Bentuk sekawa dari penyebut $(\sqrt{x + 3} - 2)$ adalah $(\sqrt{x + 3} + 2)$. Kita kalikan pembilang dan penyebut pecahan dengan bentuk sekawan tersebut:
+                    <br>$$\lim_{x \to 1} \frac{x^2 - 1}{\sqrt{x + 3} - 2} \cdot \frac{\sqrt{x + 3} + 2}{\sqrt{x + 3} + 2}$$$$\lim_{x \to 1} \frac{(x^2 - 1)(\sqrt{x + 3} + 2)}{(\sqrt{x + 3})^2 - (2)^2}$$
+                    <br>Sederhanakan bagian penyebutnya menggunakan sifat $(a-b)(a+b) = a^2 - b^2$:
+                    <br>$$\lim_{x \to 1} \frac{(x^2 - 1)(\sqrt{x + 3} + 2)}{(x + 3) - 4}$$$$\lim_{x \to 1} \frac{(x^2 - 1)(\sqrt{x + 3} + 2)}{x - 1}$$
+                    <br><strong>Langkah 3: Faktorisasi untuk Mengeliminasi Pembuat Nol</strong>
+                    <br>Kita masih belum bisa melakukan substitusi karena adanya faktor penyebut $(x - 1)$ yang akan membuat fungsi bernilai nol. Perhatikan pembilang $(x^2 - 1)$, bentuk ini merupakan selisih kuadrat yang dapat difaktorkan menjadi $(x - 1)(x + 1)$:
+                    <br>$$\lim_{x \to 1} \frac{(x - 1)(x + 1)(\sqrt{x + 3} + 2)}{x - 1}$$
+                    <br>Sekarang, kita dapat mencoret faktor $(x - 1)$ pada pembilang dan penyebut (karena dalam konsep limit $x \to 1$, nilai $x$ hanya mendekati 1 dan tidak pernah sama dengan 1, sehingga $x - 1 \neq 0$ dan sah untuk dicoret):
+                    <br>$$\lim_{x \to 1} (x + 1)(\sqrt{x + 3} + 2)$$
+                    <br> <strong>Langkah 4: Substitusi Akhir</strong>Setelah faktor pembuat nol hilang, kita dapat melakukan substitusi langsung nilai $x = 1$ untuk mendapatkan hasil akhir:
+                    <br>$$\text{Hasil} = (1 + 1)(\sqrt{1 + 3} + 2)$$
+                    <br>$$\text{Hasil} = (2)(\sqrt{4} + 2)$$
+                    <br>$$\text{Hasil} = 2(2 + 2)$$
+                    <br>$$\text{Hasil} = 2(4) = 8$$
+                    <br>Jadi, nilai dari $\lim_{x \to 1} \frac{x^2 - 1}{\sqrt{x + 3} - 2}$ adalah 8. </div>
                   </details>
                 </li>
               </ol>
