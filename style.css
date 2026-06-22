@@ -936,3 +936,8 @@ code, pre, kbd, .formula-display {
   color: white;
   border-radius: 6px;
 }
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word; /* Opsional: Membuat spasi antar-kata lebih rapi */
+}
