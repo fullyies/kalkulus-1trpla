@@ -482,56 +482,592 @@
             <h3 class="subsection-title">3.3 Diskontinuitas</h3>
             <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Diskontinuitas</strong><br><ul><li>Diskontinuitas adalah keadaan ketika suatu fungsi tidak kontinu (tidak tersambung) pada titik tertentu.</li></ul></div>
-            <ul>
-              <li>
-                <p>
-                  <em>Diskontinuitas dapat dihilangkan :</em>
-                  
-                  
-                    <p>Tentukan apakah fungsi berikut jika kontinu x=2!</p>
-                    \[
-                    f(x) = \frac{x^2 - 4}{x - 2}
-                    \]
-                    lalu kita substitusi x=2, maka f(2) = 0/0, ini adalah bentuk tak tentu. Namun, kita dapat menyederhanakan fungsi tersebut:
-                    \[
-                    f(x) = \frac{(x-2)(x+2)}{x-2} = x+2
-                    \]
-                    (jabarkan pangkat tertinggi, lalu berapa kali berapa yang hasilnya -4)
-                    <p> 
-                      masukan 2 ke x, maka \[f(2)\] = 2 + 2 = 4. Jadi limitnya adalah 4,pada fungsi kontinuitas x=2.  
-                    </p>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <em>Diskontinuitas tak terhingga :</em>
-                  <p>Terjadi ketika nilai fungsi mendekati tak hingga (∞) atau negatif tak hingga (−∞) pada suatu titik.</p>
-                  \[
-                  \lim_{x \to 2} \sqrt{x^2-4}
-                  \]
-                </p>
-                
-              </li> 
-            </ul>
-            <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
-              <p><em> Diskontinuitas dibagi menjdai 3</em>
+
+            <div class="placeholder-notice">
+                <i class="bi bi-pencil-square"></i>
+                <strong>Area Materi — Diskontinuitas</strong><br>
                 <ul>
-                  <li>dapat dihilangkan
-                    <p></p>
-                  </li>
-                  <li>tak hingga</li>
-                  <li>loncat</li>
-                </ul> 
-              <footer>— Definisi limit rasional & irasional</footer>
+                    <li>Diskontinuitas adalah keadaan ketika suatu fungsi tidak kontinu (tidak tersambung) pada titik tertentu.</li>
+                    <li>Pada titik tersebut, grafik fungsi dapat memiliki lubang, loncatan, atau bahkan menuju tak hingga.</li>
+                </ul>
+            </div>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>Diskontinuitas dapat dihilangkan :</em>
+                    </p>
+
+                    <p>
+                        Terjadi ketika limit fungsi di suatu titik ada, tetapi nilai fungsi pada titik tersebut tidak ada atau tidak sama dengan limitnya.
+                        Diskontinuitas jenis ini dapat diperbaiki dengan mendefinisikan ulang nilai fungsi pada titik tersebut.
+                    </p>
+
+                    <p>Tentukan apakah fungsi berikut kontinu pada x = 2!</p>
+
+                    \[
+                    f(x)=\frac{x^2-4}{x-2}
+                    \]
+
+                    <p>
+                        Jika kita substitusi langsung x = 2, maka diperoleh:
+                    </p>
+
+                    \[
+                    f(2)=\frac{0}{0}
+                    \]
+
+                    <p>
+                        Hasil tersebut merupakan bentuk tak tentu. Oleh karena itu, kita sederhanakan terlebih dahulu:
+                    </p>
+
+                    \[
+                    f(x)=\frac{(x-2)(x+2)}{x-2}
+                    \]
+
+                    \[
+                    f(x)=x+2,\quad x\neq2
+                    \]
+
+                    <p>
+                        Selanjutnya hitung limit saat x mendekati 2:
+                    </p>
+
+                    \[
+                    \lim_{x\to2}f(x)=\lim_{x\to2}(x+2)=4
+                    \]
+
+                    <p>
+                        Karena limitnya ada dan bernilai 4, maka terdapat lubang (hole) pada titik (2,4).
+                        Jika didefinisikan f(2)=4, maka fungsi menjadi kontinu.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Diskontinuitas tak terhingga :</em>
+                    </p>
+
+                    <p>
+                        Terjadi ketika nilai fungsi mendekati tak hingga (∞) atau negatif tak hingga (−∞)
+                        saat x mendekati suatu titik tertentu. Biasanya ditandai dengan adanya asimtot vertikal.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=\frac{1}{x-2}
+                    \]
+
+                    <p>
+                        Ketika x mendekati 2 dari kiri:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}\frac{1}{x-2}=-\infty
+                    \]
+
+                    <p>
+                        Ketika x mendekati 2 dari kanan:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}\frac{1}{x-2}=+\infty
+                    \]
+
+                    <p>
+                        Karena nilai fungsi membesar tanpa batas, maka fungsi mengalami
+                        diskontinuitas tak terhingga di x = 2.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Diskontinuitas loncat :</em>
+                    </p>
+
+                    <p>
+                        Terjadi ketika limit kiri dan limit kanan suatu fungsi memiliki nilai yang berbeda.
+                        Akibatnya, limit fungsi di titik tersebut tidak ada.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=
+                    \begin{cases}
+                    1, & x<2 \\
+                    3, & x\ge2
+                    \end{cases}
+                    \]
+
+                    <p>
+                        Limit kiri:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)=1
+                    \]
+
+                    <p>
+                        Limit kanan:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}f(x)=3
+                    \]
+
+                    <p>
+                        Karena 1 ≠ 3, maka limit di x = 2 tidak ada.
+                        Oleh sebab itu fungsi mengalami diskontinuitas loncat.
+                    </p>
+                </li>
+            </ul>
+
+            <blockquote class="blockquote-def">
+                <i class="bi bi-quote quote-icon"></i>
+                <p>
+                    <em>Diskontinuitas dibagi menjadi 3 jenis:</em>
+                </p>
+
+                <ul>
+                    <li><strong>Dapat dihilangkan</strong> → terdapat lubang pada grafik dan dapat diperbaiki dengan mendefinisikan ulang nilai fungsi.</li>
+                    <li><strong>Tak hingga</strong> → nilai fungsi menuju ∞ atau −∞ pada suatu titik.</li>
+                    <li><strong>Loncat</strong> → limit kiri dan limit kanan berbeda.</li>
+                </ul>
+
+                <footer>— Jenis-jenis Diskontinuitas</footer>
             </blockquote>
+
             <div class="concept-card mt-3">
-              <div class="concept-card-header">Syarat Kekontinuan di Titik x = a</div>
-              <div class="concept-card-body">
-                <code class="formula-display">lim<sub>x→a</sub> f(x) = f(a)</code>
-                <p class="mt-2"><em>[Kelompok 3: jelaskan tiga syarat kekontinuan di titik a]</em></p>
+                <div class="concept-card-header">Syarat Kekontinuan di Titik x = a</div>
+
+                <div class="concept-card-body">
+                    <code class="formula-display">
+                        lim<sub>x→a</sub> f(x) = f(a)
+                    </code>
+
+                    <p class="mt-2">
+                        Suatu fungsi dikatakan kontinu di titik x = a apabila memenuhi tiga syarat:
+                    </p>
+
+                    <ol>
+                        <li>Nilai fungsi di titik tersebut ada, yaitu f(a) terdefinisi.</li>
+                        <li>Limit fungsi saat x mendekati a ada.
+                            \[
+                            \lim_{x\to a}f(x)
+                            \]
+                        </li>
+                        <li>Nilai limit sama dengan nilai fungsi.
+                            \[
+                            \lim_{x\to a}f(x)=f(a)
+                            \]
+                        </li>
+                    </ol>
+
+                    <p>
+                        Jika salah satu syarat tidak terpenuhi, maka fungsi tidak kontinu
+                        (mengalami diskontinuitas) pada titik tersebut.
+                    </p>
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-teorema" class="mt-5">
+            <h3 class="subsection-title">Contoh soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    contoh soal Diskontinuitas Dapat Dihilangkan
+                </div>
+
+                <div class="card-body">
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah fungsi berikut mengalami diskontinuitas yang dapat dihilangkan pada
+                        \(x = 3\):
+                    </p>
+
+                    \[
+                    f(x)=\frac{x^2-9}{x-3}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Petunjuk:</p>
+
+                    <ol>
+                        <li>Substitusikan \(x=3\) secara langsung.</li>
+                        <li>Faktorkan pembilang.</li>
+                        <li>Sederhanakan bentuk fungsi.</li>
+                        <li>Hitung nilai limit saat \(x \to 3\).</li>
+                        <li>Tentukan apakah diskontinuitasnya dapat dihilangkan.</li>
+                    </ol>
+
+                    <hr />
+
+                    <p class="fw-semibold">Jawaban:</p>
+
+                    \[
+                    f(x)=\frac{(x-3)(x+3)}{x-3}
+                    \]
+
+                    \[
+                    f(x)=x+3,\quad x\neq3
+                    \]
+
+                    \[
+                    \lim_{x\to3}f(x)=3+3=6
+                    \]
+
+                    <p>
+                        Karena limitnya ada dan bernilai 6, tetapi fungsi tidak terdefinisi saat
+                        \(x=3\), maka fungsi mengalami <strong>diskontinuitas dapat dihilangkan</strong>.
+                    </p>
+
+                    <p>
+                        Agar fungsi menjadi kontinu, cukup definisikan:
+                    </p>
+
+                    \[
+                    f(3)=6
+                    \]
+
               </div>
+            </div>
+          </div>
+
+          <div id="ch3-teorema" class="mt-5">
+            <h3 class="subsection-title">Contoh soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Diskontinuitas Tak Hingga
+                </div>
+
+                <div class="card-body">
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah fungsi berikut mengalami diskontinuitas tak hingga pada
+                        \(x = 2\):
+                    </p>
+
+                    \[
+                    f(x)=\frac{1}{x-2}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Petunjuk:</p>
+
+                    <ol>
+                        <li>Perhatikan penyebut fungsi.</li>
+                        <li>Tentukan nilai fungsi saat \(x=2\).</li>
+                        <li>Hitung limit kiri dan limit kanan saat \(x\to2\).</li>
+                        <li>Amati perilaku fungsi ketika mendekati titik tersebut.</li>
+                    </ol>
+
+                    <hr />
+
+                    <p class="fw-semibold">Jawaban:</p>
+
+                    <p>
+                        Ketika \(x=2\), penyebut menjadi nol sehingga fungsi tidak terdefinisi.
+                    </p>
+
+                    \[
+                    f(2)=\frac{1}{2-2}=\frac{1}{0}
+                    \]
+
+                    <p>
+                        Hitung limit dari kiri:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}\frac{1}{x-2}=-\infty
+                    \]
+
+                    <p>
+                        Hitung limit dari kanan:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}\frac{1}{x-2}=+\infty
+                    \]
+
+                    <p>
+                        Karena nilai fungsi menuju \(-\infty\) dari kiri dan \(+\infty\) dari kanan,
+                        maka terdapat asimtot vertikal pada \(x=2\).
+                    </p>
+
+                    <p>
+                        Jadi fungsi mengalami
+                        <strong>diskontinuitas tak hingga</strong> pada \(x=2\).
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-teorema" class="mt-5">
+            <h3 class="subsection-title">Contoh soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Diskontinuitas Loncat
+                </div>
+
+                <div class="card-body">
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah fungsi berikut mengalami diskontinuitas loncat pada
+                        \(x = 2\):
+                    </p>
+
+                    \[
+                    f(x)=
+                    \begin{cases}
+                    x+1, & x<2\\
+                    x+3, & x\ge2
+                    \end{cases}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        Langkah 1: Hitung limit kiri saat \(x\) mendekati 2.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)
+                    =
+                    \lim_{x\to2^-}(x+1)
+                    =2+1
+                    =3
+                    \]
+
+                    <p>
+                        Langkah 2: Hitung limit kanan saat \(x\) mendekati 2.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}f(x)
+                    =
+                    \lim_{x\to2^+}(x+3)
+                    =2+3
+                    =5
+                    \]
+
+                    <p>
+                        Langkah 3: Bandingkan limit kiri dan limit kanan.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)=3
+                    \]
+
+                    \[
+                    \lim_{x\to2^+}f(x)=5
+                    \]
+
+                    <p>
+                        Karena
+                    </p>
+
+                    \[
+                    3 \neq 5
+                    \]
+
+                    <p>
+                        maka limit fungsi di \(x=2\) tidak ada.
+                    </p>
+
+                    \[
+                    \lim_{x\to2}f(x)
+                    \text{ tidak ada}
+                    \]
+
+                    <p>
+                        Jadi fungsi mengalami
+                        <strong>diskontinuitas loncat</strong> pada \(x=2\), karena
+                        limit kiri dan limit kanan memiliki nilai yang berbeda.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-definisi">
+            <h3 class="subsection-title">3.3 Perilaku Limit sebagai Indikator Kestabilan</h3>
+
+            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+            <div class="placeholder-notice">
+                <i class="bi bi-pencil-square"></i>
+                <strong>Area Materi — Perilaku Limit sebagai Indikator Kestabilan</strong><br>
+                <ul>
+                    <li>Perilaku limit dapat digunakan untuk memprediksi keadaan suatu sistem dalam jangka panjang.</li>
+                    <li>Dengan mengamati nilai fungsi saat variabel mendekati suatu nilai tertentu atau tak hingga, kita dapat menentukan apakah sistem tersebut stabil atau tidak.</li>
+                </ul>
+            </div>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>Output mendekati nilai tetap :</em>
+                    </p>
+
+                    <p>
+                        Suatu sistem dikatakan stabil apabila outputnya semakin mendekati suatu nilai tertentu ketika variabel terus bertambah.
+                        Dalam kasus ini, limit fungsi bernilai suatu konstanta.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=\frac{5x+2}{x+1}
+                    \]
+
+                    <p>
+                        Untuk mengetahui perilaku fungsi saat \(x\) sangat besar:
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\frac{5x+2}{x+1}=5
+                    \]
+
+                    <p>
+                        Karena output mendekati nilai tetap yaitu 5, maka fungsi menunjukkan perilaku yang stabil.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Output membesar tak terkendali :</em>
+                    </p>
+
+                    <p>
+                        Sistem dikatakan tidak stabil apabila outputnya terus meningkat tanpa batas ketika variabel bertambah besar.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=x^2
+                    \]
+
+                    <p>
+                        Saat \(x\) semakin besar:
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}x^2=\infty
+                    \]
+
+                    <p>
+                        Karena nilai fungsi terus bertambah tanpa batas, sistem tidak memiliki keadaan yang stabil.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Output tidak konsisten :</em>
+                    </p>
+
+                    <p>
+                        Pada beberapa fungsi, output tidak mendekati satu nilai tertentu dan juga tidak menuju tak hingga.
+                        Nilainya terus berubah-ubah sehingga sulit diprediksi.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=\sin(x)
+                    \]
+
+                    <p>
+                        Ketika \(x\) semakin besar, nilai fungsi akan terus berosilasi antara -1 dan 1.
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\sin(x)
+                    \]
+
+                    <p>
+                        Limit tersebut tidak ada karena fungsi tidak mendekati satu nilai tertentu.
+                    </p>
+
+                    <p>
+                        Oleh karena itu, output dianggap tidak konsisten atau tidak memiliki kestabilan jangka panjang.
+                    </p>
+                </li>
+            </ul>
+
+            <blockquote class="blockquote-def">
+                <i class="bi bi-quote quote-icon"></i>
+
+                <p>
+                    <em>Perilaku limit dapat digunakan untuk mengidentifikasi kestabilan suatu sistem:</em>
+                </p>
+
+                <ul>
+                    <li><strong>Output mendekati nilai tetap</strong> → sistem stabil.</li>
+                    <li><strong>Output membesar tak terkendali</strong> → sistem tidak stabil.</li>
+                    <li><strong>Output tidak konsisten</strong> → sistem tidak memiliki perilaku jangka panjang yang pasti.</li>
+                </ul>
+
+                <footer>— Perilaku Limit dan Kestabilan Sistem</footer>
+            </blockquote>
+
+            <div class="concept-card mt-3">
+                <div class="concept-card-header">Indikator Kestabilan Berdasarkan Limit</div>
+
+                <div class="concept-card-body">
+                    <code class="formula-display">
+                        lim<sub>x→∞</sub> f(x)
+                    </code>
+
+                    <p class="mt-2">
+                        Untuk menentukan kestabilan suatu fungsi, perhatikan perilaku limitnya saat variabel bertambah besar:
+                    </p>
+
+                    <ol>
+                        <li>
+                            Jika
+                            \[
+                            \lim_{x\to\infty}f(x)=L
+                            \]
+                            dengan \(L\) suatu bilangan tetap, maka sistem cenderung stabil.
+                        </li>
+
+                        <li>
+                            Jika
+                            \[
+                            \lim_{x\to\infty}f(x)=\infty
+                            \quad \text{atau} \quad
+                            \lim_{x\to\infty}f(x)=-\infty
+                            \]
+                            maka output membesar tanpa batas dan sistem tidak stabil.
+                        </li>
+
+                        <li>
+                            Jika limit tidak ada karena fungsi terus berosilasi atau berubah-ubah, maka output tidak konsisten dan sulit diprediksi.
+                        </li>
+                    </ol>
+
+                    <p>
+                        Dengan demikian, limit dapat digunakan untuk memprediksi perilaku jangka panjang suatu fungsi atau sistem.
+                    </p>
+                </div>
             </div>
           </div>
 
@@ -594,7 +1130,7 @@
             </div>
           </div>
 
-
+         
 
           <div class="chapter-nav-bottom">
             <a href="kelompok2.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 2</a>
