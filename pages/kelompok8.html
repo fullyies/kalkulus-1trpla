@@ -4,30 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bab 5 — Aplikasi Turunan | Kalkulus 1</title>
+  <title>Bab 8 — Aplikasi Turunan | Kalkulus 1</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
+
   <nav class="navbar navbar-expand-lg top-navbar sticky-top" id="topNavbar">
     <div class="container-fluid px-3 px-lg-4">
-      <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#sidebarOffcanvas"><i class="bi bi-list"></i></button>
+      <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"data-bs-target="#sidebarOffcanvas">
+        <i class="bi bi-list"></i>
+      </button>
+
       <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
         <span class="brand-icon"><i class="bi bi-journal-text"></i></span>
-        <span class="brand-text"><span class="brand-title">Kalkulus 1</span><span
-            class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span></span>
+        <span class="brand-text">
+          <span class="brand-title">Kalkulus 1</span>
+          <span class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span>
+        </span>
       </a>
+
       <div class="ms-auto d-flex align-items-center gap-2">
-        <div class="search-wrap d-none d-md-flex"><i class="bi bi-search search-icon"></i><input type="search"
-            id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..." /></div>
-        <button class="btn btn-sm theme-toggle" id="themeToggle"><i class="bi bi-moon-stars-fill"
-            id="themeIcon"></i></button>
+        <div class="search-wrap d-none d-md-flex"><i class="bi bi-search search-icon"></i>
+          <input type="search" id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..." />
+        </div>
+        <button class="btn btn-sm theme-toggle" id="themeToggle"><i class="bi bi-moon-stars-fill" id="themeIcon"></i></button>
+        
         <div class="d-none d-lg-flex gap-1">
           <button class="btn btn-sm nav-arrow" id="prevChapterBtn"><i class="bi bi-chevron-left"></i></button>
           <button class="btn btn-sm nav-arrow" id="nextChapterBtn"><i class="bi bi-chevron-right"></i></button>
@@ -35,25 +40,31 @@
       </div>
     </div>
   </nav>
+
   <div class="offcanvas offcanvas-start sidebar-offcanvas" tabindex="-1" id="sidebarOffcanvas">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title"><i class="bi bi-journal-text me-2"></i>Kalkulus 1</h6><button type="button"
         class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
+
     <div class="offcanvas-body p-0">
       <div class="sidebar-inner" id="sidebarInnerMobile"></div>
     </div>
   </div>
+
   <div class="main-wrapper">
     <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
       <div class="sidebar-inner" id="sidebarInnerDesktop">
         <div class="sidebar-section-label">Navigasi</div>
+
         <nav id="sidebar-nav">
           <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
-            <li class="sidebar-item"><a href="../index.html#pengantar" class="sidebar-link"><i
-                  class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a></li>
-            <li class="sidebar-item has-submenu"><a href="kelompok1.html" class="sidebar-link"><i
-                  class="bi bi-1-circle sidebar-link-icon"></i>Bab 1 — Bilangan Real &amp; Fungsi</a>
+            <li class="sidebar-item">
+              <a href="../index.html#pengantar" class="sidebar-link"><i class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a>
+            </li>
+
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok1.html" class="sidebar-link"><i class="bi bi-1-circle sidebar-link-icon"></i>Bab 1 — Bilangan Real &amp; Fungsi</a>
               <ul class="submenu list-unstyled">
                 <li><a href="kelompok1.html#ch1-bilangan" class="submenu-link">1.1 Sistem Bilangan Real</a></li>
                 <li><a href="kelompok1.html#ch1-fungsi" class="submenu-link">1.2 Konsep Fungsi</a></li>
@@ -62,8 +73,8 @@
                 <li><a href="kelompok1.html#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
             </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok2.html" class="sidebar-link"><i
-                  class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
+
+            <li class="sidebar-item has-submenu"><a href="kelompok2.html" class="sidebar-link"><i class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
               <ul class="submenu list-unstyled">
                 <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
                 <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
@@ -72,8 +83,8 @@
                 <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
             </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok3.html" class="sidebar-link"><i
-                  class="bi bi-3-circle sidebar-link-icon"></i>Bab 3 — Kekontinuan Fungsi</a>
+
+            <li class="sidebar-item has-submenu"><a href="kelompok3.html" class="sidebar-link"><i class="bi bi-3-circle sidebar-link-icon"></i>Bab 3 — Kekontinuan Fungsi</a>
               <ul class="submenu list-unstyled">
                 <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
                 <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
@@ -82,8 +93,8 @@
                 <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
             </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok4.html" class="sidebar-link"><i
-                  class="bi bi-4-circle sidebar-link-icon"></i>Bab 4 — Turunan (Diferensial)</a>
+
+            <li class="sidebar-item has-submenu"><a href="kelompok4.html" class="sidebar-link"><i class="bi bi-4-circle sidebar-link-icon"></i>Bab 4 — Turunan (Diferensial)</a>
               <ul class="submenu list-unstyled">
                 <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
                 <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
@@ -92,8 +103,8 @@
                 <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
             </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok5.html" class="sidebar-link"><i
-                  class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Aplikasi Turunan</a>
+
+            <li class="sidebar-item has-submenu"><a href="kelompok5.html" class="sidebar-link"><i class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Aplikasi Turunan</a>
               <ul class="submenu list-unstyled">
                 <li><a href="#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
                 <li><a href="#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
@@ -103,8 +114,8 @@
                 <li><a href="#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
             </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok6.html" class="sidebar-link"><i
-                  class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
+
+            <li class="sidebar-item has-submenu"><a href="kelompok6.html" class="sidebar-link"><i class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
               <ul class="submenu list-unstyled">
                 <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
                 <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
@@ -113,52 +124,45 @@
                 <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
             </li>
+
             <!-- chapter 7 -->
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok7.html" class="sidebar-link">
-              <i class="bi bi-7-circle sidebar-link-icon"></i>
-              Bab 7 — Aplikasi Integral
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
-              <li><a href="kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
-              <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok7.html" class="sidebar-link"><i class="bi bi-7-circle sidebar-link-icon"></i>Bab 7 — Aplikasi Integral</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
+                <li><a href="kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
+                <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
 
-          <!-- chapter 8 -->
-          <li class="sidebar-item has-submenu open">
-            <a href="kelompok8.html" class="sidebar-link active">
-              <i class="bi bi-8-circle sidebar-link-icon"></i>
-              Bab 8 — Deret Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
-              <li><a href="kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
-              <li><a href="kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+            <!-- chapter 8 -->
+            <li class="sidebar-item has-submenu open">
+              <a href="kelompok8.html" class="sidebar-link active"><i class="bi bi-8-circle sidebar-link-icon"></i>Bab 8 — Deret Tak Hingga</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
+                <li><a href="kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
+                <li><a href="kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
 
-          <!-- chapter 9 -->
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok9.html" class="sidebar-link">
-              <i class="bi bi-9-circle sidebar-link-icon"></i>
-              Bab 9 — Integral Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
-              <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
-              <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+            <!-- chapter 9 -->
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok9.html" class="sidebar-link"><i class="bi bi-9-circle sidebar-link-icon"></i>Bab 9 — Integral Tak Hingga</a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
+                <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
+                <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
+
         <div class="sidebar-footer">
           <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
           <div class="progress sidebar-progress mt-2">
@@ -169,44 +173,44 @@
       </div>
     </aside>
 
+    <!-- Begin page -->
     <main class="content-area" id="mainContent">
       <div class="content-inner">
         <section id="chapter-8" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
+          
           <div class="chapter-header">
             <div class="chapter-number">Bab 8</div>
-            <h2 class="chapter-title">Deret Tak Hingga</h2>
+            <h2 class="chapter-title"> & Integral Tak Tentu</h2>
             <p class="chapter-meta">
               <span class="chapter-group-badge">Kelompok 8</span>
               <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Optimasi</span>
             </p>
-            <p class="chapter-desc">Turunan memiliki berbagai aplikasi nyata: mencari nilai ekstrem, menganalisis gerak,
-              hingga memecahkan masalah optimasi.</p>
+            <p class="chapter-desc">Turunan memiliki berbagai aplikasi nyata: mencari nilai ekstrem, menganalisis gerak, hingga memecahkan masalah optimasi.</p>
           </div>
 
-          <div class="card mb-4"
-            style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
-            <div class="card-header"
-              style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
-              <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i><strong
-                style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 8</strong>
+          <div class="card mb-4" style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
+            <div class="card-header" style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
+              <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i><strong style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 8</strong>
             </div>
             <div class="card-body py-3">
-              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 8</strong> — Isi nama
-                anggota kelompok di sini.</div>
+              <ol>
+                <li>Briyan</li>
+                <li>M. Fadhil</li>
+                <li>Reyhanizzan</li>
+              </ol>
             </div>
           </div>
-
+          
+          <!-- Materi -->
           <div id="ch8-max-min">
-            <h3 class="subsection-title">8.1 Nilai Maksimum &amp; Minimum</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                8</strong><br>Isi dengan definisi titik kritis, uji turunan pertama, uji turunan kedua, nilai ekstrem
-              lokal dan global.</div>
+            <h3 class="subsection-title">8.A.1 Nilai Maksimum &amp; Minimum</h3>
             <p><em>[Kelompok 8: isi penjelasan tentang nilai maksimum dan minimum]</em></p>
-            <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
+            
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
               <p><em>[Kelompok 8: Tambahkan teorema atau definisi penting di sini]</em></p>
               <footer>— Teorema</footer>
             </blockquote>
+            
             <div class="concept-card mt-3">
               <div class="concept-card-header">Uji Turunan Pertama</div>
               <div class="concept-card-body">
@@ -215,92 +219,318 @@
             </div>
           </div>
 
-          <div id="ch8-optimasi" class="mt-5">
-            <h3 class="subsection-title">8.2 Optimasi</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                8</strong><br>Isi dengan langkah-langkah penyelesaian masalah optimasi, contoh kasus nyata (luas,
-              volume, biaya).</div>
-            <p><em>[Kelompok 8: isi penjelasan langkah-langkah optimasi]</em></p>
+          <!-- Integral Tak Tentu -->
+          <div id="ch8-integral_tak_tentu_anti_turunan" class="mt-5">
+            <h3 class="subsection-title">8.B.1 Integral Tak Tentu</h3>
+          </div>
+
+          <p>Secara sederhana, integral adalah salah satu konsep utama dalam kalkulus yang merupakan kebalikan dari turunan (diferensial). Jika turunan berfungsi untuk mencari laju perubahan atau kemiringan suatu fungsi, maka integral berfungsi untuk mengembalikan fungsi tersebut ke bentuk aslinya.</p>
+
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Definisi Integral Tak Tentu</em></li>
+            <p>Integral tak tentu adalah proses untuk mencari fungsi asal (antiturunan) dari suatu fungsi yang telah diturunkan. Hasil dari integral tak tentu masih berupa fungsi dan selalu diakhiri dengan konstanta + C.</p>
+          </blockquote>
+
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Fungsi Linear</div>
+              <div class="concept-card-body">
+                <code class="formula-display">∫f(x) dx = F(x) + C</code>
+                <p class="mt-2"><b>keterangan:</b></p>
+                <ul>
+                    <li>∫ -> Simbol integral, menunjukkan proses pengintegralan.</li>
+                    <li>f(x) -> Fungsi integran, menunjukkan fungsi yang akan diintegralkan.</li>
+                    <li>dx -> Deferensial/Turunan, menunjukkan perubahan kecil pada x.</li>
+                    <li>F(x) -> Fungsi hasil integral, menunjukkan total hasil pengumpulan.</li>
+                    <li>C -> Konstanta, menunjukkan bahwa ada nilai tetap yang ditambahkan pada hasil integral.</li>
+                  </ul>
+              </div>
           </div>
 
           <div id="ch8-contoh" class="mt-5">
             <h3 class="subsection-title">Contoh Soal</h3>
             <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 8.1 —
-                Nilai Ekstrem</div>
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                Contoh Soal Integral Tak Tentu
+              </div>
               <div class="card-body">
-                <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 8: isi contoh soal nilai ekstrem]</em></p>
+                <p class="fw-semibold">Diketahui: Sebuah fungsi f(x) memiliki nilai f(x) = 9x<sup>2</sup></p>
+                <p class="fw-semibold">Ditanya: Tentukan bentuk integral tak tentu dari f(x)</p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 8: isi langkah-langkah]</em></p>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                <p>Gunakan Rumus: </p>
+                $$\int ax^n \, dx = \frac{a}{n+1} x^{n+1} + C$$ <br>
+                <ul>
+                  <li>Ubah fungsi tersebut ke bentuk integral</li>
+                    $$\int f(x)dx = \int 9x^2 \, dx$$ <br>
+                  <li>Lalu kita subtitusikan nilai a diisi 9 dan n diisi oleh 2 ke dalam rumus</li>
+                    $$\int 9x^2 \, dx = \frac{9}{2+1} x^{2+1} + C$$ <br>
+                  <li>Maka didapatkanlah hasil yakni</li>
+                      $$\int f(x)dx = 3x^3 + C$$<br>
+                  <p><b>Jadi, integral tak tentu dari f(x) adalah 3x<sup>3</sup> + C</b></p>
+                </ul>
               </div>
             </div>
+          </div>
+
+
+          <div id="ch8-integral_tak_tentu_anti_turunan" class="mt-5">
+            <h3 class="subsection-title">8.B.2 Hubungan antara integral dan turunan</h3>
+          </div>
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Hubungan antara integral dan turunan</em></li>
+            <p>Hubungan antara integral dan turunan adalah salah satu penemuan paling penting dalam sejarah matematika. Hubungan ini disebut sebagai Hubungan Invers (Berkebalikan).</p>
+            <p>Jika turunan adalah proses "memecah" atau mencari laju perubahan dari suatu fungsi, maka integral adalah proses "menggabungkan kembali" atau mengonstruksi ulang fungsi asal dari laju perubahannya. Karena sifat berkebalikan ini, integral sering disebut sebagai Antiturunan.</p>
+          </blockquote>
+
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Hubungan antara integral dan turunan</div>
+            <div class="concept-card-body">
+              <p class="mt-2"><b>Misalkan:</b></p>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              $$
+              \begin{array}{ccc}
+              & \xrightarrow{\text{Integral}} & \\
+              f(x) = 9x^2 & & F(x) = 3x^3 + C \\
+              & \xleftarrow{\text{Turunan}} & 
+              \end{array}
+              $$
+              <p class="mt-2"><b>keterangan: </b></p>
+              <p>Jika f(x) = 9x<sup>2</sup> kita integralkan, maka akan mendapatkan F(x) = 3x<sup>3</sup> + C. begitu juga sebaliknya jika kita turunkan F(x) = 3x<sup>3</sup> + C, maka akan kembali menjadi f(x) = 9x<sup>2</sup>.</p>
+              <p>Ini menggambarkan sifat dasar dari integral dan turunan sebagai operasi yang saling membalikkan.</p>
+            </div>
+          </div>
+
+
+          <div id="ch8-integral_tak_tentu_anti_turunan" class="mt-5">
+            <h3 class="subsection-title">8.B.3 Interpretasi Konstanta Integrasi (C)</h3>
+          </div>
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Definisi Konstanta (C)</em></li>
+            <p>Konstanta integrasi (C) muncul dalam integral tak tentu karena adanya ketidakpastian dalam proses pengintegralan. Ketika kita mencari antiturunan dari suatu fungsi, kita sebenarnya mencari semua fungsi yang memiliki turunan yang sama dengan fungsi tersebut. Oleh karena itu, kita menambahkan konstanta C untuk mencakup semua kemungkinan fungsi yang berbeda.</p>
+          </blockquote>
+
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Konstanta (C)</div>
+            <div class="concept-card-body">
+              <p class="mt-2"><b>Misalkan:</b></p>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              $$
+              \begin{array}{rcccl}
+              f(x) = 3x^2 + 2 & \searrow & & & \\
+              \\
+              f(x) = 3x^2 + 10 & \longrightarrow & f'(x) = 9x^2 & \longrightarrow & F(x) = 3x^3 + C \\
+              \\
+              f(x) = 3x^2 + 100 & \nearrow & & &
+              \end{array}
+              $$
+              <p class="mt-2"><b>keterangan: </b></p>
+              <p>Setiap fungsi f(x) yang berbeda tidak peduli berapa besar nilainya pasti memiliki turunan yang sama, yaitu f'(x) = 9x<sup>2</sup>.</p>
+              <p>Maka, antiturunan dari f'(x) adalah F(x) = 3x<sup>3</sup> + C, di mana C mewakili setiap kemungkinan konstanta yang ditambahkan pada fungsi.</p>
+            </div>
+          </div>
+
+
+          <div id="ch8-integral_tak_tentu_anti_turunan" class="mt-5">
+            <h3 class="subsection-title">8.B.4 Integral Tak Tentu dalam konsep akumulasi perubahan</h3>
+          </div>
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Definisi Konsep Akumulasi Perubahan</em></li>
+            <p>Akumulasi perubahan adalah menghitung hasil total dari perubahan yang terjadi terus-menerus. Jika kita tahu seberapa cepat sesuatu bertambah atau berkurang setiap saat (laju perubahan), kita bisa menggunakan Integral Tak Tentu untuk menghitung berapa jumlah total yang terkumpul (akumulasi) dari waktu ke waktu.</p>
+          </blockquote>
+
+          <div id="ch8-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
             <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 8.2 —
-                Optimasi</div>
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                Contoh Soal Integral Tak Tentu dalam Konsep Akumulasi Perubahan
+              </div>
               <div class="card-body">
                 <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 8: isi contoh soal optimasi]</em></p>
+                <p class="fw-semibold">Diketahui: Sebuah perusahaan menyimpan data pengguna yang terus bertambah. Laju pertumbuhan data (dalam Gigabyte per hari) terhadap waktu t (dalam hari) dimodelkan oleh fungsi f(t) = 3t<sup>2</sup>  + 4t + 10. Jika pada hari ke-0 total data awal yang tersimpan adalah 100GB.</p>
+                <p class="fw-semibold">Ditanya: <ul><li><b>Tentukan bentuk fungsi akumulasi data secara umum!</b></li><li><b>Tentukan kapasitas data hari ke-5!</b></li></ul></p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 8: isi langkah-langkah]</em></p>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                  <ol> 
+                    <li>Menentukan bentuk fungsi akumulasi data secara umum</li>
+                      <ul>
+                        <li>Ubah fungsi tersebut ke bentuk integral</li>
+                          $$\int f(t)dt = \int (3t^2 + 4t + 10) \, dt$$ <br>
+                        <li>Lalu kita subtitusikan nilai a diisi 3, 4, 10 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
+                          $$\int (3t^2 + 4t + 10) \, dt = \left( \frac{3}{2+1} t^{2+1} + \frac{4}{1+1} t^{1+1} + \frac{10}{0+1} t^{0+1} \right) + C$$ <br>
+                        <li>maka, didapatkanlah f(t)</li>
+                          $$f(t) = t^3 + 2t^2 + 10t + C$$ <br>
+                        <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni f(0) = 100</li>
+                          $$f(0) = 0^3 + 2(0)^2 + 10(0) + C$$
+                          $$100 = C$$
+                          $$\Longleftrightarrow$$
+                          $$C = 100$$ <br>
+                        <li>lalu kita subtitusikan konstanta(C) = 100 ke dalam fungsi f(t)</li>
+                          $$f(t) = t^3 + 2t^2 + 10t + 100$$ <br>
+                        <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi data tersebut yakni</b></p>
+                        <p><b>f(t) = t <sup>3</sup> + 2t <sup>2</sup> + 10t + 100</b></p>
+                      </ul>
+                    <hr>
+
+                    <li>Menentukan kapasitas data hari ke-5</li>
+                    <ul>
+                      <li>Substitusikan t = 5 ke dalam fungsi f(t)</li>
+                        $$f(5) = 5^3 + 2(5)^2 + 10(5) + 100$$ <br>
+                      <li>Hitung nilai f(5)</li>
+                        $$f(5) = 125 + 50 + 50 + 100$$ <br>
+                        $$f(5) = 325$$ <br>
+                      <p><b>Jadi, kapasitas data hari ke-5 adalah 325GB</b></p>
+                    </ul>
+                  </ol>
               </div>
             </div>
           </div>
 
+          <!-- Video -->
           <div id="ch8-video" class="mt-5">
-            <h3 class="subsection-title">Video Pembelajaran</h3>
-            <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 8</strong> — Embed video
-              pembelajaran Aplikasi Turunan di sini.</div>
-            <div class="ratio ratio-16x9 mt-3"
-              style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 8" allowfullscreen
-                style="border:0;"></iframe>
+            <h3 class="subsection-title">Video Pembelajaran - </h3>
+            <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://youtu.be/DFDxSNSG0A4?si=794lvJ3TkEoDZOjY" title="Video Pembelajaran Bab 8" allowfullscreen style="border:0;"></iframe>
             </div>
-            <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video
-              pembelajaran yang sesuai.</p>
           </div>
 
+          <div id="ch-video" class="mt-5">
+            <h3 class="subsection-title">Video Pembelajaran - Integral Tak Tentu</h3>
+            <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 8" allowfullscreen style="border:0;"></iframe>
+            </div>
+          </div>
+
+          <!-- Soal -->
           <div id="ch8-latihan" class="mt-5">
             <h3 class="subsection-title">Latihan Soal</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 8</strong> — Isi latihan
-              soal di bawah ini.</div>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i>
+              Jawab soal dibawah ini dengan memilih 1 jawaban yang benar
+            </div>
+
             <div class="card"
               style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
               <div class="card-body">
                 <ol class="mb-0">
+
                   <li class="mb-3">
                     <p class="fw-semibold mb-1">Soal 1</p>
                     <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
                     <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 1]</em></div>
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 1</em>
+                        <p></p>
+                      </div>
                     </details>
                   </li>
+
                   <li class="mb-3">
                     <p class="fw-semibold mb-1">Soal 2</p>
-                    <p><em>[Kelompok 8: isi soal latihan 2]</em></p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
                     <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 2]</em></div>
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 2</em>
+                        <p></p>
+                      </div>
                     </details>
                   </li>
+
                   <li class="mb-3">
                     <p class="fw-semibold mb-1">Soal 3</p>
-                    <p><em>[Kelompok 8: isi soal latihan 3]</em></p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
                     <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 3]</em></div>
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 3</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 4</p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 4</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+                  
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 5</p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 5</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 6</p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 6</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 7</p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 7</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 8</p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 8</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 9</p>
+                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 9</em>
+                        <p></p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 10</p>
+                    <p>[Kelompok 8: isi soal latihan 1]</p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <em>Jawaban soal 10</em>
+                        <p></p>
+                      </div>
                     </details>
                   </li>
                 </ol>
@@ -308,36 +538,140 @@
             </div>
           </div>
 
+          <!-- kalkulator -->
           <div id="ch8-kalkulator" class="mt-5">
             <div class="calc-section">
-              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 8</div>
+              <div class="calc-header">
+                <i class="bi bi-calculator-fill me-2"></i>
+                Kalkulator Interaktif — Integral Tak Tentu
+              </div>
               <div class="calc-body">
-                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 8</strong> — Kembangkan
-                  kalkulator untuk menyelesaikan masalah optimasi.</div>
+                <p class="text-muted small mb-3">Hitung nilai fungsi <strong>f(x) = ax^n + C</strong></p>
+                <div class="row g-2 align-items-end">
+                  <div class="col-sm-3">
+                    <label class="form-label small">Angka (a)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch1-m" value="2" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label small">Pangkat (n)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch1-b" value="3" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <button class="btn btn-calc w-100" onclick="calc()">Hitung</button>
+                  </div>
+                </div>
+                <div class="calc-result mt-3" id="ch8_1-result">
+                  Masukkan nilai ditiap kotak input, lalu klik <strong>Hitung</strong>
+                </div>
+                <div class="calc-note">
+                  💡 Kalkulator ini menghitung f(x) = ax^n + C.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="ch-kalkulator" class="mt-5">
+            <div class="calc-section">
+              <div class="calc-header">
+                <i class="bi bi-calculator-fill me-2"></i>
+                Kalkulator Interaktif — Integral Tak Tentu
+              </div>
+              <div class="calc-body">
+                <p class="text-muted small mb-3">Hitung nilai fungsi <strong>∫ ax <sup>n</sup> dx = F(X) + C</strong></p>
+                <div class="row g-2 align-items-end">
+                  <div class="col-sm-3">
+                    <label class="form-label small">Angka (a)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch8_2-a" value="2" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label small">Pangkat (n)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch8_2-n" value="3" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <button class="btn btn-calc w-100" onclick="calcIntegralTakTentu()">Hitung</button>
+                  </div>
+                </div>
+                <div class="calc-result mt-3" id="ch8_2-result">
+                  Masukkan nilai ditiap kotak input, lalu klik <strong>Hitung</strong>
+                </div>
+                <div class="calc-note">
+                  💡 Kalkulator ini menghitung ∫ ax<sup>n</sup> dx = ax<sup>n</sup> + C
+                </div>
               </div>
             </div>
           </div>
 
           <div class="chapter-nav-bottom">
-            <a href="kelompok6.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 6</a>
-            <a href="kelompok8.html" class="btn btn-chapter-nav">Bab 8 <i class="bi bi-arrow-right ms-1"></i></a>
+            <a href="kelompok7.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 7</a>
+            <a href="kelompok9.html" class="btn btn-chapter-nav">Bab 9 <i class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </section>
+
         <footer class="content-footer">
           <div class="row g-3 align-items-center">
             <div class="col-md-8">
               <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
-              <div class="footer-meta">Disusun oleh 6 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
+              <div class="footer-meta">Disusun oleh 9 Kelompok Mahasiswa · Tahun Akademik 2025/2026</div>
             </div>
-            <div class="col-md-4 text-md-end"><a href="#chapter-8" class="btn btn-sm btn-outline-secondary"><i
-                  class="bi bi-arrow-up me-1"></i>Kembali ke Atas</a></div>
+            <div class="col-md-4 text-md-end">
+              <a href="#chapter-8" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-up me-1"></i>Kembali ke Atas
+              </a>
+            </div>
           </div>
         </footer>
       </div>
     </main>
+    <!-- End page -->
+
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../script.js"></script>
+
+  <script>
+
+  </script>
+
+  <script>
+    function calcIntegralTakTentu() {
+      const inputA = document.getElementById('ch8_2-a').value;
+      const inputN = document.getElementById('ch8_2-n').value;
+      const resultDiv = document.getElementById('ch8_2-result');
+      const a = parseFloat(inputA);
+      const n = parseFloat(inputN);
+
+      if (isNaN(a) || isNaN(n)) {
+        resultDiv.innerHTML = "<span class='text-danger'><strong>Error:</strong> Harap masukkan angka yang valid untuk (a) dan (n).</span>";
+        return;
+      }
+      if (a === 0) {
+        resultDiv.innerHTML = "<strong>Hasil Integral:</strong> C";
+        return;
+      }
+      let hasilTeks = "";
+
+      if (n === -1) {
+        let formatA = (a === 1) ? "" : (a === -1) ? "-" : a;
+        hasilTeks = `${formatA}ln|x|`;
+      } else {
+        let nBaru = n + 1;
+        let aBaru = a / nBaru;
+        aBaru = Number.isInteger(aBaru) ? aBaru : parseFloat(aBaru.toFixed(4));
+
+        let formatKoefisien = aBaru;
+        if (aBaru === 1 && nBaru !== 0) formatKoefisien = "";
+        if (aBaru === -1 && nBaru !== 0) formatKoefisien = "-";
+        if (nBaru === 0) {
+          hasilTeks = `${aBaru}`;
+        } else if (nBaru === 1) {
+          hasilTeks = `${formatKoefisien}x`;
+        } else {
+          hasilTeks = `${formatKoefisien}x<sup>${nBaru}</sup>`;
+        }
+      }
+      resultDiv.innerHTML = `<strong>Hasil Integral:</strong> ${hasilTeks} + C`;
+    }
+  </script>
 </body>
 
 </html>
