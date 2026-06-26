@@ -191,16 +191,13 @@
                 style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 4</strong>
             </div>
             <div class="card-body py-3">
-              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 4</strong> — Isi nama
-                anggota kelompok di sini.</div>
+              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 4</strong><br>Jeki Setiawan : 1062510<br>Muhammad Rasyid Abiyyu : 1062519<br>muhammad fhatir maulidan : 1062518</div>
             </div>
           </div>
 
           <div id="ch4-definisi">
             <h3 class="subsection-title">4.1 Definisi Turunan</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                4</strong><br>Isi dengan definisi turunan sebagai limit, notasi Leibniz dan Lagrange, dan interpretasi
-              geometrisnya.</div>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Turunan merupakan salah satu konsep penting dalam kalkulus yang digunakan untuk mengukur laju perubahan suatu fungsi terhadap variabelnya. Secara sederhana, turunan menunjukkan seberapa cepat suatu nilai berubah ketika nilai lainnya mengalami perubahan. Dalam matematika, turunan sering digunakan untuk menentukan kemiringan garis singgung pada suatu kurva di titik tertentu.</strong><br>Dengan demikian, dapat disimpulkan bahwa turunan adalah alat matematika yang digunakan untuk mengetahui laju perubahan suatu fungsi dan kemiringan kurva pada titik tertentu, sehingga sangat penting dalam analisis berbagai permasalahan matematika maupun penerapannya di dunia nyata.</div>
             <div class="concept-card mt-3">
               <div class="concept-card-header">Definisi Turunan (Limit)</div>
               <div class="concept-card-body">
@@ -211,9 +208,70 @@
           </div>
 
           <div id="ch4-aturan" class="mt-5">
-            <h3 class="subsection-title">4.2 Aturan Diferensiasi</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                4</strong><br>Isi dengan aturan turunan: power rule, product rule, quotient rule, chain rule.</div>
+            <h3 class="subsection-title">4.2 TURUNAN SEBAGAI LAJU PERUBAHAN</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Laju perubahan</strong><br>Turunan adalah alat matematika untuk mengukur seberapa cepat suatu besaran berubah terhadap variabel lain.
+                            Jika y=f(x), maka turunan f′(x) menunjukkan laju perubahan y terhadap x.
+            </div>
+            <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.3 INTERPRETASI GEOMETRIS</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Interpretasi Geometris</strong><br>Turunan f′(x) = kemiringan garis singgung grafik fungsi y=f(x) di titik tertentu.
+                            Garis singgung menggambarkan arah dan kecepatan perubahan fungsi pada saat itu.<br>
+                            HUBUNGAN DENGAN GRAFIK<br>
+                          f′(a)>0 → grafik naik (kemiringan positif).<br>
+                          f′(a)<0 → grafik turun (kemiringan negatif).<br>
+                          f′(a)=0 → garis singgung mendatar, biasanya di titik ekstrem (maksimum/minimum) atau titik belok.
+                          </div>
+              
+            <h3 class="subsection-title">4.4 LIMIT SELISIH</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>LimiT selisih</strong><br>
+                        Turunan didefinisikan melalui limit selisih (difference quotient).
+                        Ide: menghitung laju perubahan rata-rata, lalu melihat perilaku saat selisih mendekati nol.
+            </div>
+           
+            <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.5 LIMIT SELISIH MAJU</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>LIMIT SELISIH MAJU</strong><br>
+                            Selisih maju adalah cara melihat perubahan dengan  membandingkan nilai sekarang dengan nilai setelahnya
+                              Secara konsep kita memperkirakan perubahan dengan “melihat ke depan”
+                              Maknanya:
+                              perubahan dihitung berdasarkan arah maju
+                              cocok jika hanya data ke depan yang tersedia
+                              Namun karena hanya melihat satu arah, hasilnya kurang merepresentasikan kondisi sebenarnya
+                            <br>RUMUS:
+h = perubahan kecil pada variabel x.
+Bagian f(x+h)−f(x)h = laju perubahan rata-rata.
+Limit saat h→0 = laju perubahan sesaat.
+
+                            </div>
+            
+            <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.6 LIMIT SELISIH MUNDUR</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>lIMIT SELISISH MUNDUR</strong><br>
+                            Selisih mundur melihat perubahan dengan membandingkan titik sekarang dengan titik sebelumnya
+                            Kalau selisih maju melihat “ke depan” Maka selisih mundur melihat “ke belakang”
+                            Artinya perubahan ditentukan dari apa yang sudah terjadi sebelumnya
+                            Selisih mundur menggambarkan bagaimana kondisi saat ini dipengaruhi oleh kondisi sebelumnya</div>
+            
+                        <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.7 LIMIT SELISIH TENGAH</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>LIMIT SELISIH TENGAH</strong><br>
+                           Selisih pusat melihat perubahan dengan mempertimbangkan dua sisi sekaligus (depan dan belakang).
+                           Berbeda dari selisih maju → hanya depan
+                           Selisih mundur → hanya belakang
+                           Selisih pusat melihat keseimbangan dari dua arah.
+                           Selisih pusat menggambarkan perubahan yang paling mendekati kondisi sebenarnya
+                           Karena mempertimbangkan apa yang terjadi sebelum
+dan apa yang terjadi setelah<br>RUMUS:<br>
+a. f(x + h)<br>
+→ nilai fungsi sedikit di depan<br>
+ b. f(x - h)<br>
+→ nilai fungsi sedikit di belakang<br>
+c. Selisih:<br>
+    f(x + h) - f(x - h)
+d. Dibagi 2h
+→ karena jaraknya dari x - h ke x + h itu dua kali h
+</div>
+
             <div class="table-responsive mt-3">
               <table class="table table-bordered concept-table">
                 <thead>
@@ -248,6 +306,38 @@
               </table>
             </div>
           </div>
+         <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.8 ATURAN KONSTANTA</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN KONSTANTA</strong><br>
+                             aturan konstan menyatakan bahwa turunan dari suatu fungsi yang bernilai tetap(konstanta), adalah 0, karena konstanta tidak mengalami perubahan terhadap variabel.
+                            </div>
+        <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.9 ATURAN PERPANGKATAN </h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PERPANGKATAN</strong><br>
+                             Aturan perpangkatan (power rule) dalam turunan kalkulus adalah aturan untuk menentukan turunan dari fungsi yang berbentuk pangkat.
+                             syaratnya: -pangkatnya akan kite turunkan ke depan (menjadi koefisien) 
+                                        -lalu pangkatnya akan kita kurangi 1    
+                            </div>
+          <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.10 CHAIN RULE </h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>CHAIN RULE</strong><br>
+                             Aturan rantai adalah aturan turunan yang digunakan untuk menurunkan fungsi komposisi, atau secara garis besar menurunkan fungsi luar terlebih dahulu, kemudian dikalikan dengan turunan fungsi dalam. 
+
+                            </div>
+          <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.11 Aturan perkalian (product rule) </h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PERKALIAN</strong><br>
+                            aturan perkalian adalah aturan dalam turunan yang menyatakan bahwa turunan dari hasil dua fungsi merupakan penjumlahan dari kali turunan. maka: turunan pertama dikalikan fungsi kedua, dan fungsi pertama dikalikan turunan fungsi kedua
+
+                            </div>     
+             
+          <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.12 ATURAN PENJUMLAHAN DAN PENGURANGAN</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PENJUMLAHAN DAN PENGURANGAN</strong><br>
+                    aturan penjumlahan dan pengurangan menyatakan bahwa jika suatu fungsi terdiri dari beberapa bagian yang dijumlahkan atau dikurangkan maka: setiap bagian dapat diturunkan secara terpisah, kemudian hasilnya dijumlahkan atau dikurangkan
+                            </div> 
+          
+                
 
           <div id="ch4-contoh" class="mt-5">
             <h3 class="subsection-title">Contoh Soal</h3>
@@ -357,6 +447,8 @@
               </div>
             </div>
           </div>
+
+          
 
           <div class="chapter-nav-bottom">
             <a href="kelompok3.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 3</a>
