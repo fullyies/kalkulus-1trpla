@@ -906,7 +906,11 @@
           </div>
 
           <div id="ch3-definisi">
+<<<<<<< HEAD
             <h3 class="subsection-title">3.3 Perilaku Limit sebagai Indikator Kestabilan</h3>
+=======
+            <h3 class="subsection-title">3.4 Perilaku Limit sebagai Indikator Kestabilan</h3>
+>>>>>>> 61df13b (Interpretasi dalam Pemodelan)
 
             <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
@@ -1071,6 +1075,464 @@
             </div>
           </div>
 
+<<<<<<< HEAD
+=======
+          <div id="ch3-definisi">
+                <h3 class="subsection-title">3.5 Stabilitas Model Matematis</h3>
+
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+                <div class="placeholder-notice">
+                    <i class="bi bi-pencil-square"></i>
+                    <strong>Area Materi — Stabilitas Model Matematis</strong><br>
+                    <ul>
+                        <li>Stabilitas model matematis digunakan untuk mengetahui perilaku suatu fungsi ketika variabel terus bertambah besar.</li>
+                        <li>Melalui limit, kita dapat menentukan apakah suatu model akan menuju keadaan yang stabil atau justru menjadi tidak stabil.</li>
+                    </ul>
+                </div>
+
+                <ul>
+                    <li>
+                        <p>
+                            <em>Stabil (menuju nilai tertentu) :</em>
+                        </p>
+
+                        <p>
+                            Suatu model dikatakan <strong>stabil</strong> apabila nilai output semakin lama
+                            semakin mendekati suatu bilangan tetap. Hal ini menunjukkan bahwa sistem
+                            akan mencapai keadaan yang seimbang meskipun variabel terus bertambah.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=\frac{3x+6}{x+2}
+                        \]
+
+                        <p>
+                            Hitung limit saat \(x\) menuju tak hingga:
+                        </p>
+
+                        \[
+                        \lim_{x\to\infty}\frac{3x+6}{x+2}=3
+                        \]
+
+                        <p>
+                            Karena limitnya bernilai 3, maka output akan semakin mendekati nilai 3.
+                            Oleh sebab itu, model tersebut bersifat <strong>stabil</strong>.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <em>Tidak stabil (menuju tak hingga) :</em>
+                        </p>
+
+                        <p>
+                            Suatu model dikatakan <strong>tidak stabil</strong> apabila outputnya terus
+                            bertambah atau berkurang tanpa batas sehingga tidak pernah mencapai
+                            suatu nilai tetap.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=x^2
+                        \]
+
+                        <p>
+                            Hitung limit saat \(x\) menuju tak hingga:
+                        </p>
+
+                        \[
+                        \lim_{x\to\infty}x^2=\infty
+                        \]
+
+                        <p>
+                            Karena output membesar tanpa batas, maka model tersebut
+                            <strong>tidak stabil</strong>.
+                        </p>
+                    </li>
+                </ul>
+
+                <blockquote class="blockquote-def">
+                    <i class="bi bi-quote quote-icon"></i>
+
+                    <p>
+                        <em>Stabilitas model matematis dibagi menjadi dua:</em>
+                    </p>
+
+                    <ul>
+                        <li><strong>Stabil</strong> → Output mendekati suatu nilai tetap ketika variabel bertambah besar.</li>
+                        <li><strong>Tidak Stabil</strong> → Output menuju tak hingga sehingga tidak memiliki nilai keseimbangan.</li>
+                    </ul>
+
+                    <footer>— Stabilitas Model Matematis</footer>
+                </blockquote>
+
+                <div class="concept-card mt-3">
+                    <div class="concept-card-header">Indikator Stabilitas Model Matematis</div>
+
+                    <div class="concept-card-body">
+                        <code class="formula-display">
+                            lim<sub>x→∞</sub> f(x)
+                        </code>
+
+                        <p class="mt-2">
+                            Stabilitas suatu model dapat ditentukan dengan melihat nilai limitnya ketika
+                            variabel menuju tak hingga.
+                        </p>
+
+                        <ol>
+                            <li>
+                                Jika
+                                \[
+                                \lim_{x\to\infty}f(x)=L
+                                \]
+                                dengan \(L\) merupakan suatu bilangan tetap, maka model dikatakan
+                                <strong>stabil</strong>.
+                            </li>
+
+                            <li>
+                                Jika
+                                \[
+                                \lim_{x\to\infty}f(x)=\infty
+                                \quad \text{atau} \quad
+                                \lim_{x\to\infty}f(x)=-\infty
+                                \]
+                                maka model dikatakan <strong>tidak stabil</strong> karena output terus
+                                membesar tanpa batas.
+                            </li>
+                        </ol>
+
+                        <p>
+                            Dengan demikian, limit dapat digunakan sebagai alat untuk memprediksi
+                            perilaku jangka panjang suatu model matematis.
+                        </p>
+                    </div>
+                </div>
+          </div>
+
+            
+          <div id="ch3-definisi">
+                <h3 class="subsection-title">3.6 Evaluasi Limit pada Titik Kritis</h3>
+
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+                <div class="placeholder-notice">
+                    <i class="bi bi-pencil-square"></i>
+                    <strong>Area Materi — Evaluasi Limit pada Titik Kritis</strong><br>
+                    <ul>
+                        <li>Titik kritis adalah titik pada suatu fungsi yang perlu dianalisis karena berpotensi menyebabkan perubahan perilaku fungsi.</li>
+                        <li>Evaluasi limit pada titik kritis bertujuan untuk mengetahui apakah limit fungsi ada, tidak ada, atau menuju tak hingga.</li>
+                    </ul>
+                </div>
+
+                <ul>
+                    <li>
+                        <p>
+                            <em>Limit bernilai tertentu :</em>
+                        </p>
+
+                        <p>
+                            Pada beberapa fungsi, meskipun nilai fungsi tidak dapat langsung dihitung,
+                            limitnya tetap ada dan bernilai tertentu setelah dilakukan penyederhanaan.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=\frac{x^2-9}{x-3}
+                        \]
+
+                        <p>
+                            Saat \(x=3\), bentuk fungsi menjadi:
+                        </p>
+
+                        \[
+                        \frac{0}{0}
+                        \]
+
+                        <p>
+                            Faktorkan pembilang:
+                        </p>
+
+                        \[
+                        f(x)=\frac{(x-3)(x+3)}{x-3}=x+3
+                        \]
+
+                        <p>
+                            Sehingga:
+                        </p>
+
+                        \[
+                        \lim_{x\to3}f(x)=6
+                        \]
+
+                        <p>
+                            Jadi limit pada titik kritis tersebut ada dan bernilai 6.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <em>Limit menuju tak hingga :</em>
+                        </p>
+
+                        <p>
+                            Pada beberapa titik kritis, penyebut fungsi bernilai nol sehingga nilai
+                            fungsi membesar tanpa batas.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=\frac{1}{x-2}
+                        \]
+
+                        <p>
+                            Saat \(x\) mendekati 2:
+                        </p>
+
+                        \[
+                        \lim_{x\to2^-}\frac{1}{x-2}=-\infty
+                        \]
+
+                        \[
+                        \lim_{x\to2^+}\frac{1}{x-2}=+\infty
+                        \]
+
+                        <p>
+                            Karena nilai fungsi menuju tak hingga, limit pada titik kritis tersebut
+                            tidak bernilai hingga.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <em>Limit tidak ada :</em>
+                        </p>
+
+                        <p>
+                            Limit dikatakan tidak ada apabila limit kiri dan limit kanan menghasilkan
+                            nilai yang berbeda.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=
+                        \begin{cases}
+                        x+1, & x<2\\
+                        x+3, & x\ge2
+                        \end{cases}
+                        \]
+
+                        <p>
+                            Hitung limit kiri dan kanan:
+                        </p>
+
+                        \[
+                        \lim_{x\to2^-}f(x)=3
+                        \]
+
+                        \[
+                        \lim_{x\to2^+}f(x)=5
+                        \]
+
+                        <p>
+                            Karena kedua limit berbeda, maka:
+                        </p>
+
+                        \[
+                        \lim_{x\to2}f(x)
+                        \text{ tidak ada}
+                        \]
+
+                        <p>
+                            Jadi pada titik kritis tersebut, limit tidak ada.
+                        </p>
+                    </li>
+                </ul>
+
+                <blockquote class="blockquote-def">
+                    <i class="bi bi-quote quote-icon"></i>
+
+                    <p>
+                        <em>Hasil evaluasi limit pada titik kritis dapat berupa:</em>
+                    </p>
+
+                    <ul>
+                        <li><strong>Limit bernilai tertentu</strong> → fungsi mendekati suatu nilai tertentu.</li>
+                        <li><strong>Limit menuju tak hingga</strong> → fungsi membesar tanpa batas.</li>
+                        <li><strong>Limit tidak ada</strong> → limit kiri dan limit kanan berbeda atau tidak memiliki satu nilai tujuan.</li>
+                    </ul>
+
+                    <footer>— Evaluasi Limit pada Titik Kritis</footer>
+                </blockquote>
+
+                <div class="concept-card mt-3">
+                    <div class="concept-card-header">Langkah Evaluasi Limit pada Titik Kritis</div>
+
+                    <div class="concept-card-body">
+                        <code class="formula-display">
+                            lim<sub>x→a</sub> f(x)
+                        </code>
+
+                        <p class="mt-2">
+                            Untuk mengevaluasi limit pada titik kritis, lakukan langkah-langkah berikut:
+                        </p>
+
+                        <ol>
+                            <li>Substitusikan nilai titik kritis ke dalam fungsi.</li>
+                            <li>Jika diperoleh bentuk tak tentu, lakukan penyederhanaan (misalnya faktorisasi).</li>
+                            <li>Hitung limit kiri dan limit kanan jika diperlukan.</li>
+                            <li>Tentukan apakah limit bernilai tertentu, menuju tak hingga, atau tidak ada.</li>
+                        </ol>
+
+                        <p>
+                            Dengan langkah-langkah tersebut, perilaku fungsi di sekitar titik kritis dapat dianalisis secara sistematis.
+                        </p>
+                    </div>
+                </div>
+          </div>
+
+          <div id="ch3-definisi">
+              <h3 class="subsection-title">3.7 Interpretasi dalam Permodelan</h3>
+
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+              <div class="placeholder-notice">
+                  <i class="bi bi-pencil-square"></i>
+                  <strong>Area Materi — Interpretasi dalam Permodelan</strong><br>
+                  <ul>
+                      <li>Dalam pemodelan matematika, limit digunakan untuk memprediksi perilaku suatu sistem dalam jangka panjang.</li>
+                      <li>Hasil limit tidak hanya berupa angka, tetapi juga memiliki makna terhadap kondisi nyata dari suatu sistem.</li>
+                  </ul>
+              </div>
+
+              <ul>
+                  <li>
+                      <p>
+                          <em>Contoh Permodelan:</em>
+                      </p>
+
+                      <p>
+                          Misalkan seseorang bermain skateboard pada arena berbentuk huruf <strong>"U"</strong>.
+                          Awalnya pemain berada di salah satu sisi arena, kemudian meluncur turun dengan cepat,
+                          melewati titik terendah, lalu naik ke sisi yang lain.
+                      </p>
+
+                      <p>
+                          Karena adanya gesekan antara roda skateboard dan permukaan arena,
+                          setiap kali bergerak naik, ketinggian yang dicapai menjadi lebih rendah
+                          dibandingkan sebelumnya.
+                      </p>
+
+                      <p>
+                          Gerakan tersebut akan terus berulang, tetapi amplitudonya semakin kecil.
+                      </p>
+                  </li>
+
+                  <li>
+                      <p>
+                          <em>Interpretasi Limit:</em>
+                      </p>
+
+                      <p>
+                          Apakah pemain akan terus bergerak naik dan turun selamanya?
+                          <strong>Tidak.</strong>
+                      </p>
+
+                      <p>
+                          Seiring berjalannya waktu, energi yang dimiliki pemain berkurang akibat gesekan.
+                          Akibatnya, gerakan naik dan turun semakin kecil hingga akhirnya berhenti di titik
+                          paling bawah arena.
+                      </p>
+
+                      <p>
+                          Secara matematis, keadaan ini dapat diilustrasikan sebagai:
+                      </p>
+
+                      \[
+                      \lim_{t\to\infty} h(t)=0
+                      \]
+
+                      <p>
+                          dengan \(h(t)\) menyatakan tinggi gerakan skateboard terhadap titik terendah.
+                      </p>
+                  </li>
+
+                  <li>
+                      <p>
+                          <em>Makna dalam Permodelan:</em>
+                      </p>
+
+                      <p>
+                          Perilaku tersebut menunjukkan bahwa sistem memiliki <strong>keadaan stabil</strong>.
+                          Nilai fungsi tidak terus bertambah atau berosilasi selamanya, melainkan
+                          mendekati suatu keadaan keseimbangan.
+                      </p>
+
+                      <p>
+                          Titik paling bawah arena menjadi <strong>titik keseimbangan</strong> yang
+                          membatasi gerakan sehingga sistem akhirnya berhenti.
+                      </p>
+                  </li>
+              </ul>
+
+              <blockquote class="blockquote-def">
+                  <i class="bi bi-quote quote-icon"></i>
+
+                  <p>
+                      <em>Interpretasi limit dalam permodelan:</em>
+                  </p>
+
+                  <ul>
+                      <li><strong>Gerakan awal</strong> → sistem masih memiliki energi sehingga bergerak naik dan turun.</li>
+                      <li><strong>Gerakan semakin kecil</strong> → energi berkurang akibat gesekan.</li>
+                      <li><strong>Akhirnya berhenti di titik terendah</strong> → sistem mencapai keadaan stabil atau titik keseimbangan.</li>
+                  </ul>
+
+                  <footer>— Interpretasi Limit dalam Permodelan</footer>
+              </blockquote>
+
+              <div class="concept-card mt-3">
+                  <div class="concept-card-header">Kesimpulan Interpretasi</div>
+
+                  <div class="concept-card-body">
+                      <code class="formula-display">
+                          lim<sub>t→∞</sub> h(t)=0
+                      </code>
+
+                      <p class="mt-2">
+                          Dari contoh skateboard pada arena berbentuk "U", dapat disimpulkan bahwa:
+                      </p>
+
+                      <ol>
+                          <li>Awalnya sistem bergerak naik dan turun.</li>
+                          <li>Gesekan menyebabkan energi semakin berkurang.</li>
+                          <li>Gerakan semakin kecil seiring bertambahnya waktu.</li>
+                          <li>Pada akhirnya sistem berhenti di titik keseimbangan.</li>
+                      </ol>
+
+                      <p>
+                          Oleh karena itu, limit digunakan untuk menunjukkan bahwa perilaku jangka panjang
+                          suatu sistem akan mendekati keadaan yang stabil.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          
+          
+
+
+
+          
+>>>>>>> 61df13b (Interpretasi dalam Pemodelan)
           <div id="ch3-video" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran</h3>
             <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 3</strong> — Embed video
