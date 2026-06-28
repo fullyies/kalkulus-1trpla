@@ -270,16 +270,25 @@
               Pendekatan Kontinu dan Diskret</div>
             <div class="card-body">
               <p class="fw-semibold">Soal:</p>
-              <p>Sebuah server cloud mencatat kecepatan transfer data (bandwidth) yang terus berubah setiap detiknya (kontinu). Berdasarkan grafik monitoring, fungsi kecepatan data tersebut diperkirakan mengikuti rumus <strong>f(t) = 3t<sup>2</sup> + 2t</strong> (dalam Megabit per detik/Mbps). Sebagai DevOps Engineer di tim TRPL, Anda diminta menghitung perkiraan <strong>Total Akumulasi Data</strong> yang ditransfer dari detik ke-1 hingga detik ke-5 (t = 1 hingga t = 5). Karena sistem komputer bekerja secara diskret, hitunglah estimasi tersebut menggunakan metode <strong>Jumlah Riemann Kanan</strong> dengan membagi waktu menjadi 4 interval kotak yang sama (&Delta;t = 1 detik).</p>
+              <p>Sebuah server cloud mencatat kecepatan transfer data (bandwidth) yang terus berubah setiap detiknya
+                (kontinu). Berdasarkan grafik monitoring, fungsi kecepatan data tersebut diperkirakan mengikuti rumus
+                <strong>f(t) = 3t<sup>2</sup> + 2t</strong> (dalam Megabit per detik/Mbps). Sebagai DevOps Engineer di
+                tim TRPL, Anda diminta menghitung perkiraan <strong>Total Akumulasi Data</strong> yang ditransfer dari
+                detik ke-1 hingga detik ke-5 (t = 1 hingga t = 5). Karena sistem komputer bekerja secara diskret,
+                hitunglah estimasi tersebut menggunakan metode <strong>Jumlah Riemann Kanan</strong> dengan membagi
+                waktu menjadi 4 interval kotak yang sama (&Delta;t = 1 detik).
+              </p>
               <hr />
               <p class="fw-semibold">Penyelesaian:</p>
-              
+
               <p><strong>Langkah 1: Menentukan Lebar Kotak (&Delta;t)</strong><br>
-              Diketahui batas bawah a = 1, batas atas b = 5, dan jumlah interval n = 4.<br>
-              <span class="font-monospace fw-bold">&Delta;t = (b - a) / n = (5 - 1) / 4 = 1 detik</span></p>
+                Diketahui batas bawah a = 1, batas atas b = 5, dan jumlah interval n = 4.<br>
+                <span class="font-monospace fw-bold">&Delta;t = (b - a) / n = (5 - 1) / 4 = 1 detik</span>
+              </p>
 
               <p><strong>Langkah 2: Menentukan Titik Sampel Diskret (Riemann Kanan)</strong><br>
-              Karena menggunakan Riemann Kanan, kita mengambil ujung kanan dari setiap interval: 2, 3, 4, dan 5 detik.</p>
+                Karena menggunakan Riemann Kanan, kita mengambil ujung kanan dari setiap interval: 2, 3, 4, dan 5 detik.
+              </p>
 
               <p><strong>Langkah 3: Menghitung Tinggi Kotak (Nilai Fungsi f(t))</strong><br>
               <ul>
@@ -287,7 +296,8 @@
                 <li>Ujung 2 (t = 3): f(3) = 3(3)<sup>2</sup> + 2(3) = 27 + 6 = 33 Mbps</li>
                 <li>Ujung 3 (t = 4): f(4) = 3(4)<sup>2</sup> + 2(4) = 48 + 8 = 56 Mbps</li>
                 <li>Ujung 4 (t = 5): f(5) = 3(5)<sup>2</sup> + 2(5) = 75 + 10 = 85 Mbps</li>
-              </ul></p>
+              </ul>
+              </p>
 
               <p><strong>Langkah 4: Menghitung Total Akumulasi (Jumlah Riemann)</strong><br>
               <div class="p-2 bg-light border rounded font-monospace mb-3">
@@ -298,14 +308,17 @@
                 Total Akumulasi &asymp; 16 + 33 + 56 + 85 = <strong>190 Megabit</strong>
               </span></p>
 
-              <p>Jadi, estimasi total data diskret yang mengalir melalui server software tersebut adalah sebesar <strong>190 Megabit</strong>.</p>
+              <p>Jadi, estimasi total data diskret yang mengalir melalui server software tersebut adalah sebesar
+                <strong>190 Megabit</strong>.
+              </p>
             </div>
           </div>
       </div>
 
       <div id="ch9-video" class="mt-5">
         <h3 class="subsection-title">Video Pembelajaran</h3>
-        <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 9</strong> — Video Pembelajaran
+        <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 9</strong> — Video
+          Pembelajaran
           Integral Tentu dan Tak Tentu dalam Penerapan Data Kontinu.</div>
         <div class="ratio ratio-16x9 mt-3"
           style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
@@ -316,19 +329,24 @@
 
       <div id="ch9-latihan" class="mt-5">
         <h3 class="subsection-title">Latihan Soal</h3>
-        <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 9</strong> — Silahkan mengisi
+        <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 9</strong> — Silahkan
+          mengisi
           latihan soal di bawah ini!.</div>
         <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
           <div class="card-body">
             <ol class="mb-0">
-              
+
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 1: Integral Tak Tentu (Performa CPU)</p>
-                <p>Sebuah algoritma optimasi mengalami perubahan laju penggunaan memori RAM (dalam MB/detik) yang dinyatakan oleh fungsi f'(t) = 6t<sup>2</sup> - 4t + 5. 
-                  Tentukan fungsi total penggunaan memori f(t) jika diketahui pada detik ke-0 (t = 0) memori awal yang digunakan sistem adalah 100 MB!</p>
+                <p>Sebuah algoritma optimasi mengalami perubahan laju penggunaan memori RAM (dalam MB/detik) yang
+                  dinyatakan oleh fungsi f'(t) = 6t<sup>2</sup> - 4t + 5.
+                  Tentukan fungsi total penggunaan memori f(t) jika diketahui pada detik ke-0 (t = 0) memori awal yang
+                  digunakan sistem adalah 100 MB!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     Cari integral tak tentu dari f'(t):<br>
                     f(t) = &int; (6t<sup>2</sup> - 4t + 5) dt<br>
@@ -343,11 +361,14 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 2: Integral Tak Tentu (Kecepatan Unduh Data)</p>
-                <p>Laju unduh (*download speed*) sebuah aplikasi meningkat berdasarkan fungsi f'(t) = 3t<sup>1/2</sup> + 2 (dalam Mbps). 
+                <p>Laju unduh (*download speed*) sebuah aplikasi meningkat berdasarkan fungsi f'(t) = 3t<sup>1/2</sup> +
+                  2 (dalam Mbps).
                   Tentukan rumus umum total ukuran file f(t) yang berhasil diunduh setelah t detik!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     f(t) = &int; (3t<sup>1/2</sup> + 2) dt<br>
                     f(t) = (3 / (3/2)) * t<sup>3/2</sup> + 2t + C<br>
@@ -359,14 +380,18 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 3: Integral Tentu (Akumulasi Traffic Request API)</p>
-                <p>Sebuah endpoint API menerima request dengan laju r(t) = 4t<sup>3</sup> + 3t<sup>2</sup> request per menit. 
+                <p>Sebuah endpoint API menerima request dengan laju r(t) = 4t<sup>3</sup> + 3t<sup>2</sup> request per
+                  menit.
                   Hitunglah total request yang masuk ke server dari menit ke-1 (t = 1) hingga menit ke-2 (t = 2)!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     Hitung integral tentu dengan batas bawah 1 dan batas atas 2:<br>
-                    &int;<sub>1</sub><sup>2</sup> (4t<sup>3</sup> + 3t<sup>2</sup>) dt = [t<sup>4</sup> + t<sup>3</sup>]<sub>1</sub><sup>2</sup><br><br>
+                    &int;<sub>1</sub><sup>2</sup> (4t<sup>3</sup> + 3t<sup>2</sup>) dt = [t<sup>4</sup> +
+                    t<sup>3</sup>]<sub>1</sub><sup>2</sup><br><br>
                     Substitusi batas atas (t = 2): (2<sup>4</sup> + 2<sup>3</sup>) = 16 + 8 = 24<br>
                     Substitusi batas bawah (t = 1): (1<sup>4</sup> + 1<sup>3</sup>) = 1 + 1 = 2<br><br>
                     Total Request = 24 - 2 = 22<br>
@@ -377,13 +402,17 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 4: Integral Tentu (Konsumsi Daya IoT Device)</p>
-                <p>Sensor IoT mengonsumsi daya listrik dengan laju P(t) = 9t<sup>2</sup> - 2t + 4 miliwatt. 
-                  Hitunglah total energi (dalam milijoule) yang dihabiskan sensor pada rentang waktu t = 0 hingga t = 3 detik!</p>
+                <p>Sensor IoT mengonsumsi daya listrik dengan laju P(t) = 9t<sup>2</sup> - 2t + 4 miliwatt.
+                  Hitunglah total energi (dalam milijoule) yang dihabiskan sensor pada rentang waktu t = 0 hingga t = 3
+                  detik!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
-                    &int;<sub>0</sub><sup>3</sup> (9t<sup>2</sup> - 2t + 4) dt = [3t<sup>3</sup> - t<sup>2</sup> + 4t]<sub>0</sub><sup>3</sup><br><br>
+                    &int;<sub>0</sub><sup>3</sup> (9t<sup>2</sup> - 2t + 4) dt = [3t<sup>3</sup> - t<sup>2</sup> +
+                    4t]<sub>0</sub><sup>3</sup><br><br>
                     Substitusi t = 3: 3(3)<sup>3</sup> - (3)<sup>2</sup> + 4(3) = 3(27) - 9 + 12 = 81 - 9 + 12 = 84<br>
                     Substitusi t = 0: 3(0) - 0 + 0 = 0<br><br>
                     Total Energi = 84 - 0 = 84<br>
@@ -394,13 +423,17 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 5: Penerapan Diskret (Jumlah Riemann Kiri - Bandwidth)</p>
-                <p>Sebuah sistem monitoring jaringan mencatat kecepatan upload data server f(t) per detik seperti tabel berikut:<br>
-                t (detik): 0, 1, 2, 3, 4<br>
-                f(t) (Mbps): 10, 15, 20, 25, 30<br>
-                Estimasikan total data yang diupload dari t = 0 hingga t = 4 menggunakan <strong>Riemann Kiri</strong> dengan &Delta;t = 1!</p>
+                <p>Sebuah sistem monitoring jaringan mencatat kecepatan upload data server f(t) per detik seperti tabel
+                  berikut:<br>
+                  t (detik): 0, 1, 2, 3, 4<br>
+                  f(t) (Mbps): 10, 15, 20, 25, 30<br>
+                  Estimasikan total data yang diupload dari t = 0 hingga t = 4 menggunakan <strong>Riemann Kiri</strong>
+                  dengan &Delta;t = 1!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     Karena menggunakan Riemann Kiri, ambil nilai f(t) dari titik kiri interval (t = 0, 1, 2, 3):<br>
                     Total &asymp; &Delta;t * [f(0) + f(1) + f(2) + f(3)]<br>
@@ -413,11 +446,14 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 6: Penerapan Diskret (Jumlah Riemann Kanan - Log Analisis)</p>
-                <p>Berdasarkan log aktivitas web, laju penambahan pengguna baru per jam mengikuti pola f(t) = 2t + 1. 
-                  Hitunglah estimasi total pengguna baru dari jam ke-0 hingga jam ke-3 (t = 0 sampai t = 3) menggunakan metode <strong>Riemann Kanan</strong> dengan membaginya menjadi 3 interval (&Delta;t = 1)!</p>
+                <p>Berdasarkan log aktivitas web, laju penambahan pengguna baru per jam mengikuti pola f(t) = 2t + 1.
+                  Hitunglah estimasi total pengguna baru dari jam ke-0 hingga jam ke-3 (t = 0 sampai t = 3) menggunakan
+                  metode <strong>Riemann Kanan</strong> dengan membaginya menjadi 3 interval (&Delta;t = 1)!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     Batas: t=0 hingga t=3 dengan n=3, maka &Delta;t = 1. Titik kanan interval adalah t = 1, 2, 3.<br>
                     f(1) = 2(1) + 1 = 3<br>
@@ -431,11 +467,14 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 7: Integral Tak Tentu (Skalabilitas Server Node.js)</p>
-                <p>Pertumbuhan beban antrean *task* pada server Node.js dinyatakan oleh f'(t) = 12t<sup>3</sup> - 6t. 
-                  Tentukan fungsi f(t) yang merepresentasikan jumlah *task* dalam antrean pada waktu t jika pada t = 1 jumlah antrean adalah 5 *task*!</p>
+                <p>Pertumbuhan beban antrean *task* pada server Node.js dinyatakan oleh f'(t) = 12t<sup>3</sup> - 6t.
+                  Tentukan fungsi f(t) yang merepresentasikan jumlah *task* dalam antrean pada waktu t jika pada t = 1
+                  jumlah antrean adalah 5 *task*!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     f(t) = &int; (12t<sup>3</sup> - 6t) dt = 3t<sup>4</sup> - 3t<sup>2</sup> + C<br>
                     Substitusi f(1) = 5:<br>
@@ -448,13 +487,17 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 8: Integral Tentu (Pemrosesan Data Gambar/Citra)</p>
-                <p>Dalam algoritma computer vision, gradien intensitas piksel horizontal pada sebuah baris gambar dinyatakan oleh f(x) = 6x<sup>2</sup> - 2x. 
+                <p>Dalam algoritma computer vision, gradien intensitas piksel horizontal pada sebuah baris gambar
+                  dinyatakan oleh f(x) = 6x<sup>2</sup> - 2x.
                   Hitung nilai akumulasi perubahan intensitas dari koordinat x = 1 hingga x = 4!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
-                    &int;<sub>1</sub><sup>4</sup> (6x<sup>2</sup> - 2x) dx = [2x<sup>3</sup> - x<sup>2</sup>]<sub>1</sub><sup>4</sup><br><br>
+                    &int;<sub>1</sub><sup>4</sup> (6x<sup>2</sup> - 2x) dx = [2x<sup>3</sup> -
+                    x<sup>2</sup>]<sub>1</sub><sup>4</sup><br><br>
                     Substitusi x = 4: 2(4)<sup>3</sup> - (4)<sup>2</sup> = 2(64) - 16 = 128 - 16 = 112<br>
                     Substitusi x = 1: 2(1)<sup>3</sup> - (1)<sup>2</sup> = 2 - 1 = 1<br><br>
                     Total Akumulasi Intensitas = 112 - 1 = 111<br>
@@ -465,11 +508,14 @@
 
               <li class="mb-4">
                 <p class="fw-semibold mb-1">Soal 9: Penerapan Diskret (Jumlah Riemann Tengah - Pengukuran Latency)</p>
-                <p>Sebuah pengujian sistem mengukur fluktuasi latency f(t) = t<sup>2</sup> (dalam milidetik). 
-                  Estimasikan total penumpukan latency dari t = 0 hingga t = 2 detik menggunakan 2 interval (n = 2) dengan metode <strong>Riemann Tengah (Midpoint)</strong>!</p>
+                <p>Sebuah pengujian sistem mengukur fluktuasi latency f(t) = t<sup>2</sup> (dalam milidetik).
+                  Estimasikan total penumpukan latency dari t = 0 hingga t = 2 detik menggunakan 2 interval (n = 2)
+                  dengan metode <strong>Riemann Tengah (Midpoint)</strong>!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     Interval pertama [0, 1] &rarr; titik tengah t = 0.5<br>
                     Interval kedua [1, 2] &rarr; titik tengah t = 1.5<br>
@@ -484,14 +530,19 @@
 
               <li class="mb-3">
                 <p class="fw-semibold mb-1">Soal 10: Penerapan Diskret vs Kontinu (Error Batas Atas)</p>
-                <p>Aplikasi web scraping mencatat rate limit request f(t) = 4t. Jika Anda menghitung area dari t = 0 hingga t = 2 dengan 2 interval (n = 2) menggunakan Riemann Kanan, 
-                  berapakah selisih (error) hasil diskret tersebut jika dibandingkan dengan nilai integral tentu aslinya (kontinu)?</p>
+                <p>Aplikasi web scraping mencatat rate limit request f(t) = 4t. Jika Anda menghitung area dari t = 0
+                  hingga t = 2 dengan 2 interval (n = 2) menggunakan Riemann Kanan,
+                  berapakah selisih (error) hasil diskret tersebut jika dibandingkan dengan nilai integral tentu aslinya
+                  (kontinu)?</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat
+                    Jawaban</summary>
+                  <div class="mt-2 p-3"
+                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
                     <strong>Penyelesaian:</strong><br>
                     1. Secara Kontinu (Integral Tentu):<br>
-                    &int;<sub>0</sub><sup>2</sup> (4t) dt = [2t<sup>2</sup>]<sub>0</sub><sup>2</sup> = 2(2)<sup>2</sup> - 0 = 8<br><br>
+                    &int;<sub>0</sub><sup>2</sup> (4t) dt = [2t<sup>2</sup>]<sub>0</sub><sup>2</sup> = 2(2)<sup>2</sup>
+                    - 0 = 8<br><br>
                     2. Secara Diskret (Riemann Kanan, &Delta;t = 1, titik kanan t = 1 dan 2):<br>
                     Total &asymp; 1 * [f(1) + f(2)] = 1 * [4(1) + 4(2)] = 4 + 8 = 12<br><br>
                     3. Menghitung Selisih (Error):<br>
@@ -508,35 +559,265 @@
 
       <div id="ch9-kalkulator" class="mt-5">
         <div class="calc-section">
-          <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 9</div>
+          <div class="calc-header">
+            <i class="bi bi-calculator-fill me-2"></i>Kalkulator Integral — Kelompok 9
+          </div>
           <div class="calc-body">
-            <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 9</strong> — Kembangkan
-              kalkulator untuk menyelesaikan masalah optimasi.</div>
+
+            <!-- ── Tab Navigation ── -->
+            <ul class="nav nav-tabs mb-4" id="calcTab9" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-tentu-btn" data-bs-toggle="tab" data-bs-target="#tab-tentu"
+                  type="button" role="tab">
+                  <i class="bi bi-bounding-box-circles me-1"></i>Integral Tentu
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-taktentu-btn" data-bs-toggle="tab" data-bs-target="#tab-taktentu"
+                  type="button" role="tab">
+                  <i class="bi bi-infinity me-1"></i>Integral Tak Tentu
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-diskret-btn" data-bs-toggle="tab" data-bs-target="#tab-diskret"
+                  type="button" role="tab">
+                  <i class="bi bi-bar-chart-steps me-1"></i>Pendekatan Diskret
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="calcTab9Content">
+
+              <!-- ═══════════════════════════════════════
+             TAB 1 — INTEGRAL TENTU
+             ═══════════════════════════════════════ -->
+              <div class="tab-pane fade show active" id="tab-tentu" role="tabpanel">
+
+                <div class="alert alert-primary py-2 px-3 small mb-3">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Masukkan fungsi <strong>f(x)</strong>, batas bawah <strong>a</strong>, dan batas atas
+                  <strong>b</strong>.
+                  Contoh fungsi: <code>x^2</code>, <code>3*x^2 + 2*x</code>, <code>sin(x)</code>, <code>e^x</code>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="tentu-fx">Fungsi f(x)</label>
+                    <input type="text" class="form-control" id="tentu-fx" placeholder="Contoh: x^2 + 2*x" value="x^2" />
+                    <div class="form-text">Gunakan: <code>x^n</code>, <code>sin(x)</code>, <code>cos(x)</code>,
+                      <code>e^x</code>, <code>sqrt(x)</code>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label fw-semibold" for="tentu-a">Batas Bawah (a)</label>
+                    <input type="number" class="form-control" id="tentu-a" value="0" step="any" />
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label fw-semibold" for="tentu-b">Batas Atas (b)</label>
+                    <input type="number" class="form-control" id="tentu-b" value="3" step="any" />
+                  </div>
+                  <div class="col-md-2 d-flex align-items-end">
+                    <button class="btn btn-primary w-100" id="btn-tentu" onclick="hitungTentu()">
+                      <i class="bi bi-play-fill me-1"></i>Hitung
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Hasil Integral Tentu -->
+                <div id="hasil-tentu" class="d-none">
+
+                  <!-- Simbol visual notasi integral -->
+                  <div class="card border-0 bg-dark text-white rounded-3 mb-3 p-3">
+                    <div class="text-center" id="simbol-tentu"></div>
+                  </div>
+
+                  <!-- Langkah penyelesaian -->
+                  <div class="card border rounded-3 mb-3">
+                    <div class="card-header bg-primary text-white fw-semibold py-2">
+                      <i class="bi bi-list-ol me-1"></i>Langkah Penyelesaian
+                    </div>
+                    <div class="card-body" id="langkah-tentu"></div>
+                  </div>
+
+                  <!-- Nilai akhir -->
+                  <div class="alert alert-success fw-semibold" id="nilai-tentu"></div>
+
+                </div>
+                <!-- Error display -->
+                <div id="error-tentu" class="alert alert-danger d-none"></div>
+              </div>
+
+              <!-- ═══════════════════════════════════════
+             TAB 2 — INTEGRAL TAK TENTU
+             ═══════════════════════════════════════ -->
+              <div class="tab-pane fade" id="tab-taktentu" role="tabpanel">
+
+                <div class="alert alert-success py-2 px-3 small mb-3">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Masukkan fungsi <strong>f(x)</strong> yang akan dicari antiturunannya <strong>F(x) + C</strong>.
+                  Kalkulator akan menampilkan langkah penggunaan aturan integral.
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-8">
+                    <label class="form-label fw-semibold" for="taktentu-fx">Fungsi f(x)</label>
+                    <input type="text" class="form-control" id="taktentu-fx" placeholder="Contoh: 6*x^2 - 4*x + 5"
+                      value="3*x^2 + 2*x" />
+                    <div class="form-text">Gunakan: <code>a*x^n</code>, <code>sin(x)</code>, <code>cos(x)</code>,
+                      <code>e^x</code>, <code>1/x</code>
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-flex align-items-end">
+                    <button class="btn btn-success w-100" id="btn-taktentu" onclick="hitungTakTentu()">
+                      <i class="bi bi-play-fill me-1"></i>Hitung Antiturunan
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Hasil Integral Tak Tentu -->
+                <div id="hasil-taktentu" class="d-none">
+
+                  <!-- Simbol visual -->
+                  <div class="card border-0 bg-dark text-white rounded-3 mb-3 p-3">
+                    <div class="text-center" id="simbol-taktentu"></div>
+                  </div>
+
+                  <!-- Langkah penyelesaian -->
+                  <div class="card border rounded-3 mb-3">
+                    <div class="card-header bg-success text-white fw-semibold py-2">
+                      <i class="bi bi-list-ol me-1"></i>Langkah Penyelesaian
+                    </div>
+                    <div class="card-body" id="langkah-taktentu"></div>
+                  </div>
+
+                  <!-- Hasil antiturunan -->
+                  <div class="alert alert-success fw-semibold" id="nilai-taktentu"></div>
+
+                </div>
+                <div id="error-taktentu" class="alert alert-danger d-none"></div>
+              </div>
+
+              <!-- ═══════════════════════════════════════
+             TAB 3 — PENDEKATAN DISKRET (RIEMANN)
+             ═══════════════════════════════════════ -->
+              <div class="tab-pane fade" id="tab-diskret" role="tabpanel">
+
+                <div class="alert alert-warning py-2 px-3 small mb-3">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Estimasi integral menggunakan <strong>Jumlah Riemann</strong>.
+                  Masukkan fungsi, batas, jumlah sub-interval <strong>n</strong>, dan pilih metode.
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label fw-semibold" for="diskret-fx">Fungsi f(x)</label>
+                    <input type="text" class="form-control" id="diskret-fx" placeholder="Contoh: 2*x + 1" value="x^2" />
+                  </div>
+                  <div class="col-md-1">
+                    <label class="form-label fw-semibold" for="diskret-a">a</label>
+                    <input type="number" class="form-control" id="diskret-a" value="0" step="any" />
+                  </div>
+                  <div class="col-md-1">
+                    <label class="form-label fw-semibold" for="diskret-b">b</label>
+                    <input type="number" class="form-control" id="diskret-b" value="4" step="any" />
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label fw-semibold" for="diskret-n">Jumlah Interval (n)</label>
+                    <input type="number" class="form-control" id="diskret-n" value="4" min="1" max="50" />
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label fw-semibold" for="diskret-metode">Metode</label>
+                    <select class="form-select" id="diskret-metode">
+                      <option value="kiri">Riemann Kiri</option>
+                      <option value="kanan">Riemann Kanan</option>
+                      <option value="tengah">Riemann Tengah</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 d-flex align-items-end">
+                    <button class="btn btn-warning w-100" onclick="hitungDiskret()">
+                      <i class="bi bi-play-fill me-1"></i>Hitung
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Hasil Diskret -->
+                <div id="hasil-diskret" class="d-none">
+
+                  <!-- Simbol visual -->
+                  <div class="card border-0 bg-dark text-white rounded-3 mb-3 p-3">
+                    <div class="text-center" id="simbol-diskret"></div>
+                  </div>
+
+                  <!-- Tabel sub-interval -->
+                  <div class="card border rounded-3 mb-3">
+                    <div class="card-header bg-warning fw-semibold py-2">
+                      <i class="bi bi-table me-1"></i>Tabel Sub-Interval
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="table-responsive">
+                        <table class="table table-sm table-striped table-hover mb-0" id="tabel-diskret">
+                          <thead class="table-dark">
+                            <tr>
+                              <th>i</th>
+                              <th>x<sub>kiri</sub></th>
+                              <th>x<sub>kanan</sub></th>
+                              <th>x sampel</th>
+                              <th>f(x<sub>i</sub>)</th>
+                              <th>Δx</th>
+                              <th>f(x<sub>i</sub>) · Δx</th>
+                            </tr>
+                          </thead>
+                          <tbody id="tbody-diskret"></tbody>
+                          <tfoot id="tfoot-diskret" class="table-secondary fw-bold"></tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Langkah penyelesaian -->
+                  <div class="card border rounded-3 mb-3">
+                    <div class="card-header bg-warning fw-semibold py-2">
+                      <i class="bi bi-list-ol me-1"></i>Langkah Penyelesaian
+                    </div>
+                    <div class="card-body" id="langkah-diskret"></div>
+                  </div>
+
+                  <!-- Hasil akhir -->
+                  <div class="alert alert-warning fw-semibold" id="nilai-diskret"></div>
+
+                </div>
+                <div id="error-diskret" class="alert alert-danger d-none"></div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="chapter-nav-bottom">
-        <a href="kelompok8.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 8</a>
-        <a href="../index.html" class="btn btn-chapter-nav">Kembali ke Beranda <i
-            class="bi bi-arrow-right ms-1"></i></a>
-      </div>
-      </section>
-      <footer class="content-footer">
-        <div class="row g-3 align-items-center">
-          <div class="col-md-8">
-            <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
-            <div class="footer-meta">Disusun oleh 9 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
-          </div>
-          <div class="col-md-4 text-md-end"><a href="#chapter-9" class="btn btn-sm btn-outline-secondary"><i
-                class="bi bi-arrow-up me-1"></i>Kembali ke Atas</a></div>
-        </div>
-      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+
+      <script src="../script.js"></script>
+</body>
+<div class="chapter-nav-bottom">
+  <a href="kelompok8.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 8</a>
+  <a href="../index.html" class="btn btn-chapter-nav">Kembali ke Beranda <i class="bi bi-arrow-right ms-1"></i></a>
+</div>
+</section>
+<footer class="content-footer">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-8">
+      <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
+      <div class="footer-meta">Disusun oleh 9 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
+    </div>
+    <div class="col-md-4 text-md-end"><a href="#chapter-9" class="btn btn-sm btn-outline-secondary"><i
+          class="bi bi-arrow-up me-1"></i>Kembali ke Atas</a></div>
   </div>
-  </main>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../script.js"></script>
+</footer>
+</div>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
 </body>
 
 </html>

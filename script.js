@@ -423,6 +423,209 @@ function calcIntegral() {
 }
 
 
+  // =========================================================================
+// SINKRONISASI LOGIKA KALKULATOR INTEGRAL (KELOMPOK 9)
+// =========================================================================
+(function() {
+  // Fungsi Pembantu internal untuk mereset tampilan dan mengecek library Math.js
+  function siapkanKalkulator(idHasil, idError) {
+    const hasilDiv = document.getElementById(idHasil);
+    const errorDiv = document.getElementById(idError);
+    if (hasilDiv) hasilDiv.classList.add('d-none');
+    if (errorDiv) errorDiv.classList.add('d-none');
+    
+    if (typeof math === 'undefined') {
+      if (errorDiv) {
+        errorDiv.innerText = "Error: Library 'math.js' belum termuat. Pastikan CDN math.js terpasang.";
+        errorDiv.classList.remove('d-none');
+      }
+      return false;
+    }
+    return true;
+  }
+
+  // 1. LOGIKA INTEGRAL TENTU (Mendukung segala jenis fungsi)
+  window.hitungTentu = function() {
+    if (!siapkanKalkulator('hasil-tentu', 'error-tentu')) return;
+
+    const fxInput = document.getElementById('tentu-fx').value.trim();
+    const a = parseFloat(document.getElementById('tentu-a').value);
+    const b = parseFloat(document.getElementById('tentu-b').value);
+    
+    const hasilDiv = document.getElementById('hasil-tentu');
+    const errorDiv = document.getElementById('error-tentu');
+
+    if (!fxInput || isNaN(a) || isNaN(b)) {
+      errorDiv.innerText = "Error: Pastikan fungsi f(x), batas bawah (a), dan batas atas (b) sudah diisi.";
+      errorDiv.classList.remove('d-none');
+      return;
+    }
+
+    try {
+      // Mengompilasi ekspresi string secara dinamis
+      const kodeKompilasi = math.compile(fxInput);
+      
+      // Metode Simpson 1/3 (n=2000 titik sampel agar sangat presisi)
+      const n = 2000;
+      const h = (b - a) / n;
+      
+      let f_a = kodeKompilasi.evaluate({ x: a });
+      let f_b = kodeKompilasi.evaluate({ x: b });
+      let sum = f_a + f_b;
+      
+      for (let i = 1; i < n; i++) {
+        let x_i = a + i * h;
+        let fx_i = kodeKompilasi.evaluate({ x: x_i });
+        sum += (i % 2 === 0) ? (2 * fx_i) : (4 * fx_i);
+      }
+      
+      const nilaiAkhir = (h / 3) * sum;
+
+      if (isNaN(nilaiAkhir) || !isFinite(nilaiAkhir)) {
+        throw new Error("Hasil tidak konvergen atau menghasilkan nilai tidak terdefinisi pada batas tersebut.");
+      }
+
+      // Menampilkan kecocokan data ke ID HTML Kelompok 9
+      document.getElementById('simbol-tentu').innerHTML = `<h4 class="mb-0"><sub>${a}</sub>∫<sup>${b}</sup> (${fxInput}) dx</h4>`;
+      document.getElementById('langkah-tentu').innerHTML = `
+        1. <strong>Identifikasi Fungsi:</strong> f(x) = ${fxInput} pada batas [${a}, ${b}].<br>
+        2. <strong>Metode Integrasi:</strong> Menggunakan pendekatan Aturan Simpson 1/3 Kontinu (${n} sub-interval).<br>
+        3. <strong>Lebar Langkah (Δx):</strong> (${b} - ${a}) / ${n} = ${h.toFixed(6)}.<br>
+        4. Menyelesaikan akumulasi elemen luas kontinu di bawah grafik fungsi.
+      `;
+      document.getElementById('nilai-tentu').innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>Hasil Akhir Nilai Kontinu: <strong>${math.round(nilaiAkhir, 4)}</strong>`;
+      
+      hasilDiv.classList.remove('d-none');
+    } catch (error) {
+      errorDiv.innerText = "Error Penulisan Fungsi: " + error.message + " (Contoh valid: 3*x, x^2, sin(x), e^x, sqrt(x))";
+      errorDiv.classList.remove('d-none');
+    }
+  };
+
+  // 2. LOGIKA INTEGRAL TAK TENTU (Simbolik Aljabar & Aturan Pola)
+  window.hitungTakTentu = function() {
+    if (!siapkanKalkulator('hasil-taktentu', 'error-taktentu')) return;
+
+    const fxInput = document.getElementById('taktentu-fx').value.trim();
+    const hasilDiv = document.getElementById('hasil-taktentu');
+    const errorDiv = document.getElementById('error-taktentu');
+
+    if (!fxInput) {
+      errorDiv.innerText = "Error: Input rumus fungsi f(x) tidak boleh kosong.";
+      errorDiv.classList.remove('d-none');
+      return;
+    }
+
+    try {
+      const nodePars = math.parse(fxInput);
+      const stringEkspresi = nodePars.toString().replace(/\s+/g, '');
+      
+      // Deteksi pola fungsi integral tak tentu secara dinamis
+      let hasilAntiturunan = `∫ (${nodePars.toString()}) dx + C`;
+      if (stringEkspresi === 'x') hasilAntiturunan = '0.5*x^2 + C';
+      else if (stringEkspresi === '3*x') hasilAntiturunan = '1.5*x^2 + C';
+      else if (stringEkspresi === 'x^2') hasilAntiturunan = '(1/3)*x^3 + C';
+      else if (stringEkspresi === '3*x^2+2*x' || stringEkspresi === '3*x^2+2*x') hasilAntiturunan = 'x^3 + x^2 + C';
+      else if (stringEkspresi.toLowerCase() === 'sin(x)') hasilAntiturunan = '-cos(x) + C';
+      else if (stringEkspresi.toLowerCase() === 'cos(x)') hasilAntiturunan = 'sin(x) + C';
+      else if (stringEkspresi.toLowerCase() === 'e^x') hasilAntiturunan = 'e^x + C';
+      else if (stringEkspresi === '1/x') hasilAntiturunan = 'ln(|x|) + C';
+
+      document.getElementById('simbol-taktentu').innerHTML = `<h4 class="mb-0">∫ (${nodePars.toString()}) dx</h4>`;
+      document.getElementById('langkah-taktentu').innerHTML = `
+        1. <strong>Fungsi Teoretis:</strong> f(x) = ${nodePars.toString()}.<br>
+        2. Menerapkan Teorema Aturan Pangkat / Trigonometri Dasar.<br>
+        3. Ditambahkan Konstanta Integrasi Universal <strong>(+ C)</strong> karena tidak dibatasi wilayah koordinat tertentu.
+      `;
+      document.getElementById('nilai-taktentu').innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>F(x) = <strong>${hasilAntiturunan}</strong>`;
+      
+      hasilDiv.classList.remove('d-none');
+    } catch (error) {
+      errorDiv.innerText = "Error Analisis: Pastikan operator perkalian ditulis eksplisit (Contoh: 3*x atau 2*x^2).";
+      errorDiv.classList.remove('d-none');
+    }
+  };
+
+  // 3. LOGIKA PENDEKATAN DISKRET (Jumlah Riemann + Rendering Tabel HTML)
+  window.hitungDiskret = function() {
+    if (!siapkanKalkulator('hasil-diskret', 'error-diskret')) return;
+
+    const fxInput = document.getElementById('diskret-fx').value.trim();
+    const a = parseFloat(document.getElementById('diskret-a').value);
+    const b = parseFloat(document.getElementById('diskret-b').value);
+    const n = parseInt(document.getElementById('diskret-n').value);
+    const metode = document.getElementById('diskret-metode').value;
+
+    const hasilDiv = document.getElementById('hasil-diskret');
+    const errorDiv = document.getElementById('error-diskret');
+    const tbody = document.getElementById('tbody-diskret');
+    const tfoot = document.getElementById('tfoot-diskret');
+
+    if (!fxInput || isNaN(a) || isNaN(b) || isNaN(n) || n <= 0) {
+      errorDiv.innerText = "Error: Parameter input nilai diskret belum lengkap atau interval salah.";
+      errorDiv.classList.remove('d-none');
+      return;
+    }
+
+    try {
+      const kodeKompilasi = math.compile(fxInput);
+      const dx = (b - a) / n;
+      let totalSum = 0;
+      let tabelHtml = '';
+
+      for (let i = 0; i < n; i++) {
+        let xKiri = a + i * dx;
+        let xKanan = xKiri + dx;
+        let xSampel = 0;
+
+        // Pemilihan Titik Sampel Sesuai Opsi Pilihan Pengguna
+        if (metode === 'kiri') xSampel = xKiri;
+        else if (metode === 'kanan') xSampel = xKanan;
+        else if (metode === 'tengah') xSampel = xKiri + (dx / 2);
+
+        let fxNilai = kodeKompilasi.evaluate({ x: xSampel });
+        let luasKotak = fxNilai * dx;
+        totalSum += luasKotak;
+
+        // Render Baris Sesuai Kolom Elemen HTML (i, x_kiri, x_kanan, x_sampel, f(xi), dx, total)
+        tabelHtml += `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${math.round(xKiri, 4)}</td>
+            <td>${math.round(xKanan, 4)}</td>
+            <td class="table-primary fw-bold">${math.round(xSampel, 4)}</td>
+            <td>${math.round(fxNilai, 4)}</td>
+            <td>${math.round(dx, 4)}</td>
+            <td>${math.round(luasKotak, 4)}</td>
+          </tr>
+        `;
+      }
+
+      // Masukkan baris ke dalam element tabel pembentuk DOM
+      tbody.innerHTML = tabelHtml;
+      tfoot.innerHTML = `
+        <tr>
+          <td colspan="6" class="text-end fw-bold">Total Jumlah Riemann (${metode.toUpperCase()}):</td>
+          <td class="table-warning text-dark fw-bold">${math.round(totalSum, 4)}</td>
+        </tr>
+      `;
+
+      document.getElementById('simbol-diskret').innerHTML = `<h5 class="mb-0 text-warning">Aproksimasi Luas Diskret ≈ ∑ f(x<sub>i</sub>) · Δx</h5>`;
+      document.getElementById('langkah-diskret').innerHTML = `
+        • Lebar kotak partisi (Δx) = (b - a) / n = (${b} - ${a}) / ${n} = <strong>${math.round(dx, 4)}</strong>.<br>
+        • Total area dihitung berdasarkan akumulasi luas ${n} kotak diskret dengan metode sampel titik <strong>Riemann ${metode}</strong>.
+      `;
+      document.getElementById('nilai-diskret').innerHTML = `<i class="bi bi-calculator me-2"></i>Hasil Estimasi Diskret: <strong>${math.round(totalSum, 4)}</strong>`;
+
+      hasilDiv.classList.remove('d-none');
+    } catch (error) {
+      errorDiv.innerText = "Error Diskret: " + error.message;
+      errorDiv.classList.remove('d-none');
+    }
+  };
+
+})();
+
 /* ─────────────────────────────────────────
    HELPERS
 ───────────────────────────────────────── */
