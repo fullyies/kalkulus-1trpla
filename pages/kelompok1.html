@@ -1,476 +1,1552 @@
 <!DOCTYPE html>
 <html lang="id" data-bs-theme="light">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bab 1 — Bilangan Real &amp; Fungsi | Kalkulus 1</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
 
-<!-- TOP NAVBAR -->
-<nav class="navbar navbar-expand-lg top-navbar sticky-top" id="topNavbar">
-  <div class="container-fluid px-3 px-lg-4">
-    <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button"
-            data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-label="Buka navigasi">
-      <i class="bi bi-list"></i>
-    </button>
-    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-      <span class="brand-icon"><i class="bi bi-journal-text"></i></span>
-      <span class="brand-text">
-        <span class="brand-title">Kalkulus 1</span>
-        <span class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span>
-      </span>
-    </a>
-    <div class="ms-auto d-flex align-items-center gap-2">
-      <div class="search-wrap d-none d-md-flex">
-        <i class="bi bi-search search-icon"></i>
-        <input type="search" id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..."/>
-      </div>
-      <button class="btn btn-sm theme-toggle" id="themeToggle" title="Toggle dark mode">
-        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+  <!-- TOP NAVBAR -->
+  <nav class="navbar navbar-expand-lg top-navbar sticky-top" id="topNavbar">
+    <div class="container-fluid px-3 px-lg-4">
+      <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarOffcanvas" aria-label="Buka navigasi">
+        <i class="bi bi-list"></i>
       </button>
-      <div class="d-none d-lg-flex gap-1">
-        <button class="btn btn-sm nav-arrow" id="prevChapterBtn" title="Bab sebelumnya">
-          <i class="bi bi-chevron-left"></i>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="brand-icon"><i class="bi bi-journal-text"></i></span>
+        <span class="brand-text">
+          <span class="brand-title">Kalkulus 1</span>
+          <span class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span>
+        </span>
+      </a>
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <div class="search-wrap d-none d-md-flex">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" id="sidebarSearch" class="form-control form-control-sm search-input"
+            placeholder="Cari topik..." />
+        </div>
+        <button class="btn btn-sm theme-toggle" id="themeToggle" title="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
         </button>
-        <button class="btn btn-sm nav-arrow" id="nextChapterBtn" title="Bab berikutnya">
-          <i class="bi bi-chevron-right"></i>
-        </button>
+        <div class="d-none d-lg-flex gap-1">
+          <button class="btn btn-sm nav-arrow" id="prevChapterBtn" title="Bab sebelumnya">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="btn btn-sm nav-arrow" id="nextChapterBtn" title="Bab berikutnya">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- OFFCANVAS SIDEBAR (Mobile) -->
-<div class="offcanvas offcanvas-start sidebar-offcanvas" tabindex="-1" id="sidebarOffcanvas">
-  <div class="offcanvas-header">
-    <h6 class="offcanvas-title"><i class="bi bi-journal-text me-2"></i>Kalkulus 1</h6>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  <!-- OFFCANVAS SIDEBAR (Mobile) -->
+  <div class="offcanvas offcanvas-start sidebar-offcanvas" tabindex="-1" id="sidebarOffcanvas">
+    <div class="offcanvas-header">
+      <h6 class="offcanvas-title"><i class="bi bi-journal-text me-2"></i>Kalkulus 1</h6>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="sidebar-inner" id="sidebarInnerMobile"></div>
+    </div>
   </div>
-  <div class="offcanvas-body p-0">
-    <div class="sidebar-inner" id="sidebarInnerMobile"></div>
+
+  <!-- MAIN WRAPPER -->
+  <div class="main-wrapper">
+
+    <!-- SIDEBAR (Desktop) -->
+    <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
+      <div class="sidebar-inner" id="sidebarInnerDesktop">
+        <div class="sidebar-section-label">Navigasi</div>
+        <nav id="sidebar-nav">
+          <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
+            <li class="sidebar-item">
+              <a href="../index.html#pengantar" class="sidebar-link">
+                <i class="bi bi-book-half sidebar-link-icon"></i>
+                Kata Pengantar
+              </a>
+            </li>
+            <li class="sidebar-item has-submenu open">
+              <a href="kelompok1.html" class="sidebar-link active">
+                <i class="bi bi-1-circle sidebar-link-icon"></i>
+                Bab 1 — Fungsi Pemetaan
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="#ch1-bilangan" class="submenu-link">1.1 Konsep Fungsi</a></li>
+                <li><a href="#ch1-fungsi" class="submenu-link">1.2 Contoh Domain, Kodomain, dan Range</a></li>
+                <li><a href="#ch1-representasi" class="submenu-link">1.3 Representasi Fungsi</a></li>
+                <li><a href="#ch1-linear" class="submenu-link">1.4 Fungsi Linear dan Nonlinear</a></li>
+                <li><a href="#ch1-komposisi" class="submenu-link">1.5 Komposisi Fungsi</a></li>
+                <li><a href="#ch1-perubahan-input" class="submenu-link">1.6 Perubahan Input</a></li>
+                <li><a href="#ch1-laju-perubahan" class="submenu-link">1.7 Laju Perubahan</a></li>
+                <li><a href="#ch1-sensitivitas" class="submenu-link">1.8 Sensitivitas Fungsi Linear dan Kuadrat</a></li>
+                <li><a href="#ch1-analisis" class="submenu-link">1.9 Analisis Numerik Sederhana</a></li>
+                <li><a href="#ch1-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok2.html" class="sidebar-link">
+                <i class="bi bi-2-circle sidebar-link-icon"></i>
+                Bab 2 — Limit Fungsi
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
+                <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
+                <li><a href="kelompok2.html#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok2.html#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok3.html" class="sidebar-link">
+                <i class="bi bi-3-circle sidebar-link-icon"></i>
+                Bab 3 — Kekontinuan Fungsi
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
+                <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
+                <li><a href="kelompok3.html#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok3.html#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok4.html" class="sidebar-link">
+                <i class="bi bi-4-circle sidebar-link-icon"></i>
+                Bab 4 — Turunan (Diferensial)
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
+                <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
+                <li><a href="kelompok4.html#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok4.html#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok5.html" class="sidebar-link">
+                <i class="bi bi-5-circle sidebar-link-icon"></i>
+                Bab 5 — Aplikasi Turunan
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok5.html#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
+                <li><a href="kelompok5.html#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
+                <li><a href="kelompok5.html#ch5-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok5.html#ch5-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok5.html#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok6.html" class="sidebar-link">
+                <i class="bi bi-6-circle sidebar-link-icon"></i>
+                Bab 6 — Integral
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
+                <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
+                <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+            <!-- chapter 7 -->
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok7.html" class="sidebar-link">
+                <i class="bi bi-7-circle sidebar-link-icon"></i>
+                Bab 7 — Aplikasi Integral
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
+                <li><a href="kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
+                <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+
+            <!-- chapter 8 -->
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok8.html" class="sidebar-link">
+                <i class="bi bi-8-circle sidebar-link-icon"></i>
+                Bab 8 — Deret Tak Hingga
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
+                <li><a href="kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
+                <li><a href="kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+
+            <!-- chapter 9 -->
+            <li class="sidebar-item has-submenu">
+              <a href="kelompok9.html" class="sidebar-link">
+                <i class="bi bi-9-circle sidebar-link-icon"></i>
+                Bab 9 — Integral Tak Hingga
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
+                <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
+                <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="sidebar-footer-text">
+            <i class="bi bi-mortarboard-fill me-1"></i>
+            Matematika — Semester 1
+          </div>
+          <div class="progress sidebar-progress mt-2" title="Progress membaca">
+            <div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div>
+          </div>
+          <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
+        </div>
+      </div>
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="content-area" id="mainContent">
+      <div class="content-inner">
+
+        <!-- BAB 1 -->
+        <section id="chapter-1" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
+          <div class="chapter-header">
+            <div class="chapter-number">Bab 1</div>
+            <h2 class="chapter-title">Fungsi Pemetaan</h2>
+            <p class="chapter-meta">
+              <span class="chapter-group-badge">Kelompok 1</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Aljabar Dasar</span>
+            </p>
+            <p class="chapter-desc">
+              Bab ini membahas sistem bilangan real sebagai fondasi kalkulus, serta konsep fungsi yang menjadi objek
+              utama kajian kalkulus.
+            </p>
+          </div>
+
+          <!-- Nama Anggota Kelompok -->
+          <div class="card mb-4"
+            style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
+            <div class="card-header"
+              style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
+              <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i>
+              <strong style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 1</strong>
+            </div>
+            <div class="card-body py-3">
+              <div class="placeholder-notice">
+                <i class="bi bi-pencil-square"></i>
+                <strong>Kelompok 1</strong><br>
+                <br>1. Reihan Saputra</br>
+                <br>2. Rahma Safitri</br>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1.1 Konsep Fungsi -->
+          <div id="ch1-bilangan">
+            <h3 class="subsection-title">1.1 Konsep Fungsi</h3>
+            <div class="alert alert-primary">
+              <i class="bi bi-info-circle-fill me-2"></i>
+              <strong>Konsep Fungsi</strong> adalah aturan yang memasangkan setiap elemen
+              pada himpunan asal (domain) dengan tepat satu elemen pada himpunan tujuan
+              (kodomain). Hasil pemetaan yang benar-benar diperoleh disebut
+              <strong>range (daerah hasil)</strong>.
+            </div>
+            <p>
+              Dalam matematika, fungsi merupakan suatu hubungan yang menyatakan bahwa
+              setiap nilai input (<strong>x</strong>) hanya mempunyai satu pasangan nilai
+              output (<strong>y</strong>). Konsep ini menjadi dasar dalam pembelajaran
+              kalkulus karena digunakan untuk memodelkan hubungan antar variabel.
+            </p>
+            <div class="row g-3 mt-3">
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-header bg-primary text-white">
+                    Domain
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Domain adalah himpunan asal (<strong>A</strong>), yaitu seluruh nilai
+                      yang boleh dimasukkan ke dalam suatu fungsi.
+                    </p>
+                    <hr>
+                    <strong>Contoh</strong>
+
+                    <p class="mt-2">
+                      Jika
+                      <code>f(x)=2x+1</code>
+                      dan x merupakan bilangan real,
+                      maka domainnya adalah
+                      <strong>semua bilangan real (ℝ)</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-header bg-success text-white">
+                    Kodomain
+                  </div>
+
+                  <div class="card-body">
+                    <p>
+                      Kodomain adalah himpunan tujuan (<strong>B</strong>) yang menjadi
+                      target pemetaan dari suatu fungsi.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                      Semua hasil fungsi akan berada di dalam kodomain,
+                      meskipun tidak semua anggotanya harus dihasilkan.
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-header bg-warning">
+                    Range
+                  </div>
+
+                  <div class="card-body">
+
+                    <p>
+                      Range (daerah hasil) adalah himpunan nilai output yang benar-benar
+                      dihasilkan oleh fungsi.
+                    </p>
+
+                    <hr>
+
+                    <div class="alert alert-warning mb-0">
+                      <strong>Range ⊆ Kodomain</strong><br>
+                      Artinya, semua anggota range pasti berada di dalam kodomain,
+                      tetapi belum tentu semua anggota kodomain menjadi range.
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="card mt-4 border-primary">
+
+              <div class="card-header">
+                <i class="bi bi-lightbulb-fill me-2"></i>
+                Ringkasan Konsep
+              </div>
+
+              <div class="card-body">
+
+                <div class="table-responsive">
+
+                  <table class="table table-bordered align-middle">
+
+                    <thead class="table-light">
+                      <tr>
+                        <th width="25%">Istilah</th>
+                        <th>Pengertian</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td><strong>Domain</strong></td>
+                        <td>Himpunan semua nilai input yang diperbolehkan.</td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Kodomain</strong></td>
+                        <td>Himpunan tujuan dari suatu fungsi.</td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Range</strong></td>
+                        <td>Himpunan nilai output yang benar-benar dihasilkan oleh fungsi.</td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+<!-- 1.2 Contoh Domain, Kodomain, dan Range -->
+<div id="ch1-fungsi" class="mt-5">
+  <h3 class="subsection-title">1.2 Contoh Domain, Kodomain, dan Range</h3>
+
+  <div class="alert alert-success">
+    <i class="bi bi-lightbulb-fill me-2"></i>
+    Berikut merupakan beberapa contoh penentuan domain, kodomain, dan range pada berbagai jenis fungsi.
+  </div>
+
+  <div class="row g-4">
+
+    <!-- Linear -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Contoh 1 — Fungsi Linear</div>
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=4x+2</code>
+
+          <p class="mt-3">Tentukan domain, kodomain, dan range dari fungsi di atas.</p>
+
+          <ul>
+            <li><strong>Domain :</strong> {x | x ∈ ℝ}</li>
+            <li><strong>Kodomain :</strong> {y | y ∈ ℝ}</li>
+            <li><strong>Range :</strong> {y | y ∈ ℝ}</li>
+          </ul>
+
+          <div class="alert alert-light mb-0">
+            Karena fungsi linear tidak memiliki batas nilai, maka domain, kodomain, dan range adalah semua bilangan real.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuadrat -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Contoh 2 — Fungsi Kuadrat</div>
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=x²−6x+7</code>
+
+          <p class="mt-3">Tentukan domain, kodomain, dan range.</p>
+
+          <ul>
+            <li><strong>Domain :</strong> {x | x ∈ ℝ}</li>
+            <li><strong>Kodomain :</strong> {y | y ∈ ℝ}</li>
+            <li><strong>Range :</strong> y ≥ -2</li>
+          </ul>
+
+          <div class="alert alert-warning mb-0">
+            Fungsi kuadrat mempunyai nilai minimum <strong>-2</strong>, sehingga range dimulai dari -2 hingga tak hingga.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Akar -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Contoh 3 — Fungsi Akar</div>
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=√(2x−4)</code>
+
+          <p class="mt-3">Karena berbentuk akar, maka syaratnya:</p>
+
+          <code>2x−4 ≥ 0</code>
+
+          <ul class="mt-3">
+            <li><strong>Domain :</strong> x ≥ 2</li>
+            <li><strong>Kodomain :</strong> ℝ</li>
+            <li><strong>Range :</strong> y ≥ 0</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pecahan -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Contoh 4 — Fungsi Pecahan</div>
+        <div class="concept-card-body">
+          <p>Pada fungsi pecahan, penyebut tidak boleh bernilai nol.</p>
+
+          <ul>
+            <li>Domain diperoleh dengan menentukan penyebut ≠ 0.</li>
+            <li>Kodomain adalah semua bilangan real.</li>
+            <li>Range diperoleh menggunakan invers fungsi sesuai syarat yang berlaku.</li>
+          </ul>
+
+          <div class="alert alert-danger mb-0">
+            Ingat! Penyebut fungsi pecahan tidak boleh sama dengan nol.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- MAIN WRAPPER -->
-<div class="main-wrapper">
+    <!-- 1.3 Representasi Fungsi -->
+<div id="ch1-representasi" class="mt-5">
+  <h3 class="subsection-title">1.3 Representasi Fungsi</h3>
 
-  <!-- SIDEBAR (Desktop) -->
-  <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
-    <div class="sidebar-inner" id="sidebarInnerDesktop">
-      <div class="sidebar-section-label">Navigasi</div>
-      <nav id="sidebar-nav">
-        <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
-          <li class="sidebar-item">
-            <a href="../index.html#pengantar" class="sidebar-link">
-              <i class="bi bi-book-half sidebar-link-icon"></i>
-              Kata Pengantar
-            </a>
-          </li>
-          <li class="sidebar-item has-submenu open">
-            <a href="kelompok1.html" class="sidebar-link active">
-              <i class="bi bi-1-circle sidebar-link-icon"></i>
-              Bab 1 — Bilangan Real &amp; Fungsi
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="#ch1-bilangan" class="submenu-link">1.1 Sistem Bilangan Real</a></li>
-              <li><a href="#ch1-fungsi" class="submenu-link">1.2 Konsep Fungsi</a></li>
-              <li><a href="#ch1-contoh" class="submenu-link">💡 Contoh Soal</a></li>
-              <li><a href="#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok2.html" class="sidebar-link">
-              <i class="bi bi-2-circle sidebar-link-icon"></i>
-              Bab 2 — Limit Fungsi
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
-              <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
-              <li><a href="kelompok2.html#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok2.html#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok3.html" class="sidebar-link">
-              <i class="bi bi-3-circle sidebar-link-icon"></i>
-              Bab 3 — Kekontinuan Fungsi
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
-              <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
-              <li><a href="kelompok3.html#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok3.html#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok4.html" class="sidebar-link">
-              <i class="bi bi-4-circle sidebar-link-icon"></i>
-              Bab 4 — Turunan (Diferensial)
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
-              <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
-              <li><a href="kelompok4.html#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok4.html#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok5.html" class="sidebar-link">
-              <i class="bi bi-5-circle sidebar-link-icon"></i>
-              Bab 5 — Aplikasi Turunan
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok5.html#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
-              <li><a href="kelompok5.html#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
-              <li><a href="kelompok5.html#ch5-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok5.html#ch5-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok5.html#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok6.html" class="sidebar-link">
-              <i class="bi bi-6-circle sidebar-link-icon"></i>
-              Bab 6 — Integral
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
-              <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
-              <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-          <!-- chapter 7 -->
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok7.html" class="sidebar-link">
-              <i class="bi bi-7-circle sidebar-link-icon"></i>
-              Bab 7 — Aplikasi Integral
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
-              <li><a href="kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
-              <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+  <div class="alert alert-info">
+    <i class="bi bi-info-circle-fill me-2"></i>
+    Suatu fungsi dapat direpresentasikan dalam beberapa bentuk, yaitu menggunakan rumus, tabel, dan grafik. Ketiga bentuk tersebut memiliki makna yang sama, hanya berbeda dalam cara penyajiannya.
+  </div>
 
-          <!-- chapter 8 -->
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok8.html" class="sidebar-link">
-              <i class="bi bi-8-circle sidebar-link-icon"></i>
-              Bab 8 — Deret Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
-              <li><a href="kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
-              <li><a href="kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th width="20%">Representasi</th>
+          <th>Penjelasan</th>
+          <th width="30%">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Rumus</strong></td>
+          <td>Fungsi dinyatakan dalam bentuk persamaan matematika.</td>
+          <td><code>f(x)=3x−1</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tabel</strong></td>
+          <td>Menampilkan pasangan nilai input (x) dan output (y).</td>
+          <td>(x,y) = (0,-1), (1,2), (2,5)</td>
+        </tr>
+        <tr>
+          <td><strong>Grafik</strong></td>
+          <td>Hubungan antara x dan y digambarkan pada bidang Kartesius.</td>
+          <td>Grafik garis lurus.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-          <!-- chapter 9 -->
-          <li class="sidebar-item has-submenu">
-            <a href="kelompok9.html" class="sidebar-link">
-              <i class="bi bi-9-circle sidebar-link-icon"></i>
-              Bab 9 — Integral Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
-              <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
-              <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div class="sidebar-footer">
-        <div class="sidebar-footer-text">
-          <i class="bi bi-mortarboard-fill me-1"></i>
-          Matematika — Semester 1
-        </div>
-        <div class="progress sidebar-progress mt-2" title="Progress membaca">
-          <div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div>
-        </div>
-        <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
+  <h5 class="mt-4">Contoh Representasi Fungsi Linear</h5>
+
+  <p>Diketahui fungsi <code>f(x)=3x−1</code> dengan domain <code>-2 ≤ x ≤ 5</code>.</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered text-center">
+      <thead class="table-light">
+        <tr>
+          <th>x</th>
+          <th>-2</th>
+          <th>-1</th>
+          <th>0</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>f(x)</th>
+          <td>-7</td>
+          <td>-4</td>
+          <td>-1</td>
+          <td>2</td>
+          <td>5</td>
+          <td>8</td>
+          <td>11</td>
+          <td>14</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-header">Menentukan Titik Potong Grafik</div>
+    <div class="card-body">
+      <ul class="mb-3">
+        <li><strong>Titik potong sumbu-Y</strong>: x = 0 → y = -1 sehingga diperoleh titik <strong>(0,-1)</strong>.</li>
+        <li><strong>Titik potong sumbu-X</strong>: y = 0 → 3x−1 = 0 → x = 1/3 sehingga diperoleh titik <strong>(1/3,0)</strong>.</li>
+      </ul>
+
+      <div class="alert alert-success mb-0">
+        Setelah kedua titik diperoleh, hubungkan keduanya sehingga terbentuk grafik garis lurus.
       </div>
     </div>
-  </aside>
+  </div>
+</div>
 
+<!-- 1.4 Fungsi Linear dan Nonlinear -->
+<div id="ch1-linear" class="mt-5">
+  <h3 class="subsection-title">1.4 Fungsi Linear dan Nonlinear</h3>
 
+  <div class="alert alert-primary">
+    <i class="bi bi-graph-up-arrow me-2"></i>
+    Fungsi dapat dibedakan menjadi <strong>fungsi linear</strong> dan <strong>fungsi nonlinear</strong> berdasarkan bentuk persamaan serta grafik yang dihasilkan.
+  </div>
 
-                                        <!-- MAIN CONTENT -->
+  <div class="row g-4">
 
+    <!-- Fungsi Linear -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Fungsi Linear</div>
 
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=ax+b</code>
 
-  <main class="content-area" id="mainContent">
-    <div class="content-inner">
-
-      <!-- BAB 1 -->
-      <section id="chapter-1" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
-        <div class="chapter-header">
-          <div class="chapter-number">Bab 1</div>
-          <h2 class="chapter-title">Bilangan Real &amp; Fungsi</h2>
-          <p class="chapter-meta">
-            <span class="chapter-group-badge">Kelompok 1</span>
-            <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Aljabar Dasar</span>
+          <p class="mt-3">
+            Fungsi linear adalah fungsi yang memiliki pangkat tertinggi satu sehingga menghasilkan grafik berupa garis lurus.
           </p>
-          <p class="chapter-desc">
-            Bab ini membahas sistem bilangan real sebagai fondasi kalkulus, serta konsep fungsi yang menjadi objek utama kajian kalkulus.
-          </p>
-        </div>
 
-        <!-- Nama Anggota Kelompok -->
-        <div class="card mb-4" style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
-          <div class="card-header" style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
-            <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i>
-            <strong style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 1</strong>
+          <h6>Ciri-ciri:</h6>
+          <ul>
+            <li>Grafik berupa garis lurus.</li>
+            <li>Gradien bernilai tetap.</li>
+            <li>Laju perubahan konstan.</li>
+            <li>Memiliki bentuk umum <code>ax+b</code>.</li>
+          </ul>
+
+          <div class="alert alert-success mb-0">
+            Contoh: <strong>f(x)=2x+3</strong>
           </div>
-          <div class="card-body py-3">
+        </div>
+      </div>
+    </div>
+
+    <!-- Fungsi Nonlinear -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Fungsi Nonlinear</div>
+
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=x²+2x+1</code>
+
+          <p class="mt-3">
+            Fungsi nonlinear adalah fungsi yang grafiknya tidak berbentuk garis lurus karena memiliki pangkat lebih dari satu atau bentuk fungsi lainnya.
+          </p>
+
+          <h6>Ciri-ciri:</h6>
+          <ul>
+            <li>Grafik berupa kurva.</li>
+            <li>Gradien berubah-ubah.</li>
+            <li>Laju perubahan tidak konstan.</li>
+            <li>Contohnya fungsi kuadrat, akar, eksponen, dan logaritma.</li>
+          </ul>
+
+          <div class="alert alert-warning mb-0">
+            Contoh: <strong>f(x)=x²+2x+1</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h5 class="mt-5">Perbedaan Fungsi Linear dan Nonlinear</h5>
+
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>Aspek</th>
+          <th>Linear</th>
+          <th>Nonlinear</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bentuk Umum</td>
+          <td>ax + b</td>
+          <td>Selain ax + b</td>
+        </tr>
+        <tr>
+          <td>Grafik</td>
+          <td>Garis lurus</td>
+          <td>Kurva</td>
+        </tr>
+        <tr>
+          <td>Gradien</td>
+          <td>Tetap</td>
+          <td>Berubah-ubah</td>
+        </tr>
+        <tr>
+          <td>Laju Perubahan</td>
+          <td>Konstan</td>
+          <td>Tidak konstan</td>
+        </tr>
+        <tr>
+          <td>Contoh</td>
+          <td>f(x)=2x+3</td>
+          <td>f(x)=x²+2x+1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-info mt-4 mb-0">
+    <strong>Kesimpulan:</strong> Fungsi linear mempunyai grafik berupa garis lurus dengan gradien tetap, sedangkan fungsi nonlinear menghasilkan grafik berupa kurva karena laju perubahannya tidak konstan.
+  </div>
+</div>
+
+<!-- 1.5 Komposisi Fungsi -->
+<div id="ch1-komposisi" class="mt-5">
+  <h3 class="subsection-title">1.5 Komposisi Fungsi</h3>
+
+  <div class="alert alert-primary">
+    <i class="bi bi-arrow-repeat me-2"></i>
+    Komposisi fungsi adalah operasi yang menggabungkan dua fungsi sehingga
+    menghasilkan fungsi baru. Hasil suatu fungsi menjadi input bagi fungsi lainnya.
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Notasi Komposisi Fungsi</div>
+    <div class="card-body">
+      <p>
+        Jika terdapat dua fungsi <strong>f(x)</strong> dan <strong>g(x)</strong>,
+        maka komposisi fungsi ditulis sebagai:
+      </p>
+
+      <code class="formula-display">(f ∘ g)(x) = f(g(x))</code>
+
+      <p class="mt-3 mb-0">
+        Artinya, nilai <strong>x</strong> terlebih dahulu dimasukkan ke fungsi
+        <strong>g</strong>, kemudian hasilnya digunakan sebagai input fungsi
+        <strong>f</strong>.
+      </p>
+    </div>
+  </div>
+
+  <h5>Langkah Menentukan Komposisi Fungsi</h5>
+
+  <ol>
+    <li>Tentukan fungsi yang dikerjakan terlebih dahulu.</li>
+    <li>Substitusikan hasil fungsi pertama ke fungsi berikutnya.</li>
+    <li>Sederhanakan bentuk aljabarnya.</li>
+  </ol>
+
+  <h5 class="mt-4">Contoh Perhitungan</h5>
+
+  <div class="card">
+    <div class="card-body">
+
+      <p>Diketahui:</p>
+
+      <ul>
+        <li><code>f(x)=2x+3</code></li>
+        <li><code>g(x)=x²</code></li>
+      </ul>
+
+      <hr>
+
+      <p><strong>Menentukan (f ∘ g)(x)</strong></p>
+
+      <code class="formula-display">
+        (f∘g)(x)=f(g(x))
+      </code>
+
+      <code class="formula-display">
+        =2(x²)+3
+      </code>
+
+      <code class="formula-display">
+        =2x²+3
+      </code>
+
+      <hr>
+
+      <p><strong>Menentukan (g ∘ f)(x)</strong></p>
+
+      <code class="formula-display">
+        (g∘f)(x)=g(f(x))
+      </code>
+
+      <code class="formula-display">
+        =(2x+3)²
+      </code>
+
+      <code class="formula-display">
+        =4x²+12x+9
+      </code>
+
+    </div>
+  </div>
+
+  <div class="alert alert-success mt-4 mb-0">
+    <strong>Kesimpulan:</strong> Komposisi fungsi <code>(f∘g)(x)</code> belum
+    tentu sama dengan <code>(g∘f)(x)</code>. Oleh karena itu, urutan penyusunan
+    fungsi sangat memengaruhi hasil akhir.
+  </div>
+</div>
+
+<!-- 1.6 Perubahan Input -->
+<div id="ch1-perubahan-input" class="mt-5">
+  <h3 class="subsection-title">1.6 Perubahan Input</h3>
+
+  <div class="alert alert-primary">
+    <i class="bi bi-arrow-left-right me-2"></i>
+    Perubahan input adalah perubahan nilai variabel bebas (<strong>x</strong>) yang
+    menyebabkan perubahan pada nilai fungsi <strong>f(x)</strong>. Besarnya perubahan
+    input biasanya dinyatakan dengan simbol <strong>Δx</strong> (delta x).
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Konsep Perubahan Input</div>
+    <div class="card-body">
+      <p>
+        Jika nilai input berubah dari <strong>x</strong> menjadi
+        <strong>x + Δx</strong>, maka nilai fungsi juga berubah dari
+        <strong>f(x)</strong> menjadi <strong>f(x + Δx)</strong>.
+      </p>
+
+      <code class="formula-display">
+        Δx = x<sub>baru</sub> - x<sub>lama</sub>
+      </code>
+
+      <code class="formula-display">
+        Δf = f(x + Δx) - f(x)
+      </code>
+    </div>
+  </div>
+
+  <h5>Contoh Perubahan Input</h5>
+
+  <div class="card">
+    <div class="card-body">
+
+      <p>Diketahui fungsi:</p>
+
+      <code class="formula-display">
+        f(x)=2x+1
+      </code>
+
+      <p class="mt-3">
+        Jika nilai <strong>x</strong> berubah dari <strong>2</strong> menjadi
+        <strong>3</strong>, maka:
+      </p>
+
+      <table class="table table-bordered text-center">
+        <thead class="table-light">
+          <tr>
+            <th>x</th>
+            <th>f(x)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>7</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li><strong>Δx = 3 - 2 = 1</strong></li>
+        <li><strong>Δf = 7 - 5 = 2</strong></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="alert alert-success mt-4 mb-0">
+    <strong>Kesimpulan:</strong> Setiap perubahan nilai input akan menghasilkan
+    perubahan pada nilai output. Besarnya perubahan output bergantung pada bentuk
+    fungsi yang digunakan.
+  </div>
+</div>
+
+<!-- 1.7 Laju Perubahan -->
+<div id="ch1-laju-perubahan" class="mt-5">
+  <h3 class="subsection-title">1.7 Laju Perubahan</h3>
+
+  <div class="alert alert-primary">
+    <i class="bi bi-speedometer2 me-2"></i>
+    Laju perubahan menunjukkan seberapa besar perubahan nilai output terhadap perubahan nilai input. Dalam fungsi, laju perubahan rata-rata dihitung dengan membandingkan perubahan output dengan perubahan input.
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Rumus Laju Perubahan</div>
+    <div class="card-body text-center">
+      <code class="formula-display">
+        Laju Perubahan = Δf / Δx
+      </code>
+
+      <p class="mt-3 mb-0">
+        atau dapat dituliskan sebagai:
+      </p>
+
+      <code class="formula-display">
+        (f(x₂) − f(x₁)) / (x₂ − x₁)
+      </code>
+    </div>
+  </div>
+
+  <h5>Contoh Perhitungan</h5>
+
+  <div class="card">
+    <div class="card-body">
+
+      <p>Diketahui fungsi:</p>
+
+      <code class="formula-display">
+        f(x)=2x+1
+      </code>
+
+      <p class="mt-3">
+        Tentukan laju perubahan pada interval
+        <strong>x=2</strong> hingga <strong>x=5</strong>.
+      </p>
+
+      <table class="table table-bordered text-center">
+        <thead class="table-light">
+          <tr>
+            <th>x</th>
+            <th>f(x)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>11</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="mb-2"><strong>Penyelesaian:</strong></p>
+
+      <code class="formula-display">
+        Δf = 11 − 5 = 6
+      </code>
+
+      <code class="formula-display">
+        Δx = 5 − 2 = 3
+      </code>
+
+      <code class="formula-display">
+        Laju Perubahan = 6 / 3 = 2
+      </code>
+
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-header">Interpretasi</div>
+    <div class="card-body">
+      <p class="mb-0">
+        Nilai laju perubahan sebesar <strong>2</strong> berarti setiap kenaikan
+        <strong>1 satuan</strong> pada nilai input akan menyebabkan nilai output
+        bertambah <strong>2 satuan</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="alert alert-success mt-4 mb-0">
+    <strong>Kesimpulan:</strong> Pada fungsi linear, laju perubahan selalu tetap
+    karena gradiennya konstan. Nilai inilah yang menentukan kemiringan grafik garis lurus.
+  </div>
+</div>
+
+<!-- 1.8 Sensitivitas Fungsi Linear dan Kuadrat -->
+<div id="ch1-sensitivitas" class="mt-5">
+  <h3 class="subsection-title">1.8 Sensitivitas Fungsi Linear dan Kuadrat</h3>
+
+  <div class="alert alert-primary">
+    <i class="bi bi-activity me-2"></i>
+    Sensitivitas fungsi menunjukkan seberapa besar perubahan nilai output akibat perubahan nilai input. Setiap jenis fungsi memiliki tingkat sensitivitas yang berbeda.
+  </div>
+
+  <div class="row g-4">
+
+    <!-- Linear -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Fungsi Linear</div>
+
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=2x+1</code>
+
+          <p class="mt-3">
+            Pada fungsi linear, setiap perubahan input menghasilkan perubahan output
+            yang tetap karena gradiennya konstan.
+          </p>
+
+          <table class="table table-bordered text-center">
+            <thead class="table-light">
+              <tr>
+                <th>x</th>
+                <th>f(x)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert alert-success mb-0">
+            Setiap kenaikan 1 pada x menyebabkan nilai f(x) bertambah 2.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kuadrat -->
+    <div class="col-lg-6">
+      <div class="concept-card h-100">
+        <div class="concept-card-header">Fungsi Kuadrat</div>
+
+        <div class="concept-card-body">
+          <code class="formula-display">f(x)=x²</code>
+
+          <p class="mt-3">
+            Pada fungsi kuadrat, perubahan output tidak tetap. Semakin besar nilai x,
+            perubahan output akan semakin cepat.
+          </p>
+
+          <table class="table table-bordered text-center">
+            <thead class="table-light">
+              <tr>
+                <th>x</th>
+                <th>f(x)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>9</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert alert-warning mb-0">
+            Semakin besar nilai x, semakin besar pula perubahan nilai f(x).
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h5 class="mt-5">Perbandingan Sensitivitas</h5>
+
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>Aspek</th>
+          <th>Fungsi Linear</th>
+          <th>Fungsi Kuadrat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gradien</td>
+          <td>Tetap</td>
+          <td>Berubah-ubah</td>
+        </tr>
+        <tr>
+          <td>Perubahan Output</td>
+          <td>Konstan</td>
+          <td>Semakin besar</td>
+        </tr>
+        <tr>
+          <td>Grafik</td>
+          <td>Garis lurus</td>
+          <td>Kurva parabola</td>
+        </tr>
+        <tr>
+          <td>Sensitivitas</td>
+          <td>Stabil</td>
+          <td>Meningkat seiring bertambahnya x</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-info mt-4 mb-0">
+    <strong>Kesimpulan:</strong> Fungsi linear memiliki sensitivitas yang tetap karena gradiennya konstan, sedangkan fungsi kuadrat memiliki sensitivitas yang berubah sehingga perubahan output menjadi semakin besar ketika nilai input meningkat.
+  </div>
+</div>
+
+<!-- 1.9 Analisis Numerik Sederhana -->
+<div id="ch1-analisis" class="mt-5">
+  <h3 class="subsection-title">1.9 Analisis Numerik Sederhana</h3>
+
+  <div class="alert alert-primary">
+    <i class="bi bi-bar-chart-fill me-2"></i>
+    Analisis numerik sederhana digunakan untuk memahami perilaku suatu fungsi
+    melalui perhitungan nilai fungsi pada beberapa input sehingga dapat diketahui
+    pola perubahan yang terjadi.
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">Studi Kasus</div>
+    <div class="card-body">
+      <p>
+        Diketahui fungsi linear:
+      </p>
+
+      <code class="formula-display">f(x)=2x+3</code>
+
+      <p class="mt-3">
+        Hitung nilai fungsi untuk beberapa nilai <strong>x</strong>.
+      </p>
+
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <thead class="table-light">
+            <tr>
+              <th>x</th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>f(x)</th>
+              <td>3</td>
+              <td>5</td>
+              <td>7</td>
+              <td>9</td>
+              <td>11</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mb-0">
+        Dari tabel di atas terlihat bahwa setiap kenaikan nilai
+        <strong>x sebesar 1</strong> menyebabkan nilai
+        <strong>f(x)</strong> bertambah <strong>2</strong>. Hal ini menunjukkan
+        bahwa fungsi linear memiliki laju perubahan yang konstan.
+      </p>
+    </div>
+  </div>
+
+  <h5>Langkah Analisis</h5>
+
+  <ol>
+    <li>Menentukan bentuk fungsi yang akan dianalisis.</li>
+    <li>Menentukan beberapa nilai input (<strong>x</strong>).</li>
+    <li>Menghitung nilai fungsi untuk setiap input.</li>
+    <li>Membandingkan perubahan nilai output.</li>
+    <li>Menarik kesimpulan berdasarkan hasil perhitungan.</li>
+  </ol>
+
+  <div class="card mt-4">
+    <div class="card-header">Hasil Analisis</div>
+    <div class="card-body">
+      <ul class="mb-0">
+        <li>Nilai fungsi meningkat secara teratur.</li>
+        <li>Laju perubahan bernilai tetap sebesar <strong>2</strong>.</li>
+        <li>Grafik fungsi berbentuk garis lurus.</li>
+        <li>Semakin besar nilai input, nilai output juga semakin besar.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alert alert-success mt-4 mb-0">
+    <strong>Kesimpulan:</strong> Analisis numerik membantu memahami karakteristik
+    suatu fungsi melalui data perhitungan. Dengan menghitung beberapa nilai input
+    dan output, kita dapat mengetahui pola perubahan, laju perubahan, serta sifat
+    dari fungsi tersebut.
+  </div>
+</div>
+
+          <!-- Contoh Soal -->
+<div id="ch1-contoh" class="mt-5">
+  <h3 class="subsection-title">Contoh Soal</h3>
+
+  <div class="alert alert-warning">
+    <i class="bi bi-lightbulb-fill me-2"></i>
+    Berikut beberapa contoh soal beserta penyelesaiannya untuk membantu memahami materi fungsi.
+  </div>
+
+  <div class="card example-card mt-3">
+    <div class="card-header example-card-header">
+      <i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1
+    </div>
+
+    <div class="card-body">
+      <p class="fw-semibold">Soal:</p>
+
+      <p>
+        Diketahui fungsi <code>f(x)=2x+5</code>.
+        Tentukan domain, kodomain, range, dan nilai <code>f(4)</code>.
+      </p>
+
+      <hr>
+
+      <p class="fw-semibold">Penyelesaian:</p>
+
+      <ul>
+        <li>Domain = ℝ</li>
+        <li>Kodomain = ℝ</li>
+        <li>Range = ℝ</li>
+        <li>f(4)=2(4)+5=13</li>
+      </ul>
+
+      <div class="alert alert-success mb-0">
+        Fungsi tersebut merupakan fungsi linear karena berbentuk <code>ax+b</code>.
+      </div>
+    </div>
+  </div>
+
+  <div class="card example-card mt-3">
+    <div class="card-header example-card-header">
+      <i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 2
+    </div>
+
+    <div class="card-body">
+      <p class="fw-semibold">Soal:</p>
+
+      <p>
+        Diketahui:
+      </p>
+
+      <ul>
+        <li><code>f(x)=2x+1</code></li>
+        <li><code>g(x)=x²</code></li>
+      </ul>
+
+      <p>Tentukan hasil komposisi <code>(f∘g)(x)</code>.</p>
+
+      <hr>
+
+      <p class="fw-semibold">Penyelesaian:</p>
+
+      <p>
+        Diketahui:
+      </p>
+
+      <code class="formula-display">(f∘g)(x)=f(g(x))</code>
+
+      <code class="formula-display">=2(x²)+1</code>
+
+      <code class="formula-display">=2x²+1</code>
+
+      <div class="alert alert-success mb-0">
+        Jadi, hasil komposisi fungsi <strong>(f∘g)(x)=2x²+1</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Video Pembelajaran -->
+          <div id="ch1-video" class="mt-5">
+            <h3 class="subsection-title">Video Pembelajaran</h3>
             <div class="placeholder-notice">
-              <i class="bi bi-pencil-square"></i>
-              <strong>Kelompok 1</strong> — Isi nama anggota kelompok di sini.<br>
-              Contoh: 1. Nama Anggota 1 &nbsp;|&nbsp; 2. Nama Anggota 2 &nbsp;|&nbsp; 3. Nama Anggota 3
+              <i class="bi bi-camera-video"></i>
+              <strong>Kelompok 1</strong> — Embed video pembelajaran di sini. Ganti <code>VIDEO_ID</code> dengan ID
+              video YouTube kalian.<br>
+              Contoh: <code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" ...&gt;&lt;/iframe&gt;</code>
             </div>
+            <div class="ratio ratio-16x9 mt-3"
+              style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Video Pembelajaran Bab 1 — Bilangan Real &amp; Fungsi" allowfullscreen
+                style="border:0;"></iframe>
+            </div>
+            <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video
+              pembelajaran yang sesuai.</p>
           </div>
-        </div>
 
-        <!-- 1.1 Sistem Bilangan Real -->
-        <div id="ch1-bilangan">
-          <h3 class="subsection-title">1.1 Sistem Bilangan Real</h3>
-          <div class="placeholder-notice">
-            <i class="bi bi-pencil-square"></i>
-            <strong>Area Materi — Kelompok 1</strong><br>
-            Isi bagian ini dengan penjelasan tentang sistem bilangan real: bilangan asli, bulat, rasional, irasional, dan sifat-sifatnya.
-          </div>
+<!-- Latihan Soal -->
+<div id="ch1-latihan" class="mt-5">
+  <h3 class="subsection-title">Latihan Soal</h3>
+
+  <div class="alert alert-warning">
+    <i class="bi bi-pencil-square me-2"></i>
+    Kerjakan latihan berikut berdasarkan materi Bab 1. Setelah selesai,
+    klik <strong>Lihat Pembahasan</strong> untuk memeriksa jawaban.
+  </div>
+
+  <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
+    <div class="card-body">
+
+      <ol class="mb-0">
+
+        <!-- Soal 1 -->
+        <li class="mb-4">
+          <p class="fw-semibold mb-2">Soal 1</p>
+
           <p>
-            Sistem bilangan real (<strong>ℝ</strong>) mencakup semua bilangan yang dapat ditempatkan pada garis bilangan.
-            <em>[Kelompok 1 melengkapi penjelasan di sini]</em>
+            Diketahui fungsi <code>f(x)=3x-2</code>.
+            Tentukan:
           </p>
-          <h5 class="mt-4">Hierarki Bilangan Real</h5>
-          <div class="table-responsive">
-            <table class="table table-bordered table-sm concept-table">
-              <thead>
-                <tr>
-                  <th>Jenis Bilangan</th><th>Notasi</th><th>Contoh</th><th>Keterangan</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Bilangan Asli</td><td><code>ℕ</code></td><td>1, 2, 3, ...</td><td><em>[Kelompok 1 isi]</em></td></tr>
-                <tr><td>Bilangan Bulat</td><td><code>ℤ</code></td><td>..., −2, −1, 0, 1, 2, ...</td><td><em>[Kelompok 1 isi]</em></td></tr>
-                <tr><td>Bilangan Rasional</td><td><code>ℚ</code></td><td>½, 0.75, −3</td><td><em>[Kelompok 1 isi]</em></td></tr>
-                <tr><td>Bilangan Irasional</td><td><code>ℚ'</code></td><td>√2, π, e</td><td><em>[Kelompok 1 isi]</em></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <blockquote class="blockquote-def">
-            <i class="bi bi-quote quote-icon"></i>
-            <p><em>[Kelompok 1: Tambahkan definisi penting tentang bilangan real di sini]</em></p>
-            <footer>— Sumber / Referensi</footer>
-          </blockquote>
-        </div>
 
-        <!-- 1.2 Konsep Fungsi -->
-        <div id="ch1-fungsi" class="mt-5">
-          <h3 class="subsection-title">1.2 Konsep Fungsi</h3>
-          <div class="placeholder-notice">
-            <i class="bi bi-pencil-square"></i>
-            <strong>Area Materi — Kelompok 1</strong><br>
-            Isi bagian ini dengan definisi fungsi, domain, kodomain, range, jenis-jenis fungsi, dan contoh.
-          </div>
-          <p><em>[Kelompok 1 mengisi penjelasan lengkap tentang fungsi di sini]</em></p>
-          <h5 class="mt-3">Contoh Jenis-Jenis Fungsi</h5>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="concept-card">
-                <div class="concept-card-header">Fungsi Linear</div>
-                <div class="concept-card-body">
-                  <code class="formula-display">f(x) = mx + b</code>
-                  <p class="mt-2"><em>[Kelompok 1: isi penjelasan]</em></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="concept-card">
-                <div class="concept-card-header">Fungsi Kuadrat</div>
-                <div class="concept-card-body">
-                  <code class="formula-display">f(x) = ax² + bx + c</code>
-                  <p class="mt-2"><em>[Kelompok 1: isi penjelasan]</em></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <ol type="a">
+            <li>Domain</li>
+            <li>Kodomain</li>
+            <li>Range</li>
+            <li>Nilai <code>f(5)</code></li>
+          </ol>
 
-        <!-- Contoh Soal -->
-        <div id="ch1-contoh" class="mt-5">
-          <h3 class="subsection-title">Contoh Soal</h3>
-          <div class="card example-card mt-3">
-            <div class="card-header example-card-header">
-              <i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1.1
-            </div>
-            <div class="card-body">
-              <p class="fw-semibold">Soal:</p>
-              <p><em>[Kelompok 1: isi contoh soal]</em></p>
-              <hr/>
-              <p class="fw-semibold">Penyelesaian:</p>
-              <p><em>[Kelompok 1: isi langkah penyelesaian]</em></p>
-            </div>
-          </div>
-          <div class="card example-card mt-3">
-            <div class="card-header example-card-header">
-              <i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 1.2
-            </div>
-            <div class="card-body">
-              <p class="fw-semibold">Soal:</p>
-              <p><em>[Kelompok 1: isi contoh soal kedua]</em></p>
-              <hr/>
-              <p class="fw-semibold">Penyelesaian:</p>
-              <p><em>[Kelompok 1: isi langkah penyelesaian]</em></p>
-            </div>
-          </div>
-        </div>
+          <details class="mt-3">
+            <summary style="cursor:pointer; color:var(--clr-primary); font-weight:600;">
+              Lihat Pembahasan
+            </summary>
 
-        <!-- Video Pembelajaran -->
-        <div id="ch1-video" class="mt-5">
-          <h3 class="subsection-title">Video Pembelajaran</h3>
-          <div class="placeholder-notice">
-            <i class="bi bi-camera-video"></i>
-            <strong>Kelompok 1</strong> — Embed video pembelajaran di sini. Ganti <code>VIDEO_ID</code> dengan ID video YouTube kalian.<br>
-            Contoh: <code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" ...&gt;&lt;/iframe&gt;</code>
-          </div>
-          <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Video Pembelajaran Bab 1 — Bilangan Real &amp; Fungsi"
-                    allowfullscreen
-                    style="border:0;"></iframe>
-          </div>
-          <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video pembelajaran yang sesuai.</p>
-        </div>
+            <div class="mt-3 p-3 rounded" style="background:var(--clr-primary-light);">
 
-        <!-- Latihan Soal -->
-        <div id="ch1-latihan" class="mt-5">
-          <h3 class="subsection-title">Latihan Soal</h3>
-          <div class="placeholder-notice">
-            <i class="bi bi-pencil-square"></i>
-            <strong>Kelompok 1</strong> — Isi latihan soal di bawah ini dengan soal-soal yang relevan dengan materi Bab 1.
-          </div>
-          <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
-            <div class="card-body">
-              <ol class="mb-0">
-                <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 1</p>
-                  <p><em>[Kelompok 1: isi soal latihan 1]</em></p>
-                  <details class="mt-2">
-                    <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                      <em>[Kelompok 1: isi kunci jawaban soal 1]</em>
-                    </div>
-                  </details>
-                </li>
-                <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 2</p>
-                  <p><em>[Kelompok 1: isi soal latihan 2]</em></p>
-                  <details class="mt-2">
-                    <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                      <em>[Kelompok 1: isi kunci jawaban soal 2]</em>
-                    </div>
-                  </details>
-                </li>
-                <li class="mb-3">
-                  <p class="fw-semibold mb-1">Soal 3</p>
-                  <p><em>[Kelompok 1: isi soal latihan 3]</em></p>
-                  <details class="mt-2">
-                    <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                    <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                      <em>[Kelompok 1: isi kunci jawaban soal 3]</em>
-                    </div>
-                  </details>
-                </li>
-              </ol>
+              <p><strong>Jawaban:</strong></p>
+
+              <ul>
+                <li>Domain = ℝ</li>
+                <li>Kodomain = ℝ</li>
+                <li>Range = ℝ</li>
+                <li>f(5)=3(5)-2=13</li>
+              </ul>
+
+              <hr>
+
+              <p class="mb-0">
+                Karena fungsi berbentuk <code>ax+b</code>, maka fungsi ini
+                merupakan fungsi linear sehingga domain, kodomain, dan
+                range-nya adalah himpunan bilangan real.
+              </p>
+
             </div>
-          </div>
-        </div>
+          </details>
+        </li>
 
-        <!-- Kalkulator Bab 1 -->
-        <div id="ch1-kalkulator" class="mt-5">
-          <div class="calc-section">
-            <div class="calc-header">
-              <i class="bi bi-calculator-fill me-2"></i>
-              Kalkulator Interaktif — Fungsi Linear
+        <!-- Soal 2 -->
+        <li class="mb-4">
+          <p class="fw-semibold mb-2">Soal 2</p>
+
+          <p>Diketahui:</p>
+
+          <ul>
+            <li><code>f(x)=2x+1</code></li>
+            <li><code>g(x)=x²</code></li>
+          </ul>
+
+          <p>Tentukan hasil komposisi <code>(f∘g)(x)</code>.</p>
+
+          <details class="mt-3">
+            <summary style="cursor:pointer; color:var(--clr-primary); font-weight:600;">
+              Lihat Pembahasan
+            </summary>
+
+            <div class="mt-3 p-3 rounded" style="background:var(--clr-primary-light);">
+
+              <code class="formula-display">(f∘g)(x)=f(g(x))</code>
+
+              <code class="formula-display">=2(x²)+1</code>
+
+              <code class="formula-display">=2x²+1</code>
+
+              <hr>
+
+              <p class="mb-0">
+                Pada komposisi fungsi, hasil dari fungsi <strong>g(x)</strong>
+                dimasukkan sebagai input ke fungsi <strong>f(x)</strong>.
+              </p>
+
             </div>
-            <div class="calc-body">
-              <p class="text-muted small mb-3">Hitung nilai fungsi linear <strong>f(x) = mx + b</strong></p>
-              <div class="row g-2 align-items-end">
-                <div class="col-sm-3">
-                  <label class="form-label small">Gradien (m)</label>
-                  <input type="number" class="form-control form-control-sm" id="ch1-m" value="2" step="0.1"/>
-                </div>
-                <div class="col-sm-3">
-                  <label class="form-label small">Konstanta (b)</label>
-                  <input type="number" class="form-control form-control-sm" id="ch1-b" value="3" step="0.1"/>
-                </div>
-                <div class="col-sm-3">
-                  <label class="form-label small">Nilai x</label>
-                  <input type="number" class="form-control form-control-sm" id="ch1-x" value="5" step="0.1"/>
-                </div>
-                <div class="col-sm-3">
-                  <button class="btn btn-calc w-100" onclick="calcLinear()">Hitung</button>
-                </div>
-              </div>
-              <div class="calc-result mt-3" id="ch1-result">
-                Masukkan nilai, lalu klik <strong>Hitung</strong>
-              </div>
-              <div class="calc-note">
-                💡 Kalkulator ini menghitung f(x) = mx + b. Kelompok 1 dapat mengembangkan kalkulator sesuai topik bab.
-              </div>
+          </details>
+        </li>
+
+        <!-- Soal 3 -->
+        <li>
+          <p class="fw-semibold mb-2">Soal 3</p>
+
+          <p>
+            Diketahui fungsi <code>f(x)=2x+1</code>.
+            Tentukan laju perubahan fungsi pada interval
+            <strong>x=2</strong> sampai <strong>x=5</strong>.
+          </p>
+
+          <details class="mt-3">
+            <summary style="cursor:pointer; color:var(--clr-primary); font-weight:600;">
+              Lihat Pembahasan
+            </summary>
+
+            <div class="mt-3 p-3 rounded" style="background:var(--clr-primary-light);">
+
+              <p><strong>Langkah 1</strong></p>
+
+              <ul>
+                <li>f(2)=5</li>
+                <li>f(5)=11</li>
+              </ul>
+
+              <p><strong>Langkah 2</strong></p>
+
+              <code class="formula-display">
+                Laju Perubahan =
+                (11−5)/(5−2)
+              </code>
+
+              <code class="formula-display">
+                =6/3=2
+              </code>
+
+              <hr>
+
+              <p class="mb-0">
+                Nilai 2 menunjukkan bahwa setiap kenaikan 1 satuan pada
+                input akan menyebabkan output bertambah 2 satuan.
+              </p>
+
             </div>
-          </div>
-        </div>
+          </details>
+        </li>
 
-        <div class="chapter-nav-bottom">
-          <a href="../index.html#pengantar" class="btn btn-chapter-nav-outline">
-            <i class="bi bi-arrow-left me-1"></i> Kata Pengantar
-          </a>
-          <a href="kelompok2.html" class="btn btn-chapter-nav">
-            Bab 2 <i class="bi bi-arrow-right ms-1"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="content-footer">
-        <div class="row g-3 align-items-center">
-          <div class="col-md-8">
-            <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
-            <div class="footer-meta">Disusun oleh 6 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
-          </div>
-          <div class="col-md-4 text-md-end">
-            <a href="#chapter-1" class="btn btn-sm btn-outline-secondary">
-              <i class="bi bi-arrow-up me-1"></i>Kembali ke Atas
-            </a>
-          </div>
-        </div>
-      </footer>
+      </ol>
 
     </div>
-  </main>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../script.js"></script>
+          <!-- Kalkulator Bab 1 -->
+<div id="ch1-kalkulator" class="mt-5">
+  <div class="calc-section">
+    <div class="calc-header">
+      <i class="bi bi-calculator-fill me-2"></i>
+      Kalkulator Interaktif — Fungsi Linear
+    </div>
+
+    <div class="calc-body">
+
+      <p class="text-muted small mb-3">
+        Masukkan nilai gradien (<strong>m</strong>), konstanta (<strong>b</strong>), dan nilai
+        <strong>x</strong> untuk menghitung fungsi linear
+        <strong>f(x)=mx+b</strong>.
+      </p>
+
+      <div class="row g-2 align-items-end">
+
+        <div class="col-md-3">
+          <label class="form-label small">Gradien (m)</label>
+          <input type="number"
+                 class="form-control form-control-sm"
+                 id="ch1-m"
+                 value="2"
+                 step="0.1">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label small">Konstanta (b)</label>
+          <input type="number"
+                 class="form-control form-control-sm"
+                 id="ch1-b"
+                 value="3"
+                 step="0.1">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label small">Nilai x</label>
+          <input type="number"
+                 class="form-control form-control-sm"
+                 id="ch1-x"
+                 value="5"
+                 step="0.1">
+        </div>
+
+        <div class="col-md-3">
+
+          <button
+            class="btn btn-calc w-100 mb-2"
+            onclick="calcLinear()">
+            Hitung
+          </button>
+
+          <button
+            class="btn btn-outline-secondary w-100"
+            onclick="resetLinearCalc()">
+            Reset
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="calc-result mt-4" id="ch1-result">
+        Masukkan nilai kemudian klik
+        <strong>Hitung</strong>.
+      </div>
+
+      <div class="calc-note mt-3">
+        💡 Kalkulator ini membantu menghitung nilai fungsi linear,
+        menampilkan langkah penyelesaian, informasi fungsi,
+        serta analisis berdasarkan nilai gradien.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+          <div class="chapter-nav-bottom">
+            <a href="../index.html#pengantar" class="btn btn-chapter-nav-outline">
+              <i class="bi bi-arrow-left me-1"></i> Kata Pengantar
+            </a>
+            <a href="kelompok2.html" class="btn btn-chapter-nav">
+              Bab 2 <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="content-footer">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-8">
+              <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
+              <div class="footer-meta">Disusun oleh 6 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
+            </div>
+            <div class="col-md-4 text-md-end">
+              <a href="#chapter-1" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-up me-1"></i>Kembali ke Atas
+              </a>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script.js"></script>
 </body>
+
 </html>
