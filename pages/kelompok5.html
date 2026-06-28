@@ -202,8 +202,10 @@
 
           <div id="ch5-max-min">
             <h3 class="subsection-title">5.1 Pendekatan Numerik Nilai Approx</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                5</strong><br>Pendekatan numerik adalah cara menghitung suatu nilai (misalnya turunan) dengan menggunakan angka-angka pendekatan, bukan hasil rumus yang pasti.</div>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Apa Itu Pendekatan Numerik?
+                </strong><br>Pendekatan numerik adalah cara menghitung suatu nilai (misalnya turunan) dengan menggunakan angka-angka pendekatan, bukan hasil rumus yang pasti. Disini terdapat 3 cara 
+                             mementukan nilai approx/aproksimasi yaitu dengan Forward Difference, Backward Difference, dan Central Difference
+                            </div>
             <p>
               <em><strong>1. Metode Fordward  :</em>
               <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -249,9 +251,51 @@
             </p>
           </blockquote>
             <div class="concept-card mt-3">
-              <div class="concept-card-header">Uji Turunan Pertama</div>
+              <div class="concept-card-header">Contoh Soal Latihan Forward Difference</div>
               <div class="concept-card-body">
-                <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                <p class="mb-0"><em>
+                  <tr>
+                    <td> Kerjakanlah Contoh Soal Dengan </td>
+                  </tr>
+                  <br>
+                
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X³     ||</td>
+                   
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>1     ||</td>
+
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>H</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>0.2</td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>Cara Pengerjaan</td> 
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(1) = 1³ = "1" </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x + h) = 1 + 2 = 1,2 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f(1,2) = 1,2³ = "1,728" </td>
+                  </tr>
+                  <br>
+
+                  $$f'(x) \approx \frac{f(1,728) - f(1)}{0,2}$$
+                  $$f'(x) = 3,64 $$
+                  
+                </em></p>
               </div>
             </div><br><br>         
 
@@ -292,7 +336,7 @@
                   <tr>
                     <td style="padding-right: 15px; vertical-align: top;"><strong>f(x - h)</td>
                     <td style="padding-right: 10px; vertical-align: top;">=</td>
-                    <td>Nilai fungsi f di titik x + h</td>
+                    <td>Nilai fungsi f di titik x - h</td>
                   </tr>
                   
                 </table>
@@ -300,9 +344,46 @@
             </p>
           </blockquote>
             <div class="concept-card mt-3">
-              <div class="concept-card-header">Uji Turunan Pertama</div>
+              <div class="concept-card-header">Contol Soal Latihan Backward Difference</div>
               <div class="concept-card-body">
-                <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                <p class="mb-0"><em>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X⁴     ||
+                  </td>
+                   
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>3     ||</td>
+
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>H</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>0.1</td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>Cara Pengerjaan</td> 
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(1) = 3⁴ = "81" </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x - h) = 3 - 0,1 = 2,9 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f(2,9) = 2,9⁴ = "70,7281" </td>
+                  </tr>
+                  <br>
+
+                  $$f'(x) \approx \frac{f(81) - f(70,7281)}{0,1}$$
+                  $$f'(x) = 102,719 $$
+                </em></p>
               </div>
             </div><br><br>
           
@@ -352,9 +433,54 @@
             </p>
               </blockquote>
               <div class="concept-card mt-3">
-                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-header">Contoh Soal Latihan Central Difference</div>
                 <div class="concept-card-body">
-                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                  <p class="mb-0"><em>
+                    <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X³ + 2X     ||</td>
+                   
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>2     ||</td>
+
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>H</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>0.1</td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>Cara Pengerjaan</td> 
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x + h) = 2 + 0,1 = 2,1 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f(2,1) = 2,1³ + 2 x 2,1 = "13,461" </td>
+                  </tr>
+                  <br>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x - h) = 2 - 0,1 = 1,9 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(1,9) = 1,9³ + 2 x 1,9 = "10,659" </td>
+                  </tr>
+                  <br>
+
+                  $$f'(x) \approx \frac{f(13,461) - f(10,659)}{2 x 0,1}$$
+                  
+                  $$f'(x) \approx \frac{2,802}{2 x 0,1}$$
+
+                  $$ \approx 14,01 $$
+                </em></p>
                 </div>
               </div>
             </div><br><br>
@@ -399,11 +525,47 @@ value) dengan nilai pendekatan (approximation)</div>
             </p>
               </blockquote>
               <div class="concept-card mt-3">
-                <div class="concept-card-header">Uji Turunan Pertama</div>
-                <div class="concept-card-body">
-                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
-                </div>
-              </div><br><br>
+            <div class="concept-card-header">Uji Rumus Numerik Nilai True</div>
+            <div class="concept-card-body">
+              <p class="mb-3"><strong>Contoh Soal Aturan Pangkat (Nilai True):</strong></p>
+              <p class="mb-2">
+                Gunakan rumus dasar aturan pangkat $$x^n \rightarrow n x^{n-1}$$ untuk mencari <strong>Nilai True (Eksak)</strong> dari turunan fungsi <strong>$$f(x) = 4x^3$$</strong> pada titik di mana turunan dihitung <strong>$$x = 2$$</strong>!
+              </p>
+              <hr class="my-2">
+              
+              <p class="mb-1"><strong>Langkah 1: Identifikasi Komponen Fungsi</strong></p>
+              <p class="mb-3">
+                Berdasarkan fungsi $$f(x) = 4x^3$$, kita dapat menentukan variabel sesuai keterangan rumus:
+                <br>
+                • Bilangan Pangkat (n) = 3
+                <br>
+                • Koefisien pengali = 4
+              </p>
+
+              <p class="mb-1"><strong>Langkah 2: Terapkan Rumus Aturan Pangkat</strong></p>
+              <p class="mb-3">
+                Turunkan fungsi dengan mengalikan pangkat ke depan lalu kurangi pangkatnya dengan 1:
+                <br>
+                $$f'(x) = 4 \cdot (n x^{n-1})$$
+                $$f'(x) = 4 \cdot (3x^{3-1})$$
+                $$f'(x) = 12x^2$$
+              </p>
+
+              <p class="mb-1"><strong>Langkah 3: Substitusikan Titik x yang Dihitung</strong></p>
+              <p class="mb-3">
+                Masukkan nilai titik di mana turunan dihitung (x = 2) ke dalam hasil turunan:
+                <br>
+                $$\text{Nilai True} = 12(2)^2$$
+                $$\text{Nilai True} = 12(4) = \mathbf{48}$$
+              </p>
+
+              <p class="mb-0">
+                <span class="badge bg-primary">Info</span> 
+                <br>
+                Hasil akhir menunjukkan bahwa <strong>Nilai True (Eksak)</strong> dari laju perubahan fungsi tersebut adalah <strong>48</strong>. Angka inilah yang menjadi standar kebenaran mutlak sebelum diuji menggunakan pendekatan metode numerik.
+              </p>
+            </div>
+          </div><br><br>
 
               <p><em>
               
@@ -441,14 +603,63 @@ value) dengan nilai pendekatan (approximation)</div>
               </em>
             </p>
               </blockquote>
-              <div class="concept-card mt-3">
-                <div class="concept-card-header">Uji Turunan Pertama</div>
-                <div class="concept-card-body">
-                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
-                </div>
-              </div><br><br>
+            <div class="concept-card mt-3">
+            <div class="concept-card-header">Uji Rumus Galat Mutlak</div>
+            <div class="concept-card-body">
+              
 
-              <div id="ch5-max-min">
+              <p class="mb-3"><strong>Contoh Soal Menggunakan Rumus Galat Mutlak:</strong></p>
+              <p class="mb-2">
+                Berdasarkan uji komputasi sebelumnya, diperoleh data Nilai Sebenarnya sebesar <strong>48</strong> dan Nilai Aproksimasi (pendekatan komputer) sebesar <strong>49.2</strong>. 
+                <br><br>
+                Hitunglah nilai galat/kesalahan mutlak (<strong>Error</strong>) dari hasil komputasi tersebut menggunakan rumus:
+              </p>
+              
+              <div style="text-align: center; margin: 20px 0; font-size: 1.2rem; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+                Error = | x<sub>true</sub> - x<sub>approx</sub> |
+              </div>
+              
+              <hr class="my-3">
+              
+              <p class="mb-1"><strong>Langkah 1: Identifikasi Variabel Simbol</strong></p>
+              <div class="mb-4">
+                <p class="mb-2 text-muted">Berdasarkan data soal dan keterangan rumus pada slide:</p>
+                <table style="border: none; width: 100%; max-width: 380px; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding: 6px 0; width: 45%; vertical-align: middle;">• Nilai Sebenarnya</td>
+                    <td style="padding: 6px 8px; width: 25%; font-weight: bold; vertical-align: middle; color: #1a73e8; font-family: 'Times New Roman', Times, serif; font-size: 1.1rem;">(x<sub>true</sub>)</td>
+                    <td style="padding: 6px 0; width: 30%; vertical-align: middle; font-weight: bold;">= 48</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 0; vertical-align: middle;">• Nilai Aproksimasi</td>
+                    <td style="padding: 6px 8px; font-weight: bold; vertical-align: middle; color: #1a73e8; font-family: 'Times New Roman', Times, serif; font-size: 1.1rem;">(x<sub>approx</sub>)</td>
+                    <td style="vertical-align: middle; font-weight: bold;">= 49.2</td>
+                  </tr>
+                </table>
+              </div>
+
+              <p class="mb-1"><strong>Langkah 2: Substitusi ke Dalam Rumus Error</strong></p>
+              <p class="mb-3">
+                Masukkan nilai ke dalam rumus tanda mutlak (ingat, tanda mutlak selalu mengubah hasil operasi negatif menjadi positif karena mengukur selisih jarak murni):
+              </p>
+              
+              <div style="text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 1.15rem; line-height: 2; margin-bottom: 20px;">
+                Error = | 48 - 49.2 |<br>
+                Error = | -1.2 |<br>
+                <strong>Error = 1.2</strong>
+              </div>
+
+              <div style="background-color: rgba(220,53,69,0.05); padding: 12px; border-radius: 6px; border: 1px dashed rgba(220,53,69,0.2);">
+                <span class="badge bg-danger mb-2">Kesimpulan Interpretasi</span> 
+                <p class="mb-0" style="font-size: 0.95em; line-height: 1.5;">
+                  Nilai galat/kesalahan mutlak (<strong>Error</strong>) atau selisih murni yang terjadi antara perhitungan komputer dengan nilai aslinya adalah sebesar <strong>1.2</strong> satuan.
+                </p>
+              </div>
+
+            </div>
+          </div><br>
+
+           <div id="ch5-max-min">
             <h3 class="subsection-title">5.3 Kriteria metode numerik yang baik</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
                 5</strong><br>Kriteria metode numerik yang baik adalah ukuran untuk menilai apakah suatu metode pendekatan dalam perhitungan sudah layak digunakan atau tidak. suatu metode dikatakan baik jika memenuhi tiga hal utama yaitu akurat, stabil, dan efisien.
@@ -494,11 +705,72 @@ value) dengan nilai pendekatan (approximation)</div>
             </p>
           </blockquote>
               <div class="concept-card mt-3">
-                <div class="concept-card-header">Uji Turunan Pertama</div>
-                <div class="concept-card-body">
-                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
-                </div>
-              </div><br><br>
+  <div class="concept-card-header">Contoh Soal Akurat</div>
+  <div class="concept-card-body">
+
+    <p class="mb-3"><strong>Contoh Soal Pembahasan Lengkap:</strong></p>
+    <div class="p-3 bg-light rounded mb-4" style="font-size: 0.95rem; border: 1px solid #e0e0e0; line-height: 1.6;">
+      Sebuah sensor pada perangkat IoT mendeteksi percepatan arus data yang bergerak mengikuti fungsi posisi <strong>f(x) = 2x<sup>3</sup></strong>. Saat melakukan pengujian pada titik lokasi <strong>x = 2</strong>, sistem komputer memberikan hasil aproksimasi (pendekatan numerik) sebesar <strong>24.75</strong>.
+      <br><br>
+      <strong>Pertanyaan:</strong>
+      <ol class="mb-0 pl-3">
+        <li>Tentukan Nilai True (Eksak) dari turunan fungsi tersebut menggunakan Aturan Pangkat matematika murni!</li>
+        <li>Hitung besar nilai galat mutlak (Error) komputasi yang terjadi berdasarkan rumus slide akurasi!</li>
+      </ol>
+    </div>
+    <hr class="my-3">
+    
+    <p class="mb-1"><strong>Langkah 1: Hitung Nilai True (Eksak) Berdasarkan Aturan Pangkat</strong></p>
+    <div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+      Gunakan aturan turunan pangkat dasar matematika murni di mana bentuk x<sup>n</sup> diturunkan menjadi n · x<sup>n-1</sup>:
+      <br>
+      • Fungsi awal: f(x) = 2x<sup>3</sup> (pangkat n = 3)
+      <br>
+      • Hasil Turunan: f'(x) = 2 · (3x<sup>3-1</sup>) = 6x<sup>2</sup>
+      <br>
+      • Substitusikan nilai titik posisi x = 2 ke dalam fungsi turunan tersebut:
+      <div class="text-center my-2" style="font-family: 'Times New Roman', Times, serif; font-size: 1.2rem; font-weight: bold; color: #1a73e8;">
+        Nilai True (x<sub>true</sub>) = 6 · (2)<sup>2</sup> = 6 · 4 = 24
+      </div>
+    </div>
+
+    <p class="mb-1"><strong>Langkah 2: Identifikasi Variabel Komponen Uji Error</strong></p>
+    <div class="mb-4" style="padding-left: 5px;">
+      <p class="mb-2 text-muted">Kumpulkan parameter data yang akan dihitung agar posisinya sejajar lurus:</p>
+      <table style="border: none; width: 100%; max-width: 400px; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 5px 0; width: 45%; vertical-align: middle;">• Nilai Sebenarnya</td>
+          <td style="padding: 5px 8px; width: 25%; font-weight: bold; vertical-align: middle; color: #1a73e8; font-family: 'Times New Roman', Times, serif; font-size: 1.1rem;">(x<sub>true</sub>)</td>
+          <td style="padding: 5px 0; width: 30%; vertical-align: middle; font-weight: bold;">= 24</td>
+        </tr>
+        <tr>
+          <td style="padding: 5px 0; vertical-align: middle;">• Nilai Aproksimasi</td>
+          <td style="padding: 5px 8px; font-weight: bold; vertical-align: middle; color: #1a73e8; font-family: 'Times New Roman', Times, serif; font-size: 1.1rem;">(x<sub>approx</sub>)</td>
+          <td style="vertical-align: middle; font-weight: bold;">= 24.75</td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="mb-1"><strong>Langkah 3: Substitusi ke Dalam Rumus Galat Mutlak</strong></p>
+    <div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+      Gunakan rumus pencarian selisih murni: <strong>Error = | x<sub>true</sub> - x<sub>approx</sub> |</strong>. Sifat tanda mutlak menjamin hasil akhir tidak pernah bernilai negatif.
+      <div class="text-center my-3" style="font-family: 'Times New Roman', Times, serif; font-size: 1.15rem; line-height: 1.8; background-color: #f8f9fa; padding: 10px; border-radius: 4px;">
+        Error = | 24 - 24.75 | <br>
+        Error = | -0.75 | <br>
+        <strong>Error = 0.75</strong>
+      </div>
+    </div>
+
+    <div style="background-color: rgba(40,167,69,0.04); padding: 14px; border-radius: 6px; border: 1px dashed rgba(40,167,69,0.25);">
+      <span class="badge bg-success mb-2">Evaluasi Hasil Akhir</span> 
+      <p class="mb-0 text-dark" style="font-size: 0.95em; line-height: 1.5; text-align: justify;">
+        Besar nilai galat mutlak (<strong>Error</strong>) yang didapatkan adalah <strong>0.75</strong> satuan data. Nilai kesalahan yang kecil ini membuktikan bahwa pengujian kalkulasi di tingkat komputasi perangkat lunak telah berhasil mendekati performa standar <strong>Akurat</strong>.
+      </p>
+    </div>
+
+  </div>
+</div><br><br>
+
 
               <p><em>
               
@@ -532,9 +804,66 @@ value) dengan nilai pendekatan (approximation)</div>
               </p>
             </blockquote>
                 <div class="concept-card mt-3">
-                  <div class="concept-card-header">Uji Turunan Pertama</div>
+                  <div class="concept-card-header">Contoh Soal Latihan Stabil</div>
                   <div class="concept-card-body">
-                    <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                    <p class="mb-3"><strong>Contoh Soal Pengujian Kestabilan (Stabil):</strong></p>
+                <div class="p-3 bg-light rounded mb-4" style="font-size: 0.95rem; border: 1px solid #e0e0e0; line-height: 1.6;">
+                  Seorang analis sistem menguji kestabilan metode numerik untuk menghitung turunan fungsi <strong>f(x) = 4x<sup>2</sup></strong> pada titik <strong>x = 1</strong> (Nilai True = 8). 
+                  Sistem diuji menggunakan dua ukuran langkah berbeda, yaitu <strong>h = 0.2</strong> dan <strong>h = 0.1</strong>. 
+                  <br><br>
+                  Hasil pendekatan komputer menunjukkan:
+                  <br>
+                  • Untuk h = 0.2 &rarr; Nilai Aproksimasi = <strong>8.8</strong>
+                  <br>
+                  • Untuk h = 0.1 &rarr; Nilai Aproksimasi = <strong>8.4</strong>
+                  <br><br>
+                  <strong>Pertanyaan:</strong> Hitunglah galat mutlak (Error) dari kedua percobaan tersebut dan buktikan apakah metode ini memenuhi kriteria <strong>Stabil</strong> berdasarkan prinsip slide!
+                </div>
+                <hr class="my-3">
+
+                <p class="mb-1"><strong>Langkah 1: Hitung Galat Mutlak untuk Percobaan 1 (h = 0.2)</strong></p>
+                <div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+                  Diketahui Nilai True (x<sub>true</sub>) = 8 dan Nilai Aproksimasi pertama (x<sub>approx1</sub>) = 8.8.
+                  <br>
+                  Gunakan rumus: <strong>Error = | x<sub>true</sub> - x<sub>approx</sub> |</strong>
+                  <div class="text-center my-2" style="font-family: 'Times New Roman', Times, serif; font-size: 1.15rem; font-weight: bold; color: #dc3545;">
+                    Error<sub>1</sub> = | 8 - 8.8 | = | -0.8 | = 0.8
+                  </div>
+                </div>
+
+                <p class="mb-1"><strong>Langkah 2: Hitung Galat Mutlak untuk Percobaan 2 (h = 0.1)</strong></p>
+                <div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+                  Diketahui Nilai True (x<sub>true</sub>) = 8 dan Nilai Aproksimasi kedua (x<sub>approx2</sub>) = 8.4 (di mana nilai h diperkecil).
+                  <br>
+                  Gunakan rumus yang sama:
+                  <div class="text-center my-2" style="font-family: 'Times New Roman', Times, serif; font-size: 1.15rem; font-weight: bold; color: #28a745;">
+                    Error<sub>2</sub> = | 8 - 8.4 | = | -0.4 | = 0.4
+                  </div>
+                </div>
+
+                <p class="mb-1"><strong>Langkah 3: Analisis Perbandingan Kestabilan (Simbol Tabel)</strong></p>
+                <div class="mb-4" style="padding-left: 5px;">
+                  <p class="mb-2 text-muted">Mari kita sejajarkan data perubahan nilai langkah (h) terhadap galatnya:</p>
+                  <table style="border: none; width: 100%; max-width: 450px; border-collapse: collapse;">
+                    <tr>
+                      <td style="padding: 5px 0; width: 50%; vertical-align: middle;">• Ukuran Langkah Awal</td>
+                      <td style="padding: 5px 8px; width: 20%; font-weight: bold; vertical-align: middle; color: #1a73e8; font-family: 'Times New Roman', Times, serif;">h = 0.2</td>
+                      <td style="padding: 5px 0; width: 30%; vertical-align: middle; font-weight: bold;">&rarr; Error = 0.8</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 5px 0; vertical-align: middle;">• Ukuran Langkah Diperkecil</td>
+                      <td style="padding: 5px 8px; font-weight: bold; vertical-align: middle; color: #1a73e8; font-family: 'Times New Roman', Times, serif;">h = 0.1 (&darr;)</td>
+                      <td style="vertical-align: middle; font-weight: bold;">&rarr; Error = 0.4 (&darr;)</td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div style="background-color: rgba(0,123,255,0.04); padding: 14px; border-radius: 6px; border: 1px dashed rgba(0,123,255,0.25);">
+                  <span class="badge bg-primary mb-2">Kesimpulan Pembuktian Kestabilan</span> 
+                  <p class="mb-0 text-dark" style="font-size: 0.95em; line-height: 1.5; text-align: justify;">
+                    Berdasarkan hasil pengujian, ketika nilai langkah diperkecil dari <strong>h = 0.2 menjadi h = 0.1 (h &darr;)</strong>, nilai galatnya terbukti ikut menurun secara konsisten dari <strong>0.8 menjadi 0.4 (Error &darr;)</strong>. Hal ini menunjukkan hasil pendekatan semakin merapat menuju nilai aslinya. Dengan demikian, metode numerik ini terbukti memenuhi kriteria <strong>Stabil</strong>.
+                  </p>
+                </div>
                   </div>
                 </div>
 
@@ -575,9 +904,75 @@ value) dengan nilai pendekatan (approximation)</div>
           </p>
         </blockquote>
                         <div class="concept-card mt-3">
-                  <div class="concept-card-header">Uji Turunan Pertama</div>
+                  <div class="concept-card-header">Contoh Soal Latihan Efisien</div>
                   <div class="concept-card-body">
-                    <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+              
+                  <p class="mb-3"><strong>Contoh Soal Pengujian Efisiensi:</strong></p>
+                  <div class="p-3 bg-light rounded mb-4" style="font-size: 0.95rem; border: 1px solid #e0e0e0; line-height: 1.6;">
+                    Sebuah sistem kecerdasan buatan (AI) diuji untuk memproses turunan data numerik. 
+                    Sistem tersebut berhasil memberikan tingkat hasil (akurasi) sebesar 96% (atau jika didesimalkan menjadi 0.96). 
+                    Waktu komputasi yang dihabiskan oleh komputer untuk menyelesaikan seluruh langkah pengujian tersebut adalah 0.12 detik.
+                    <br><br>
+                    <strong>Pertanyaan:</strong> Berapakah nilai skor Efisiensi dari performa komputasi sistem tersebut berdasarkan rumus standar pada slide?
+                  </div>
+                  <hr class="my-3">
+
+                  <p class="mb-1"><strong>Langkah 1: Identifikasi Variabel Komponen</strong></p>
+                  <div class="mb-4" style="padding-left: 5px;">
+                    <p class="mb-2 text-muted">Kumpulkan data dari soal agar posisinya berbaris sejajar lurus:</p>
+                    <table style="border: none; width: 100%; max-width: 450px; border-collapse: collapse;">
+                      <tr>
+                        <td style="padding: 5px 0; width: 50%; vertical-align: middle;">• Hasil (Akurasi)</td>
+                        <td style="padding: 5px 8px; width: 20%; font-weight: bold; vertical-align: middle; color: #1a73e8;">Akurasi</td>
+                        <td style="padding: 5px 0; width: 30%; vertical-align: middle; font-weight: bold;">= 0.96</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px 0; vertical-align: middle;">• Waktu / Langkah Proses</td>
+                        <td style="padding: 5px 8px; font-weight: bold; vertical-align: middle; color: #1a73e8;">Waktu</td>
+                        <td style="vertical-align: middle; font-weight: bold;">= 0.12 detik</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <p class="mb-1"><strong>Langkah 2: Substitusi ke Dalam Rumus Pembagian Efisiensi</strong></p>
+                  <div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+                    Masukkan nilai variabel komponen ke dalam susunan rumus pembagian:
+                    
+                    <div class="my-3 d-flex justify-content-center align-items-center" style="font-family: 'Times New Roman', Times, serif; font-size: 1.2rem;">
+                      <span style="font-weight: bold; margin-right: 10px;">Efisiensi =</span>
+                      <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+                        <tr>
+                          <td style="border-bottom: 2px solid #333; padding: 2px 10px; font-weight: 500;">hasil (akurasi)</td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 2px 10px; font-weight: 500;">waktu / langkah</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div class="my-3 d-flex justify-content-center align-items-center" style="font-family: 'Times New Roman', Times, serif; font-size: 1.2rem;">
+                      <span style="font-weight: bold; margin-right: 10px;">Efisiensi =</span>
+                      <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+                        <tr>
+                          <td style="border-bottom: 2px solid #333; padding: 2px 10px;">0.96</td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 2px 10px;">0.12</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div class="text-center my-2" style="font-family: 'Times New Roman', Times, serif; font-size: 1.25rem; font-weight: bold; color: #28a745;">
+                      Efisiensi = 8
+                    </div>
+                  </div>
+
+                  <div style="background-color: rgba(23,162,184,0.04); padding: 14px; border-radius: 6px; border: 1px dashed rgba(23,162,184,0.25);">
+                    <span class="badge bg-info mb-2">Kesimpulan Hasil Analisis</span> 
+                    <p class="mb-0 text-dark" style="font-size: 0.95em; line-height: 1.5; text-align: justify;">
+                      Berdasarkan perhitungan di atas, diperoleh nilai indeks **Efisiensi sebesar 8**. Nilai ini menunjukkan rasio keseimbangan yang sangat baik antara tingginya akurasi yang dihasilkan algoritma terhadap ringkasnya waktu pemrosesan langkah komputasi.
+                    </p>
+                  </div>
                   </div>
                 </div>
 
@@ -646,7 +1041,110 @@ seperti kecepatan, pertumbuhan, atau penurunan dalam berbagai konteks.</div>
       </tr>
     </table>
   </p>
-</blockquote><br><br>
+</blockquote>
+
+<div class="concept-card mt-3">
+                  <div class="concept-card-header">Contoh Soal Latihan Interpretasi</div>
+                  <div class="concept-card-body">
+                  <p class="mb-3"><strong>Contoh Soal Komparasi 3 Skema Numerik & Interpretasi:</strong></p>
+<div class="p-3 bg-light rounded mb-4" style="font-size: 0.95rem; border: 1px solid #e0e0e0; line-height: 1.6;">
+  Sebuah sistem pemantau suhu mesin industri bekerja mengikuti fungsi bursa data <strong>f(x) = x<sup>2</sup> + 2x</strong>, di mana <strong>x</strong> mewakili waktu dalam menit dan <strong>f(x) = suhu (°C)</strong>. 
+  Analis ingin memprediksi laju perubahan sesaat suhu mesin pada titik evaluasi utama <strong>x = 3</strong> menggunakan interval ukuran langkah kecil <strong>h = 0.1</strong>.
+  <br><br>
+  <strong>Pertanyaan:</strong>
+  <br>
+  1. Hitung nilai pendekatan turunan f'(3) menggunakan skema <strong>Beda Maju (Forward)</strong>, <strong>Beda Mundur (Backward)</strong>, dan <strong>Beda Pusat (Central)</strong>!
+  <br>
+  2. Tuliskan kalimat baku interpretasi hasilnya berdasarkan standar panduan slide!
+</div>
+<hr class="my-3">
+
+<p class="mb-1"><strong>Langkah 1: Kumpulkan Data Nilai Evaluasi Fungsi</strong></p>
+<div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+  Sebelum masuk ke rumus skema, cari terlebih dahulu nilai fungsi f(x) pada titik-titik yang dibutuhkan (x, x+h, dan x-h):
+  <br>
+  • Nilai utama <b>f(x)</b> &rarr; f(3) = 3<sup>2</sup> + 2(3) = 9 + 6 = <strong>15</strong>
+  <br>
+  • Titik maju <b>f(x+h)</b> &rarr; f(3 + 0.1) = f(3.1) = 3.1<sup>2</sup> + 2(3.1) = 9.61 + 6.2 = <strong>15.81</strong>
+  <br>
+  • Titik mundur <b>f(x-h)</b> &rarr; f(3 - 0.1) = f(2.9) = 2.9<sup>2</sup> + 2(2.9) = 8.41 + 5.8 = <strong>14.21</strong>
+</div>
+
+<p class="mb-1"><strong>Langkah 2: Hitung Menggunakan Tiga Skema Pendekatan Numerik</strong></p>
+<div class="mb-4 text-muted" style="line-height: 1.6; padding-left: 5px;">
+  Mari kita masukkan nilai di atas ke dalam masing-masing skema rumus dari slide:
+
+  <p class="mb-2 text-dark"><strong>1. Beda Maju (Forward):</strong></p>
+  <div class="my-2 d-flex align-items-center" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; padding-left: 15px;">
+    <span style="margin-right: 10px;">f'(3) &asymp;</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">f(x + h) - f(x)</td></tr>
+      <tr><td style="padding: 0 5px;">h</td></tr>
+    </table>
+    <span style="margin: 0 10px;">=</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">15.81 - 15</td></tr>
+      <tr><td style="padding: 0 5px;">0.1</td></tr>
+    </table>
+    <span style="margin: 0 10px;">=</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">0.81</td></tr>
+      <tr><td style="padding: 0 5px;">0.1</td></tr>
+    </table>
+    <span style="margin-left: 10px; font-weight: bold; color: #1a73e8;">= 8.1</span>
+  </div>
+
+  <p class="mb-2 text-dark mt-3"><strong>2. Beda Mundur (Backward):</strong></p>
+  <div class="my-2 d-flex align-items-center" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; padding-left: 15px;">
+    <span style="margin-right: 10px;">f'(3) &asymp;</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">f(x) - f(x - h)</td></tr>
+      <tr><td style="padding: 0 5px;">h</td></tr>
+    </table>
+    <span style="margin: 0 10px;">=</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">15 - 14.21</td></tr>
+      <tr><td style="padding: 0 5px;">0.1</td></tr>
+    </table>
+    <span style="margin: 0 10px;">=</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">0.79</td></tr>
+      <tr><td style="padding: 0 5px;">0.1</td></tr>
+    </table>
+    <span style="margin-left: 10px; font-weight: bold; color: #1a73e8;">= 7.9</span>
+  </div>
+
+  <p class="mb-2 text-dark mt-3"><strong>3. Beda Pusat (Central):</strong></p>
+  <div class="my-2 d-flex align-items-center" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; padding-left: 15px;">
+    <span style="margin-right: 10px;">f'(3) &asymp;</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">f(x + h) - f(x - h)</td></tr>
+      <tr><td style="padding: 0 5px;">2h</td></tr>
+    </table>
+    <span style="margin: 0 10px;">=</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">15.81 - 14.21</td></tr>
+      <tr><td style="padding: 0 5px;">2(0.1)</td></tr>
+    </table>
+    <span style="margin: 0 10px;">=</span>
+    <table style="border: none; display: inline-block; vertical-align: middle; text-align: center;">
+      <tr><td style="border-bottom: 2px solid #333; padding: 0 5px;">1.60</td></tr>
+      <tr><td style="padding: 0 5px;">0.2</td></tr>
+    </table>
+    <span style="margin-left: 10px; font-weight: bold; color: #28a745;">= 8.0</span>
+  </div>
+  <small class="text-muted d-block mt-2" style="padding-left: 15px;">*(Catatan: Metode Beda Pusat menghasilkan nilai 8.0 yang paling akurat karena persis sama dengan nilai turunan eksak matematika murninya).</small>
+</div>
+
+<div style="background-color: rgba(40,167,69,0.04); padding: 14px; border-radius: 6px; border: 1px dashed rgba(40,167,69,0.25);">
+  <span class="badge bg-success mb-2">Panduan Universal Interpretasi Hasil (L = 8)</span> 
+  <p class="mb-0 text-dark" style="font-size: 0.95em; line-height: 1.6; font-style: italic; text-align: justify;">
+    "Pada saat variabel input berada di titik <strong>3 menit</strong>, maka setiap kenaikan 1 satuan pada input akan menyebabkan variabel output (f(x)) bertambah/berubah sebesar <strong>8 °C</strong> satuan."
+  </p>
+</div>
+                </div><br><br>
+
+
 
 
 <div id="ch5-max-min">
@@ -699,30 +1197,244 @@ seperti kecepatan, pertumbuhan, atau penurunan dalam berbagai konteks.</div>
           
 
           <div id="ch5-contoh" class="mt-5">
-            <h3 class="subsection-title">Contoh Soal</h3>
-            <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 5.1 —
-                Nilai Ekstrem</div>
+            <h3 class="subsection-title"> Latihan Soal & Evaluasi Interaktif</h3>
+            
+            <div class="card example-card mt-3" style="border-color: var(--clr-border); background: var(--clr-surface);">
+              <div class="card-header" style="background: var(--clr-primary-light); padding:.65rem 1.1rem;">
+                <i class="bi bi-patch-question-fill me-2" style="color:var(--clr-primary);"></i><strong style="color:var(--clr-text); font-size:.85rem;">Soal 1 — Komparasi 3 Metode Aproksimasi</strong>
+              </div>
               <div class="card-body">
-                <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 5: isi contoh soal nilai ekstrem]</em></p>
-                <hr />
-                <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 5: isi langkah-langkah]</em></p>
+                <p>
+                  Diberikan sebuah fungsi data <strong>f(x) = x<sup>3</sup></strong>. Jika kita ingin mencari nilai hampiran turunan pada titik <strong>x = 2</strong> dengan lebar langkah <strong>h = 0.1</strong>, berapakah hasil yang diperoleh berturut-turut menggunakan metode <strong>Forward Difference</strong>, <strong>Backward Difference</strong>, dan <strong>Central Difference</strong>?
+                </p>
+                
+                <div class="mt-3">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal1" id="s1A" value="A">
+                    <label class="form-check-label" for="s1A">A. Forward = 12.61 || Backward = 11.41 || Central = 12.01</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal1" id="s1B" value="B">
+                    <label class="form-check-label" for="s1B">B. Forward = 13.22 || Backward = 10.82 || Central = 12.02</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal1" id="s1C" value="C">
+                    <label class="form-check-label" for="s1C">C. Forward = 14.01 || Backward = 11.01 || Central = 12.51</label>
+                  </div>
+                </div>
+
+                <button class="btn btn-sm btn-primary mt-3" onclick="checkAnswer(1, 'A')">
+                  <i class="bi bi-cpu-fill me-1"></i> Periksa Langkah & Hasil
+                </button>
+
+                <div id="pembahasan-soal1" class="d-none mt-3">
+                  <hr class="my-3"/>
+                  <p class="fw-semibold text-success mb-2" style="font-size: 0.9rem;"><i class="bi bi-calculator-fill me-2"></i>Langkah Analisis & Pembuktian:</p>
+                  <div class="text-muted mb-3" style="line-height: 1.6; font-size: 0.9rem;">
+                    • Data komponen awal: f(2) = 2<sup>3</sup> = 8<br>
+                    • Titik maju: f(2 + 0.1) = f(2.1) = 2.1<sup>3</sup> = 9.261<br>
+                    • Titik mundur: f(2 - 0.1) = f(1.9) = 1.9<sup>3</sup> = 6.859<br><br>
+                    1. <strong>Forward Difference:</strong> [f(x+h) - f(x)] / h &rarr; [9.261 - 8] / 0.1 = <strong>12.61</strong>.<br>
+                    2. <strong>Backward Difference:</strong> [f(x) - f(x-h)] / h &rarr; [8 - 6.859] / 0.1 = <strong>11.41</strong>.<br>
+                    3. <strong>Central Difference:</strong> [f(x+h) - f(x-h)] / 2h &rarr; [9.261 - 6.859] / 0.2 = <strong>12.01</strong>.
+                  </div>
+                  
+                  <div id="status-soal1" class="p-2 rounded style-font-size: 0.9rem;"></div>
+                </div>
               </div>
             </div>
-            <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 5.2 —
-                Optimasi</div>
+
+            <div class="card example-card mt-4" style="border-color: var(--clr-border); background: var(--clr-surface);">
+              <div class="card-header" style="background: var(--clr-primary-light); padding:.65rem 1.1rem;">
+                <i class="bi bi-patch-question-fill me-2" style="color:var(--clr-primary);"></i><strong style="color:var(--clr-text); font-size:.85rem;">Soal 2 — Perhitungan Nilai True & Galat (Error)</strong>
+              </div>
               <div class="card-body">
-                <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 5: isi contoh soal optimasi]</em></p>
-                <hr />
-                <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 5: isi langkah-langkah]</em></p>
+                <p>
+                  Sebuah fungsi kontrol memiliki persamaan analitik <strong>f(x) = 4x<sup>2</sup></strong>. Turunan eksak (Nilai True) fungsi tersebut pada titik <strong>x = 3</strong> dihitung menggunakan rumus aturan pangkat. Jika pengujian komputasi numerik menghasilkan nilai pendekatan sebesar <strong>24.15</strong>, berapakah besar <strong>Galat Mutlak (Error)</strong> yang terjadi?
+                </p>
+                
+                <div class="mt-3">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal2" id="s2A" value="A">
+                    <label class="form-check-label" for="s2A">A. Nilai True = 24 || Error = 0.15</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal2" id="s2B" value="B">
+                    <label class="form-check-label" for="s2B">B. Nilai True = 24 || Error = -0.15</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal2" id="s2C" value="C">
+                    <label class="form-check-label" for="s2C">C. Nilai True = 36 || Error = 11.85</label>
+                  </div>
+                </div>
+
+                <button class="btn btn-sm btn-primary mt-3" onclick="checkAnswer(2, 'A')">
+                  <i class="bi bi-cpu-fill me-1"></i> Periksa Langkah & Hasil
+                </button>
+
+                <div id="pembahasan-soal2" class="d-none mt-3">
+                  <hr class="my-3"/>
+                  <p class="fw-semibold text-success mb-2" style="font-size: 0.9rem;"><i class="bi bi-calculator-fill me-2"></i>Langkah Analisis & Pembuktian:</p>
+                  <div class="text-muted mb-3" style="line-height: 1.6; font-size: 0.9rem;">
+                    1. <strong>Nilai True (Analitik):</strong> Turunan dari 4x<sup>2</sup> adalah f'(x) = 8x. Pada titik x = 3, maka f'(3) = 8 &middot; 3 = <strong>24</strong>.<br>
+                    2. <strong>Komponen Terdeteksi:</strong> Nilai True = 24 dan Nilai Approx = 24.15.<br>
+                    3. <strong>Rumus Galat Mutlak:</strong> Error = | Nilai True - Nilai Approx | &rarr; | 24 - 24.15 | = | -0.15 | = <strong>0.15</strong>.
+                  </div>
+                  <div id="status-soal2" class="p-2 rounded style-font-size: 0.9rem;"></div>
+                </div>
               </div>
             </div>
+
+            <div class="card example-card mt-4" style="border-color: var(--clr-border); background: var(--clr-surface);">
+              <div class="card-header" style="background: var(--clr-primary-light); padding:.65rem 1.1rem;">
+                <i class="bi bi-patch-question-fill me-2" style="color:var(--clr-primary);"></i><strong style="color:var(--clr-text); font-size:.85rem;">Soal 3 — Analisis Kriteria Metode Numerik</strong>
+              </div>
+              <div class="card-body">
+                <p>
+                  Sebuah algoritma numerik dikatakan ideal jika memenuhi kriteria: <strong>Akurat</strong>, <strong>Stabil</strong>, dan <strong>Efisien</strong>. Manakah dari pernyataan di bawah ini yang mendefinisikan kombinasi ketiga kriteria tersebut secara tepat?
+                </p>
+                
+                <div class="mt-3">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal3" id="s3A" value="A">
+                    <label class="form-check-label" for="s3A">A. Akurat berarti memiliki galat kecil; Stabil berarti galat tidak membesar saat iterasi bertambah; Efisien berarti menggunakan waktu komputasi dan memori yang minimum.</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal3" id="s3B" value="B">
+                    <label class="form-check-label" for="s3B">B. Akurat berarti waktu hitungnya cepat; Stabil berarti hasilnya selalu bernilai bulat; Efisien berarti rumusnya sangat panjang.</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal3" id="s3C" value="C">
+                    <label class="form-check-label" for="s3C">C. Akurat berarti menghasilkan nilai pembagian nol; Stabil berarti grafiknya berupa garis lurus; Efisien berarti kebal dari pembulatan komputer.</label>
+                  </div>
+                </div>
+
+                <button class="btn btn-sm btn-primary mt-3" onclick="checkAnswer(3, 'A')">
+                  <i class="bi bi-cpu-fill me-1"></i> Periksa Langkah & Hasil
+                </button>
+
+                <div id="pembahasan-soal3" class="d-none mt-3">
+                  <hr class="my-3"/>
+                  <p class="fw-semibold text-success mb-2" style="font-size: 0.9rem;"><i class="bi bi-calculator-fill me-2"></i>Langkah Analisis & Pembuktian:</p>
+                  <div class="text-muted mb-3" style="line-height: 1.6; font-size: 0.9rem;">
+                    • <strong>Akurat (Accuracy):</strong> Mengukur seberapa dekat hasil hampiran numerik dengan solusi analitik sejatinya (Error sekecil mungkin).<br>
+                    • <strong>Stabil (Stability):</strong> Menjamin bahwa kesalahan kecil seperti pembulatan (round-off error) di dalam komputer tidak akan meledak menjadi besar pada proses iterasi berikutnya.<br>
+                    • <strong>Efisien (Efficiency):</strong> Berfokus pada arsitektur kode yang hemat resource memori (RAM) dan eksekusi instruksi CPU yang cepat.
+                  </div>
+                  <div id="status-soal3" class="p-2 rounded style-font-size: 0.9rem;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card example-card mt-4" style="border-color: var(--clr-border); background: var(--clr-surface);">
+              <div class="card-header" style="background: var(--clr-primary-light); padding:.65rem 1.1rem;">
+                <i class="bi bi-patch-question-fill me-2" style="color:var(--clr-primary);"></i><strong style="color:var(--clr-text); font-size:.85rem;">Soal 4 — Interpretasi Laju Perubahan Struktur Baku</strong>
+              </div>
+              <div class="card-body">
+                <p>
+                  Sebuah eksperimen menghitung laju pertumbuhan bakteri menggunakan 3 pendekatan numerik pada titik <strong>x = 4 jam</strong>, menghasilkan rentang hampiran nilai turunan <strong>f'(x) &approx; +5</strong>. Sesuai panduan baku universal interpretasi hasil laju perubahan pada modul, manakah kalimat simpulan yang paling tepat?
+                </p>
+                
+                <div class="mt-3">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal4" id="s4A" value="A">
+                    <label class="form-check-label" for="s4A">A. "Pada jam ke-4, jumlah bakteri konstan sebanyak 5 koloni dan tidak mengalami perubahan pertumbuhan."</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal4" id="s4B" value="B">
+                    <label class="form-check-label" for="s4B">B. "Pada saat waktu mencapai 4 jam, setiap penambahan 1 jam waktu akan menyebabkan jumlah bakteri bertambah/naik sebanyak 5 satuan."</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal4" id="s4C" value="C">
+                    <label class="form-check-label" for="s4C">C. "Jumlah total bakteri berkurang sebanyak 5 satuan setiap jamnya secara konstan dimulai dari titik awal 0 jam hingga 4 jam."</label>
+                  </div>
+                </div>
+
+                <button class="btn btn-sm btn-primary mt-3" onclick="checkAnswer(4, 'B')">
+                  <i class="bi bi-cpu-fill me-1"></i> Periksa Langkah & Hasil
+                </button>
+
+                <div id="pembahasan-soal4" class="d-none mt-3">
+                  <hr class="my-3"/>
+                  <p class="fw-semibold text-success mb-2" style="font-size: 0.9rem;"><i class="bi bi-calculator-fill me-2"></i>Langkah Analisis & Pembuktian:</p>
+                  <div class="text-muted mb-3" style="line-height: 1.6; font-size: 0.9rem;">
+                    1. <strong>Makna Turunan Pertama:</strong> Turunan menyatakan laju perubahan sesaat dari fungsi output terhadap inputnya.<br>
+                    2. <strong>Analisis Tanda (+):</strong> Tanda positif mutlak menunjukkan pertumbuhan searah (jika waktu naik, populasi naik).<br>
+                    3. <strong>Struktur Kalimat Baku Kalkulus:</strong> Menyatakan efek perubahan marjinal instan lokal (+5 satuan output per 1 satuan perubahan variabel independen input di titik tersebut).
+                  </div>
+                  <div id="status-soal4" class="p-2 rounded style-font-size: 0.9rem;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card example-card mt-4" style="border-color: var(--clr-border); background: var(--clr-surface);">
+              <div class="card-header" style="background: var(--clr-primary-light); padding:.65rem 1.1rem;">
+                <i class="bi bi-patch-question-fill me-2" style="color:var(--clr-primary);"></i><strong style="color:var(--clr-text); font-size:.85rem;">Soal 5 — Implementasi Turunan Numerik di Bidang IT</strong>
+              </div>
+              <div class="card-body">
+                <p>
+                  Dalam bidang Teknologi Informasi (IT) dan Ilmu Komputer, manakah skenario di bawah ini yang menerapkan prinsip <strong>turunan numerik (laju perubahan diskret)</strong> untuk menyelesaikan permasalahannya?
+                </p>
+                
+                <div class="mt-3">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal5" id="s5A" value="A">
+                    <label class="form-check-label" for="s5A">A. Algoritma pendeteksi tepi citra digital (Edge Detection seperti operator Sobel) yang menghitung gradien/perubahan intensitas warna piksel tetangga.</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal5" id="s5B" value="B">
+                    <label class="form-check-label" for="s5B">B. Pembuatan struktur tabel basis data relasional (RDBMS) untuk menyimpan riwayat kata sandi pengguna.</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="soal5" id="s5C" value="C">
+                    <label class="form-check-label" for="s5C">C. Pengurutan deret array data acak menggunakan algoritma Bubble Sort.</label>
+                  </div>
+                </div>
+
+                <button class="btn btn-sm btn-primary mt-3" onclick="checkAnswer(5, 'A')">
+                  <i class="bi bi-cpu-fill me-1"></i> Periksa Langkah & Hasil
+                </button>
+
+                <div id="pembahasan-soal5" class="d-none mt-3">
+                  <hr class="my-3"/>
+                  <p class="fw-semibold text-success mb-2" style="font-size: 0.9rem;"><i class="bi bi-calculator-fill me-2"></i>Langkah Analisis & Pembuktian:</p>
+                  <div class="text-muted mb-3" style="line-height: 1.6; font-size: 0.9rem;">
+                    • <strong>Kasus Citra Digital (Matrix Piksel):</strong> Gambar komputer tersusun atas nilai diskret (0-255). Tepi objek ditandai dengan perubahan warna mendadak dari satu piksel ke piksel sebelahnya.<br>
+                    • Untuk mendeteksi lonjakan intensitas ini, algoritma IT (seperti Sobel/Prewitt) menghitung *gradien citra* menggunakan formula hampiran beda maju/beda pusat tingkat satu pada sumbu koordinat piksel f(x,y).
+                  </div>
+                  <div id="status-soal5" class="p-2 rounded style-font-size: 0.9rem;"></div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+          <script>
+            function checkAnswer(soalNum, correctAnswer) {
+              // 1. Tampilkan kontainer pembahasan langkah-langkah terlebih dahulu
+              const pembahasanDiv = document.getElementById('pembahasan-soal1' + soalNum) || document.getElementById('pembahasan-soal' + soalNum);
+              pembahasanDiv.classList.remove('d-none');
+              
+              // 2. Ambil nilai tombol radio yang dipilih pengguna
+              const selectedOption = document.querySelector('input[name="soal' + soalNum + '"]:checked');
+              const statusDiv = document.getElementById('status-soal1 -> ' + soalNum) || document.getElementById('status-soal' + soalNum);
+              
+              // 3. Eksekusi evaluasi hasil di bagian paling akhir langkah
+              if (!selectedOption) {
+                statusDiv.className = "p-2 rounded bg-warning text-dark mt-2 fw-semibold";
+                statusDiv.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-2'></i>Hasil Evaluasi: Anda belum memilih opsi jawaban! Silakan pilih salah satu opsi di atas.";
+                return;
+              }
+              
+              if (selectedOption.value === correctAnswer) {
+                statusDiv.className = "p-2 rounded bg-success text-white mt-2 fw-semibold";
+                statusDiv.innerHTML = "<i class='bi bi-check-circle-fill me-2'></i>Hasil Evaluasi: Jawaban Anda BENAR (Opsi " + selectedOption.value + "). Hebat, analisis Anda tepat!";
+              } else {
+                statusDiv.className = "p-2 rounded bg-danger text-white mt-2 fw-semibold";
+                statusDiv.innerHTML = "<i class='bi bi-x-circle-fill me-2'></i>Hasil Evaluasi: Jawaban Anda KURANG TEPAT (Opsi " + selectedOption.value + "). Silakan pelajari kembali uraian runtutan langkah matematika di atas.";
+              }
+            }
+          </script>
 
           <div id="ch5-video" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran</h3>
@@ -737,61 +1449,384 @@ seperti kecepatan, pertumbuhan, atau penurunan dalam berbagai konteks.</div>
               pembelajaran yang sesuai.</p>
           </div>
 
-          <div id="ch5-latihan" class="mt-5">
-            <h3 class="subsection-title">Latihan Soal</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 5</strong> — Isi latihan
-              soal di bawah ini.</div>
-            <div class="card"
-              style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
-              <div class="card-body">
-                <ol class="mb-0">
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 1</p>
-                    <p><em>[Kelompok 5: isi soal latihan 1]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 1]</em></div>
-                    </details>
-                  </li>
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 2</p>
-                    <p><em>[Kelompok 5: isi soal latihan 2]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 2]</em></div>
-                    </details>
-                  </li>
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 3</p>
-                    <p><em>[Kelompok 5: isi soal latihan 3]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 3]</em></div>
-                    </details>
-                  </li>
-                </ol>
+          <div id="ch5-contoh" class="mt-5">
+  
+
+          <div id="ch5-kalkulator" class="mt-5">
+            <div class="card shadow-sm border-0 transition-all" style="border-radius: 16px; background: var(--clr-surface); overflow: hidden;">
+              
+              <div class="card-header border-0 d-flex align-items-center justify-content-between p-4" style="background: linear-gradient(135deg, var(--clr-primary-light) 0%, rgba(var(--clr-primary-rgb), 0.05) 100%);">
+                <div class="d-flex align-items-center">
+                  <div class="p-2 rounded-3 me-3 d-flex align-items-center justify-content-center" style="background: var(--clr-surface); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <i class="bi bi-calculator-fill fs-5 text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="m-0 fw-bold text-dark" style="font-size: 1.15rem; letter-spacing: -0.3px;">Laboratorium Komputasi Numerik</h4>
+                    <small class="text-muted" style="font-size: 0.78rem;">Interactive Tools Premium — Kelompok 5</small>
+                  </div>
+                </div>
+                <span class="badge bg-white text-primary border border-primary-light px-2 py-1.5 rounded-pill fw-medium text-xs">v2.8 Final Layout</span>
+              </div>
+
+              <div class="card-body p-4">
+                
+                <div class="nav-scroller mb-4" style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;">
+                  <ul class="nav nav-pills flex-nowrap" id="calcTab" role="tablist" style="padding-bottom: 4px;">
+                    <li class="nav-item me-2" role="presentation">
+                      <button class="nav-link active px-3 py-2 text-xs d-flex align-items-center gap-2 rounded-3" id="calc1-tab" data-bs-toggle="pill" data-bs-target="#calc1" type="button" role="tab">
+                        <i class="bi bi-layers-half"></i> 1. 3 Metode Approx
+                      </button>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                      <button class="nav-link px-3 py-2 text-xs d-flex align-items-center gap-2 rounded-3" id="calc2-tab" data-bs-toggle="pill" data-bs-target="#calc2" type="button" role="tab">
+                        <i class="bi bi-bullseye"></i> 2. Nilai True & Galat
+                      </button>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                      <button class="nav-link px-3 py-2 text-xs d-flex align-items-center gap-2 rounded-3" id="calc3-tab" data-bs-toggle="pill" data-bs-target="#calc3" type="button" role="tab">
+                        <i class="bi bi-shield-check"></i> 3. Uji Kriteria Ideal
+                      </button>
+                    </li>
+                    <li class="nav-item me-2" role="presentation">
+                      <button class="nav-link px-3 py-2 text-xs d-flex align-items-center gap-2 rounded-3" id="calc4-tab" data-bs-toggle="pill" data-bs-target="#calc4" type="button" role="tab">
+                        <i class="bi bi-translate"></i> 4. Interpretasi Laju
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link px-3 py-2 text-xs d-flex align-items-center gap-2 rounded-3" id="calc5-tab" data-bs-toggle="pill" data-bs-target="#calc5" type="button" role="tab">
+                        <i class="bi bi-cpu-fill"></i> 5. Terapan IT (Edge)
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="tab-content border p-4 rounded-4 shadow-2xs" id="calcTabContent" style="background: rgba(var(--clr-surface-rgb), 0.4); border-color: rgba(0,0,0,0.04) !important;">
+                  
+                  <div class="tab-pane fade show active" id="calc1" role="tabpanel">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                      <span class="badge bg-primary-light text-primary rounded-2 px-2 py-1 text-xs">Materi 1</span>
+                      <h5 class="m-0 fw-bold text-dark" style="font-size:0.95rem;">Aproksimasi Turunan Numerik f(x) = x³</h5>
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-sm-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Titik Evaluasi (x)</label>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-geo-fill"></i></span>
+                          <input type="number" id="c1-x" class="form-control border-start-0 ps-0" value="2" step="any">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Lebar Langkah (h)</label>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-arrows-collapse"></i></span>
+                          <input type="number" id="c1-h" class="form-control border-start-0 ps-0" value="0.1" step="any">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Pilih Metode Pendekatan</label>
+                        <select id="c1-metode" class="form-select form-select-sm rounded-3">
+                          <option value="semua">Tampilkan Semua Metode</option>
+                          <option value="maju">Beda Maju (Forward Difference)</option>
+                          <option value="mundur">Beda Mundur (Backward Difference)</option>
+                          <option value="pusat">Beda Pusat (Central Difference)</option>
+                        </select>
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-primary w-100 w-sm-auto mt-4 px-3 py-2 rounded-3 shadow-3xs" onclick="hitungKalkulator1()">
+                      <i class="bi bi-lightning-charge-fill me-1"></i> Hitung Proses &amp; Hasil
+                    </button>
+                    <div id="res-c1" class="d-none mt-4 animate-fade-in"></div>
+                  </div>
+
+                  <div class="tab-pane fade" id="calc2" role="tabpanel">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                      <span class="badge bg-primary-light text-primary rounded-2 px-2 py-1 text-xs">Materi 2</span>
+                      <h5 class="m-0 fw-bold text-dark" style="font-size:0.95rem;">Perhitungan Nilai Eksak &amp; Galat Mutlak</h5>
+                    </div>
+                    <p class="text-muted text-xs mb-3">Fungsi Polinomial f(x) = xⁿ | Pendekatan Nilai True: n · xⁿ⁻¹ | Galat Mutlak: Error = |x_true - x_approx|</p>
+                    <div class="row g-3">
+                      <div class="col-sm-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Basis Konstanta (x)</label>
+                        <input type="number" id="c2-x" class="form-control form-control-sm rounded-3" value="3" step="any">
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Pangkat Orde (n)</label>
+                        <input type="number" id="c2-n" class="form-control form-control-sm rounded-3" value="2" step="any">
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Nilai Hampiran Komputasi (x_approx)</label>
+                        <input type="number" id="c2-approx" class="form-control form-control-sm rounded-3" value="5.95" step="any">
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-primary w-100 w-sm-auto mt-4 px-3 py-2 rounded-3 shadow-3xs" onclick="hitungKalkulator2()">
+                      <i class="bi bi-lightning-charge-fill me-1"></i> Hitung Nilai True &amp; Error
+                    </button>
+                    <div id="res-c2" class="d-none mt-4 animate-fade-in"></div>
+                  </div>
+
+                  <div class="tab-pane fade" id="calc3" role="tabpanel">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                      <span class="badge bg-primary-light text-primary rounded-2 px-2 py-1 text-xs">Materi 3</span>
+                      <h5 class="m-0 fw-bold text-dark" style="font-size:0.95rem;">Uji Kelayakan Kriteria Metode Numerik</h5>
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Akurasi: Nilai Galat (Error = |x_true - x_approx|)</label>
+                        <input type="number" id="c3-error-val" class="form-control form-control-sm rounded-3" value="0.0005" step="any">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Stabilitas: Saat h ↓ (Langkah Diperkecil)</label>
+                        <select id="c3-stabil-val" class="form-select form-select-sm rounded-3">
+                          <option value="stabil">Hasil mendekati nilai asli secara konsisten</option>
+                          <option value="tidak">Hasil menjauh / berosilasi tidak menentu</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Efisien: Waktu Eksekusi / Langkah (Detik)</label>
+                        <input type="number" id="c3-waktu-val" class="form-control form-control-sm rounded-3" value="0.02" step="any">
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-primary w-100 w-sm-auto mt-4 px-3 py-2 rounded-3 shadow-3xs" onclick="hitungKalkulator3()">
+                      <i class="bi bi-shield-shaded me-1"></i> Jalankan Pengujian Kriteria
+                    </button>
+                    <div id="res-c3" class="d-none mt-4 animate-fade-in"></div>
+                  </div>
+
+                  <div class="tab-pane fade" id="calc4" role="tabpanel">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                      <span class="badge bg-primary-light text-primary rounded-2 px-2 py-1 text-xs">Materi 4</span>
+                      <h5 class="m-0 fw-bold text-dark" style="font-size:0.95rem;">Interpretasi Laju Perubahan Menggunakan 3 Metode</h5>
+                    </div>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Nama Variabel Input (Contoh: waktu)</label>
+                        <input type="text" id="c4-input-name" class="form-control form-control-sm rounded-3" value="waktu">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Titik Evaluasi Utama (x)</label>
+                        <input type="number" id="c4-x" class="form-control form-control-sm rounded-3" value="2" step="any">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label text-xs fw-semibold text-muted">Lebar Langkah (h)</label>
+                        <input type="number" id="c4-h" class="form-control form-control-sm rounded-3" value="0.1" step="any">
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-primary w-100 w-sm-auto mt-4 px-3 py-2 rounded-3 shadow-3xs" onclick="hitungKalkulator4()">
+                      <i class="bi bi-file-earmark-text me-1"></i> Analisis Komparasi Laju &amp; Simpulkan
+                    </button>
+                    <div id="res-c4" class="d-none mt-4 animate-fade-in"></div>
+                  </div>
+
+                  <div class="tab-pane fade" id="calc5" role="tabpanel">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge bg-primary-light text-primary rounded-2 px-2 py-1 text-xs">Materi 5</span>
+                      <h5 class="m-0 fw-bold text-dark" style="font-size:0.95rem;">Simulasi Deteksi Tepi Gambar (Computer Vision)</h5>
+                    </div>
+                    <p class="text-muted mb-3" style="font-size: 0.78rem;">Masukkan nilai intensitas keabuan (0-255) dari 3 piksel horizontal sejajar:</p>
+                    <div class="row g-2">
+                      <div class="col-4">
+                        <div class="p-3 text-center rounded-3 border" style="background: #fdfdfd;">
+                          <label class="form-label text-xs d-block text-muted mb-1">Piksel f(x-h)</label>
+                          <input type="number" id="c5-p1" class="form-control form-control-sm text-center fw-bold rounded-2" value="50" min="0" max="255">
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="p-3 text-center rounded-3 border style-accent" style="background: rgba(var(--clr-primary-rgb), 0.02); border-color: var(--clr-primary-light) !important;">
+                          <label class="form-label text-xs d-block text-primary mb-1 fw-semibold">Piksel Fokus f(x)</label>
+                          <input type="number" id="c5-p2" class="form-control form-control-sm text-center fw-bold rounded-2 border-primary" value="55" min="0" max="255">
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="p-3 text-center rounded-3 border" style="background: #fdfdfd;">
+                          <label class="form-label text-xs d-block text-muted mb-1">Piksel f(x+h)</label>
+                          <input type="number" id="c5-p3" class="form-control form-control-sm text-center fw-bold rounded-2" value="230" min="0" max="255">
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-primary w-100 w-sm-auto mt-4 px-3 py-2 rounded-3 shadow-3xs" onclick="hitungKalkulator5()">
+                      <i class="bi bi-eye-fill me-1"></i> Analisis Matriks Citra
+                    </button>
+                    <div id="res-c5" class="d-none mt-4 animate-fade-in"></div>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
 
-          <div id="ch5-kalkulator" class="mt-5">
-            <div class="calc-section">
-              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 5</div>
-              <div class="calc-body">
-                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 5</strong> — Kembangkan
-                  kalkulator untuk menyelesaikan masalah optimasi.</div>
-              </div>
-            </div>
-          </div>
+          <script>
+            function bangunOutputHTML(langkahUraian, hasilAkhirHTML, isSuccess = true) {
+              return `
+                <div class="card border-0 shadow-3xs p-3 rounded-4 mb-0" style="background: #fafafa; border-left: 4px solid var(--clr-primary) !important;">
+                  <div class="d-flex align-items-center text-primary mb-2 fw-bold" style="font-size: 0.88rem;">
+                    <i class="bi bi-node-plus-fill me-2"></i> Runtutan Uraian Komputasi Sistem
+                  </div>
+                  <div class="text-muted ps-4 mb-3" style="font-size: 0.85rem; line-height: 1.6;">
+                    ${langkahUraian}
+                  </div>
+                  <div class="p-3 rounded-3 d-flex align-items-start gap-3 ${isSuccess ? 'bg-success text-white' : 'bg-danger text-white'}" style="box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);">
+                    <i class="bi ${isSuccess ? 'bi-check-circle-fill' : 'bi-exclamation-octagon-fill'} fs-5 mt-0.5"></i>
+                    <div style="font-size: 0.85rem; line-height: 1.5;">
+                      <div class="fw-bold mb-1" style="letter-spacing:0.3px; text-transform: uppercase; font-size:0.75rem; opacity:0.9;">Kesimpulan & Hasil Akhir</div>
+                      <div class="font-monospace">${hasilAkhirHTML}</div>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }
+
+            // KALKULATOR 1: 3 METODE APPROX
+            function hitungKalkulator1() {
+              const x = parseFloat(document.getElementById('c1-x').value);
+              const h = parseFloat(document.getElementById('c1-h').value);
+              const metode = document.getElementById('c1-metode').value;
+              const res = document.getElementById('res-c1');
+              if(isNaN(x) || isNaN(h) || h === 0) return alert("Masukkan parameter numerik dengan benar.");
+
+              const f = (v) => Math.pow(v, 3);
+              const forward = (f(x+h) - f(x)) / h;
+              const backward = (f(x) - f(x-h)) / h;
+              const central = (f(x+h) - f(x-h)) / (2*h);
+
+              let langkah = `
+                • Mengambil nilai awal: x = ${x} dan lebar langkah h = ${h}<br>
+                • Komponen fungsi terhitung: f(x) = ${f(x).toFixed(4)}, f(x+h) = ${f(x+h).toFixed(4)}, f(x-h) = ${f(x-h).toFixed(4)}<br>
+              `;
+
+              let hasil = "";
+
+              if (metode === "semua" || metode === "maju") {
+                langkah += `• <b>Beda Maju (Forward):</b> [f(x+h) - f(x)] / h = [${f(x+h).toFixed(4)} - ${f(x).toFixed(4)}] / ${h}<br>`;
+                hasil += `Forward Difference &nbsp;= ${forward.toFixed(4)}<br>`;
+              }
+              if (metode === "semua" || metode === "mundur") {
+                langkah += `• <b>Beda Mundur (Backward):</b> [f(x) - f(x-h)] / h = [${f(x).toFixed(4)} - ${f(x-h).toFixed(4)}] / ${h}<br>`;
+                hasil += `Backward Difference = ${backward.toFixed(4)}<br>`;
+              }
+              if (metode === "semua" || metode === "pusat") {
+                langkah += `• <b>Beda Pusat (Central):</b> [f(x+h) - f(x-h)] / 2h = [${f(x+h).toFixed(4)} - ${f(x-h).toFixed(4)}] / ${(2*h).toFixed(2)}<br>`;
+                hasil += `Central Difference &nbsp;&nbsp;= ${central.toFixed(4)}`;
+              }
+
+              res.innerHTML = bangunOutputHTML(langkah, hasil);
+              res.className = "mt-4 d-block";
+            }
+
+            // KALKULATOR 2: NILAI TRUE & GALAT
+            function hitungKalkulator2() {
+              const x = parseFloat(document.getElementById('c2-x').value);
+              const n = parseFloat(document.getElementById('c2-n').value);
+              const approx = parseFloat(document.getElementById('c2-approx').value);
+              const res = document.getElementById('res-c2');
+              if(isNaN(x) || isNaN(n) || isNaN(approx)) return alert("Isi seluruh input.");
+
+              const trueValue = n * Math.pow(x, n - 1);
+              const errorMutlak = Math.abs(trueValue - approx);
+
+              const langkah = `
+                1. <b>Mengevaluasi Nilai Eksak (True Value):</b><br>
+                &nbsp;&nbsp; Aturan pangkat kalkulus sejati: f'(x) = n · xⁿ⁻¹<br>
+                &nbsp;&nbsp; f'(${x}) = ${n} · ${x}^(${n}-1) = ${trueValue}<br>
+                2. <b>Menghitung Galat Mutlak:</b><br>
+                &nbsp;&nbsp; Rumus tanda mutlak: Error = |x_true - x_approx|<br>
+                &nbsp;&nbsp; Error = |${trueValue} - ${approx}| = |${(trueValue - approx).toFixed(4)}|
+              `;
+
+              const hasil = `
+                Nilai Sejati (True Value) = ${trueValue}<br>
+                Galat Mutlak (Error) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ${errorMutlak.toFixed(5)}
+              `;
+
+              res.innerHTML = bangunOutputHTML(langkah, hasil);
+              res.className = "mt-4 d-block";
+            }
+
+            // KALKULATOR 3: UJI KRITERIA METODE IDEAL
+            function hitungKalkulator3() {
+              const errorVal = parseFloat(document.getElementById('c3-error-val').value);
+              const stabilVal = document.getElementById('c3-stabil-val').value;
+              const waktuVal = parseFloat(document.getElementById('c3-waktu-val').value);
+              const res = document.getElementById('res-c3');
+              if(isNaN(errorVal) || isNaN(waktuVal) || waktuVal <= 0) return alert("Masukkan data parameter dengan benar.");
+
+              const skorAkurasi = errorVal < 0.01 ? 1.0 : 0.2; 
+              const efisiensiSkor = skorAkurasi / waktuVal;
+
+              const isAkurat = errorVal <= 0.005;
+              const isStabil = stabilVal === 'stabil';
+              const isEfisien = efisiensiSkor >= 20;
+
+              const langkah = `
+                • <b>Pengecekan Akurasi:</b> Nilai Error = |x_true - x_approx| = ${errorVal}. Metode dinilai <b>${isAkurat ? 'Akurat' : 'Kurang Akurat'}</b>.<br>
+                • <b>Pengecekan Stabilitas:</b> Sifat kekonvergenan saat h ↓: <b>${isStabil ? 'Hasil mendekati nilai asli secara konsisten (Stabil)' : 'Hasil tidak konsisten (Tidak Stabil)'}</b>.<br>
+                • <b>Pengecekan Efisiensi:</b> Diukur via rumus Efisiensi = Hasil Akurasi / (Waktu / Langkah) = ${skorAkurasi} / ${waktuVal} = ${efisiensiSkor.toFixed(2)}
+              `;
+
+              const isIdeal = isAkurat && isStabil && isEfisien;
+              let hasil = `Akurasi: ${isAkurat ? 'OK' : 'RENDAH'} | Stabilitas: ${isStabil ? 'OK' : 'GAGAL'} | Rasio Efisiensi: ${efisiensiSkor.toFixed(2)}<br>`;
+              hasil += `KESIMPULAN: METODE ${isIdeal ? 'MEMENUHI SELURUH KRITERIA IDEAL' : 'BELUM OPTIMAL (Butuh Modifikasi Algoritma)'}`;
+
+              res.innerHTML = bangunOutputHTML(langkah, hasil, isIdeal);
+              res.className = "mt-4 d-block";
+            }
+
+            // KALKULATOR 4: INTERPRETASI LAJU 3 METODE
+            function hitungKalkulator4() {
+              const varName = document.getElementById('c4-input-name').value || "input";
+              const x = parseFloat(document.getElementById('c4-x').value);
+              const h = parseFloat(document.getElementById('c4-h').value);
+              const res = document.getElementById('res-c4');
+              if(isNaN(x) || isNaN(h) || h === 0) return alert("Masukkan parameter numerik.");
+
+              const f = (v) => Math.pow(v, 3);
+              const forward = (f(x+h) - f(x)) / h;
+              const backward = (f(x) - f(x-h)) / h;
+              const central = (f(x+h) - f(x-h)) / (2*h);
+              const L = (forward + backward + central) / 3;
+
+              const langkah = `
+                • Menghitung nilai hampiran laju sesaat f'(x) melalui 3 pendekatan:<br>
+                &nbsp;&nbsp; - Beda Maju (Forward) = ${forward.toFixed(3)}<br>
+                &nbsp;&nbsp; - Beda Mundur (Backward) = ${backward.toFixed(3)}<br>
+                &nbsp;&nbsp; - Beda Pusat (Central) = ${central.toFixed(3)}<br>
+                • Diperoleh nilai rata-rata laju transien perubahan sesaat (L) = ${L.toFixed(3)}
+              `;
+
+              const hasil = `
+                "Pada saat variabel <b>${varName}</b> berada di titik <b>(${x})</b>, maka setiap kenaikan 1 satuan pada <b>${varName}</b> akan menyebabkan variabel output <b>(f(x))</b> bertambah/berubah sebesar <b>(${L.toFixed(2)})</b> satuan."<br><br>
+                <strong>Jadi laju perubahan terjadi pada titik input ${varName} = ${x} dengan nilai gradien perubahan sebesar ${L.toFixed(2)} satuan per unit perubahan.</strong>
+              `;
+
+              res.innerHTML = bangunOutputHTML(langkah, hasil);
+              res.className = "mt-4 d-block";
+            }
+
+            // KALKULATOR 5: TERAPAN IT (EDGE DETECTION)
+            function hitungKalkulator5() {
+              const p1 = parseInt(document.getElementById('c5-p1').value);
+              const p2 = parseInt(document.getElementById('c5-p2').value);
+              const p3 = parseInt(document.getElementById('c5-p3').value);
+              const res = document.getElementById('res-c5');
+              if(isNaN(p1) || isNaN(p2) || isNaN(p3)) return alert("Lengkapi data piksel.");
+
+              const gradien = (p3 - p1) / 2;
+              const isEdge = Math.abs(gradien) > 30;
+
+              const langkah = `
+                • Menggunakan pendekatan operator gradien matriks citra 1D beda pusat (h=1).<br>
+                • Evaluasi rumus: Gradien = [f(x+1) - f(x-1)] / 2 = [${p3} - ${p1}] / 2 = ${gradien}<br>
+                • Aturan klasifikasi ambang batas komputer (Thresholding) diset pada nilai konstanta > 30.
+              `;
+              const hasil = `
+                Magnitudo Perubahan Gradien Intensitas = ${gradien}<br>
+                Klasifikasi Filter Komputer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ${isEdge ? 'TERDETEKSI SEBAGAI TEPI OBJEK (EDGE)' : 'BUKAN TEPI (AREA HOMOGEN/HALUS)'}
+              `;
+
+              res.innerHTML = bangunOutputHTML(langkah, hasil, isEdge);
+              res.className = "mt-4 d-block";
+            }
+          </script>
 
           <div class="chapter-nav-bottom">
             <a href="kelompok4.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 4</a>
