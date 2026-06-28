@@ -203,29 +203,500 @@
           <div id="ch5-max-min">
             <h3 class="subsection-title">5.1 Pendekatan Numerik Nilai Approx</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                5</strong><br>Isi dengan definisi titik kritis, uji turunan pertama, uji turunan kedua, nilai ekstrem
-              lokal dan global.</div>
-            <p><em>[Kelompok 5: Penjelasan tentang Nilai Approx ]</em></p>
+                5</strong><br>Pendekatan numerik adalah cara menghitung suatu nilai (misalnya turunan) dengan menggunakan angka-angka pendekatan, bukan hasil rumus yang pasti.</div>
+            <p>
+              <em><strong>1. Metode Fordward  :</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
+
+               $$f'(x) \approx \frac{f(x + h) - f(x)}{h}$$
+            </p>
+
             <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
-              <p><em>[Kelompok 5: Tambahkan teorema atau definisi penting di sini]</em></p>
-              <footer>— Teorema</footer>
-            </blockquote>
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f'(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Turunan Pertama Fungsi f terhadap x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>h</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Perubahan kecil pada x (misalnya 0.001)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x + h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x + h</td>
+                  </tr>
+                  
+                </table>
+              </em>
+            </p>
+          </blockquote>
             <div class="concept-card mt-3">
               <div class="concept-card-header">Uji Turunan Pertama</div>
               <div class="concept-card-body">
                 <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
               </div>
-            </div>
-          </div>
+            </div><br><br>         
 
-          <div id="ch5-optimasi" class="mt-5">
-            <h3 class="subsection-title">5.2 Pendekatan Numerik Nilai True</h3>
+          <p>
+              <em><strong>2. Metode Backward  :</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
+
+               $$f'(x) \approx \frac{f(x) - f(x - h)}{h}$$
+            </p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f'(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Turunan Pertama Fungsi f terhadap x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>h</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Perubahan kecil pada x (misalnya 0.001)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x - h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x + h</td>
+                  </tr>
+                  
+                </table>
+              </em>
+            </p>
+          </blockquote>
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Uji Turunan Pertama</div>
+              <div class="concept-card-body">
+                <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+              </div>
+            </div><br><br>
+          
+            <p>
+              <em><strong>3. Metode Central  :</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
+
+               $$f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}$$
+            </p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f'(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Turunan Pertama Fungsi f terhadap x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>h</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Perubahan kecil pada x (misalnya 0.001)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x + h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x + h</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x - h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x - h</td>
+                  </tr>
+
+                  
+                </table>
+              </em>
+            </p>
+              </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div>
+            </div><br><br>
+
+          <div id="ch5-max-min">
+            <h3 class="subsection-title">5.2 Pendekatan Numerik Nilai True dan Galat (Error)</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                5</strong><br>Isi dengan langkah-langkah penyelesaian masalah optimasi, contoh kasus nyata (luas,
-              volume, biaya).</div>
-            <p><em>[Kelompok 5: Penjelasan tentang Nilai True]</em></p>
-          </div>
+                5</strong><br>Metode analitik adalah cara menyelesaikan masalah
+                matematika menggunakan rumus dan aturan
+                matematika secara langsung untuk mendapatkan
+                hasil yang tepat (eksak) tanpa perkiraan. <br><br>Galat (error) adalah selisih antara nilai eksak (true
+value) dengan nilai pendekatan (approximation)</div>
+            <p><em>
+              
+              Rumus Numerik Nilai True
+              $$x^n \rightarrow n x^{n-1}$$
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>n</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Bilangan Pangkat</td>
+                  </tr>
+      
+
+                  
+                </table>
+              </em>
+            </p>
+              </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div><br><br>
+
+              <p><em>
+              
+              Rumus Error (Galat)
+              $$\text{Error} = |x_{\text{true}} - x_{\text{approx}}|$$
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>$$\text{Error}$$</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai galat/kesalahan mutlak (selisih murni)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>$$x_{\text{true}} $$</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai Sebenarnya</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>$$x_{\text{approx}}$$</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai Aproksimasi</td>
+                  </tr>
+      
+
+                  
+                </table>
+              </em>
+            </p>
+              </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div><br><br>
+
+              <div id="ch5-max-min">
+            <h3 class="subsection-title">5.3 Kriteria metode numerik yang baik</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                5</strong><br>Kriteria metode numerik yang baik adalah ukuran untuk menilai apakah suatu metode pendekatan dalam perhitungan sudah layak digunakan atau tidak. suatu metode dikatakan baik jika memenuhi tiga hal utama yaitu akurat, stabil, dan efisien.
+</div>
+            <p><em>
+              
+                          
+            Akurat
+               $$\text{Error} = |x_{\text{true}} - x_{\text{approx}}|$$
+
+            
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              Akurat adalah ukuran yang menunjukkan “Seberapa dekat hasil perhitungan dengan nilai sebenarnya”. 
+              Semakin kecil selisih (Error) antara hasil pendekatan dan nilai asli, maka hasil tersebut semakin akurat.
+              <br><br>
+              
+              <em>
+                <strong>Keterangan Komponen:</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">Error</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai galat mutlak (selisih murni antara nilai asli dan pendekatan)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">x<sub>approx</sub></td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai hasil pendekatan / hasil perhitungan metode numerik</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">x<sub>true</sub></td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai asli / eksak dari perhitungan matematika murni</td>
+                  </tr>
+                </table>
+              </em>
+            </p>
+          </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div><br><br>
+
+              <p><em>
+              
+              Stabil
+              $$h \downarrow \implies \text{hasil mendekati nilai asli secara konsisten}$$
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+              <i class="bi bi-quote quote-icon"></i>
+              <p>
+                Stabil adalah ukuran yang menunjukkan seberapa konsisten hasil perhitungan ketika terjadi perubahan kecil pada input atau langkah (seperti nilai <em>h</em>). Jika perubahan kecil tidak menyebabkan hasil berubah drastis, maka metode tersebut dikatakan stabil.
+                <br><br>
+                
+                <em>
+                  <strong>Kesimpulan Logika:</strong>
+                  <table style="border: none; margin-top: 5px; font-style: italic;">
+                    <tr>
+                      <td style="padding-right: 15px; vertical-align: top;">Perubahan kecil input</td>
+                      <td style="padding-right: 10px; vertical-align: top;">&rarr;</td>
+                      <td>Perubahan kecil hasil</td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 15px; vertical-align: top;">Nilai h diperkecil (h &darr;)</td>
+                      <td style="padding-right: 10px; vertical-align: top;">&rArr;</td>
+                      <td>Hasil mendekati nilai asli secara konsisten</td>
+                    </tr>
+                  </table>
+                </em>
+              </p>
+            </blockquote>
+                <div class="concept-card mt-3">
+                  <div class="concept-card-header">Uji Turunan Pertama</div>
+                  <div class="concept-card-body">
+                    <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                  </div>
+                </div>
+
+                <p><em><br><br>
+              
+              Efisiensi
+              $$\text{Efisiensi} = \frac{\text{hasil (akurasi)}}{\text{waktu / langkah}}$$
+            
+            
+            </em></p>
+
+           <blockquote class="blockquote-def">
+          <i class="bi bi-quote quote-icon"></i>
+          <p>
+            Efisien adalah ukuran yang menunjukkan seberapa hemat suatu metode dalam penggunaan waktu dan jumlah perhitungan. Metode dikatakan efisien jika dapat memberikan hasil yang cukup baik dengan langkah yang lebih sedikit atau proses yang lebih cepat.
+            <br><br>
+            
+            <em>
+              <strong>Secara Konsep Komputasi:</strong>
+              <table style="border: none; margin-top: 5px; font-style: italic;">
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top;">Langkah Perhitungan</td>
+                  <td style="padding-right: 10px; vertical-align: top;">=</td>
+                  <td>Sedikit / minimal</td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top;">Waktu Eksekusi</td>
+                  <td style="padding-right: 10px; vertical-align: top;">=</td>
+                  <td>Cepat (Running time singkat)</td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top;">Hasil Pendekatan</td>
+                  <td style="padding-right: 10px; vertical-align: top;">=</td>
+                  <td>Cukup baik dan memenuhi toleransi</td>
+                </tr>
+              </table>
+            </em>
+          </p>
+        </blockquote>
+                        <div class="concept-card mt-3">
+                  <div class="concept-card-header">Uji Turunan Pertama</div>
+                  <div class="concept-card-body">
+                    <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                  </div>
+                </div>
+
+
+                
+
+            </div><br><br>
+
+            <div id="ch5-max-min">
+            <h3 class="subsection-title">5.4 Interpretasi hasil
+turunan sebagai
+laju perubahan</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                5</strong><br>Interpretasi hasil turunan sebagai laju perubahan adalah cara memahami
+nilai turunan sebagai ukuran seberapa cepat suatu besaran berubah
+terhadap variabelnya. Nilai turunan menunjukkan perubahan kecil pada
+nilai fungsi ketika variabel inputnya berubah sedikit, sehingga dapat
+digunakan untuk menggambarkan kecepatan perubahan suatu fenomena,
+seperti kecepatan, pertumbuhan, atau penurunan dalam berbagai konteks.</div>
+            <p>
+              
+            </p>
+
+          <blockquote class="blockquote-def">
+  <i class="bi bi-quote quote-icon"></i>
+  <p>
+    
+    
+    <strong>A. Tiga Skema Rumus Pendekatan Numerik:</strong><br>
+    $$\text{1. Beda Maju (Forward): } f'(x) \approx \frac{f(x + h) - f(x)}{h}$$
+    $$\text{2. Beda Mundur (Backward): } f'(x) \approx \frac{f(x) - f(x - h)}{h}$$
+    $$\text{3. Beda Pusat (Central): } f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}$$
+    <br>
+    
+    <em>
+      <strong>Pengertian Variabel Simbol:</strong>
+      <table style="border: none; margin-top: 5px; font-style: italic;">
+        <tr>
+          <td style="padding-right: 15px; vertical-align: top;">f'(x)</td>
+          <td style="padding-right: 10px; vertical-align: top;">&approx;</td>
+          <td>Nilai laju perubahan sesaat (turunan pertama) hasil pendekatan komputer.</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 15px; vertical-align: top;">x</td>
+          <td style="padding-right: 10px; vertical-align: top;">=</td>
+          <td>Titik evaluasi utama atau posisi kondisi saat ini.</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 15px; vertical-align: top;">h</td>
+          <td style="padding-right: 10px; vertical-align: top;">=</td>
+          <td>Ukuran langkah (step size) atau interval perubahan kecil pada input.</td>
+        </tr>
+      </table>
+    </em>
+    <br>
+    
+    <strong>B. Panduan Universal Interpretasi Hasil:</strong>
+    <br>
+    Untuk mengartikan angka hasil hitungan:
+    $$f'(x) = L$$
+    gunakan kalimat baku di bawah ini:
+    <br>
+    <table style="border: none; margin-top: 5px; font-weight: bold; background-color: rgba(0,0,0,0.03); padding: 12px; border-radius: 5px; width: 100%;">
+      <tr>
+        <td>"Pada saat variabel input berada di titik (x), maka setiap kenaikan 1 satuan pada input akan menyebabkan variabel output (f(x)) bertambah/berubah sebesar (L) satuan."</td>
+      </tr>
+    </table>
+  </p>
+</blockquote><br><br>
+
+
+<div id="ch5-max-min">
+            <h3 class="subsection-title">5.5 Penerapan Turunan Numerik Dalam Bidang IT </h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                5</strong><br>
+  Di bidang IT, turunan numerik sangat penting karena komputer tidak dapat memproses persamaan kalkulus analitis yang kompleks secara langsung, melainkan harus menggunakan pendekatan algoritma aritmatika untuk menghitung laju perubahan data secara real-time. Konsep ini menjadi fondasi utama dalam kecerdasan buatan (Machine Learning) untuk memperbarui bobot algoritma lewat perhitungan gradien error, dalam pengembangan game untuk memproses pergerakan animasi serta simulasi fisika yang mulus, hingga dalam pengolahan citra digital untuk mendeteksi tepi objek berdasarkan perubahan intensitas warna pixel. Melalui pendekatan numerik, sistem komputasi mampu melakukan jutaan kalkulasi perubahan data yang masif secara akurat, stabil, dan efisien hanya dalam hitungan milidetik.
+</p></div>
+            <p>
+              
+            </p>
+
+          <blockquote class="blockquote-def">
+  <i class="bi bi-quote quote-icon"></i>
+  <p>
+    <strong>Penerapan Turunan dalam Bidang IT: Pentingnya Turunan Numerik Di Bidang IT</strong>
+    <br><br>
+    Turunan numerik memegang peranan krusial dalam pengembangan perangkat lunak dan teknologi informasi melalui tiga pilar kriteria utama:
+    <br><br>
+
+    <table style="border: none; width: 100%; font-size: 0.95em; border-collapse: collapse;">
+      <tr style="background-color: rgba(0,0,0,0.03);">
+        <td style="padding: 10px; font-weight: bold; width: 20%; vertical-align: top; color: #00BCD4;">🎯 Akurat</td>
+        <td style="padding: 10px; vertical-align: top;">
+          Turunan numerik memungkinkan perangkat lunak untuk mencapai tingkat presisi yang tinggi. Turunan juga digunakan untuk menghitung error skala terkecil hingga terbesar.
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; font-weight: bold; width: 20%; vertical-align: top; color: #2196F3;">⚓ Stabil</td>
+        <td style="padding: 10px; vertical-align: top;">
+          Sifat stabil ini sering kali dipakai dalam Simulasi Fisika Game, atau pun animasi seperti karakter melakukan gerakan yang cepat. Perhitungan kecepatannya tetap sehingga tidak terlihat patah-patah.
+          <br>
+          <span style="font-style: italic; font-size: 0.9em; color: #666;">
+            Logika fisis: $$h \downarrow \implies \text{hasil mendekati nilai asli secara konsisten}$$ (perubahan kecil input &rarr; perubahan kecil hasil).
+          </span>
+        </td>
+      </tr>
+      <tr style="background-color: rgba(0,0,0,0.03);">
+        <td style="padding: 10px; font-weight: bold; width: 20%; vertical-align: top; color: #FFEB3B;">⚡ Efisien</td>
+        <td style="padding: 10px; vertical-align: top;">
+          Turunan numerik dirancangkan agar dapat diproses oleh komputer dengan sangat cepat. Dengan Turunan Numerik ini juga komputer bisa melakukan jutaan perhitungan perubahan dalam hitungan milidetik.
+        </td>
+      </tr>
+    </table>
+  </p>
+</blockquote>
+
+          
+          
+          
 
           <div id="ch5-contoh" class="mt-5">
             <h3 class="subsection-title">Contoh Soal</h3>
