@@ -179,7 +179,7 @@
             <h2 class="chapter-title">Integral Tentu dan Integral Tak Tentu dalam Penerapan Data Kontinu</h2>
             <p class="chapter-meta">
               <span class="chapter-group-badge">Kelompok 9</span>
-              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Optimasi</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Definisi Integral</span>
             </p>
             <p class="chapter-desc">Integral adalah konsep dasar dalam kalkulus yang digunakan untuk menghitung luas,
               volume dan akumulasi suatu besaran.</p>
@@ -201,8 +201,8 @@
           <div id="ch9-max-min">
             <h3 class="subsection-title">9.1 Integral Tentu dan tak Tentu </h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Integral tentu adalah integral
-                yang memiliki nilai batas dan atas bawah.</strong><br></div>
-            <p><em>[Kelompok 9: Teorama Dasar Kalkulus</em></p>
+                yang memiliki nilai batas atas dan batas bawah.</strong><br></div>
+            <p><em>[Kelompok 9: Definisi Integral Tentu</em></p>
             <blockquote class="blockquote-def">
               <i class="bi bi-quote quote-icon"></i>
               <p><em>[ Kelompok 9: Pernyataan matematis yang menghubungkan konsep diferensiasi (turunan) dan integrasi
@@ -212,7 +212,7 @@
             <div class="concept-card mt-3">
               <div class="concept-card-header">Integral Tak Tentu</div>
               <div class="concept-card-body">
-                <p class="mb-0"><em>[Kelompok 9:Integral tak tentu atau antiturunan adalah suatu invers atau kebalikan
+                <p class="mb-0"><em>[ Kelompok 9:Integral tak tentu atau antiturunan adalah suatu invers atau kebalikan
                     dari turunan yang mana apabila sebuah turunan dari suatu fungsi jika diintegralkan akan menghasilkan
                     fungsi itu sendiri. Hasil angka konstanta dari Integral Tak
                     Tentu selalu disimbolkan dengan +C ]</em></p>
@@ -221,13 +221,13 @@
           </div>
 
           <div id="ch9-optimasi" class="mt-5">
-            <h3 class="subsection-title">9.2 Pendekatan Kontinu</h3>
+            <h3 class="subsection-title">9.2 Pendekatan Kontinu dan Diskret</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Dunia nyata bersifat kontinu (tak
                 terhingga dan mulus), sedangkan sistem komputer bersifat Diskret (terbatas dan berbasis sample). Dalam
                 pemograman, kita menggunakan metode Jumlah Riemann untuk memecahkan area kontinu menjadi
                 potongan-potongan kecil agar bisa
                 diproses oleh algoritma.</div>
-            <p><em>[Kelompok 9: Definisi Pendekatan Data Kontinu]</em></p>
+            <p><em>[ Kelompok 9: Definisi Pendekatan Kontinu dan Diskret ]</em></p>
           </div>
 
           <div id="ch9-contoh" class="mt-5">
@@ -267,70 +267,240 @@
           </div>
           <div class="card example-card mt-3">
             <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 9.2 —
-              Optimasi</div>
+              Pendekatan Kontinu dan Diskret</div>
             <div class="card-body">
               <p class="fw-semibold">Soal:</p>
-              <p><em>[Kelompok 9: isi contoh soal optimasi]</em></p>
+              <p>Sebuah server cloud mencatat kecepatan transfer data (bandwidth) yang terus berubah setiap detiknya (kontinu). Berdasarkan grafik monitoring, fungsi kecepatan data tersebut diperkirakan mengikuti rumus <strong>f(t) = 3t<sup>2</sup> + 2t</strong> (dalam Megabit per detik/Mbps). Sebagai DevOps Engineer di tim TRPL, Anda diminta menghitung perkiraan <strong>Total Akumulasi Data</strong> yang ditransfer dari detik ke-1 hingga detik ke-5 (t = 1 hingga t = 5). Karena sistem komputer bekerja secara diskret, hitunglah estimasi tersebut menggunakan metode <strong>Jumlah Riemann Kanan</strong> dengan membagi waktu menjadi 4 interval kotak yang sama (&Delta;t = 1 detik).</p>
               <hr />
               <p class="fw-semibold">Penyelesaian:</p>
-              <p><em>[Kelompok 9: isi langkah-langkah]</em></p>
+              
+              <p><strong>Langkah 1: Menentukan Lebar Kotak (&Delta;t)</strong><br>
+              Diketahui batas bawah a = 1, batas atas b = 5, dan jumlah interval n = 4.<br>
+              <span class="font-monospace fw-bold">&Delta;t = (b - a) / n = (5 - 1) / 4 = 1 detik</span></p>
+
+              <p><strong>Langkah 2: Menentukan Titik Sampel Diskret (Riemann Kanan)</strong><br>
+              Karena menggunakan Riemann Kanan, kita mengambil ujung kanan dari setiap interval: 2, 3, 4, dan 5 detik.</p>
+
+              <p><strong>Langkah 3: Menghitung Tinggi Kotak (Nilai Fungsi f(t))</strong><br>
+              <ul>
+                <li>Ujung 1 (t = 2): f(2) = 3(2)<sup>2</sup> + 2(2) = 12 + 4 = 16 Mbps</li>
+                <li>Ujung 2 (t = 3): f(3) = 3(3)<sup>2</sup> + 2(3) = 27 + 6 = 33 Mbps</li>
+                <li>Ujung 3 (t = 4): f(4) = 3(4)<sup>2</sup> + 2(4) = 48 + 8 = 56 Mbps</li>
+                <li>Ujung 4 (t = 5): f(5) = 3(5)<sup>2</sup> + 2(5) = 75 + 10 = 85 Mbps</li>
+              </ul></p>
+
+              <p><strong>Langkah 4: Menghitung Total Akumulasi (Jumlah Riemann)</strong><br>
+              <div class="p-2 bg-light border rounded font-monospace mb-3">
+                <strong>Konsep:</strong> Total Akumulasi &asymp; &Sigma; (Tinggi Kotak &times; Lebar Kotak)
+              </div>
+              <span class="font-monospace">
+                Total Akumulasi &asymp; [f(2) &times; 1] + [f(3) &times; 1] + [f(4) &times; 1] + [f(5) &times; 1]<br>
+                Total Akumulasi &asymp; 16 + 33 + 56 + 85 = <strong>190 Megabit</strong>
+              </span></p>
+
+              <p>Jadi, estimasi total data diskret yang mengalir melalui server software tersebut adalah sebesar <strong>190 Megabit</strong>.</p>
             </div>
           </div>
       </div>
 
       <div id="ch9-video" class="mt-5">
         <h3 class="subsection-title">Video Pembelajaran</h3>
-        <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 9</strong> — Embed video
-          pembelajaran Aplikasi Turunan di sini.</div>
+        <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 9</strong> — Video Pembelajaran
+          Integral Tentu dan Tak Tentu dalam Penerapan Data Kontinu.</div>
         <div class="ratio ratio-16x9 mt-3"
           style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
           <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 9" allowfullscreen
             style="border:0;"></iframe>
         </div>
-        <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video
-          pembelajaran yang sesuai.</p>
       </div>
 
       <div id="ch9-latihan" class="mt-5">
         <h3 class="subsection-title">Latihan Soal</h3>
-        <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 9</strong> — Isi latihan
-          soal di bawah ini.</div>
+        <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 9</strong> — Silahkan mengisi
+          latihan soal di bawah ini!.</div>
         <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
           <div class="card-body">
             <ol class="mb-0">
-              <li class="mb-3">
-                <p class="fw-semibold mb-1">Soal 1</p>
-                <p><em>[Kelompok 9: isi soal latihan 1]</em></p>
+              
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 1: Integral Tak Tentu (Performa CPU)</p>
+                <p>Sebuah algoritma optimasi mengalami perubahan laju penggunaan memori RAM (dalam MB/detik) yang dinyatakan oleh fungsi f'(t) = 6t<sup>2</sup> - 4t + 5. 
+                  Tentukan fungsi total penggunaan memori f(t) jika diketahui pada detik ke-0 (t = 0) memori awal yang digunakan sistem adalah 100 MB!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                    Lihat Jawaban</summary>
-                  <div class="mt-2 p-3"
-                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                      soal 1]</em></div>
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    Cari integral tak tentu dari f'(t):<br>
+                    f(t) = &int; (6t<sup>2</sup> - 4t + 5) dt<br>
+                    f(t) = (6/3)t<sup>3</sup> - (4/2)t<sup>2</sup> + 5t + C<br>
+                    f(t) = 2t<sup>3</sup> - 2t<sup>2</sup> + 5t + C<br><br>
+                    Substitusi nilai awal t = 0, f(0) = 100:<br>
+                    100 = 2(0)<sup>3</sup> - 2(0)<sup>2</sup> + 5(0) + C &rarr; C = 100<br><br>
+                    <strong>Jawaban Akhir:</strong> f(t) = 2t<sup>3</sup> - 2t<sup>2</sup> + 5t + 100
+                  </div>
                 </details>
               </li>
-              <li class="mb-3">
-                <p class="fw-semibold mb-1">Soal 2</p>
-                <p><em>[Kelompok 9: isi soal latihan 2]</em></p>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 2: Integral Tak Tentu (Kecepatan Unduh Data)</p>
+                <p>Laju unduh (*download speed*) sebuah aplikasi meningkat berdasarkan fungsi f'(t) = 3t<sup>1/2</sup> + 2 (dalam Mbps). 
+                  Tentukan rumus umum total ukuran file f(t) yang berhasil diunduh setelah t detik!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                    Lihat Jawaban</summary>
-                  <div class="mt-2 p-3"
-                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                      soal 2]</em></div>
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    f(t) = &int; (3t<sup>1/2</sup> + 2) dt<br>
+                    f(t) = (3 / (3/2)) * t<sup>3/2</sup> + 2t + C<br>
+                    f(t) = 2t<sup>3/2</sup> + 2t + C<br><br>
+                    <strong>Jawaban Akhir:</strong> f(t) = 2t&radic;t + 2t + C
+                  </div>
                 </details>
               </li>
-              <li class="mb-3">
-                <p class="fw-semibold mb-1">Soal 3</p>
-                <p><em>[Kelompok 9: isi soal latihan 3]</em></p>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 3: Integral Tentu (Akumulasi Traffic Request API)</p>
+                <p>Sebuah endpoint API menerima request dengan laju r(t) = 4t<sup>3</sup> + 3t<sup>2</sup> request per menit. 
+                  Hitunglah total request yang masuk ke server dari menit ke-1 (t = 1) hingga menit ke-2 (t = 2)!</p>
                 <details class="mt-2">
-                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                    Lihat Jawaban</summary>
-                  <div class="mt-2 p-3"
-                    style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                      soal 3]</em></div>
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    Hitung integral tentu dengan batas bawah 1 dan batas atas 2:<br>
+                    &int;<sub>1</sub><sup>2</sup> (4t<sup>3</sup> + 3t<sup>2</sup>) dt = [t<sup>4</sup> + t<sup>3</sup>]<sub>1</sub><sup>2</sup><br><br>
+                    Substitusi batas atas (t = 2): (2<sup>4</sup> + 2<sup>3</sup>) = 16 + 8 = 24<br>
+                    Substitusi batas bawah (t = 1): (1<sup>4</sup> + 1<sup>3</sup>) = 1 + 1 = 2<br><br>
+                    Total Request = 24 - 2 = 22<br>
+                    <strong>Jawaban Akhir:</strong> 22 Request
+                  </div>
                 </details>
               </li>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 4: Integral Tentu (Konsumsi Daya IoT Device)</p>
+                <p>Sensor IoT mengonsumsi daya listrik dengan laju P(t) = 9t<sup>2</sup> - 2t + 4 miliwatt. 
+                  Hitunglah total energi (dalam milijoule) yang dihabiskan sensor pada rentang waktu t = 0 hingga t = 3 detik!</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    &int;<sub>0</sub><sup>3</sup> (9t<sup>2</sup> - 2t + 4) dt = [3t<sup>3</sup> - t<sup>2</sup> + 4t]<sub>0</sub><sup>3</sup><br><br>
+                    Substitusi t = 3: 3(3)<sup>3</sup> - (3)<sup>2</sup> + 4(3) = 3(27) - 9 + 12 = 81 - 9 + 12 = 84<br>
+                    Substitusi t = 0: 3(0) - 0 + 0 = 0<br><br>
+                    Total Energi = 84 - 0 = 84<br>
+                    <strong>Jawaban Akhir:</strong> 84 milijoule
+                  </div>
+                </details>
+              </li>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 5: Penerapan Diskret (Jumlah Riemann Kiri - Bandwidth)</p>
+                <p>Sebuah sistem monitoring jaringan mencatat kecepatan upload data server f(t) per detik seperti tabel berikut:<br>
+                t (detik): 0, 1, 2, 3, 4<br>
+                f(t) (Mbps): 10, 15, 20, 25, 30<br>
+                Estimasikan total data yang diupload dari t = 0 hingga t = 4 menggunakan <strong>Riemann Kiri</strong> dengan &Delta;t = 1!</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    Karena menggunakan Riemann Kiri, ambil nilai f(t) dari titik kiri interval (t = 0, 1, 2, 3):<br>
+                    Total &asymp; &Delta;t * [f(0) + f(1) + f(2) + f(3)]<br>
+                    Total &asymp; 1 * [10 + 15 + 20 + 25]<br>
+                    Total &asymp; 70 Megabit<br>
+                    <strong>Jawaban Akhir:</strong> 70 Megabit
+                  </div>
+                </details>
+              </li>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 6: Penerapan Diskret (Jumlah Riemann Kanan - Log Analisis)</p>
+                <p>Berdasarkan log aktivitas web, laju penambahan pengguna baru per jam mengikuti pola f(t) = 2t + 1. 
+                  Hitunglah estimasi total pengguna baru dari jam ke-0 hingga jam ke-3 (t = 0 sampai t = 3) menggunakan metode <strong>Riemann Kanan</strong> dengan membaginya menjadi 3 interval (&Delta;t = 1)!</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    Batas: t=0 hingga t=3 dengan n=3, maka &Delta;t = 1. Titik kanan interval adalah t = 1, 2, 3.<br>
+                    f(1) = 2(1) + 1 = 3<br>
+                    f(2) = 2(2) + 1 = 5<br>
+                    f(3) = 2(3) + 1 = 7<br><br>
+                    Total &asymp; 1 * [f(1) + f(2) + f(3)] = 1 * [3 + 5 + 7] = 15<br>
+                    <strong>Jawaban Akhir:</strong> 15 pengguna baru
+                  </div>
+                </details>
+              </li>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 7: Integral Tak Tentu (Skalabilitas Server Node.js)</p>
+                <p>Pertumbuhan beban antrean *task* pada server Node.js dinyatakan oleh f'(t) = 12t<sup>3</sup> - 6t. 
+                  Tentukan fungsi f(t) yang merepresentasikan jumlah *task* dalam antrean pada waktu t jika pada t = 1 jumlah antrean adalah 5 *task*!</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    f(t) = &int; (12t<sup>3</sup> - 6t) dt = 3t<sup>4</sup> - 3t<sup>2</sup> + C<br>
+                    Substitusi f(1) = 5:<br>
+                    5 = 3(1)<sup>4</sup> - 3(1)<sup>2</sup> + C<br>
+                    5 = 3 - 3 + C &rarr; C = 5<br><br>
+                    <strong>Jawaban Akhir:</strong> f(t) = 3t<sup>4</sup> - 3t<sup>2</sup> + 5
+                  </div>
+                </details>
+              </li>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 8: Integral Tentu (Pemrosesan Data Gambar/Citra)</p>
+                <p>Dalam algoritma computer vision, gradien intensitas piksel horizontal pada sebuah baris gambar dinyatakan oleh f(x) = 6x<sup>2</sup> - 2x. 
+                  Hitung nilai akumulasi perubahan intensitas dari koordinat x = 1 hingga x = 4!</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    &int;<sub>1</sub><sup>4</sup> (6x<sup>2</sup> - 2x) dx = [2x<sup>3</sup> - x<sup>2</sup>]<sub>1</sub><sup>4</sup><br><br>
+                    Substitusi x = 4: 2(4)<sup>3</sup> - (4)<sup>2</sup> = 2(64) - 16 = 128 - 16 = 112<br>
+                    Substitusi x = 1: 2(1)<sup>3</sup> - (1)<sup>2</sup> = 2 - 1 = 1<br><br>
+                    Total Akumulasi Intensitas = 112 - 1 = 111<br>
+                    <strong>Jawaban Akhir:</strong> 111
+                  </div>
+                </details>
+              </li>
+
+              <li class="mb-4">
+                <p class="fw-semibold mb-1">Soal 9: Penerapan Diskret (Jumlah Riemann Tengah - Pengukuran Latency)</p>
+                <p>Sebuah pengujian sistem mengukur fluktuasi latency f(t) = t<sup>2</sup> (dalam milidetik). 
+                  Estimasikan total penumpukan latency dari t = 0 hingga t = 2 detik menggunakan 2 interval (n = 2) dengan metode <strong>Riemann Tengah (Midpoint)</strong>!</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    Interval pertama [0, 1] &rarr; titik tengah t = 0.5<br>
+                    Interval kedua [1, 2] &rarr; titik tengah t = 1.5<br>
+                    Lebar interval &Delta;t = (2-0)/2 = 1<br><br>
+                    f(0.5) = (0.5)<sup>2</sup> = 0.25<br>
+                    f(1.5) = (1.5)<sup>2</sup> = 2.25<br><br>
+                    Total &asymp; 1 * [f(0.5) + f(1.5)] = 1 * [0.25 + 2.25] = 2.5<br>
+                    <strong>Jawaban Akhir:</strong> 2.5 milidetik
+                  </div>
+                </details>
+              </li>
+
+              <li class="mb-3">
+                <p class="fw-semibold mb-1">Soal 10: Penerapan Diskret vs Kontinu (Error Batas Atas)</p>
+                <p>Aplikasi web scraping mencatat rate limit request f(t) = 4t. Jika Anda menghitung area dari t = 0 hingga t = 2 dengan 2 interval (n = 2) menggunakan Riemann Kanan, 
+                  berapakah selisih (error) hasil diskret tersebut jika dibandingkan dengan nilai integral tentu aslinya (kontinu)?</p>
+                <details class="mt-2">
+                  <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                  <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                    <strong>Penyelesaian:</strong><br>
+                    1. Secara Kontinu (Integral Tentu):<br>
+                    &int;<sub>0</sub><sup>2</sup> (4t) dt = [2t<sup>2</sup>]<sub>0</sub><sup>2</sup> = 2(2)<sup>2</sup> - 0 = 8<br><br>
+                    2. Secara Diskret (Riemann Kanan, &Delta;t = 1, titik kanan t = 1 dan 2):<br>
+                    Total &asymp; 1 * [f(1) + f(2)] = 1 * [4(1) + 4(2)] = 4 + 8 = 12<br><br>
+                    3. Menghitung Selisih (Error):<br>
+                    Selisih = Nilai Diskret - Nilai Kontinu = 12 - 8 = 4<br>
+                    <strong>Jawaban Akhir:</strong> 4
+                  </div>
+                </details>
+              </li>
+
             </ol>
           </div>
         </div>
