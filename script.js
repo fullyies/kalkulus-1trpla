@@ -266,11 +266,56 @@ function calcLinear() {
   const sign = b >= 0 ? '+' : '−';
   const absB = Math.abs(b);
 
+  // Menentukan sifat fungsi
+  let sifat = "";
+  if (m > 0) {
+    sifat = "Grafik fungsi naik karena gradien bernilai positif.";
+  } else if (m < 0) {
+    sifat = "Grafik fungsi menurun karena gradien bernilai negatif.";
+  } else {
+    sifat = "Grafik fungsi mendatar karena gradien sama dengan nol.";
+  }
+
+  // Laju perubahan fungsi linear = gradien
+  const laju = m;
+
   resultEl.className = 'calc-result success';
+
   resultEl.innerHTML = `
-    <strong>f(x) = ${m}x ${sign} ${absB}</strong><br>
-    f(<strong>${x}</strong>) = ${m} × ${x} ${sign} ${absB}
+    <strong>📘 Persamaan Fungsi</strong><br>
+    f(x) = ${m}x ${sign} ${absB}
+
+    <hr>
+
+    <strong>🧮 Langkah Perhitungan</strong><br>
+    f(${formatNum(x)}) = (${formatNum(m)} × ${formatNum(x)}) ${sign} ${absB}<br>
+    = ${formatNum(m * x)} ${sign} ${absB}<br>
     = <strong>${formatNum(fx)}</strong>
+
+    <hr>
+
+    <strong>📚 Informasi Fungsi</strong><br>
+    • Jenis Fungsi : Linear<br>
+    • Gradien (m) : <strong>${formatNum(m)}</strong><br>
+    • Konstanta (b) : <strong>${formatNum(b)}</strong><br>
+    • Domain : ℝ<br>
+    • Kodomain : ℝ<br>
+    • Range : ℝ
+
+    <hr>
+
+    <strong>📈 Laju Perubahan</strong><br>
+    Δy / Δx = <strong>${formatNum(laju)}</strong><br>
+    Artinya, setiap kenaikan <strong>1</strong> satuan pada nilai x,
+    maka nilai f(x) akan berubah sebesar
+    <strong>${formatNum(laju)}</strong> satuan.
+
+    <hr>
+
+    <strong>📊 Analisis</strong><br>
+    Nilai fungsi pada x = <strong>${formatNum(x)}</strong> adalah
+    <strong>${formatNum(fx)}</strong>.<br>
+    ${sifat}
   `;
 }
 
