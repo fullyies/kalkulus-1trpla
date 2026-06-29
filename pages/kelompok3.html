@@ -200,58 +200,259 @@
             </div>
           </div>
 
-          <div id="ch3-definisi">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-            <h3 class="subsection-title">3.1 limit Rasional & Irasional</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — limit Rasional & Irasional</strong><br><ul>
-                 </div>
-            <p>
-              <em>contoh limit rasional :</em>
-              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-              
+          
+            <div id="ch3-definisi">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-                \[
-                \lim_{x \to 2} \frac{x^2-4}{x-2}
-                \]
-            </p>
-            <p>
-              <em>contoh limit irasional :</em>
-              \[
-              \lim_{x \to 2} \sqrt{x^2-4}
-              \]
-            </p>
-            <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
-              <p><em> <li>Definisi limit rasional</li>
-                    <p>limit yang melibatkan fungsi berbentuk pecahan</p>
-                  <li>Definisi limit irasional</li>
-                    <p>limit yang melibatkan fungsi berbentuk akar</p>
-                </ul></em></p>
-              <footer>— Definisi limit rasional & irasional</footer>
-            </blockquote>
-            <div class="concept-card mt-3">
-              <div class="concept-card-header">Syarat Kekontinuan di Titik x = a</div>
-              <div class="concept-card-body">
-                <code class="formula-display">lim<sub>x→a</sub> f(x) = f(a)</code>
-                <p class="mt-2"><em>[Kelompok 3: jelaskan tiga syarat kekontinuan di titik a]</em></p>
-              </div>
-            </div>
-          </div>
+                <h3 class="subsection-title">3.1 Limit Rasional & Irasional</h3>
 
-          <div id="ch3-contoh" class="mt-5">
-            <h3 class="subsection-title">Contoh Soal</h3>
-            <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 3.1
-              </div>
-              <div class="card-body">
-                <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 3: isi contoh soal kekontinuan]</em></p>
-                <hr />
-                <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 3: isi langkah-langkah]</em></p>
-              </div>
+                <div class="placeholder-notice">
+                    <i class="bi bi-pencil-square"></i>
+                    <strong>Area Materi — Limit Rasional & Irasional</strong><br>
+
+                    <ul>
+                        <li>Limit rasional dan limit irasional merupakan dua bentuk limit fungsi yang sering dijumpai dalam kalkulus.</li>
+                        <li>Perbedaannya terletak pada bentuk fungsi yang digunakan, yaitu fungsi pecahan (rasional) dan fungsi yang mengandung akar (irasional).</li>
+                    </ul>
+                </div>
+
+                <ul>
+
+                    <li>
+                        <p>
+                            <em>Limit Rasional :</em>
+                        </p>
+
+                        <p>
+                            Limit rasional adalah limit yang melibatkan fungsi berbentuk pecahan
+                            (rasional). Penyelesaiannya dapat dilakukan dengan substitusi langsung
+                            apabila penyebut tidak bernilai nol. Jika menghasilkan bentuk tak tentu
+                            \(\frac{0}{0}\), maka dapat diselesaikan menggunakan faktorisasi atau
+                            penyederhanaan aljabar.
+                        </p>
+
+                        <p><strong>Contoh:</strong></p>
+
+                        \[
+                        \lim_{x\to2}\frac{x^2-4}{x-2}
+                        \]
+
+                        <p>
+                            Faktorkan pembilang:
+                        </p>
+
+                        \[
+                        =\lim_{x\to2}\frac{(x-2)(x+2)}{x-2}
+                        \]
+
+                        \[
+                        =\lim_{x\to2}(x+2)
+                        \]
+
+                        \[
+                        =2+2=4
+                        \]
+
+                        <p>
+                            Jadi,
+                        </p>
+
+                        \[
+                        \boxed{\lim_{x\to2}\frac{x^2-4}{x-2}=4}
+                        \]
+
+                    </li>
+
+                    <li>
+
+                        <p>
+                            <em>Limit Irasional :</em>
+                        </p>
+
+                        <p>
+                            Limit irasional adalah limit yang melibatkan fungsi yang mengandung
+                            bentuk akar. Jika hasil substitusi menghasilkan bentuk tak tentu,
+                            penyelesaiannya dapat menggunakan sekawan (mengalikan dengan bentuk
+                            sekawan).
+                        </p>
+
+                        <p><strong>Contoh:</strong></p>
+
+                        \[
+                        \lim_{x\to4}\frac{\sqrt{x}-2}{x-4}
+                        \]
+
+                        <p>
+                            Kalikan pembilang dan penyebut dengan bentuk sekawan:
+                        </p>
+
+                        \[
+                        \frac{\sqrt{x}-2}{x-4}
+                        \times
+                        \frac{\sqrt{x}+2}{\sqrt{x}+2}
+                        \]
+
+                        <p>
+                            Sehingga diperoleh:
+                        </p>
+
+                        \[
+                        =\frac{x-4}{(x-4)(\sqrt{x}+2)}
+                        \]
+
+                        \[
+                        =\frac{1}{\sqrt{x}+2}
+                        \]
+
+                        <p>
+                            Substitusikan \(x=4\):
+                        </p>
+
+                        \[
+                        =\frac{1}{2+2}
+                        =\frac14
+                        \]
+
+                        <p>
+                            Jadi,
+                        </p>
+
+                        \[
+                        \boxed{\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}=\frac14}
+                        \]
+
+                    </li>
+
+                </ul>
+
+                <blockquote class="blockquote-def">
+                    <i class="bi bi-quote quote-icon"></i>
+
+                    <p><em>Perbedaan Limit Rasional dan Limit Irasional:</em></p>
+
+                    <ul>
+                        <li><strong>Limit Rasional</strong> → melibatkan fungsi berbentuk pecahan aljabar.</li>
+                        <li><strong>Limit Irasional</strong> → melibatkan fungsi yang mengandung akar.</li>
+                        <li><strong>Penyelesaian</strong> → limit rasional umumnya menggunakan substitusi atau faktorisasi, sedangkan limit irasional sering menggunakan bentuk sekawan.</li>
+                    </ul>
+
+                    <footer>— Definisi Limit Rasional & Irasional</footer>
+                </blockquote>
+
+                <div class="concept-card mt-3">
+                    <div class="concept-card-header">Langkah Menyelesaikan Limit</div>
+
+                    <div class="concept-card-body">
+
+                        <code class="formula-display">
+                            lim<sub>x→a</sub> f(x)
+                        </code>
+
+                        <p class="mt-2">
+                            Secara umum, langkah-langkah menyelesaikan limit adalah:
+                        </p>
+
+                        <ol>
+                            <li>Substitusikan nilai yang dituju ke dalam fungsi.</li>
+                            <li>Jika hasilnya bukan bentuk tak tentu, maka itulah nilai limit.</li>
+                            <li>Jika diperoleh bentuk \(\frac{0}{0}\), lakukan penyederhanaan dengan faktorisasi atau bentuk sekawan.</li>
+                            <li>Substitusikan kembali hingga diperoleh nilai limit.</li>
+                        </ol>
+
+                        <p>
+                            Dengan memahami langkah-langkah tersebut, limit rasional maupun irasional
+                            dapat diselesaikan secara sistematis.
+                        </p>
+
+                    </div>
+                </div>
             </div>
-          </div>  
+
+
+
+            <div id="ch3-contoh" class="mt-5">
+                <h3 class="subsection-title">Contoh Soal</h3>
+
+                <div class="card example-card mt-3">
+                    <div class="card-header example-card-header">
+                        <i class="bi bi-lightbulb-fill me-2"></i>
+                        Contoh Soal Limit Rasional
+                    </div>
+
+                    <div class="card-body">
+
+                        <p class="fw-semibold">Soal:</p>
+
+                        <p>
+                            Tentukan nilai limit berikut:
+                        </p>
+
+                        \[
+                        \lim_{x\to3}\frac{x^2-9}{x-3}
+                        \]
+
+                        <hr />
+
+                        <p class="fw-semibold">Penyelesaian:</p>
+
+                        <p>
+                            <strong>Langkah 1:</strong> Substitusikan nilai \(x=3\).
+                        </p>
+
+                        \[
+                        \frac{3^2-9}{3-3}
+                        =
+                        \frac{0}{0}
+                        \]
+
+                        <p>
+                            Karena menghasilkan bentuk tak tentu \(\frac{0}{0}\), maka fungsi harus disederhanakan.
+                        </p>
+
+                        <p>
+                            <strong>Langkah 2:</strong> Faktorkan pembilang.
+                        </p>
+
+                        \[
+                        x^2-9=(x-3)(x+3)
+                        \]
+
+                        sehingga,
+
+                        \[
+                        \frac{x^2-9}{x-3}
+                        =
+                        \frac{(x-3)(x+3)}{x-3}
+                        =
+                        x+3
+                        \]
+
+                        <p>
+                            <strong>Langkah 3:</strong> Hitung kembali limitnya.
+                        </p>
+
+                        \[
+                        \lim_{x\to3}(x+3)
+                        =
+                        3+3
+                        =
+                        6
+                        \]
+
+                        <p>
+                            Jadi,
+                        </p>
+
+                        \[
+                        \boxed{
+                        \lim_{x\to3}\frac{x^2-9}{x-3}=6
+                        }
+                        \]
+
+                    </div>
+                </div>
+            </div>
 
         <div class="mb-3">
           <label class="form-label">Mode Perhitungan</label>
@@ -482,59 +683,1557 @@
             <h3 class="subsection-title">3.3 Diskontinuitas</h3>
             <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Diskontinuitas</strong><br><ul><li>Diskontinuitas adalah keadaan ketika suatu fungsi tidak kontinu (tidak tersambung) pada titik tertentu.</li></ul></div>
-            <ul>
-              <li>
-                <p>
-                  <em>Diskontinuitas dapat dihilangkan :</em>
-                  
-                  
-                    <p>Tentukan apakah fungsi berikut jika kontinu x=2!</p>
-                    \[
-                    f(x) = \frac{x^2 - 4}{x - 2}
-                    \]
-                    lalu kita substitusi x=2, maka f(2) = 0/0, ini adalah bentuk tak tentu. Namun, kita dapat menyederhanakan fungsi tersebut:
-                    \[
-                    f(x) = \frac{(x-2)(x+2)}{x-2} = x+2
-                    \]
-                    (jabarkan pangkat tertinggi, lalu berapa kali berapa yang hasilnya -4)
-                    <p> 
-                      masukan 2 ke x, maka \[f(2)\] = 2 + 2 = 4. Jadi limitnya adalah 4,pada fungsi kontinuitas x=2.  
-                    </p>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <em>Diskontinuitas tak terhingga :</em>
-                  <p>Terjadi ketika nilai fungsi mendekati tak hingga (∞) atau negatif tak hingga (−∞) pada suatu titik.</p>
-                  \[
-                  \lim_{x \to 2} \sqrt{x^2-4}
-                  \]
-                </p>
-                
-              </li> 
-            </ul>
-            <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
-              <p><em> Diskontinuitas dibagi menjdai 3</em>
+
+            <div class="placeholder-notice">
+                <i class="bi bi-pencil-square"></i>
+                <strong>Area Materi — Diskontinuitas</strong><br>
                 <ul>
-                  <li>dapat dihilangkan
-                    <p></p>
-                  </li>
-                  <li>tak hingga</li>
-                  <li>loncat</li>
-                </ul> 
-              <footer>— Definisi limit rasional & irasional</footer>
+                    <li>Diskontinuitas adalah keadaan ketika suatu fungsi tidak kontinu (tidak tersambung) pada titik tertentu.</li>
+                    <li>Pada titik tersebut, grafik fungsi dapat memiliki lubang, loncatan, atau bahkan menuju tak hingga.</li>
+                </ul>
+            </div>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>Diskontinuitas dapat dihilangkan :</em>
+                    </p>
+
+                    <p>
+                        Terjadi ketika limit fungsi di suatu titik ada, tetapi nilai fungsi pada titik tersebut tidak ada atau tidak sama dengan limitnya.
+                        Diskontinuitas jenis ini dapat diperbaiki dengan mendefinisikan ulang nilai fungsi pada titik tersebut.
+                    </p>
+
+                    <p>Tentukan apakah fungsi berikut kontinu pada x = 2!</p>
+
+                    \[
+                    f(x)=\frac{x^2-4}{x-2}
+                    \]
+
+                    <p>
+                        Jika kita substitusi langsung x = 2, maka diperoleh:
+                    </p>
+
+                    \[
+                    f(2)=\frac{0}{0}
+                    \]
+
+                    <p>
+                        Hasil tersebut merupakan bentuk tak tentu. Oleh karena itu, kita sederhanakan terlebih dahulu:
+                    </p>
+
+                    \[
+                    f(x)=\frac{(x-2)(x+2)}{x-2}
+                    \]
+
+                    \[
+                    f(x)=x+2,\quad x\neq2
+                    \]
+
+                    <p>
+                        Selanjutnya hitung limit saat x mendekati 2:
+                    </p>
+
+                    \[
+                    \lim_{x\to2}f(x)=\lim_{x\to2}(x+2)=4
+                    \]
+
+                    <p>
+                        Karena limitnya ada dan bernilai 4, maka terdapat lubang (hole) pada titik (2,4).
+                        Jika didefinisikan f(2)=4, maka fungsi menjadi kontinu.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Diskontinuitas tak terhingga :</em>
+                    </p>
+
+                    <p>
+                        Terjadi ketika nilai fungsi mendekati tak hingga (∞) atau negatif tak hingga (−∞)
+                        saat x mendekati suatu titik tertentu. Biasanya ditandai dengan adanya asimtot vertikal.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=\frac{1}{x-2}
+                    \]
+
+                    <p>
+                        Ketika x mendekati 2 dari kiri:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}\frac{1}{x-2}=-\infty
+                    \]
+
+                    <p>
+                        Ketika x mendekati 2 dari kanan:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}\frac{1}{x-2}=+\infty
+                    \]
+
+                    <p>
+                        Karena nilai fungsi membesar tanpa batas, maka fungsi mengalami
+                        diskontinuitas tak terhingga di x = 2.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Diskontinuitas loncat :</em>
+                    </p>
+
+                    <p>
+                        Terjadi ketika limit kiri dan limit kanan suatu fungsi memiliki nilai yang berbeda.
+                        Akibatnya, limit fungsi di titik tersebut tidak ada.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=
+                    \begin{cases}
+                    1, & x<2 \\
+                    3, & x\ge2
+                    \end{cases}
+                    \]
+
+                    <p>
+                        Limit kiri:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)=1
+                    \]
+
+                    <p>
+                        Limit kanan:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}f(x)=3
+                    \]
+
+                    <p>
+                        Karena 1 ≠ 3, maka limit di x = 2 tidak ada.
+                        Oleh sebab itu fungsi mengalami diskontinuitas loncat.
+                    </p>
+                </li>
+            </ul>
+
+            <blockquote class="blockquote-def">
+                <i class="bi bi-quote quote-icon"></i>
+                <p>
+                    <em>Diskontinuitas dibagi menjadi 3 jenis:</em>
+                </p>
+
+                <ul>
+                    <li><strong>Dapat dihilangkan</strong> → terdapat lubang pada grafik dan dapat diperbaiki dengan mendefinisikan ulang nilai fungsi.</li>
+                    <li><strong>Tak hingga</strong> → nilai fungsi menuju ∞ atau −∞ pada suatu titik.</li>
+                    <li><strong>Loncat</strong> → limit kiri dan limit kanan berbeda.</li>
+                </ul>
+
+                <footer>— Jenis-jenis Diskontinuitas</footer>
             </blockquote>
+
             <div class="concept-card mt-3">
-              <div class="concept-card-header">Syarat Kekontinuan di Titik x = a</div>
-              <div class="concept-card-body">
-                <code class="formula-display">lim<sub>x→a</sub> f(x) = f(a)</code>
-                <p class="mt-2"><em>[Kelompok 3: jelaskan tiga syarat kekontinuan di titik a]</em></p>
+                <div class="concept-card-header">Syarat Kekontinuan di Titik x = a</div>
+
+                <div class="concept-card-body">
+                    <code class="formula-display">
+                        lim<sub>x→a</sub> f(x) = f(a)
+                    </code>
+
+                    <p class="mt-2">
+                        Suatu fungsi dikatakan kontinu di titik x = a apabila memenuhi tiga syarat:
+                    </p>
+
+                    <ol>
+                        <li>Nilai fungsi di titik tersebut ada, yaitu f(a) terdefinisi.</li>
+                        <li>Limit fungsi saat x mendekati a ada.
+                            \[
+                            \lim_{x\to a}f(x)
+                            \]
+                        </li>
+                        <li>Nilai limit sama dengan nilai fungsi.
+                            \[
+                            \lim_{x\to a}f(x)=f(a)
+                            \]
+                        </li>
+                    </ol>
+
+                    <p>
+                        Jika salah satu syarat tidak terpenuhi, maka fungsi tidak kontinu
+                        (mengalami diskontinuitas) pada titik tersebut.
+                    </p>
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-teorema" class="mt-5">
+            <h3 class="subsection-title">Contoh soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    contoh soal Diskontinuitas Dapat Dihilangkan
+                </div>
+
+                <div class="card-body">
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah fungsi berikut mengalami diskontinuitas yang dapat dihilangkan pada
+                        \(x = 3\):
+                    </p>
+
+                    \[
+                    f(x)=\frac{x^2-9}{x-3}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Petunjuk:</p>
+
+                    <ol>
+                        <li>Substitusikan \(x=3\) secara langsung.</li>
+                        <li>Faktorkan pembilang.</li>
+                        <li>Sederhanakan bentuk fungsi.</li>
+                        <li>Hitung nilai limit saat \(x \to 3\).</li>
+                        <li>Tentukan apakah diskontinuitasnya dapat dihilangkan.</li>
+                    </ol>
+
+                    <hr />
+
+                    <p class="fw-semibold">Jawaban:</p>
+
+                    \[
+                    f(x)=\frac{(x-3)(x+3)}{x-3}
+                    \]
+
+                    \[
+                    f(x)=x+3,\quad x\neq3
+                    \]
+
+                    \[
+                    \lim_{x\to3}f(x)=3+3=6
+                    \]
+
+                    <p>
+                        Karena limitnya ada dan bernilai 6, tetapi fungsi tidak terdefinisi saat
+                        \(x=3\), maka fungsi mengalami <strong>diskontinuitas dapat dihilangkan</strong>.
+                    </p>
+
+                    <p>
+                        Agar fungsi menjadi kontinu, cukup definisikan:
+                    </p>
+
+                    \[
+                    f(3)=6
+                    \]
+
               </div>
             </div>
           </div>
 
+          <div id="ch3-teorema" class="mt-5">
+            <h3 class="subsection-title">Contoh soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Diskontinuitas Tak Hingga
+                </div>
+
+                <div class="card-body">
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah fungsi berikut mengalami diskontinuitas tak hingga pada
+                        \(x = 2\):
+                    </p>
+
+                    \[
+                    f(x)=\frac{1}{x-2}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Petunjuk:</p>
+
+                    <ol>
+                        <li>Perhatikan penyebut fungsi.</li>
+                        <li>Tentukan nilai fungsi saat \(x=2\).</li>
+                        <li>Hitung limit kiri dan limit kanan saat \(x\to2\).</li>
+                        <li>Amati perilaku fungsi ketika mendekati titik tersebut.</li>
+                    </ol>
+
+                    <hr />
+
+                    <p class="fw-semibold">Jawaban:</p>
+
+                    <p>
+                        Ketika \(x=2\), penyebut menjadi nol sehingga fungsi tidak terdefinisi.
+                    </p>
+
+                    \[
+                    f(2)=\frac{1}{2-2}=\frac{1}{0}
+                    \]
+
+                    <p>
+                        Hitung limit dari kiri:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}\frac{1}{x-2}=-\infty
+                    \]
+
+                    <p>
+                        Hitung limit dari kanan:
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}\frac{1}{x-2}=+\infty
+                    \]
+
+                    <p>
+                        Karena nilai fungsi menuju \(-\infty\) dari kiri dan \(+\infty\) dari kanan,
+                        maka terdapat asimtot vertikal pada \(x=2\).
+                    </p>
+
+                    <p>
+                        Jadi fungsi mengalami
+                        <strong>diskontinuitas tak hingga</strong> pada \(x=2\).
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-teorema" class="mt-5">
+            <h3 class="subsection-title">Contoh soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Diskontinuitas Loncat
+                </div>
+
+                <div class="card-body">
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah fungsi berikut mengalami diskontinuitas loncat pada
+                        \(x = 2\):
+                    </p>
+
+                    \[
+                    f(x)=
+                    \begin{cases}
+                    x+1, & x<2\\
+                    x+3, & x\ge2
+                    \end{cases}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        Langkah 1: Hitung limit kiri saat \(x\) mendekati 2.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)
+                    =
+                    \lim_{x\to2^-}(x+1)
+                    =2+1
+                    =3
+                    \]
+
+                    <p>
+                        Langkah 2: Hitung limit kanan saat \(x\) mendekati 2.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}f(x)
+                    =
+                    \lim_{x\to2^+}(x+3)
+                    =2+3
+                    =5
+                    \]
+
+                    <p>
+                        Langkah 3: Bandingkan limit kiri dan limit kanan.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)=3
+                    \]
+
+                    \[
+                    \lim_{x\to2^+}f(x)=5
+                    \]
+
+                    <p>
+                        Karena
+                    </p>
+
+                    \[
+                    3 \neq 5
+                    \]
+
+                    <p>
+                        maka limit fungsi di \(x=2\) tidak ada.
+                    </p>
+
+                    \[
+                    \lim_{x\to2}f(x)
+                    \text{ tidak ada}
+                    \]
+
+                    <p>
+                        Jadi fungsi mengalami
+                        <strong>diskontinuitas loncat</strong> pada \(x=2\), karena
+                        limit kiri dan limit kanan memiliki nilai yang berbeda.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-definisi">
+            <h3 class="subsection-title">3.4 Perilaku Limit sebagai Indikator Kestabilan</h3>
+            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+            <div class="placeholder-notice">
+                <i class="bi bi-pencil-square"></i>
+                <strong>Area Materi — Perilaku Limit sebagai Indikator Kestabilan</strong><br>
+                <ul>
+                    <li>Perilaku limit dapat digunakan untuk memprediksi keadaan suatu sistem dalam jangka panjang.</li>
+                    <li>Dengan mengamati nilai fungsi saat variabel mendekati suatu nilai tertentu atau tak hingga, kita dapat menentukan apakah sistem tersebut stabil atau tidak.</li>
+                </ul>
+            </div>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>Output mendekati nilai tetap :</em>
+                    </p>
+
+                    <p>
+                        Suatu sistem dikatakan stabil apabila outputnya semakin mendekati suatu nilai tertentu ketika variabel terus bertambah.
+                        Dalam kasus ini, limit fungsi bernilai suatu konstanta.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=\frac{5x+2}{x+1}
+                    \]
+
+                    <p>
+                        Untuk mengetahui perilaku fungsi saat \(x\) sangat besar:
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\frac{5x+2}{x+1}=5
+                    \]
+
+                    <p>
+                        Karena output mendekati nilai tetap yaitu 5, maka fungsi menunjukkan perilaku yang stabil.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Output membesar tak terkendali :</em>
+                    </p>
+
+                    <p>
+                        Sistem dikatakan tidak stabil apabila outputnya terus meningkat tanpa batas ketika variabel bertambah besar.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=x^2
+                    \]
+
+                    <p>
+                        Saat \(x\) semakin besar:
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}x^2=\infty
+                    \]
+
+                    <p>
+                        Karena nilai fungsi terus bertambah tanpa batas, sistem tidak memiliki keadaan yang stabil.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Output tidak konsisten :</em>
+                    </p>
+
+                    <p>
+                        Pada beberapa fungsi, output tidak mendekati satu nilai tertentu dan juga tidak menuju tak hingga.
+                        Nilainya terus berubah-ubah sehingga sulit diprediksi.
+                    </p>
+
+                    <p>Contoh:</p>
+
+                    \[
+                    f(x)=\sin(x)
+                    \]
+
+                    <p>
+                        Ketika \(x\) semakin besar, nilai fungsi akan terus berosilasi antara -1 dan 1.
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\sin(x)
+                    \]
+
+                    <p>
+                        Limit tersebut tidak ada karena fungsi tidak mendekati satu nilai tertentu.
+                    </p>
+
+                    <p>
+                        Oleh karena itu, output dianggap tidak konsisten atau tidak memiliki kestabilan jangka panjang.
+                    </p>
+                </li>
+            </ul>
+
+            <blockquote class="blockquote-def">
+                <i class="bi bi-quote quote-icon"></i>
+
+                <p>
+                    <em>Perilaku limit dapat digunakan untuk mengidentifikasi kestabilan suatu sistem:</em>
+                </p>
+
+                <ul>
+                    <li><strong>Output mendekati nilai tetap</strong> → sistem stabil.</li>
+                    <li><strong>Output membesar tak terkendali</strong> → sistem tidak stabil.</li>
+                    <li><strong>Output tidak konsisten</strong> → sistem tidak memiliki perilaku jangka panjang yang pasti.</li>
+                </ul>
+
+                <footer>— Perilaku Limit dan Kestabilan Sistem</footer>
+            </blockquote>
+
+            <div class="concept-card mt-3">
+                <div class="concept-card-header">Indikator Kestabilan Berdasarkan Limit</div>
+
+                <div class="concept-card-body">
+                    <code class="formula-display">
+                        lim<sub>x→∞</sub> f(x)
+                    </code>
+
+                    <p class="mt-2">
+                        Untuk menentukan kestabilan suatu fungsi, perhatikan perilaku limitnya saat variabel bertambah besar:
+                    </p>
+
+                    <ol>
+                        <li>
+                            Jika
+                            \[
+                            \lim_{x\to\infty}f(x)=L
+                            \]
+                            dengan \(L\) suatu bilangan tetap, maka sistem cenderung stabil.
+                        </li>
+
+                        <li>
+                            Jika
+                            \[
+                            \lim_{x\to\infty}f(x)=\infty
+                            \quad \text{atau} \quad
+                            \lim_{x\to\infty}f(x)=-\infty
+                            \]
+                            maka output membesar tanpa batas dan sistem tidak stabil.
+                        </li>
+
+                        <li>
+                            Jika limit tidak ada karena fungsi terus berosilasi atau berubah-ubah, maka output tidak konsisten dan sulit diprediksi.
+                        </li>
+                    </ol>
+
+                    <p>
+                        Dengan demikian, limit dapat digunakan untuk memprediksi perilaku jangka panjang suatu fungsi atau sistem.
+                    </p>
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Perilaku Limit sebagai Indikator Kestabilan
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Perhatikan fungsi berikut:
+                    </p>
+
+                    \[
+                    f(x)=\frac{4x+8}{x+2}
+                    \]
+
+                    <p>
+                        Tentukan perilaku fungsi saat \(x \to \infty\), kemudian simpulkan apakah sistem tersebut stabil atau tidak.
+                    </p>
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        <strong>Langkah 1:</strong> Hitung limit fungsi saat \(x\) menuju tak hingga.
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\frac{4x+8}{x+2}
+                    \]
+
+                    <p>
+                        <strong>Langkah 2:</strong> Bagi pembilang dan penyebut dengan pangkat tertinggi, yaitu \(x\).
+                    </p>
+
+                    \[
+                    =
+                    \lim_{x\to\infty}
+                    \frac{4+\frac{8}{x}}
+                    {1+\frac{2}{x}}
+                    \]
+
+                    <p>
+                        <strong>Langkah 3:</strong> Karena
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\frac{8}{x}=0
+                    \quad \text{dan} \quad
+                    \lim_{x\to\infty}\frac{2}{x}=0
+                    \]
+
+                    <p>
+                        maka diperoleh
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}
+                    \frac{4+\frac{8}{x}}
+                    {1+\frac{2}{x}}
+                    =
+                    \frac{4+0}{1+0}
+                    =4
+                    \]
+
+                    <p>
+                        <strong>Kesimpulan:</strong> Karena limit fungsi mendekati nilai tetap, yaitu <strong>4</strong>, maka output sistem akan mendekati nilai tersebut.
+                    </p>
+
+                    <p>
+                        Jadi, perilaku limit menunjukkan bahwa sistem tersebut <strong>stabil</strong> karena memiliki nilai keseimbangan yang tetap.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+          <div id="ch3-definisi">
+                <h3 class="subsection-title">3.5 Stabilitas Model Matematis</h3>
+
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+                <div class="placeholder-notice">
+                    <i class="bi bi-pencil-square"></i>
+                    <strong>Area Materi — Stabilitas Model Matematis</strong><br>
+                    <ul>
+                        <li>Stabilitas model matematis digunakan untuk mengetahui perilaku suatu fungsi ketika variabel terus bertambah besar.</li>
+                        <li>Melalui limit, kita dapat menentukan apakah suatu model akan menuju keadaan yang stabil atau justru menjadi tidak stabil.</li>
+                    </ul>
+                </div>
+
+                <ul>
+                    <li>
+                        <p>
+                            <em>Stabil (menuju nilai tertentu) :</em>
+                        </p>
+
+                        <p>
+                            Suatu model dikatakan <strong>stabil</strong> apabila nilai output semakin lama
+                            semakin mendekati suatu bilangan tetap. Hal ini menunjukkan bahwa sistem
+                            akan mencapai keadaan yang seimbang meskipun variabel terus bertambah.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=\frac{3x+6}{x+2}
+                        \]
+
+                        <p>
+                            Hitung limit saat \(x\) menuju tak hingga:
+                        </p>
+
+                        \[
+                        \lim_{x\to\infty}\frac{3x+6}{x+2}=3
+                        \]
+
+                        <p>
+                            Karena limitnya bernilai 3, maka output akan semakin mendekati nilai 3.
+                            Oleh sebab itu, model tersebut bersifat <strong>stabil</strong>.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <em>Tidak stabil (menuju tak hingga) :</em>
+                        </p>
+
+                        <p>
+                            Suatu model dikatakan <strong>tidak stabil</strong> apabila outputnya terus
+                            bertambah atau berkurang tanpa batas sehingga tidak pernah mencapai
+                            suatu nilai tetap.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=x^2
+                        \]
+
+                        <p>
+                            Hitung limit saat \(x\) menuju tak hingga:
+                        </p>
+
+                        \[
+                        \lim_{x\to\infty}x^2=\infty
+                        \]
+
+                        <p>
+                            Karena output membesar tanpa batas, maka model tersebut
+                            <strong>tidak stabil</strong>.
+                        </p>
+                    </li>
+                </ul>
+
+                <blockquote class="blockquote-def">
+                    <i class="bi bi-quote quote-icon"></i>
+
+                    <p>
+                        <em>Stabilitas model matematis dibagi menjadi dua:</em>
+                    </p>
+
+                    <ul>
+                        <li><strong>Stabil</strong> → Output mendekati suatu nilai tetap ketika variabel bertambah besar.</li>
+                        <li><strong>Tidak Stabil</strong> → Output menuju tak hingga sehingga tidak memiliki nilai keseimbangan.</li>
+                    </ul>
+
+                    <footer>— Stabilitas Model Matematis</footer>
+                </blockquote>
+
+                <div class="concept-card mt-3">
+                    <div class="concept-card-header">Indikator Stabilitas Model Matematis</div>
+
+                    <div class="concept-card-body">
+                        <code class="formula-display">
+                            lim<sub>x→∞</sub> f(x)
+                        </code>
+
+                        <p class="mt-2">
+                            Stabilitas suatu model dapat ditentukan dengan melihat nilai limitnya ketika
+                            variabel menuju tak hingga.
+                        </p>
+
+                        <ol>
+                            <li>
+                                Jika
+                                \[
+                                \lim_{x\to\infty}f(x)=L
+                                \]
+                                dengan \(L\) merupakan suatu bilangan tetap, maka model dikatakan
+                                <strong>stabil</strong>.
+                            </li>
+
+                            <li>
+                                Jika
+                                \[
+                                \lim_{x\to\infty}f(x)=\infty
+                                \quad \text{atau} \quad
+                                \lim_{x\to\infty}f(x)=-\infty
+                                \]
+                                maka model dikatakan <strong>tidak stabil</strong> karena output terus
+                                membesar tanpa batas.
+                            </li>
+                        </ol>
+
+                        <p>
+                            Dengan demikian, limit dapat digunakan sebagai alat untuk memprediksi
+                            perilaku jangka panjang suatu model matematis.
+                        </p>
+                    </div>
+                </div>
+          </div>
+
+          <div id="ch3-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Stabilitas Model Matematis
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Suatu model matematis dinyatakan oleh fungsi berikut:
+                    </p>
+
+                    \[
+                    f(x)=\frac{5x+10}{x+2}
+                    \]
+
+                    <p>
+                        Tentukan apakah model tersebut <strong>stabil</strong> atau
+                        <strong>tidak stabil</strong> dengan menggunakan konsep limit.
+                    </p>
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        <strong>Langkah 1:</strong> Hitung limit fungsi saat \(x\) menuju tak hingga.
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\frac{5x+10}{x+2}
+                    \]
+
+                    <p>
+                        <strong>Langkah 2:</strong> Bagi pembilang dan penyebut dengan pangkat tertinggi, yaitu \(x\).
+                    </p>
+
+                    \[
+                    =
+                    \lim_{x\to\infty}
+                    \frac{5+\frac{10}{x}}
+                    {1+\frac{2}{x}}
+                    \]
+
+                    <p>
+                        <strong>Langkah 3:</strong> Karena
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}\frac{10}{x}=0
+                    \qquad
+                    \text{dan}
+                    \qquad
+                    \lim_{x\to\infty}\frac{2}{x}=0
+                    \]
+
+                    <p>
+                        maka diperoleh
+                    </p>
+
+                    \[
+                    \lim_{x\to\infty}
+                    \frac{5+\frac{10}{x}}
+                    {1+\frac{2}{x}}
+                    =
+                    \frac{5+0}{1+0}
+                    =
+                    5
+                    \]
+
+                    <p>
+                        <strong>Kesimpulan:</strong>
+                    </p>
+
+                    <p>
+                        Karena limit fungsi menuju suatu nilai tetap, yaitu <strong>5</strong>,
+                        maka model matematika tersebut <strong>stabil</strong>. Artinya,
+                        seiring bertambahnya nilai \(x\), output sistem akan mendekati nilai 5
+                        dan tidak membesar tanpa batas.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+          <div id="ch3-definisi">
+                <h3 class="subsection-title">3.6 Evaluasi Limit pada Titik Kritis</h3>
+
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+                <div class="placeholder-notice">
+                    <i class="bi bi-pencil-square"></i>
+                    <strong>Area Materi — Evaluasi Limit pada Titik Kritis</strong><br>
+                    <ul>
+                        <li>Titik kritis adalah titik pada suatu fungsi yang perlu dianalisis karena berpotensi menyebabkan perubahan perilaku fungsi.</li>
+                        <li>Evaluasi limit pada titik kritis bertujuan untuk mengetahui apakah limit fungsi ada, tidak ada, atau menuju tak hingga.</li>
+                    </ul>
+                </div>
+
+                <ul>
+                    <li>
+                        <p>
+                            <em>Limit bernilai tertentu :</em>
+                        </p>
+
+                        <p>
+                            Pada beberapa fungsi, meskipun nilai fungsi tidak dapat langsung dihitung,
+                            limitnya tetap ada dan bernilai tertentu setelah dilakukan penyederhanaan.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=\frac{x^2-9}{x-3}
+                        \]
+
+                        <p>
+                            Saat \(x=3\), bentuk fungsi menjadi:
+                        </p>
+
+                        \[
+                        \frac{0}{0}
+                        \]
+
+                        <p>
+                            Faktorkan pembilang:
+                        </p>
+
+                        \[
+                        f(x)=\frac{(x-3)(x+3)}{x-3}=x+3
+                        \]
+
+                        <p>
+                            Sehingga:
+                        </p>
+
+                        \[
+                        \lim_{x\to3}f(x)=6
+                        \]
+
+                        <p>
+                            Jadi limit pada titik kritis tersebut ada dan bernilai 6.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <em>Limit menuju tak hingga :</em>
+                        </p>
+
+                        <p>
+                            Pada beberapa titik kritis, penyebut fungsi bernilai nol sehingga nilai
+                            fungsi membesar tanpa batas.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=\frac{1}{x-2}
+                        \]
+
+                        <p>
+                            Saat \(x\) mendekati 2:
+                        </p>
+
+                        \[
+                        \lim_{x\to2^-}\frac{1}{x-2}=-\infty
+                        \]
+
+                        \[
+                        \lim_{x\to2^+}\frac{1}{x-2}=+\infty
+                        \]
+
+                        <p>
+                            Karena nilai fungsi menuju tak hingga, limit pada titik kritis tersebut
+                            tidak bernilai hingga.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <em>Limit tidak ada :</em>
+                        </p>
+
+                        <p>
+                            Limit dikatakan tidak ada apabila limit kiri dan limit kanan menghasilkan
+                            nilai yang berbeda.
+                        </p>
+
+                        <p>Contoh:</p>
+
+                        \[
+                        f(x)=
+                        \begin{cases}
+                        x+1, & x<2\\
+                        x+3, & x\ge2
+                        \end{cases}
+                        \]
+
+                        <p>
+                            Hitung limit kiri dan kanan:
+                        </p>
+
+                        \[
+                        \lim_{x\to2^-}f(x)=3
+                        \]
+
+                        \[
+                        \lim_{x\to2^+}f(x)=5
+                        \]
+
+                        <p>
+                            Karena kedua limit berbeda, maka:
+                        </p>
+
+                        \[
+                        \lim_{x\to2}f(x)
+                        \text{ tidak ada}
+                        \]
+
+                        <p>
+                            Jadi pada titik kritis tersebut, limit tidak ada.
+                        </p>
+                    </li>
+                </ul>
+
+                <blockquote class="blockquote-def">
+                    <i class="bi bi-quote quote-icon"></i>
+
+                    <p>
+                        <em>Hasil evaluasi limit pada titik kritis dapat berupa:</em>
+                    </p>
+
+                    <ul>
+                        <li><strong>Limit bernilai tertentu</strong> → fungsi mendekati suatu nilai tertentu.</li>
+                        <li><strong>Limit menuju tak hingga</strong> → fungsi membesar tanpa batas.</li>
+                        <li><strong>Limit tidak ada</strong> → limit kiri dan limit kanan berbeda atau tidak memiliki satu nilai tujuan.</li>
+                    </ul>
+
+                    <footer>— Evaluasi Limit pada Titik Kritis</footer>
+                </blockquote>
+
+                <div class="concept-card mt-3">
+                    <div class="concept-card-header">Langkah Evaluasi Limit pada Titik Kritis</div>
+
+                    <div class="concept-card-body">
+                        <code class="formula-display">
+                            lim<sub>x→a</sub> f(x)
+                        </code>
+
+                        <p class="mt-2">
+                            Untuk mengevaluasi limit pada titik kritis, lakukan langkah-langkah berikut:
+                        </p>
+
+                        <ol>
+                            <li>Substitusikan nilai titik kritis ke dalam fungsi.</li>
+                            <li>Jika diperoleh bentuk tak tentu, lakukan penyederhanaan (misalnya faktorisasi).</li>
+                            <li>Hitung limit kiri dan limit kanan jika diperlukan.</li>
+                            <li>Tentukan apakah limit bernilai tertentu, menuju tak hingga, atau tidak ada.</li>
+                        </ol>
+
+                        <p>
+                            Dengan langkah-langkah tersebut, perilaku fungsi di sekitar titik kritis dapat dianalisis secara sistematis.
+                        </p>
+                    </div>
+                </div>
+          </div>
+
+          <div id="ch3-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Evaluasi Limit pada Titik Kritis (Limit Bernilai Tertentu)
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan nilai limit fungsi berikut pada titik kritis \(x=2\):
+                    </p>
+
+                    \[
+                    \lim_{x\to2}\frac{x^2-4}{x-2}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        <strong>Langkah 1:</strong> Substitusikan \(x=2\) ke dalam fungsi.
+                    </p>
+
+                    \[
+                    \frac{2^2-4}{2-2}
+                    =
+                    \frac{0}{0}
+                    \]
+
+                    <p>
+                        Karena diperoleh bentuk tak tentu \(\frac{0}{0}\), maka fungsi harus disederhanakan.
+                    </p>
+
+                    <p>
+                        <strong>Langkah 2:</strong> Faktorkan pembilang.
+                    </p>
+
+                    \[
+                    x^2-4=(x-2)(x+2)
+                    \]
+
+                    sehingga,
+
+                    \[
+                    \frac{x^2-4}{x-2}
+                    =
+                    \frac{(x-2)(x+2)}{x-2}
+                    =
+                    x+2,\qquad x\neq2
+                    \]
+
+                    <p>
+                        <strong>Langkah 3:</strong> Hitung kembali limitnya.
+                    </p>
+
+                    \[
+                    \lim_{x\to2}(x+2)
+                    =
+                    2+2
+                    =
+                    4
+                    \]
+
+                    <p>
+                        <strong>Kesimpulan:</strong>
+                    </p>
+
+                    <p>
+                        Walaupun fungsi tidak dapat langsung dihitung pada \(x=2\),
+                        setelah disederhanakan diperoleh bahwa limitnya bernilai
+                        <strong>4</strong>. Jadi, evaluasi limit pada titik kritis tersebut
+                        menghasilkan <strong>limit bernilai tertentu</strong>.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Evaluasi Limit pada Titik Kritis (Limit Menuju Tak Hingga)
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan perilaku limit fungsi berikut pada titik kritis \(x=2\):
+                    </p>
+
+                    \[
+                    \lim_{x\to2}\frac{1}{x-2}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        <strong>Langkah 1:</strong> Periksa nilai penyebut saat \(x=2\).
+                    </p>
+
+                    \[
+                    x-2=2-2=0
+                    \]
+
+                    <p>
+                        Karena penyebut bernilai nol, fungsi tidak terdefinisi pada \(x=2\).
+                        Oleh karena itu, hitung limit dari sisi kiri dan sisi kanan.
+                    </p>
+
+                    <p>
+                        <strong>Langkah 2:</strong> Hitung limit kiri.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}\frac{1}{x-2}
+                    =-\infty
+                    \]
+
+                    <p>
+                        <strong>Langkah 3:</strong> Hitung limit kanan.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}\frac{1}{x-2}
+                    =+\infty
+                    \]
+
+                    <p>
+                        Karena saat \(x\) mendekati 2 dari kiri nilai fungsi menuju
+                        \(-\infty\), sedangkan dari kanan menuju \(+\infty\), maka fungsi
+                        memiliki asimtot vertikal pada \(x=2\).
+                    </p>
+
+                    <p>
+                        <strong>Kesimpulan:</strong>
+                    </p>
+
+                    <p>
+                        Evaluasi limit pada titik kritis menunjukkan bahwa nilai fungsi
+                        membesar tanpa batas (menuju tak hingga). Oleh karena itu,
+                        limit pada titik kritis tersebut termasuk
+                        <strong>limit menuju tak hingga</strong>.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Evaluasi Limit pada Titik Kritis (Limit Tidak Ada)
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Tentukan apakah limit fungsi berikut ada pada titik kritis \(x=2\):
+                    </p>
+
+                    \[
+                    f(x)=
+                    \begin{cases}
+                    x+1, & x<2\\
+                    x+3, & x\ge2
+                    \end{cases}
+                    \]
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        <strong>Langkah 1:</strong> Hitung limit dari sisi kiri saat \(x\) mendekati 2.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)
+                    =
+                    \lim_{x\to2^-}(x+1)
+                    =
+                    2+1
+                    =
+                    3
+                    \]
+
+                    <p>
+                        <strong>Langkah 2:</strong> Hitung limit dari sisi kanan saat \(x\) mendekati 2.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^+}f(x)
+                    =
+                    \lim_{x\to2^+}(x+3)
+                    =
+                    2+3
+                    =
+                    5
+                    \]
+
+                    <p>
+                        <strong>Langkah 3:</strong> Bandingkan hasil limit kiri dan limit kanan.
+                    </p>
+
+                    \[
+                    \lim_{x\to2^-}f(x)=3
+                    \]
+
+                    \[
+                    \lim_{x\to2^+}f(x)=5
+                    \]
+
+                    <p>
+                        Karena
+                    </p>
+
+                    \[
+                    3 \neq 5
+                    \]
+
+                    <p>
+                        maka limit kiri dan limit kanan tidak sama.
+                    </p>
+
+                    \[
+                    \boxed{\lim_{x\to2}f(x)\text{ tidak ada}}
+                    \]
+
+                    <p>
+                        <strong>Kesimpulan:</strong>
+                    </p>
+
+                    <p>
+                        Karena limit dari sisi kiri dan sisi kanan memiliki nilai yang berbeda,
+                        maka evaluasi limit pada titik kritis menghasilkan
+                        <strong>limit tidak ada</strong>.
+                    </p>
+
+                </div>
+            </div>
+          </div>
+
+          <div id="ch3-definisi">
+              <h3 class="subsection-title">3.7 Interpretasi dalam Permodelan</h3>
+
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
+
+              <div class="placeholder-notice">
+                  <i class="bi bi-pencil-square"></i>
+                  <strong>Area Materi — Interpretasi dalam Permodelan</strong><br>
+                  <ul>
+                      <li>Dalam pemodelan matematika, limit digunakan untuk memprediksi perilaku suatu sistem dalam jangka panjang.</li>
+                      <li>Hasil limit tidak hanya berupa angka, tetapi juga memiliki makna terhadap kondisi nyata dari suatu sistem.</li>
+                  </ul>
+              </div>
+
+              <ul>
+                  <li>
+                      <p>
+                          <em>Contoh Permodelan:</em>
+                      </p>
+
+                      <p>
+                          Misalkan seseorang bermain skateboard pada arena berbentuk huruf <strong>"U"</strong>.
+                          Awalnya pemain berada di salah satu sisi arena, kemudian meluncur turun dengan cepat,
+                          melewati titik terendah, lalu naik ke sisi yang lain.
+                      </p>
+
+                      <p>
+                          Karena adanya gesekan antara roda skateboard dan permukaan arena,
+                          setiap kali bergerak naik, ketinggian yang dicapai menjadi lebih rendah
+                          dibandingkan sebelumnya.
+                      </p>
+
+                      <p>
+                          Gerakan tersebut akan terus berulang, tetapi amplitudonya semakin kecil.
+                      </p>
+                  </li>
+
+                  <li>
+                      <p>
+                          <em>Interpretasi Limit:</em>
+                      </p>
+
+                      <p>
+                          Apakah pemain akan terus bergerak naik dan turun selamanya?
+                          <strong>Tidak.</strong>
+                      </p>
+
+                      <p>
+                          Seiring berjalannya waktu, energi yang dimiliki pemain berkurang akibat gesekan.
+                          Akibatnya, gerakan naik dan turun semakin kecil hingga akhirnya berhenti di titik
+                          paling bawah arena.
+                      </p>
+
+                      <p>
+                          Secara matematis, keadaan ini dapat diilustrasikan sebagai:
+                      </p>
+
+                      \[
+                      \lim_{t\to\infty} h(t)=0
+                      \]
+
+                      <p>
+                          dengan \(h(t)\) menyatakan tinggi gerakan skateboard terhadap titik terendah.
+                      </p>
+                  </li>
+
+                  <li>
+                      <p>
+                          <em>Makna dalam Permodelan:</em>
+                      </p>
+
+                      <p>
+                          Perilaku tersebut menunjukkan bahwa sistem memiliki <strong>keadaan stabil</strong>.
+                          Nilai fungsi tidak terus bertambah atau berosilasi selamanya, melainkan
+                          mendekati suatu keadaan keseimbangan.
+                      </p>
+
+                      <p>
+                          Titik paling bawah arena menjadi <strong>titik keseimbangan</strong> yang
+                          membatasi gerakan sehingga sistem akhirnya berhenti.
+                      </p>
+                  </li>
+              </ul>
+
+              <blockquote class="blockquote-def">
+                  <i class="bi bi-quote quote-icon"></i>
+
+                  <p>
+                      <em>Interpretasi limit dalam permodelan:</em>
+                  </p>
+
+                  <ul>
+                      <li><strong>Gerakan awal</strong> → sistem masih memiliki energi sehingga bergerak naik dan turun.</li>
+                      <li><strong>Gerakan semakin kecil</strong> → energi berkurang akibat gesekan.</li>
+                      <li><strong>Akhirnya berhenti di titik terendah</strong> → sistem mencapai keadaan stabil atau titik keseimbangan.</li>
+                  </ul>
+
+                  <footer>— Interpretasi Limit dalam Permodelan</footer>
+              </blockquote>
+
+              <div class="concept-card mt-3">
+                  <div class="concept-card-header">Kesimpulan Interpretasi</div>
+
+                  <div class="concept-card-body">
+                      <code class="formula-display">
+                          lim<sub>t→∞</sub> h(t)=0
+                      </code>
+
+                      <p class="mt-2">
+                          Dari contoh skateboard pada arena berbentuk "U", dapat disimpulkan bahwa:
+                      </p>
+
+                      <ol>
+                          <li>Awalnya sistem bergerak naik dan turun.</li>
+                          <li>Gesekan menyebabkan energi semakin berkurang.</li>
+                          <li>Gerakan semakin kecil seiring bertambahnya waktu.</li>
+                          <li>Pada akhirnya sistem berhenti di titik keseimbangan.</li>
+                      </ol>
+
+                      <p>
+                          Oleh karena itu, limit digunakan untuk menunjukkan bahwa perilaku jangka panjang
+                          suatu sistem akan mendekati keadaan yang stabil.
+                      </p>
+                  </div>
+              </div>
+          </div>
+        
+          <div id="ch3-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh Soal Interpretasi dalam Permodelan
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Soal:</p>
+
+                    <p>
+                        Seorang pemain skateboard meluncur pada arena berbentuk huruf <strong>"U"</strong>.
+                        Awalnya pemain bergerak turun dari salah satu sisi, kemudian naik ke sisi lainnya.
+                        Karena adanya gesekan, setiap ayunan menjadi semakin kecil hingga akhirnya berhenti
+                        di titik paling bawah arena.
+                    </p>
+
+                    <p>
+                        Jika tinggi gerakan skateboard dinyatakan dengan fungsi \(h(t)\), dan diketahui
+                    </p>
+
+                    \[
+                    \lim_{t\to\infty} h(t)=0
+                    \]
+
+                    <p>
+                        Jelaskan makna limit tersebut dalam konteks permodelan.
+                    </p>
+
+                    <hr />
+
+                    <p class="fw-semibold">Penyelesaian:</p>
+
+                    <p>
+                        <strong>Langkah 1:</strong> Perhatikan nilai limit fungsi.
+                    </p>
+
+                    \[
+                    \lim_{t\to\infty} h(t)=0
+                    \]
+
+                    <p>
+                        Artinya, semakin lama waktu berjalan, tinggi gerakan skateboard semakin
+                        mendekati nol.
+                    </p>
+
+                    <p>
+                        <strong>Langkah 2:</strong> Interpretasikan hasil limit.
+                    </p>
+
+                    <p>
+                        Nilai limit yang mendekati nol menunjukkan bahwa energi pemain terus
+                        berkurang akibat gesekan dengan permukaan arena.
+                        Akibatnya, gerakan naik dan turun menjadi semakin kecil.
+                    </p>
+
+                    <p>
+                        <strong>Langkah 3:</strong> Hubungkan dengan kondisi nyata.
+                    </p>
+
+                    <p>
+                        Setelah beberapa saat, pemain tidak lagi bergerak naik dan turun,
+                        tetapi berhenti di titik paling bawah arena yang merupakan titik
+                        keseimbangan.
+                    </p>
+
+                    <p>
+                        <strong>Kesimpulan:</strong>
+                    </p>
+
+                    <p>
+                        Limit \(\lim_{t\to\infty} h(t)=0\) menunjukkan bahwa sistem memiliki
+                        <strong>keadaan stabil</strong>. Dalam permodelan, limit membantu
+                        memprediksi bahwa gerakan skateboard tidak berlangsung selamanya,
+                        melainkan akhirnya berhenti pada titik keseimbangan.
+                    </p>
+
+                </div>
+            </div>
+          </div>
           <div id="ch3-video" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran</h3>
             <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 3</strong> — Embed video
@@ -548,53 +2247,99 @@
               pembelajaran yang sesuai.</p>
           </div>
 
-          <div id="ch3-latihan" class="mt-5">
+          <div id="ch3-contoh" class="mt-5">
             <h3 class="subsection-title">Latihan Soal</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 3</strong> — Isi latihan
-              soal di bawah ini.</div>
-            <div class="card"
-              style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
-              <div class="card-body">
-                <ol class="mb-0">
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 1</p>
-                    <p><em>[Kelompok 3: isi soal latihan 1]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 1]</em></div>
-                    </details>
-                  </li>
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 2</p>
-                    <p><em>[Kelompok 3: isi soal latihan 2]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 2]</em></div>
-                    </details>
-                  </li>
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 3</p>
-                    <p><em>[Kelompok 3: isi soal latihan 3]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 3]</em></div>
-                    </details>
-                  </li>
-                </ol>
-              </div>
+
+            <div class="card example-card mt-3">
+                <div class="card-header example-card-header">
+                    <i class="bi bi-pencil-square me-2"></i>
+                    Latihan Bab 3
+                </div>
+
+                <div class="card-body">
+
+                    <p class="fw-semibold">Kerjakan soal-soal berikut!</p>
+
+                    <hr>
+
+                    <p><strong>1.</strong> Tentukan nilai limit berikut.</p>
+
+                    \[
+                    \lim_{x\to2}\frac{x^2-4}{x-2}
+                    \]
+
+                    <hr>
+
+                    <p><strong>2.</strong> Tentukan nilai limit berikut.</p>
+
+                    \[
+                    \lim_{x\to4}\frac{\sqrt{x}-2}{x-4}
+                    \]
+
+                    <hr>
+
+                    <p><strong>3.</strong> Tentukan apakah model matematika berikut termasuk
+                    <strong>stabil</strong> atau <strong>tidak stabil</strong>.</p>
+
+                    \[
+                    f(x)=\frac{7x+5}{x+1}
+                    \]
+
+                    <p>
+                        Gunakan limit saat \(x\to\infty\) untuk menentukan jawabannya.
+                    </p>
+
+                    <hr>
+
+                    <p><strong>4.</strong> Evaluasilah limit berikut pada titik kritis \(x=3\).</p>
+
+                    \[
+                    \lim_{x\to3}\frac{1}{x-3}
+                    \]
+
+                    <p>
+                        Tentukan apakah limit tersebut bernilai tertentu, menuju tak hingga,
+                        atau tidak ada.
+                    </p>
+
+                    <hr>
+
+                    <p><strong>5.</strong> Perhatikan fungsi berikut.</p>
+
+                    \[
+                    f(x)=
+                    \begin{cases}
+                    x+2, & x<1\\
+                    x+5, & x\ge1
+                    \end{cases}
+                    \]
+
+                    <p>
+                        Hitung limit kiri dan limit kanan saat \(x\to1\), kemudian tentukan
+                        apakah limitnya ada.
+                    </p>
+
+                    <hr>
+
+                    <p><strong>6.</strong> Seorang pemain skateboard bermain pada arena
+                    berbentuk huruf <strong>"U"</strong>. Karena adanya gesekan, gerakan naik
+                    dan turun semakin kecil hingga akhirnya berhenti di titik paling bawah.
+                    Diketahui:
+                    </p>
+
+                    \[
+                    \lim_{t\to\infty}h(t)=0
+                    \]
+
+                    <p>
+                        Jelaskan makna limit tersebut dalam konteks permodelan.
+                    </p>
+
+                </div>
             </div>
           </div>
 
-
+         
 
           <div class="chapter-nav-bottom">
             <a href="kelompok2.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 2</a>
