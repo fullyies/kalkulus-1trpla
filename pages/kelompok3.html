@@ -203,7 +203,7 @@
           
             <div id="ch3-definisi">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                
 
                 <h3 class="subsection-title">3.1 Limit Rasional & Irasional</h3>
 
@@ -454,153 +454,220 @@
                 </div>
             </div>
 
-        <div class="mb-3">
-          <label class="form-label">Mode Perhitungan</label>
+        <!-- ==================== KALKULATOR 3.1 LIMIT RASIONAL & IRASIONAL ==================== -->
+<div id="ch3-kalkulator" class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Limit Rasional &amp; Irasional
+  </h3>
 
-          <select id="modeLimit" class="form-select">
-              <option value="rasional">
-                  Limit Rasional
-              </option>
-    
-              <option value="irasional">
-                  Limit Irasional
-              </option>
-          </select>
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Hitung Nilai Limit Fungsi
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Mode Perhitungan</label>
+        <select id="modeLimit" class="form-select">
+          <option value="rasional">Limit Rasional (fungsi pecahan)</option>
+          <option value="irasional">Limit Irasional (mengandung akar/sqrt)</option>
+        </select>
+        <div class="form-text">
+          <strong>Rasional:</strong> fungsi berbentuk pecahan, contoh: <code>(x^2-4)/(x-2)</code><br>
+          <strong>Irasional:</strong> fungsi mengandung akar, contoh: <code>(sqrt(x)-2)/(x-4)</code>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Fungsi f(x)</label>
+        <input type="text" id="fungsi" class="form-control font-monospace"
+          placeholder="Contoh: (x^2-4)/(x-2)" />
+        <div class="form-text">
+          Gunakan <code>x</code> sebagai variabel. Operator: <code>+ - * / ^</code>. Akar: <code>sqrt(...)</code>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">x mendekati</label>
+        <input type="number" id="x0" class="form-control" placeholder="Contoh: 2" step="any" />
+      </div>
+
+      <button class="btn btn-success w-100" onclick="hitungLimit()">
+        <i class="bi bi-calculator me-1"></i> Hitung Limit
+      </button>
+
+      <hr>
+
+      <div id="hasilKalkulator31" class="d-none">
+
+        <h5 class="mb-3">Hasil Perhitungan</h5>
+
+        <div class="alert alert-secondary mb-3">
+          <strong>Fungsi:</strong> <span id="tampilFungsi" class="font-monospace"></span><br>
+          <strong>x mendekati:</strong> <span id="tampilX0"></span>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">
-                Fungsi f(x)
-            </label>
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr>
+              <th>Keterangan</th>
+              <th>Nilai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Limit dari kiri (x → a⁻)</td>
+              <td id="hasilKiri">-</td>
+            </tr>
+            <tr>
+              <td>Limit dari kanan (x → a⁺)</td>
+              <td id="hasilKanan">-</td>
+            </tr>
+            <tr class="table-success fw-bold">
+              <td>Nilai Limit</td>
+              <td id="hasilLimit">-</td>
+            </tr>
+          </tbody>
+        </table>
 
-            <input type="text"
-                  id="fungsi"
-                  class="form-control"
-                  placeholder="Contoh: (x^2-4)/(x-2) atau kalau limit irasional sqrt(x^2-4)">
+        <div id="boxAnalisis" class="alert mb-3"></div>
+
+        <div class="card bg-light border-0">
+          <div class="card-body">
+            <strong>Langkah Penyelesaian:</strong>
+            <ol id="langkahPenyelesaian" class="mt-2 mb-0"></ol>
+          </div>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">
-                x mendekati
-            </label>
+      </div>
 
-            <input type="number"
-                  id="x0"
-                  class="form-control">
-        </div>
+      <div id="pesanError31" class="alert alert-danger d-none mt-3"></div>
 
-        <button class="btn btn-primary"
-                onclick="hitungLimit()">
-            Hitung
-        </button>
+    </div>
+  </div>
+</div>
 
-        <hr>
+<script>
+function hitungLimit() {
 
-        <h5>Hasil Perhitungan</h5>
+  const mode   = document.getElementById("modeLimit").value;
+  const fungsi = document.getElementById("fungsi").value.trim();
+  const x0     = parseFloat(document.getElementById("x0").value);
 
-        <p>
-            <strong>Nilai Limit :</strong>
-            <span id="hasilLimit">-</span>
-        </p>
+  const elHasil  = document.getElementById("hasilKalkulator31");
+  const elError  = document.getElementById("pesanError31");
 
-        <p>
-            <strong>Analisis :</strong>
-            <span id="analisis">-</span>
-        </p>
+  // Reset tampilan
+  elHasil.classList.add("d-none");
+  elError.classList.add("d-none");
 
-      <script>
-        function hitungLimit() {
+  // Validasi input
+  if (!fungsi) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan fungsi f(x) terlebih dahulu.";
+    elError.classList.remove("d-none");
+    return;
+  }
+  if (isNaN(x0)) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan nilai x yang valid.";
+    elError.classList.remove("d-none");
+    return;
+  }
 
-            const mode =
-                document.getElementById("modeLimit").value;
+  // Validasi mode vs fungsi
+  if (mode === "irasional" && !fungsi.includes("sqrt")) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Mode Irasional harus mengandung <code>sqrt()</code>.";
+    elError.classList.remove("d-none");
+    return;
+  }
+  if (mode === "rasional" && fungsi.includes("sqrt")) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Mode Rasional tidak boleh mengandung <code>sqrt()</code>. Ganti ke mode Irasional.";
+    elError.classList.remove("d-none");
+    return;
+  }
 
-            const fungsi =
-                document.getElementById("fungsi").value;
+  try {
+    // Hitung limit kiri dan kanan dengan pendekatan numerik
+    const kiri  = math.evaluate(fungsi.replaceAll("x", `(${x0 - 0.0001})`));
+    const kanan = math.evaluate(fungsi.replaceAll("x", `(${x0 + 0.0001})`));
+    const limit = (kiri + kanan) / 2;
 
-            const x0 =
-                parseFloat(
-                    document.getElementById("x0").value
-                );
-                
-                if (!fungsi || isNaN(x0)) {
-                  document.getElementById("analisis").innerHTML =
-                  "Masukkan fungsi dan nilai x";
-                  return;
-                }
+    // Isi tabel hasil
+    document.getElementById("tampilFungsi").textContent = fungsi;
+    document.getElementById("tampilX0").textContent     = x0;
+    document.getElementById("hasilKiri").textContent    = isFinite(kiri)  ? kiri.toFixed(6)  : (kiri > 0 ? "+∞" : "-∞");
+    document.getElementById("hasilKanan").textContent   = isFinite(kanan) ? kanan.toFixed(6) : (kanan > 0 ? "+∞" : "-∞");
 
-            try {
+    // Tentukan nilai limit & analisis
+    const elBox     = document.getElementById("boxAnalisis");
+    const elLangkah = document.getElementById("langkahPenyelesaian");
+    let nilaiLimit  = "";
+    let analisis    = "";
+    let langkah     = "";
+    const modeLabel = mode === "rasional" ? "Limit Rasional" : "Limit Irasional";
 
-                if (
-                    mode === "irasional" &&
-                    !fungsi.includes("sqrt")
-                ) {
+    const selisih = Math.abs(kiri - kanan);
 
-                    document.getElementById("analisis").innerHTML =
-                        "Mode Irasional harus mengandung sqrt()";
+    if (!isFinite(limit)) {
+      // Limit tak hingga
+      nilaiLimit = limit > 0 ? "+∞" : "-∞";
+      analisis   = `<i class='bi bi-exclamation-circle-fill me-1'></i><strong>Tipe: ${modeLabel} — Limit Tak Hingga</strong><br>
+                    Nilai fungsi membesar tanpa batas saat x mendekati ${x0}. Kemungkinan terdapat asimtot vertikal.`;
+      elBox.className = "alert alert-warning mb-3";
+      langkah = `
+        <li>Substitusikan nilai x = ${x0} ke dalam fungsi.</li>
+        <li>Karena penyebut mendekati nol, fungsi menuju tak hingga.</li>
+        <li>Periksa limit dari kiri dan kanan secara terpisah.</li>
+      `;
+    } else if (selisih > 0.01) {
+      // Limit tidak ada (limit kiri ≠ kanan)
+      nilaiLimit = "Tidak Ada";
+      analisis   = `<i class='bi bi-x-circle-fill me-1'></i><strong>Tipe: ${modeLabel} — Limit Tidak Ada</strong><br>
+                    Limit kiri (${kiri.toFixed(4)}) ≠ Limit kanan (${kanan.toFixed(4)}), sehingga limit tidak ada.`;
+      elBox.className = "alert alert-danger mb-3";
+      langkah = `
+        <li>Hitung limit dari kiri: x → ${x0}⁻, diperoleh ${kiri.toFixed(4)}.</li>
+        <li>Hitung limit dari kanan: x → ${x0}⁺, diperoleh ${kanan.toFixed(4)}.</li>
+        <li>Karena limit kiri ≠ limit kanan, maka limit tidak ada.</li>
+      `;
+    } else {
+      // Limit ada dan bernilai tertentu
+      nilaiLimit = limit.toFixed(6);
+      const metode = mode === "rasional"
+        ? "faktorisasi atau substitusi langsung"
+        : "perkalian bentuk sekawan";
+      analisis   = `<i class='bi bi-check-circle-fill me-1'></i><strong>Tipe: ${modeLabel} — Limit Bernilai Tertentu</strong><br>
+                    Limit fungsi ada dan bernilai <strong>${limit.toFixed(6)}</strong>. 
+                    Diselesaikan menggunakan <em>${metode}</em>.`;
+      elBox.className = "alert alert-success mb-3";
+      langkah = `
+        <li>Substitusikan x = ${x0} ke dalam f(x) = <code>${fungsi}</code>.</li>
+        <li>Jika diperoleh bentuk tak tentu (0/0), sederhanakan fungsi dengan ${metode}.</li>
+        <li>Hitung limit dari kiri: ${kiri.toFixed(6)}</li>
+        <li>Hitung limit dari kanan: ${kanan.toFixed(6)}</li>
+        <li>Karena limit kiri ≈ limit kanan, maka nilai limit = <strong>${limit.toFixed(6)}</strong>.</li>
+      `;
+    }
 
-                    return;
-                }
+    document.getElementById("hasilLimit").textContent  = nilaiLimit;
+    elBox.innerHTML                                     = analisis;
+    elLangkah.innerHTML                                 = langkah;
+    elHasil.classList.remove("d-none");
 
-                if (
-                    mode === "rasional" &&
-                    fungsi.includes("sqrt")
-                ) {
-
-                    document.getElementById("analisis").innerHTML =
-                        "Mode Rasional tidak boleh mengandung sqrt()";
-
-                    return;
-                }
-
-                const kiri = math.evaluate(
-                    fungsi.replaceAll(
-                        "x",
-                        `(${x0 - 0.0001})`
-                    )
-                );
-
-                const kanan = math.evaluate(
-                    fungsi.replaceAll(
-                        "x",
-                        `(${x0 + 0.0001})`
-                    )
-                );
-
-                const limit =
-                    (kiri + kanan) / 2;
-
-                document.getElementById("hasilLimit").innerHTML =
-                    parseFloat(limit.toFixed(6));
-
-                if (mode === "rasional") {
-
-                    document.getElementById("analisis").innerHTML =
-                        "Limit Fungsi Rasional";
-
-                } else {
-
-                    document.getElementById("analisis").innerHTML =
-                        "Limit Fungsi Irasional";
-
-                }
-
-            } catch(err) {
-
-                document.getElementById("hasilLimit").innerHTML =
-                    "Error";
-
-                document.getElementById("analisis").innerHTML =
-                    "Input tidak valid";
-
-            }
-          }
-        </script>
+  } catch(err) {
+    elError.innerHTML = `<i class='bi bi-bug-fill me-1'></i> Input tidak valid: <code>${err.message}</code>.<br>
+                         Pastikan penulisan fungsi benar. Contoh: <code>(x^2-4)/(x-2)</code>`;
+    elError.classList.remove("d-none");
+  }
+}
+</script>
 
           <div id="ch3-teorema" class="mt-5">
             <h3 class="subsection-title">3.2 limit tak hingga</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — limit tak hingga</strong><br><ul><li>limit yang membahas perilaku suatu fungsi ketika nilai variabel mendekati tak hingga (∞) atau negatif tak hingga (-∞).</li></ul></div>
             <p><em>bentuk limit tak hingga positif dan negatif</em>
-              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
               \[
               \lim_{x \to \infty} f(x) \quad \text{atau} \quad \lim_{x \to -\infty} f(x)
               \]
@@ -677,11 +744,78 @@
                 </p> 
               </div>
             </div>
+            
+            <!-- ==================== KALKULATOR LIMIT MENUJU TAK HINGGA ==================== -->
+
+<div class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Limit Menuju Tak Hingga
+  </h3>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Hitung Limit Fungsi Rasional
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Koefisien Pangkat Tertinggi Pembilang</label>
+        <input type="number" class="form-control" id="atas" placeholder="Contoh : 2">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Derajat Pembilang</label>
+        <input type="number" class="form-control" id="derajatAtas" placeholder="Contoh : 2">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Koefisien Pangkat Tertinggi Penyebut</label>
+        <input type="number" class="form-control" id="bawah" placeholder="Contoh : 1">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Derajat Penyebut</label>
+        <input type="number" class="form-control" id="derajatBawah" placeholder="Contoh : 2">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Arah Limit</label>
+
+        <select class="form-select" id="arahLimit">
+          <option value="positif">x → ∞</option>
+          <option value="negatif">x → -∞</option>
+        </select>
+
+      </div>
+
+      <button class="btn btn-success w-100" onclick="hitungLimitTakHingga()">
+        <i class="bi bi-calculator"></i>
+        Hitung Limit
+      </button>
+
+      <hr>
+
+      <h5>Hasil Perhitungan</h5>
+
+      <div id="hasilLimitTakHingga" class="alert alert-info mt-3"></div>
+
+        Masukkan data terlebih dahulu kemudian tekan
+        <strong>Hitung Limit</strong>.
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
           </div>
           
           <div id="ch3-definisi">
             <h3 class="subsection-title">3.3 Diskontinuitas</h3>
-            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
 
             <div class="placeholder-notice">
@@ -1104,11 +1238,283 @@
 
                 </div>
             </div>
+            <!-- ==================== KALKULATOR 3.3 DISKONTINUITAS ==================== -->
+<div id="ch3-kalkulator-diskontinuitas" class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Diskontinuitas
+  </h3>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Periksa Jenis Diskontinuitas Fungsi
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Jenis Fungsi</label>
+        <select id="jenisDiskontinuitas" class="form-select" onchange="toggleInputDiskontinuitas()">
+          <option value="biasa">Fungsi Biasa — f(x) tunggal</option>
+          <option value="pecah">Fungsi Pecah — dua bagian (x &lt; a dan x ≥ a)</option>
+        </select>
+      </div>
+
+      <!-- Input fungsi biasa -->
+      <div id="inputBiasa">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Fungsi f(x)</label>
+          <input type="text" id="fungsiD" class="form-control font-monospace"
+            placeholder="Contoh: (x^2-4)/(x-2) atau 1/(x-2)" />
+          <div class="form-text">Gunakan <code>x</code> sebagai variabel. Akar: <code>sqrt(...)</code></div>
+        </div>
+      </div>
+
+      <!-- Input fungsi pecah -->
+      <div id="inputPecah" class="d-none">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Fungsi f(x) saat x &lt; a</label>
+          <input type="text" id="fungsiKiri" class="form-control font-monospace"
+            placeholder="Contoh: x+1" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Fungsi f(x) saat x ≥ a</label>
+          <input type="text" id="fungsiKanan" class="form-control font-monospace"
+            placeholder="Contoh: x+3" />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Titik yang diperiksa (x = a)</label>
+        <input type="number" id="titikD" class="form-control" placeholder="Contoh: 2" step="any" />
+      </div>
+
+      <button class="btn btn-success w-100" onclick="periksaDiskontinuitas()">
+        <i class="bi bi-calculator me-1"></i> Periksa Diskontinuitas
+      </button>
+
+      <hr>
+
+      <!-- Hasil -->
+      <div id="hasilDiskontinuitas" class="d-none">
+
+        <h5 class="mb-3">Hasil Pemeriksaan</h5>
+
+        <div class="alert alert-secondary mb-3">
+          <strong>Fungsi:</strong> <span id="tampilFungsiD"></span><br>
+          <strong>Titik yang diperiksa:</strong> x = <span id="tampilTitikD"></span>
+        </div>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr>
+              <th>Keterangan</th>
+              <th>Nilai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Limit dari kiri (x → a⁻)</td>
+              <td id="limitKiriD">-</td>
+            </tr>
+            <tr>
+              <td>Limit dari kanan (x → a⁺)</td>
+              <td id="limitKananD">-</td>
+            </tr>
+            <tr>
+              <td>Nilai fungsi f(a)</td>
+              <td id="nilaiFungsiD">-</td>
+            </tr>
+            <tr class="fw-bold table-warning">
+              <td>Jenis Diskontinuitas</td>
+              <td id="jenisDisk">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="boxAnalisisDisk" class="alert mb-3"></div>
+
+        <div class="card bg-light border-0">
+          <div class="card-body">
+            <strong>Langkah Penyelesaian:</strong>
+            <ol id="langkahDisk" class="mt-2 mb-0"></ol>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="pesanErrorDisk" class="alert alert-danger d-none mt-3"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleInputDiskontinuitas() {
+  const jenis = document.getElementById("jenisDiskontinuitas").value;
+  document.getElementById("inputBiasa").classList.toggle("d-none", jenis !== "biasa");
+  document.getElementById("inputPecah").classList.toggle("d-none", jenis !== "pecah");
+}
+
+function formatNilai(val) {
+  if (!isFinite(val)) return val > 0 ? "+∞" : "-∞";
+  return parseFloat(val.toFixed(6));
+}
+
+function periksaDiskontinuitas() {
+  const jenis  = document.getElementById("jenisDiskontinuitas").value;
+  const a      = parseFloat(document.getElementById("titikD").value);
+
+  const elHasil = document.getElementById("hasilDiskontinuitas");
+  const elError = document.getElementById("pesanErrorDisk");
+
+  // Reset tampilan
+  elHasil.classList.add("d-none");
+  elError.classList.add("d-none");
+
+  if (isNaN(a)) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan titik x = a yang valid.";
+    elError.classList.remove("d-none");
+    return;
+  }
+
+  const eps = 0.0001;
+  let limitKiri, limitKanan, nilaiFa, tampilFungsi;
+
+  try {
+    if (jenis === "biasa") {
+      const fx = document.getElementById("fungsiD").value.trim();
+      if (!fx) {
+        elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan fungsi f(x).";
+        elError.classList.remove("d-none");
+        return;
+      }
+      tampilFungsi = `f(x) = ${fx}`;
+      limitKiri  = math.evaluate(fx.replaceAll("x", `(${a - eps})`));
+      limitKanan = math.evaluate(fx.replaceAll("x", `(${a + eps})`));
+      try {
+        nilaiFa = math.evaluate(fx.replaceAll("x", `(${a})`));
+      } catch(e) {
+        nilaiFa = NaN;
+      }
+
+    } else {
+      const fKiri  = document.getElementById("fungsiKiri").value.trim();
+      const fKanan = document.getElementById("fungsiKanan").value.trim();
+      if (!fKiri || !fKanan) {
+        elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan kedua bagian fungsi.";
+        elError.classList.remove("d-none");
+        return;
+      }
+      tampilFungsi = `f(x) = ${fKiri} (x < ${a}), f(x) = ${fKanan} (x ≥ ${a})`;
+      limitKiri  = math.evaluate(fKiri.replaceAll("x", `(${a - eps})`));
+      limitKanan = math.evaluate(fKanan.replaceAll("x", `(${a + eps})`));
+      nilaiFa    = math.evaluate(fKanan.replaceAll("x", `(${a})`));
+    }
+
+    // Tampilkan info
+    document.getElementById("tampilFungsiD").textContent = tampilFungsi;
+    document.getElementById("tampilTitikD").textContent  = a;
+    document.getElementById("limitKiriD").textContent    = formatNilai(limitKiri);
+    document.getElementById("limitKananD").textContent   = formatNilai(limitKanan);
+    document.getElementById("nilaiFungsiD").textContent  = isNaN(nilaiFa) ? "Tidak terdefinisi" : formatNilai(nilaiFa);
+
+    // Tentukan jenis diskontinuitas
+    const elBox     = document.getElementById("boxAnalisisDisk");
+    const elJenis   = document.getElementById("jenisDisk");
+    const elLangkah = document.getElementById("langkahDisk");
+
+    let jenisDisk = "", analisis = "", langkah = "";
+
+    const kiriTakHingga  = !isFinite(limitKiri);
+    const kananTakHingga = !isFinite(limitKanan);
+    const selisih        = Math.abs(limitKiri - limitKanan);
+    const limitAda       = selisih < 0.01 && isFinite(limitKiri) && isFinite(limitKanan);
+    const limitSama      = limitAda && !isNaN(nilaiFa) && Math.abs((limitKiri + limitKanan) / 2 - nilaiFa) < 0.01;
+
+    if (kiriTakHingga || kananTakHingga) {
+      // Diskontinuitas tak hingga
+      jenisDisk = "Diskontinuitas Tak Hingga";
+      elBox.className = "alert alert-warning mb-3";
+      analisis = `<i class='bi bi-exclamation-circle-fill me-1'></i><strong>Diskontinuitas Tak Hingga</strong><br>
+                  Nilai fungsi menuju ±∞ saat x mendekati ${a}. Terdapat <strong>asimtot vertikal</strong> pada x = ${a}.`;
+      langkah = `
+        <li>Periksa penyebut fungsi pada x = ${a} → hasilnya nol sehingga fungsi tidak terdefinisi.</li>
+        <li>Limit dari kiri: ${formatNilai(limitKiri)}</li>
+        <li>Limit dari kanan: ${formatNilai(limitKanan)}</li>
+        <li>Karena nilai fungsi menuju tak hingga, terdapat asimtot vertikal pada x = ${a}.</li>
+        <li>Kesimpulan: fungsi mengalami <strong>diskontinuitas tak hingga</strong>.</li>
+      `;
+
+    } else if (!limitAda) {
+      // Diskontinuitas loncat
+      jenisDisk = "Diskontinuitas Loncat";
+      elBox.className = "alert alert-danger mb-3";
+      analisis = `<i class='bi bi-x-circle-fill me-1'></i><strong>Diskontinuitas Loncat</strong><br>
+                  Limit kiri (${formatNilai(limitKiri)}) ≠ Limit kanan (${formatNilai(limitKanan)}), 
+                  sehingga limit di x = ${a} tidak ada.`;
+      langkah = `
+        <li>Hitung limit dari kiri saat x → ${a}⁻: diperoleh ${formatNilai(limitKiri)}.</li>
+        <li>Hitung limit dari kanan saat x → ${a}⁺: diperoleh ${formatNilai(limitKanan)}.</li>
+        <li>Karena ${formatNilai(limitKiri)} ≠ ${formatNilai(limitKanan)}, maka limit tidak ada.</li>
+        <li>Kesimpulan: fungsi mengalami <strong>diskontinuitas loncat</strong>.</li>
+      `;
+
+    } else if (isNaN(nilaiFa) || !limitSama) {
+      // Diskontinuitas dapat dihilangkan
+      const nilaiLimit = ((limitKiri + limitKanan) / 2).toFixed(6);
+      jenisDisk = "Diskontinuitas Dapat Dihilangkan";
+      elBox.className = "alert alert-info mb-3";
+      analisis = `<i class='bi bi-info-circle-fill me-1'></i><strong>Diskontinuitas Dapat Dihilangkan</strong><br>
+                  Limit ada dan bernilai <strong>${nilaiLimit}</strong>, tetapi f(${a}) 
+                  ${isNaN(nilaiFa) ? "tidak terdefinisi" : `= ${formatNilai(nilaiFa)} ≠ ${nilaiLimit}`}.<br>
+                  Diskontinuitas ini dapat diperbaiki dengan mendefinisikan <strong>f(${a}) = ${nilaiLimit}</strong>.`;
+      langkah = `
+        <li>Substitusikan x = ${a} ke dalam f(x) → ${isNaN(nilaiFa) ? "tidak terdefinisi (bentuk 0/0)" : `f(${a}) = ${formatNilai(nilaiFa)}`}.</li>
+        <li>Sederhanakan fungsi (faktorisasi) untuk mencari nilai limit.</li>
+        <li>Limit dari kiri: ${formatNilai(limitKiri)}</li>
+        <li>Limit dari kanan: ${formatNilai(limitKanan)}</li>
+        <li>Limit ada dan bernilai ${nilaiLimit}, namun f(${a}) tidak sama dengan limit.</li>
+        <li>Untuk memperbaiki: definisikan f(${a}) = ${nilaiLimit}.</li>
+        <li>Kesimpulan: <strong>diskontinuitas dapat dihilangkan</strong>.</li>
+      `;
+
+    } else {
+      // Fungsi kontinu
+      jenisDisk = "Fungsi Kontinu ✓";
+      elBox.className = "alert alert-success mb-3";
+      analisis = `<i class='bi bi-check-circle-fill me-1'></i><strong>Fungsi Kontinu di x = ${a}</strong><br>
+                  Semua syarat kekontinuan terpenuhi:<br>
+                  ✓ f(${a}) = ${formatNilai(nilaiFa)} terdefinisi<br>
+                  ✓ Limit ada dan bernilai ${formatNilai((limitKiri + limitKanan) / 2)}<br>
+                  ✓ Nilai limit = nilai fungsi`;
+      langkah = `
+        <li>f(${a}) = ${formatNilai(nilaiFa)} → terdefinisi. ✓</li>
+        <li>Limit dari kiri: ${formatNilai(limitKiri)} ✓</li>
+        <li>Limit dari kanan: ${formatNilai(limitKanan)} ✓</li>
+        <li>Limit ada dan bernilai ${formatNilai((limitKiri + limitKanan) / 2)}. ✓</li>
+        <li>Nilai limit = f(${a}). ✓</li>
+        <li>Kesimpulan: fungsi <strong>kontinu</strong> di x = ${a}.</li>
+      `;
+    }
+
+    elJenis.textContent = jenisDisk;
+    elBox.innerHTML     = analisis;
+    elLangkah.innerHTML = langkah;
+    elHasil.classList.remove("d-none");
+
+  } catch(err) {
+    elError.innerHTML = `<i class='bi bi-bug-fill me-1'></i> Input tidak valid: <code>${err.message}</code>.<br>
+                         Pastikan penulisan fungsi benar. Contoh: <code>(x^2-4)/(x-2)</code>`;
+    elError.classList.remove("d-none");
+  }
+}
+</script>
           </div>
 
           <div id="ch3-definisi">
             <h3 class="subsection-title">3.4 Perilaku Limit sebagai Indikator Kestabilan</h3>
-            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
 
             <div class="placeholder-notice">
@@ -1356,7 +1762,7 @@
           <div id="ch3-definisi">
                 <h3 class="subsection-title">3.5 Stabilitas Model Matematis</h3>
 
-                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
 
                 <div class="placeholder-notice">
@@ -1582,7 +1988,7 @@
           <div id="ch3-definisi">
                 <h3 class="subsection-title">3.6 Evaluasi Limit pada Titik Kritis</h3>
 
-                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
 
                 <div class="placeholder-notice">
@@ -2026,7 +2432,7 @@
           <div id="ch3-definisi">
               <h3 class="subsection-title">3.7 Interpretasi dalam Permodelan</h3>
 
-              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
               <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
 
               <div class="placeholder-notice">
@@ -2360,7 +2766,91 @@
     </main>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../script.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+function hitungLimitTakHingga(){
+
+    let atas = parseFloat(document.getElementById("atas").value);
+    let bawah = parseFloat(document.getElementById("bawah").value);
+
+    let derajatAtas = parseInt(document.getElementById("derajatAtas").value);
+    let derajatBawah = parseInt(document.getElementById("derajatBawah").value);
+
+    let arah = document.getElementById("arahLimit").value;
+
+    let hasil = "";
+
+    if(isNaN(atas) || isNaN(bawah) || isNaN(derajatAtas) || isNaN(derajatBawah)){
+        document.getElementById("hasilLimitTakHingga").innerHTML =
+        "<span class='text-danger'>Semua data harus diisi.</span>";
+        return;
+    }
+
+    if(derajatAtas < derajatBawah){
+
+        hasil = `
+        <b>Langkah 1</b><br>
+        Derajat pembilang = ${derajatAtas}<br>
+        Derajat penyebut = ${derajatBawah}<br><br>
+
+        Karena derajat pembilang lebih kecil dari penyebut,
+        maka menurut aturan limit menuju tak hingga:
+
+        <h4 class="text-success mt-3">Limit = 0</h4>
+        `;
+
+    }
+
+    else if(derajatAtas == derajatBawah){
+
+        hasil = `
+        <b>Langkah 1</b><br>
+        Derajat pembilang = ${derajatAtas}<br>
+        Derajat penyebut = ${derajatBawah}<br><br>
+
+        Karena derajat sama,
+        maka limit diperoleh dari perbandingan koefisien tertinggi.
+
+        <br><br>
+
+        ${atas} / ${bawah}
+
+        <h4 class="text-primary mt-3">
+        Limit = ${(atas/bawah)}
+        </h4>
+        `;
+
+    }
+
+    else{
+
+        let tanda = "";
+
+        if(arah === "negatif" && derajatAtas % 2 !== 0){
+            tanda = (atas/bawah) > 0 ? "-∞" : "∞";
+        } else {
+            tanda = (atas/bawah) > 0 ? "∞" : "-∞";
+        }
+
+        hasil = `
+        <b>Langkah 1</b><br>
+        Derajat pembilang = ${derajatAtas}<br>
+        Derajat penyebut = ${derajatBawah}<br><br>
+
+        Karena derajat pembilang lebih besar,
+        maka limit menuju tak hingga.
+
+        <h4 class="text-danger mt-3">
+        Limit = ${tanda}
+        </h4>
+        `;
+    }
+
+    document.getElementById("hasilLimitTakHingga").innerHTML = hasil;
+
+}
+</script>
 </body>
 
 </html>
