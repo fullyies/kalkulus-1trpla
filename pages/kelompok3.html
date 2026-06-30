@@ -206,17 +206,6 @@
                 
 
                 <h3 class="subsection-title">3.1 Limit Rasional & Irasional</h3>
-
-                <div class="placeholder-notice">
-                    <i class="bi bi-pencil-square"></i>
-                    <strong>Area Materi — Limit Rasional & Irasional</strong><br>
-
-                    <ul>
-                        <li>Limit rasional dan limit irasional merupakan dua bentuk limit fungsi yang sering dijumpai dalam kalkulus.</li>
-                        <li>Perbedaannya terletak pada bentuk fungsi yang digunakan, yaitu fungsi pecahan (rasional) dan fungsi yang mengandung akar (irasional).</li>
-                    </ul>
-                </div>
-
                 <ul>
 
                     <li>
@@ -665,7 +654,6 @@ function hitungLimit() {
 
           <div id="ch3-teorema" class="mt-5">
             <h3 class="subsection-title">3.2 limit tak hingga</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — limit tak hingga</strong><br><ul><li>limit yang membahas perilaku suatu fungsi ketika nilai variabel mendekati tak hingga (∞) atau negatif tak hingga (-∞).</li></ul></div>
             <p><em>bentuk limit tak hingga positif dan negatif</em>
               
               \[
@@ -817,15 +805,6 @@ function hitungLimit() {
             <h3 class="subsection-title">3.3 Diskontinuitas</h3>
             
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-
-            <div class="placeholder-notice">
-                <i class="bi bi-pencil-square"></i>
-                <strong>Area Materi — Diskontinuitas</strong><br>
-                <ul>
-                    <li>Diskontinuitas adalah keadaan ketika suatu fungsi tidak kontinu (tidak tersambung) pada titik tertentu.</li>
-                    <li>Pada titik tersebut, grafik fungsi dapat memiliki lubang, loncatan, atau bahkan menuju tak hingga.</li>
-                </ul>
-            </div>
 
             <ul>
                 <li>
@@ -1517,14 +1496,6 @@ function periksaDiskontinuitas() {
             
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
 
-            <div class="placeholder-notice">
-                <i class="bi bi-pencil-square"></i>
-                <strong>Area Materi — Perilaku Limit sebagai Indikator Kestabilan</strong><br>
-                <ul>
-                    <li>Perilaku limit dapat digunakan untuk memprediksi keadaan suatu sistem dalam jangka panjang.</li>
-                    <li>Dengan mengamati nilai fungsi saat variabel mendekati suatu nilai tertentu atau tak hingga, kita dapat menentukan apakah sistem tersebut stabil atau tidak.</li>
-                </ul>
-            </div>
 
             <ul>
                 <li>
@@ -1758,21 +1729,228 @@ function periksaDiskontinuitas() {
 
                 </div>
             </div>
+            <!-- ==================== KALKULATOR 3.4 PERILAKU LIMIT & KESTABILAN ==================== -->
+<div id="ch3-kalkulator-kestabilan" class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Perilaku Limit &amp; Kestabilan
+  </h3>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Analisis Kestabilan Fungsi saat x → ∞
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Fungsi f(x)</label>
+        <input type="text" id="fungsiKestabilan" class="form-control font-monospace"
+          placeholder="Contoh: (5*x+2)/(x+1) atau x^2 atau sin(x)" />
+        <div class="form-text">
+          Gunakan <code>x</code> sebagai variabel.<br>
+          Contoh fungsi: <code>(5*x+2)/(x+1)</code> · <code>x^2</code> · <code>sin(x)</code> · <code>1/x</code>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Arah Limit</label>
+        <select id="arahKestabilan" class="form-select">
+          <option value="positif">x → +∞</option>
+          <option value="negatif">x → -∞</option>
+        </select>
+      </div>
+
+      <button class="btn btn-success w-100" onclick="hitungKestabilan()">
+        <i class="bi bi-calculator me-1"></i> Analisis Kestabilan
+      </button>
+
+      <hr>
+
+      <!-- Hasil -->
+      <div id="hasilKestabilan" class="d-none">
+
+        <h5 class="mb-3">Hasil Analisis</h5>
+
+        <div class="alert alert-secondary mb-3">
+          <strong>Fungsi:</strong> <span id="tampilFungsiK" class="font-monospace"></span><br>
+          <strong>Arah:</strong> <span id="tampilArahK"></span>
+        </div>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr>
+              <th>x</th>
+              <th>f(x)</th>
+            </tr>
+          </thead>
+          <tbody id="tabelNilaiK"></tbody>
+        </table>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr>
+              <th>Keterangan</th>
+              <th>Nilai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="fw-bold table-warning">
+              <td>Nilai Limit (estimasi)</td>
+              <td id="nilaiLimitK">-</td>
+            </tr>
+            <tr class="fw-bold">
+              <td>Status Kestabilan</td>
+              <td id="statusKestabilan">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="boxAnalisisK" class="alert mb-3"></div>
+
+        <div class="card bg-light border-0">
+          <div class="card-body">
+            <strong>Langkah Analisis:</strong>
+            <ol id="langkahK" class="mt-2 mb-0"></ol>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="pesanErrorK" class="alert alert-danger d-none mt-3"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function hitungKestabilan() {
+
+  const fx   = document.getElementById("fungsiKestabilan").value.trim();
+  const arah = document.getElementById("arahKestabilan").value;
+
+  const elHasil = document.getElementById("hasilKestabilan");
+  const elError = document.getElementById("pesanErrorK");
+
+  // Reset tampilan
+  elHasil.classList.add("d-none");
+  elError.classList.add("d-none");
+
+  if (!fx) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan fungsi f(x) terlebih dahulu.";
+    elError.classList.remove("d-none");
+    return;
+  }
+
+  try {
+    // Nilai x yang diuji (semakin besar untuk mendekati tak hingga)
+    const tandaArah = arah === "positif" ? 1 : -1;
+    const xNilai    = [10, 100, 1000, 10000, 100000].map(v => tandaArah * v);
+    const label     = arah === "positif" ? "+∞" : "-∞";
+
+    // Hitung f(x) untuk setiap x
+    const hasilNilai = xNilai.map(x => {
+      try {
+        return math.evaluate(fx.replaceAll("x", `(${x})`));
+      } catch(e) {
+        return NaN;
+      }
+    });
+
+    // Isi tabel nilai
+    const tabel = document.getElementById("tabelNilaiK");
+    tabel.innerHTML = xNilai.map((x, i) => {
+      const val = hasilNilai[i];
+      const tampil = isNaN(val) ? "Tidak terdefinisi"
+                   : !isFinite(val) ? (val > 0 ? "+∞" : "-∞")
+                   : parseFloat(val.toFixed(6));
+      return `<tr><td>${x.toLocaleString()}</td><td>${tampil}</td></tr>`;
+    }).join("");
+
+    // Estimasi nilai limit dari nilai terbesar
+    const nilaiAkhir    = hasilNilai[hasilNilai.length - 1];
+    const nilaiSebelum  = hasilNilai[hasilNilai.length - 2];
+
+    document.getElementById("tampilFungsiK").textContent = `f(x) = ${fx}`;
+    document.getElementById("tampilArahK").textContent   = `x → ${label}`;
+
+    const elBox     = document.getElementById("boxAnalisisK");
+    const elLangkah = document.getElementById("langkahK");
+    const elNilai   = document.getElementById("nilaiLimitK");
+    const elStatus  = document.getElementById("statusKestabilan");
+
+    let nilaiLimit = "", status = "", analisis = "", langkah = "";
+
+    // Deteksi perilaku osilasi (sin, cos)
+    const isOsilasi = fx.includes("sin") || fx.includes("cos") || fx.includes("tan");
+
+    if (isOsilasi) {
+      // Output tidak konsisten
+      nilaiLimit = "Tidak Ada (Osilasi)";
+      status     = "⚠️ Tidak Konsisten";
+      elBox.className = "alert alert-warning mb-3";
+      analisis = `<i class='bi bi-exclamation-circle-fill me-1'></i><strong>Output Tidak Konsisten</strong><br>
+                  Fungsi berosilasi antara nilai tertentu saat x → ${label}.<br>
+                  Limit tidak ada karena fungsi tidak mendekati satu nilai tertentu.`;
+      langkah = `
+        <li>Substitusikan nilai x yang semakin besar ke dalam f(x).</li>
+        <li>Amati bahwa nilai f(x) terus berubah-ubah (berosilasi).</li>
+        <li>Karena tidak mendekati satu nilai tertentu, limit tidak ada.</li>
+        <li>Kesimpulan: output <strong>tidak konsisten</strong> → sistem tidak memiliki perilaku jangka panjang yang pasti.</li>
+      `;
+
+    } else if (!isFinite(nilaiAkhir)) {
+      // Output membesar tak terkendali
+      nilaiLimit = nilaiAkhir > 0 ? "+∞" : "-∞";
+      status     = "❌ Tidak Stabil";
+      elBox.className = "alert alert-danger mb-3";
+      analisis = `<i class='bi bi-x-circle-fill me-1'></i><strong>Output Membesar Tak Terkendali</strong><br>
+                  Saat x → ${label}, nilai f(x) terus membesar tanpa batas menuju <strong>${nilaiLimit}</strong>.<br>
+                  Sistem tidak memiliki nilai keseimbangan.`;
+      langkah = `
+        <li>Substitusikan nilai x yang semakin besar ke dalam f(x).</li>
+        <li>Amati bahwa nilai f(x) terus bertambah tanpa batas.</li>
+        <li>Limit f(x) saat x → ${label} = ${nilaiLimit}.</li>
+        <li>Kesimpulan: output <strong>membesar tak terkendali</strong> → sistem <strong>tidak stabil</strong>.</li>
+      `;
+
+    } else {
+      // Output mendekati nilai tetap
+      const limitVal = parseFloat(nilaiAkhir.toFixed(6));
+      nilaiLimit = limitVal;
+      status     = "✅ Stabil";
+      elBox.className = "alert alert-success mb-3";
+      analisis = `<i class='bi bi-check-circle-fill me-1'></i><strong>Output Mendekati Nilai Tetap</strong><br>
+                  Saat x → ${label}, nilai f(x) semakin mendekati <strong>${limitVal}</strong>.<br>
+                  Sistem memiliki <strong>nilai keseimbangan</strong> yang tetap sehingga bersifat stabil.`;
+      langkah = `
+        <li>Substitusikan nilai x yang semakin besar ke dalam f(x).</li>
+        <li>Amati bahwa nilai f(x) semakin mendekati angka tetap.</li>
+        <li>Estimasi limit f(x) saat x → ${label} ≈ <strong>${limitVal}</strong>.</li>
+        <li>Karena limit bernilai tertentu, output mendekati nilai keseimbangan.</li>
+        <li>Kesimpulan: sistem <strong>stabil</strong> dengan nilai keseimbangan = ${limitVal}.</li>
+      `;
+    }
+
+    elNilai.textContent = nilaiLimit;
+    elStatus.textContent = status;
+    elBox.innerHTML      = analisis;
+    elLangkah.innerHTML  = langkah;
+    elHasil.classList.remove("d-none");
+
+  } catch(err) {
+    elError.innerHTML = `<i class='bi bi-bug-fill me-1'></i> Input tidak valid: <code>${err.message}</code>.<br>
+                         Pastikan penulisan fungsi benar. Contoh: <code>(5*x+2)/(x+1)</code>`;
+    elError.classList.remove("d-none");
+  }
+}
+</script>
           </div>
           <div id="ch3-definisi">
                 <h3 class="subsection-title">3.5 Stabilitas Model Matematis</h3>
 
                 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-
-                <div class="placeholder-notice">
-                    <i class="bi bi-pencil-square"></i>
-                    <strong>Area Materi — Stabilitas Model Matematis</strong><br>
-                    <ul>
-                        <li>Stabilitas model matematis digunakan untuk mengetahui perilaku suatu fungsi ketika variabel terus bertambah besar.</li>
-                        <li>Melalui limit, kita dapat menentukan apakah suatu model akan menuju keadaan yang stabil atau justru menjadi tidak stabil.</li>
-                    </ul>
-                </div>
 
                 <ul>
                     <li>
@@ -1984,21 +2162,181 @@ function periksaDiskontinuitas() {
 
                 </div>
             </div>
+            <!-- ==================== KALKULATOR 3.5 STABILITAS MODEL MATEMATIS ==================== -->
+<div id="ch3-kalkulator-stabilitas" class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Stabilitas Model Matematis
+  </h3>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Tentukan Stabilitas Model Matematis
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Fungsi Model f(x)</label>
+        <input type="text" id="fungsiStabilitas" class="form-control font-monospace"
+          placeholder="Contoh: (3*x+6)/(x+2) atau x^2 atau 1/x" />
+        <div class="form-text">
+          Gunakan <code>x</code> sebagai variabel.<br>
+          Contoh: <code>(3*x+6)/(x+2)</code> · <code>x^2</code> · <code>1/x^2</code> · <code>e^(-x)</code>
+        </div>
+      </div>
+
+      <button class="btn btn-success w-100" onclick="hitungStabilitas()">
+        <i class="bi bi-calculator me-1"></i> Tentukan Stabilitas
+      </button>
+
+      <hr>
+
+      <div id="hasilStabilitas" class="d-none">
+
+        <h5 class="mb-3">Hasil Analisis Stabilitas</h5>
+
+        <div class="alert alert-secondary mb-3">
+          <strong>Model:</strong> <span id="tampilFungsiS" class="font-monospace"></span>
+        </div>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr><th>x</th><th>f(x)</th></tr>
+          </thead>
+          <tbody id="tabelStabilitas"></tbody>
+        </table>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr><th>Keterangan</th><th>Nilai</th></tr>
+          </thead>
+          <tbody>
+            <tr class="fw-bold table-warning">
+              <td>Nilai Limit saat x → ∞</td>
+              <td id="nilaiLimitS">-</td>
+            </tr>
+            <tr class="fw-bold">
+              <td>Status Model</td>
+              <td id="statusStabilitas">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="boxAnalisisS" class="alert mb-3"></div>
+
+        <div class="card bg-light border-0">
+          <div class="card-body">
+            <strong>Langkah Analisis:</strong>
+            <ol id="langkahS" class="mt-2 mb-0"></ol>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="pesanErrorS" class="alert alert-danger d-none mt-3"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function hitungStabilitas() {
+
+  const fx = document.getElementById("fungsiStabilitas").value.trim();
+
+  const elHasil = document.getElementById("hasilStabilitas");
+  const elError = document.getElementById("pesanErrorS");
+
+  elHasil.classList.add("d-none");
+  elError.classList.add("d-none");
+
+  if (!fx) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan fungsi model f(x).";
+    elError.classList.remove("d-none");
+    return;
+  }
+
+  try {
+    const xNilai     = [10, 100, 1000, 10000, 100000];
+    const hasilNilai = xNilai.map(x => {
+      try { return math.evaluate(fx.replaceAll("x", `(${x})`)); }
+      catch(e) { return NaN; }
+    });
+
+    // Isi tabel
+    const tabel = document.getElementById("tabelStabilitas");
+    tabel.innerHTML = xNilai.map((x, i) => {
+      const val = hasilNilai[i];
+      const tampil = isNaN(val) ? "Tidak terdefinisi"
+                   : !isFinite(val) ? (val > 0 ? "+∞" : "-∞")
+                   : parseFloat(val.toFixed(6));
+      return `<tr><td>${x.toLocaleString()}</td><td>${tampil}</td></tr>`;
+    }).join("");
+
+    document.getElementById("tampilFungsiS").textContent = `f(x) = ${fx}`;
+
+    const nilaiAkhir   = hasilNilai[hasilNilai.length - 1];
+    const elBox        = document.getElementById("boxAnalisisS");
+    const elNilai      = document.getElementById("nilaiLimitS");
+    const elStatus     = document.getElementById("statusStabilitas");
+    const elLangkah    = document.getElementById("langkahS");
+
+    let nilaiLimit = "", status = "", analisis = "", langkah = "";
+
+    if (!isFinite(nilaiAkhir) || isNaN(nilaiAkhir)) {
+      // Tidak stabil
+      nilaiLimit = isNaN(nilaiAkhir) ? "Tidak Ada" : (nilaiAkhir > 0 ? "+∞" : "-∞");
+      status     = "❌ Tidak Stabil";
+      elBox.className = "alert alert-danger mb-3";
+      analisis = `<i class='bi bi-x-circle-fill me-1'></i><strong>Model Tidak Stabil</strong><br>
+                  Saat x → ∞, nilai output terus membesar tanpa batas menuju <strong>${nilaiLimit}</strong>.<br>
+                  Model tidak memiliki nilai keseimbangan jangka panjang.`;
+      langkah = `
+        <li>Masukkan nilai x yang semakin besar ke dalam model f(x) = <code>${fx}</code>.</li>
+        <li>Amati bahwa output terus bertambah tanpa batas.</li>
+        <li>Karena lim f(x) saat x → ∞ = ${nilaiLimit}, model tidak punya keadaan stabil.</li>
+        <li>Kesimpulan: model matematis <strong>tidak stabil</strong>.</li>
+      `;
+
+    } else {
+      // Stabil
+      const limitVal = parseFloat(nilaiAkhir.toFixed(6));
+      nilaiLimit = limitVal;
+      status     = "✅ Stabil";
+      elBox.className = "alert alert-success mb-3";
+      analisis = `<i class='bi bi-check-circle-fill me-1'></i><strong>Model Stabil</strong><br>
+                  Saat x → ∞, output model semakin mendekati nilai tetap <strong>${limitVal}</strong>.<br>
+                  Model memiliki <strong>nilai keseimbangan</strong> yang jelas.`;
+      langkah = `
+        <li>Masukkan nilai x yang semakin besar ke dalam model f(x) = <code>${fx}</code>.</li>
+        <li>Amati bahwa output semakin mendekati nilai tertentu.</li>
+        <li>Estimasi: lim f(x) saat x → ∞ ≈ <strong>${limitVal}</strong>.</li>
+        <li>Karena limit bernilai tetap, model memiliki nilai keseimbangan.</li>
+        <li>Kesimpulan: model matematis <strong>stabil</strong> dengan keseimbangan = ${limitVal}.</li>
+      `;
+    }
+
+    elNilai.textContent  = nilaiLimit;
+    elStatus.textContent = status;
+    elBox.innerHTML      = analisis;
+    elLangkah.innerHTML  = langkah;
+    elHasil.classList.remove("d-none");
+
+  } catch(err) {
+    elError.innerHTML = `<i class='bi bi-bug-fill me-1'></i> Input tidak valid: <code>${err.message}</code>.<br>
+                         Contoh penulisan yang benar: <code>(3*x+6)/(x+2)</code>`;
+    elError.classList.remove("d-none");
+  }
+}
+
+</script>
           </div>
           <div id="ch3-definisi">
                 <h3 class="subsection-title">3.6 Evaluasi Limit pada Titik Kritis</h3>
 
                 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-
-                <div class="placeholder-notice">
-                    <i class="bi bi-pencil-square"></i>
-                    <strong>Area Materi — Evaluasi Limit pada Titik Kritis</strong><br>
-                    <ul>
-                        <li>Titik kritis adalah titik pada suatu fungsi yang perlu dianalisis karena berpotensi menyebabkan perubahan perilaku fungsi.</li>
-                        <li>Evaluasi limit pada titik kritis bertujuan untuk mengetahui apakah limit fungsi ada, tidak ada, atau menuju tak hingga.</li>
-                    </ul>
-                </div>
 
                 <ul>
                     <li>
@@ -2427,6 +2765,245 @@ function periksaDiskontinuitas() {
 
                 </div>
             </div>
+            <!-- ==================== KALKULATOR 3.6 EVALUASI LIMIT TITIK KRITIS ==================== -->
+<div id="ch3-kalkulator-titikkritis" class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Evaluasi Limit pada Titik Kritis
+  </h3>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Evaluasi Limit Fungsi pada Titik Kritis
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Jenis Fungsi</label>
+        <select id="jenisTitikKritis" class="form-select" onchange="toggleInputTitikKritis()">
+          <option value="biasa">Fungsi Biasa — f(x) tunggal</option>
+          <option value="pecah">Fungsi Pecah — dua bagian (x &lt; a dan x ≥ a)</option>
+        </select>
+      </div>
+
+      <div id="inputBiasaTK">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Fungsi f(x)</label>
+          <input type="text" id="fungsiTK" class="form-control font-monospace"
+            placeholder="Contoh: (x^2-9)/(x-3) atau 1/(x-2)" />
+          <div class="form-text">Gunakan <code>x</code> sebagai variabel.</div>
+        </div>
+      </div>
+
+      <div id="inputPecahTK" class="d-none">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Fungsi f(x) saat x &lt; a</label>
+          <input type="text" id="fungsiTKKiri" class="form-control font-monospace"
+            placeholder="Contoh: x+1" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Fungsi f(x) saat x ≥ a</label>
+          <input type="text" id="fungsiTKKanan" class="form-control font-monospace"
+            placeholder="Contoh: x+3" />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Titik Kritis (x = a)</label>
+        <input type="number" id="titikKritis" class="form-control"
+          placeholder="Contoh: 3" step="any" />
+      </div>
+
+      <button class="btn btn-success w-100" onclick="evaluasiTitikKritis()">
+        <i class="bi bi-calculator me-1"></i> Evaluasi Limit
+      </button>
+
+      <hr>
+
+      <div id="hasilTitikKritis" class="d-none">
+
+        <h5 class="mb-3">Hasil Evaluasi</h5>
+
+        <div class="alert alert-secondary mb-3">
+          <strong>Fungsi:</strong> <span id="tampilFungsiTK" class="font-monospace"></span><br>
+          <strong>Titik Kritis:</strong> x = <span id="tampilTitikTK"></span>
+        </div>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr><th>Keterangan</th><th>Nilai</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Limit dari kiri (x → a⁻)</td>
+              <td id="limitKiriTK">-</td>
+            </tr>
+            <tr>
+              <td>Limit dari kanan (x → a⁺)</td>
+              <td id="limitKananTK">-</td>
+            </tr>
+            <tr class="fw-bold table-warning">
+              <td>Hasil Evaluasi Limit</td>
+              <td id="hasilEvaluasiTK">-</td>
+            </tr>
+            <tr class="fw-bold">
+              <td>Kategori</td>
+              <td id="kategoriTK">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="boxAnalisisTK" class="alert mb-3"></div>
+
+        <div class="card bg-light border-0">
+          <div class="card-body">
+            <strong>Langkah Evaluasi:</strong>
+            <ol id="langkahTK" class="mt-2 mb-0"></ol>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="pesanErrorTK" class="alert alert-danger d-none mt-3"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleInputTitikKritis() {
+  const jenis = document.getElementById("jenisTitikKritis").value;
+  document.getElementById("inputBiasaTK").classList.toggle("d-none", jenis !== "biasa");
+  document.getElementById("inputPecahTK").classList.toggle("d-none", jenis !== "pecah");
+}
+
+function evaluasiTitikKritis() {
+
+  const jenis = document.getElementById("jenisTitikKritis").value;
+  const a     = parseFloat(document.getElementById("titikKritis").value);
+
+  const elHasil = document.getElementById("hasilTitikKritis");
+  const elError = document.getElementById("pesanErrorTK");
+
+  elHasil.classList.add("d-none");
+  elError.classList.add("d-none");
+
+  if (isNaN(a)) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan titik kritis x = a yang valid.";
+    elError.classList.remove("d-none");
+    return;
+  }
+
+  const eps = 0.0001;
+  let limitKiri, limitKanan, tampilFungsi;
+
+  try {
+    if (jenis === "biasa") {
+      const fx = document.getElementById("fungsiTK").value.trim();
+      if (!fx) {
+        elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan fungsi f(x).";
+        elError.classList.remove("d-none");
+        return;
+      }
+      tampilFungsi = `f(x) = ${fx}`;
+      limitKiri  = math.evaluate(fx.replaceAll("x", `(${a - eps})`));
+      limitKanan = math.evaluate(fx.replaceAll("x", `(${a + eps})`));
+
+    } else {
+      const fKiri  = document.getElementById("fungsiTKKiri").value.trim();
+      const fKanan = document.getElementById("fungsiTKKanan").value.trim();
+      if (!fKiri || !fKanan) {
+        elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan kedua bagian fungsi.";
+        elError.classList.remove("d-none");
+        return;
+      }
+      tampilFungsi = `f(x) = ${fKiri} (x < ${a}),  f(x) = ${fKanan} (x ≥ ${a})`;
+      limitKiri  = math.evaluate(fKiri.replaceAll("x", `(${a - eps})`));
+      limitKanan = math.evaluate(fKanan.replaceAll("x", `(${a + eps})`));
+    }
+
+    document.getElementById("tampilFungsiTK").textContent = tampilFungsi;
+    document.getElementById("tampilTitikTK").textContent  = a;
+
+    const fmtVal = v => !isFinite(v) ? (v > 0 ? "+∞" : "-∞") : parseFloat(v.toFixed(6));
+    document.getElementById("limitKiriTK").textContent  = fmtVal(limitKiri);
+    document.getElementById("limitKananTK").textContent = fmtVal(limitKanan);
+
+    const elBox     = document.getElementById("boxAnalisisTK");
+    const elHasil2  = document.getElementById("hasilEvaluasiTK");
+    const elKat     = document.getElementById("kategoriTK");
+    const elLangkah = document.getElementById("langkahTK");
+
+    let hasilEval = "", kategori = "", analisis = "", langkah = "";
+
+    const kiriTakHingga  = !isFinite(limitKiri);
+    const kananTakHingga = !isFinite(limitKanan);
+    const selisih        = Math.abs(limitKiri - limitKanan);
+
+    if (kiriTakHingga || kananTakHingga) {
+      // Limit menuju tak hingga
+      hasilEval = kiriTakHingga ? fmtVal(limitKiri) : fmtVal(limitKanan);
+      kategori  = "⚠️ Limit Menuju Tak Hingga";
+      elBox.className = "alert alert-warning mb-3";
+      analisis = `<i class='bi bi-exclamation-circle-fill me-1'></i><strong>Limit Menuju Tak Hingga</strong><br>
+                  Saat x mendekati titik kritis ${a}, nilai fungsi membesar tanpa batas.<br>
+                  Terdapat <strong>asimtot vertikal</strong> pada x = ${a}.`;
+      langkah = `
+        <li>Periksa nilai penyebut saat x = ${a} → bernilai nol, sehingga fungsi tidak terdefinisi.</li>
+        <li>Hitung limit dari kiri: ${fmtVal(limitKiri)}.</li>
+        <li>Hitung limit dari kanan: ${fmtVal(limitKanan)}.</li>
+        <li>Karena nilai fungsi menuju tak hingga, terdapat asimtot vertikal di x = ${a}.</li>
+        <li>Kategori: <strong>limit menuju tak hingga</strong>.</li>
+      `;
+
+    } else if (selisih > 0.01) {
+      // Limit tidak ada
+      hasilEval = "Tidak Ada";
+      kategori  = "❌ Limit Tidak Ada";
+      elBox.className = "alert alert-danger mb-3";
+      analisis = `<i class='bi bi-x-circle-fill me-1'></i><strong>Limit Tidak Ada</strong><br>
+                  Limit kiri (${fmtVal(limitKiri)}) ≠ Limit kanan (${fmtVal(limitKanan)}).<br>
+                  Karena kedua sisi berbeda, limit di titik kritis x = ${a} tidak ada.`;
+      langkah = `
+        <li>Hitung limit dari kiri saat x → ${a}⁻: diperoleh ${fmtVal(limitKiri)}.</li>
+        <li>Hitung limit dari kanan saat x → ${a}⁺: diperoleh ${fmtVal(limitKanan)}.</li>
+        <li>Karena ${fmtVal(limitKiri)} ≠ ${fmtVal(limitKanan)}, maka limit tidak ada.</li>
+        <li>Kategori: <strong>limit tidak ada</strong>.</li>
+      `;
+
+    } else {
+      // Limit bernilai tertentu
+      const limitVal = parseFloat(((limitKiri + limitKanan) / 2).toFixed(6));
+      hasilEval = limitVal;
+      kategori  = "✅ Limit Bernilai Tertentu";
+      elBox.className = "alert alert-success mb-3";
+      analisis = `<i class='bi bi-check-circle-fill me-1'></i><strong>Limit Bernilai Tertentu</strong><br>
+                  Limit di titik kritis x = ${a} ada dan bernilai <strong>${limitVal}</strong>.<br>
+                  Fungsi dapat disederhanakan untuk mendapatkan nilai ini.`;
+      langkah = `
+        <li>Substitusikan x = ${a} ke dalam f(x) → kemungkinan menghasilkan bentuk tak tentu 0/0.</li>
+        <li>Sederhanakan fungsi dengan faktorisasi atau bentuk sekawan.</li>
+        <li>Hitung limit dari kiri: ${fmtVal(limitKiri)}.</li>
+        <li>Hitung limit dari kanan: ${fmtVal(limitKanan)}.</li>
+        <li>Karena limit kiri ≈ limit kanan, nilai limit = <strong>${limitVal}</strong>.</li>
+        <li>Kategori: <strong>limit bernilai tertentu</strong>.</li>
+      `;
+    }
+
+    elHasil2.textContent = hasilEval;
+    elKat.textContent    = kategori;
+    elBox.innerHTML      = analisis;
+    elLangkah.innerHTML  = langkah;
+    elHasil.classList.remove("d-none");
+
+  } catch(err) {
+    elError.innerHTML = `<i class='bi bi-bug-fill me-1'></i> Input tidak valid: <code>${err.message}</code>.<br>
+                         Contoh: <code>(x^2-9)/(x-3)</code>`;
+    elError.classList.remove("d-none");
+  }
+}
+</script>
           </div>
 
           <div id="ch3-definisi">
@@ -2434,15 +3011,6 @@ function periksaDiskontinuitas() {
 
               
               <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.min.js"></script>
-
-              <div class="placeholder-notice">
-                  <i class="bi bi-pencil-square"></i>
-                  <strong>Area Materi — Interpretasi dalam Permodelan</strong><br>
-                  <ul>
-                      <li>Dalam pemodelan matematika, limit digunakan untuk memprediksi perilaku suatu sistem dalam jangka panjang.</li>
-                      <li>Hasil limit tidak hanya berupa angka, tetapi juga memiliki makna terhadap kondisi nyata dari suatu sistem.</li>
-                  </ul>
-              </div>
 
               <ul>
                   <li>
@@ -2639,6 +3207,267 @@ function periksaDiskontinuitas() {
 
                 </div>
             </div>
+            <!-- ==================== KALKULATOR 3.7 INTERPRETASI PERMODELAN ==================== -->
+<div id="ch3-kalkulator-permodelan" class="mt-5">
+  <h3 class="subsection-title">
+    <i class="bi bi-calculator-fill me-2"></i>
+    Kalkulator Interpretasi dalam Permodelan
+  </h3>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Interpretasi Perilaku Jangka Panjang Suatu Model
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Fungsi Model h(t) atau f(x)</label>
+        <input type="text" id="fungsiModel" class="form-control font-monospace"
+          placeholder="Contoh: e^(-x) atau 1/x^2 atau (3*x)/(x+1)" />
+        <div class="form-text">
+          Gunakan <code>x</code> atau <code>t</code> sebagai variabel waktu.<br>
+          Contoh: <code>e^(-x)</code> · <code>1/x^2</code> · <code>(3*x)/(x+1)</code> · <code>sin(x)/x</code>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Konteks Permodelan (opsional)</label>
+        <input type="text" id="konteksModel" class="form-control"
+          placeholder="Contoh: tinggi skateboard, suhu pendinginan, populasi" />
+        <div class="form-text">Digunakan untuk memperkaya interpretasi hasil.</div>
+      </div>
+
+      <button class="btn btn-success w-100" onclick="interpretasiModel()">
+        <i class="bi bi-calculator me-1"></i> Interpretasikan Model
+      </button>
+
+      <hr>
+
+      <div id="hasilPermodelan" class="d-none">
+
+        <h5 class="mb-3">Hasil Interpretasi</h5>
+
+        <div class="alert alert-secondary mb-3">
+          <strong>Model:</strong> <span id="tampilFungsiM" class="font-monospace"></span><br>
+          <strong>Konteks:</strong> <span id="tampilKonteks"></span>
+        </div>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr><th>t (waktu/variabel)</th><th>Nilai Output</th></tr>
+          </thead>
+          <tbody id="tabelPermodelan"></tbody>
+        </table>
+
+        <table class="table table-bordered table-sm mb-3">
+          <thead class="table-light">
+            <tr><th>Keterangan</th><th>Nilai</th></tr>
+          </thead>
+          <tbody>
+            <tr class="fw-bold table-warning">
+              <td>Nilai Limit saat t → ∞</td>
+              <td id="nilaiLimitM">-</td>
+            </tr>
+            <tr class="fw-bold">
+              <td>Perilaku Jangka Panjang</td>
+              <td id="perilakuModel">-</td>
+            </tr>
+            <tr class="fw-bold">
+              <td>Titik Keseimbangan</td>
+              <td id="titikKeseimbangan">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div id="boxAnalisisM" class="alert mb-3"></div>
+
+        <div class="card bg-light border-0 mb-3">
+          <div class="card-body">
+            <strong>Langkah Interpretasi:</strong>
+            <ol id="langkahM" class="mt-2 mb-0"></ol>
+          </div>
+        </div>
+
+        <div id="boxInterpretasi" class="card border-primary">
+          <div class="card-header bg-primary text-white">
+            <i class="bi bi-lightbulb-fill me-1"></i> Interpretasi dalam Konteks Nyata
+          </div>
+          <div class="card-body" id="isiInterpretasi"></div>
+        </div>
+
+      </div>
+
+      <div id="pesanErrorM" class="alert alert-danger d-none mt-3"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function interpretasiModel() {
+
+  let fx      = document.getElementById("fungsiModel").value.trim();
+  const konteks = document.getElementById("konteksModel").value.trim();
+
+  const elHasil = document.getElementById("hasilPermodelan");
+  const elError = document.getElementById("pesanErrorM");
+
+  elHasil.classList.add("d-none");
+  elError.classList.add("d-none");
+
+  if (!fx) {
+    elError.innerHTML = "<i class='bi bi-exclamation-triangle-fill me-1'></i> Masukkan fungsi model terlebih dahulu.";
+    elError.classList.remove("d-none");
+    return;
+  }
+
+  // Ganti variabel t dengan x agar bisa dievaluasi math.js
+  fx = fx.replaceAll("t", "x");
+
+  try {
+    const xNilai     = [1, 5, 10, 50, 100, 1000];
+    const hasilNilai = xNilai.map(x => {
+      try { return math.evaluate(fx.replaceAll("x", `(${x})`)); }
+      catch(e) { return NaN; }
+    });
+
+    // Isi tabel
+    const tabel = document.getElementById("tabelPermodelan");
+    tabel.innerHTML = xNilai.map((x, i) => {
+      const val = hasilNilai[i];
+      const tampil = isNaN(val) ? "Tidak terdefinisi"
+                   : !isFinite(val) ? (val > 0 ? "+∞" : "-∞")
+                   : parseFloat(val.toFixed(6));
+      return `<tr><td>${x}</td><td>${tampil}</td></tr>`;
+    }).join("");
+
+    const namaKonteks = konteks || "output sistem";
+    document.getElementById("tampilFungsiM").textContent = `f(x) = ${fx}`;
+    document.getElementById("tampilKonteks").textContent = konteks || "(tidak diisi)";
+
+    const nilaiAkhir = hasilNilai[hasilNilai.length - 1];
+    const elBox      = document.getElementById("boxAnalisisM");
+    const elInterp   = document.getElementById("isiInterpretasi");
+    const elLangkah  = document.getElementById("langkahM");
+
+    let nilaiLimit = "", perilaku = "", titikKeseimbangan = "";
+    let analisis = "", langkah = "", interpretasi = "";
+
+    const isOsilasi = fx.includes("sin") || fx.includes("cos");
+
+    if (isOsilasi && isFinite(nilaiAkhir) && Math.abs(nilaiAkhir) <= 1) {
+      // Osilasi teredam (misal sin(x)/x)
+      const limitVal = parseFloat(((hasilNilai[hasilNilai.length-1] + hasilNilai[hasilNilai.length-2]) / 2).toFixed(6));
+      const menujuNol = Math.abs(limitVal) < 0.01;
+
+      if (menujuNol) {
+        nilaiLimit         = "0 (teredam)";
+        perilaku           = "✅ Osilasi Teredam — Stabil";
+        titikKeseimbangan  = "0";
+        elBox.className    = "alert alert-success mb-3";
+        analisis = `<i class='bi bi-check-circle-fill me-1'></i><strong>Osilasi Teredam</strong><br>
+                    Model berosilasi tetapi amplitudonya semakin kecil dan mendekati 0.<br>
+                    Sistem akhirnya mencapai keadaan <strong>stabil di titik keseimbangan = 0</strong>.`;
+        langkah = `
+          <li>Amati nilai output pada tabel — berubah-ubah tetapi semakin mengecil.</li>
+          <li>Karena ada faktor peredam, amplitudo osilasi terus berkurang.</li>
+          <li>Estimasi lim f(x) saat x → ∞ ≈ 0.</li>
+          <li>Kesimpulan: model menunjukkan <strong>osilasi teredam</strong> yang stabil.</li>
+        `;
+        interpretasi = `<p>Dalam konteks <strong>${namaKonteks}</strong>:</p>
+          <ul>
+            <li>Awalnya sistem bergerak naik dan turun (berosilasi).</li>
+            <li>Seiring bertambahnya waktu, gerakan semakin kecil akibat peredaman.</li>
+            <li>Sistem akhirnya berhenti di titik keseimbangan (nilai = 0).</li>
+            <li><strong>Interpretasi:</strong> ${namaKonteks} semakin lama semakin mendekati nol dan berhenti.</li>
+          </ul>
+          <p class="mb-0">Contoh nyata: skateboard yang berhenti di titik terendah arena "U", atau pegas yang berhenti setelah bergetar.</p>`;
+
+      } else {
+        nilaiLimit         = "Tidak Ada (Osilasi Murni)";
+        perilaku           = "⚠️ Osilasi Tidak Teredam";
+        titikKeseimbangan  = "Tidak Ada";
+        elBox.className    = "alert alert-warning mb-3";
+        analisis = `<i class='bi bi-exclamation-circle-fill me-1'></i><strong>Osilasi Tidak Teredam</strong><br>
+                    Model terus berosilasi tanpa amplitudo yang mengecil. Tidak ada titik keseimbangan.`;
+        langkah = `
+          <li>Amati nilai output pada tabel — terus berubah-ubah.</li>
+          <li>Tidak ada kecenderungan mendekati nilai tertentu.</li>
+          <li>Limit tidak ada karena fungsi tidak konvergen.</li>
+          <li>Kesimpulan: <strong>osilasi tidak teredam</strong>, sistem tidak stabil secara jangka panjang.</li>
+        `;
+        interpretasi = `<p>Dalam konteks <strong>${namaKonteks}</strong>:</p>
+          <ul>
+            <li>Output terus berfluktuasi tanpa batas waktu.</li>
+            <li>Sistem tidak pernah mencapai keadaan diam atau stabil.</li>
+            <li><strong>Interpretasi:</strong> ${namaKonteks} tidak memiliki titik keseimbangan.</li>
+          </ul>`;
+      }
+
+    } else if (!isFinite(nilaiAkhir) || isNaN(nilaiAkhir)) {
+      // Tidak stabil
+      nilaiLimit        = isNaN(nilaiAkhir) ? "Tidak Ada" : (nilaiAkhir > 0 ? "+∞" : "-∞");
+      perilaku          = "❌ Tidak Stabil — Output Tak Terkendali";
+      titikKeseimbangan = "Tidak Ada";
+      elBox.className   = "alert alert-danger mb-3";
+      analisis = `<i class='bi bi-x-circle-fill me-1'></i><strong>Model Tidak Stabil</strong><br>
+                  Output model terus membesar tanpa batas saat t → ∞.<br>
+                  Sistem tidak memiliki titik keseimbangan.`;
+      langkah = `
+        <li>Amati nilai output pada tabel — terus membesar tanpa batas.</li>
+        <li>lim f(x) saat x → ∞ = ${nilaiLimit}.</li>
+        <li>Tidak ada nilai keseimbangan yang dapat dicapai.</li>
+        <li>Kesimpulan: model <strong>tidak stabil</strong>.</li>
+      `;
+      interpretasi = `<p>Dalam konteks <strong>${namaKonteks}</strong>:</p>
+        <ul>
+          <li>Output sistem terus bertambah tanpa henti.</li>
+          <li>Tidak ada batas akhir yang dapat diprediksi.</li>
+          <li><strong>Interpretasi:</strong> ${namaKonteks} tidak akan pernah stabil.</li>
+        </ul>
+        <p class="mb-0">Contoh nyata: pertumbuhan populasi tanpa batas, inflasi tak terkendali.</p>`;
+
+    } else {
+      // Stabil — mendekati nilai tetap
+      const limitVal    = parseFloat(nilaiAkhir.toFixed(6));
+      nilaiLimit        = limitVal;
+      perilaku          = "✅ Stabil — Mendekati Nilai Tetap";
+      titikKeseimbangan = limitVal;
+      elBox.className   = "alert alert-success mb-3";
+      analisis = `<i class='bi bi-check-circle-fill me-1'></i><strong>Model Stabil</strong><br>
+                  Output model semakin mendekati nilai tetap <strong>${limitVal}</strong> saat t → ∞.<br>
+                  Sistem memiliki <strong>titik keseimbangan yang jelas</strong>.`;
+      langkah = `
+        <li>Amati nilai output pada tabel — semakin mendekati angka tertentu.</li>
+        <li>Estimasi lim f(x) saat x → ∞ ≈ <strong>${limitVal}</strong>.</li>
+        <li>Karena limit bernilai tetap, sistem memiliki keseimbangan.</li>
+        <li>Kesimpulan: model <strong>stabil</strong> dengan titik keseimbangan = ${limitVal}.</li>
+      `;
+      interpretasi = `<p>Dalam konteks <strong>${namaKonteks}</strong>:</p>
+        <ul>
+          <li>Awalnya output mungkin berubah-ubah, namun lama-kelamaan semakin stabil.</li>
+          <li>Sistem akhirnya mendekati nilai keseimbangan = <strong>${limitVal}</strong>.</li>
+          <li><strong>Interpretasi:</strong> ${namaKonteks} akan stabil pada nilai ${limitVal} seiring berjalannya waktu.</li>
+        </ul>
+        <p class="mb-0">Contoh nyata: suhu benda yang mendingin hingga suhu ruangan, konsentrasi obat dalam darah yang menstabil.</p>`;
+    }
+
+    document.getElementById("nilaiLimitM").textContent      = nilaiLimit;
+    document.getElementById("perilakuModel").textContent    = perilaku;
+    document.getElementById("titikKeseimbangan").textContent = titikKeseimbangan;
+    elBox.innerHTML      = analisis;
+    elLangkah.innerHTML  = langkah;
+    elInterp.innerHTML   = interpretasi;
+    elHasil.classList.remove("d-none");
+
+  } catch(err) {
+    elError.innerHTML = `<i class='bi bi-bug-fill me-1'></i> Input tidak valid: <code>${err.message}</code>.<br>
+                         Contoh: <code>e^(-x)</code> atau <code>(3*x)/(x+1)</code>`;
+    elError.classList.remove("d-none");
+  }
+}
+</script>
           </div>
           <div id="ch3-video" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran</h3>
