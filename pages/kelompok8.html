@@ -139,13 +139,15 @@
 
             <!-- chapter 8 -->
             <li class="sidebar-item has-submenu open">
-              <a href="kelompok8.html" class="sidebar-link active"><i class="bi bi-8-circle sidebar-link-icon"></i>Bab 8 — Deret Tak Hingga</a>
+              <a href="kelompok8.html" class="sidebar-link active"><i class="bi bi-8-circle sidebar-link-icon"></i>Bab 8 — Penerapan Turunan dan Integral Tak Tentu</a>
               <ul class="submenu list-unstyled overflow-auto pe-2 ">
-                <li><a href="#ch8-penyelesaian_masalah_terapan" class="submenu-link">8.A.1 Penerapan Turunan</a></li>
-                <li><a href="#ch8-integral_tak_tentu" class="submenu-link">8.B.1 Integral Tak Tentu</a></li>
-                <li><a href="#ch8-hubungan_integral_dan_turunan" class="submenu-link">8.B.2 Hubungan Integral dan Turunan</a></li>
-                <li><a href="#ch8-interpretasi_konstanta_integrasi" class="submenu-link">8.B.3 Interpretasi Konstanta Integrasi</a></li>
-                <li><a href="#ch8-integral_tak_tentu_Konsep_akumulasi_perubahan" class="submenu-link">8.B.4 Integral Tak Tentu Dalam Konsep Akumulasi Perubahan</a></li>
+                <li><a href="#ch8-penerapan_turunan" class="submenu-link">8.1 Penerapan Turunan</a></li>
+                <li><a href="#ch8-evaluasi_dengan_metode_berbeda" class="submenu-link">8.2 Evaluasi Dengan Metode Berbeda</a></li>
+                <li><a href="#ch8-pengambilan_keputusan" class="submenu-link">8.3 Pengambilan Keputusan Matematis</a></li>
+                <li><a href="#ch8-integral_tak_tentu" class="submenu-link">8.4 Integral Tak Tentu</a></li>
+                <li><a href="#ch8-hubungan_integral_dan_turunan" class="submenu-link">8.5 Hubungan Integral dan Turunan</a></li>
+                <li><a href="#ch8-interpretasi_konstanta_integrasi" class="submenu-link">8.6 Interpretasi Konstanta Integrasi</a></li>
+                <li><a href="#ch8-integral_tak_tentu_Konsep_akumulasi_perubahan" class="submenu-link">8.7 Integral Tak Tentu Dalam Konsep Akumulasi Perubahan</a></li>
                 <li><a href="#ch8-videoPenerapanTurunan" class="submenu-link">🎬 Video Materi Penerapan Turunan</a></li>
                 <li><a href="#ch8-videoIntegralTakTentu" class="submenu-link">🎬 Video Materi Integral Tak Tentu</a></li>
                 <li><a href="#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
@@ -213,9 +215,9 @@
           </div>
           
           <!-- Materi -->
-          <div id="ch8-penyelesaian_masalah_terapan">
-            <h3 class="subsection-title">8.A.1 Penyelesaian Masalah Terapan</h3>
-            <p>Penyelesaian Masalah Terapan mencakup tiga sub-topik. Laju perubahan diselesaikan dengan mencari f'(x) lalu substitusi nilai x yang ditanyakan. Optimisasi diselesaikan dengan mencari titik kritis (f'= 0) lalu uji turunan kedua. Penentuan ekstrem memerlukan keduanya untuk membedakan titik maksimum dan minimum lokal.</p>
+          <div id="ch8-penerapan_turunan" class="mt-5">
+            <h3 class="subsection-title">8.1 Penerapan Turunan Dalam Menyelesaikan Masalah</h3>
+            <p>Penyelesaian Masalah Turunan mencakup tiga sub-topik. Laju perubahan diselesaikan dengan mencari f'(x) lalu substitusi nilai x yang ditanyakan. Optimisasi diselesaikan dengan mencari titik kritis (f'= 0) lalu uji turunan kedua. Penentuan ekstrem memerlukan keduanya untuk membedakan titik maksimum dan minimum.</p>
             
             <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
               <li><em>Definisi Laju Perubahan</em></li>
@@ -254,7 +256,7 @@
               <div class="col-md-6">
                 <div class="concept-card">
                   <div class="concept-card-header">Syarat Optimasi Maksimum</div>
-                  <div class="concept-card-body">
+                  <div class="concept-card-body"> 
                     <code class="formula-display">f''(x) < 0</code>
                     <p class="mt-2"><em>Keterangan</em></p>
                     <p>Nilai Maksimum harus memiliki nilai lebih kecil dari nol (0)</p>
@@ -281,12 +283,11 @@
                 </div>
                 <div class="card-body">
                   <p>Diketahui: Sebuah perusahaan startup teknologi memodelkan keuntungan bersih (dalam juta rupiah) terhadap jumlah fitur yang diluncurkan per kuartal dengan fungsi: P(x) = -x<sup>3</sup> + 9x<sup>2</sup> - 15x + 2 dengan x = jumlah fitur antara 1 hingga 7.</p>
-                  <p>Ditanya: Tentukan jumlah fitur yang menghasilkan keuntungan maksimum menggunakan: <ul><li>(a) Metode turunan</li> <li>(b) Metode numerik dengan tabel nilai</li></ul></p>
-                  <p>Kemudian lakukan pengambilan keputusan matematis: evaluasi ketepatan metode, bandingkan hasilnya, dan rumuskan implikasinya terhadap sistem perangkat lunak.</p>
+                  <p>Ditanya: Tentukan jumlah fitur yang menghasilkan keuntungan maksimum menggunakan Metode turunan</p>
                   <hr />
                   <p class="fw-semibold">Penyelesaian:</p>
                   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-                  <ol>
+                  <ul>
                     <li><b>Metode Turunan</b></li>
                     <p>Untuk mencari jumlah fitur yang menghasilkan keuntungan maksimum, kita perlu mencari turunan pertama dari fungsi P(x).</p>
                     $$P(x) = -x^3 + 9x^2 - 15x + 2$$
@@ -313,29 +314,52 @@
                     $$P(5) = -(5)^3 + 9(5)^2 - 15(5) + 2 = -125 + 225 - 75 + 2 = 27$$
                     <p>Dan juga batas interval diujung kanan = 7</p>
                     $$P(7) = -(7)^3 + 9(7)^2 - 15(7) + 2 = -343 + 441 - 105 + 2 = -5$$
-                    <p>Jadi, keuntungan maksimum yang akan didapatkan pada fitur berjumlah 5 adalah 27 juta Rp.</p>
+                    <p>Jadi, keuntungan maksimum yang akan didapatkan pada fitur berjumlah 5 adalah Rp 27 juta.</p>
                     <hr/>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div id="ch8-evaluasi_dengan_metode_berbeda" class="mt-5">
+            <h3 class="subsection-title">8.2 Evaluasi Menggunakan Metode yang Berbeda</h3>
+
+            <p>Membandingkan hasil dari penyelesaian dengan metode turunan dan metode numerik. Disini kita akan menggunakan metode numerik untuk mendapatkan hasil yang lebih intuitif ke contoh soal sebelumnya</p>
+
+            <div id="ch8-contoh" class="mt-5">
+              <h3 class="subsection-title">Contoh Soal</h3>
+              <div class="card example-card mt-3">
+                <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh soal penyelesaian masalah terapan dengan turunan
+                  </div>
+                  <div class="card-body">
+                    <p>Diketahui: Sebuah perusahaan startup teknologi memodelkan keuntungan bersih (dalam juta rupiah) terhadap jumlah fitur yang diluncurkan per kuartal dengan fungsi: P(x) = -x<sup>3</sup> + 9x<sup>2</sup> - 15x + 2 dengan x = jumlah fitur antara 1 hingga 7.</p>
+                    <p>Ditanya: Tentukan jumlah fitur yang menghasilkan keuntungan maksimum menggunakan Metode numerik lalu evaluasi hasilnya dengan Metode turunan.</p>
+                  <hr />
+                  <p class="fw-semibold">Penyelesaian:</p>
+                  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                  <ul>
                     <li><b>Metode Numerik dengan Tabel</b></li>
-                    <p>Metode numerik dengan tabel dapat digunakan untuk mendekati nilai maksimum dan minimum dari fungsi P(x) dengan cara menghitung nilai P(x) pada beberapa titik dalam interval [1 hingga 7].</p>
-                    <table class="table table-bordered table-sm concept-table">
-                      <thead>
-                        <tr>
-                          <th>X</th><th>Perhitungan</th><th>P(x) hasil</th><th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>1</td><td>P(1) = -(1)^3 + 9(1)^2 - 15(1) + 2 = -1 + 18 - 13</td><td>-5</td><td>Turun</td></tr>
-                        <tr><td>2</td><td>P(2) = -(2)^3 + 9(2)^2 - 15(2) + 2 = -8 + 36 - 30 + 2</td><td>0</td><td>Naik</td></tr>
-                        <tr><td>3</td><td>P(3) = -(3)^3 + 9(3)^2 - 15(3) + 2 = -27 + 81 - 45 + 2</td><td>11</td><td>Naik</td></tr>
-                        <tr><td>4</td><td>P(4) = -(4)^3 + 9(4)^2 - 15(4) + 2 = -64 + 144 - 60 + 2</td><td>22</td><td>Naik</td></tr>
-                        <tr><td>5</td><td>P(5) = -(5)^3 + 9(5)^2 - 15(5) + 2 = -125 + 225 - 75 + 2</td><td><b>27</b></td><td><b>Maksimum</b></td></tr>
-                        <tr><td>6</td><td>P(6) = -(6)^3 + 9(6)^2 - 15(6) + 2 = -216 + 324 - 90 + 2</td><td>20</td><td>Turun</td></tr>
-                        <tr><td>7</td><td>P(7) = -(7)^3 + 9(7)^2 - 15(7) + 2 = -343 + 441 - 105 + 2</td><td>-5</td><td>Turun</td></tr>
-                      </tbody>
-                    </table>
-                    <p>jadi, pada metode numerik dengan tabel, kita dapat melihat bahwa nilai maksimum P(x) terjadi pada x = 5 dengan P(5) = 27 menyatakan bahwa hasilnya sama dengan metode turunan.</p>
-                  </ol>
+                      <p>Metode numerik dengan tabel dapat digunakan untuk mendekati nilai maksimum dan minimum dari fungsi P(x) dengan cara menghitung nilai P(x) pada beberapa titik dalam interval [1 hingga 7].</p>
+                      <table class="table table-bordered table-sm concept-table">
+                        <thead>
+                          <tr>
+                            <th>X</th><th>Perhitungan</th><th>P(x) hasil</th><th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>1</td><td>P(1) = -(1)^3 + 9(1)^2 - 15(1) + 2 = -1 + 18 - 13</td><td>-5</td><td>Turun</td></tr>
+                          <tr><td>2</td><td>P(2) = -(2)^3 + 9(2)^2 - 15(2) + 2 = -8 + 36 - 30 + 2</td><td>0</td><td>Naik</td></tr>
+                          <tr><td>3</td><td>P(3) = -(3)^3 + 9(3)^2 - 15(3) + 2 = -27 + 81 - 45 + 2</td><td>11</td><td>Naik</td></tr>
+                          <tr><td>4</td><td>P(4) = -(4)^3 + 9(4)^2 - 15(4) + 2 = -64 + 144 - 60 + 2</td><td>22</td><td>Naik</td></tr>
+                          <tr><td>5</td><td>P(5) = -(5)^3 + 9(5)^2 - 15(5) + 2 = -125 + 225 - 75 + 2</td><td><b>27</b></td><td><b>Maksimum</b></td></tr>
+                          <tr><td>6</td><td>P(6) = -(6)^3 + 9(6)^2 - 15(6) + 2 = -216 + 324 - 90 + 2</td><td>20</td><td>Turun</td></tr>
+                          <tr><td>7</td><td>P(7) = -(7)^3 + 9(7)^2 - 15(7) + 2 = -343 + 441 - 105 + 2</td><td>-5</td><td>Turun</td></tr>
+                        </tbody>
+                      </table>
+                      <p>jadi, pada metode numerik dengan tabel, kita dapat melihat bahwa nilai maksimum P(x) terjadi pada x = 5 dengan P(5) = 27 menyatakan bahwa hasilnya sama dengan metode turunan.</p>
+                  </ul>
                   <hr/>
                   <p><b>Evaluasi Metode Penyelesaian</b></p>
                   <ul>
@@ -346,184 +370,202 @@
                       <p>Metode numerik dengan tabel memberikan pendekatan yang lebih intuitif dan mudah dipahami, tetapi kurang akurat dibandingkan metode turunan jika intervalnya terlalu besar. Numerik hanya menunjukkan P(5) lebih besar dari titik-titik yang diuji. Tanpa cukup titik, bisa saja melewatkan titik kritis lain jika fungsi lebih kompleks.</p>
                     </li>
                   </ul>
-                  <hr>
-                  <p><b>Pengambilan Keputusan Matematis</b></p>
-                  <ol>
-                    <li>Implikasi terhadap pemodelan sistem perangkat lunak</li>
-                    <ul>
-                      <li>Perencanaan roadmap: Tim produk sebaiknya merilis 5 fitur per kuartal. Lebih dari itu justru menurunkan keuntungan akibat kompleksitas, biaya maintenance, dan penurunan fokus pengguna.</li>
-                      <li>Risiko over-engineering: Model menunjukkan P(7) = -5 (rugi). Meluncurkan 7 fitur sekaligus berpotensi merugikan perusahaan — validasi matematis ini mendukung keputusan bisnis yang lebih konservatif.</li>
-                    </ul>
-                  </ol>
                 </div>
               </div>
             </div>
-          </div> <br>
-
-          <!-- Integral Tak Tentu -->
-          <div id="ch8-integral_tak_tentu" class="mt-5">
-            <h3 class="subsection-title">8.B.1 Integral Tak Tentu</h3>
           </div>
 
-          <p>Secara sederhana, integral adalah salah satu konsep utama dalam kalkulus yang merupakan kebalikan dari turunan (diferensial). Jika turunan berfungsi untuk mencari laju perubahan atau kemiringan suatu fungsi, maka integral berfungsi untuk mengembalikan fungsi tersebut ke bentuk aslinya.</p>
+          <div id="ch8-pengambilan_keputusan" class="mt-5">
+            <h3 class="subsection-title">8.3 Pengambilan Keputusan Matematis</h3>
 
-          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
-            <li><em>Definisi Integral Tak Tentu</em></li>
-            <p>Integral tak tentu adalah proses untuk mencari fungsi asal (antiturunan) dari suatu fungsi yang telah diturunkan. Hasil dari integral tak tentu masih berupa fungsi dan selalu diakhiri dengan konstanta + C.</p>
-          </blockquote>
+            <p>Menyimpulkan sebuah keputusan matematis berdasarkan hasil dari penggunaan turunan dan metode numerik.</p>
 
-          <div class="concept-card mt-3">
-            <div class="concept-card-header">Integral Tak Tentu</div>
-              <div class="concept-card-body">
-                <code class="formula-display">∫f(x) dx = F(x) + C</code>
-                <p class="mt-2"><b>keterangan:</b></p>
-                <ul>
-                    <li>∫ -> Simbol integral, menunjukkan proses pengintegralan.</li>
-                    <li>f(x) -> Fungsi integran, menunjukkan fungsi yang akan diintegralkan.</li>
-                    <li>dx -> Deferensial/Turunan, menunjukkan perubahan kecil pada x.</li>
-                    <li>F(x) -> Fungsi hasil integral, menunjukkan total hasil pengumpulan.</li>
-                    <li>C -> Konstanta, menunjukkan bahwa ada nilai tetap yang ditambahkan pada hasil integral.</li>
-                  </ul>
-              </div>
-          </div>
-
-          <div id="ch8-contoh" class="mt-5">
-            <h3 class="subsection-title">Contoh Soal</h3>
-            <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
-                Contoh Soal Integral Tak Tentu
-              </div>
-              <div class="card-body">
-                <p class="fw-semibold">Diketahui: Sebuah fungsi f(x) memiliki nilai f(x) = 9x<sup>2</sup></p>
-                <p class="fw-semibold">Ditanya: Tentukan bentuk integral tak tentu dari f(x)</p>
-                <hr />
-                <p class="fw-semibold">Penyelesaian:</p>
-                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-                <p>Gunakan Rumus: </p>
-                $$\int ax^n \, dx = \frac{a}{n+1} x^{n+1} + C$$ <br>
-                <ul>
-                  <li>Ubah fungsi tersebut ke bentuk integral</li>
-                    $$\int f(x)dx = \int 9x^2 \, dx$$ <br>
-                  <li>Lalu kita subtitusikan nilai a diisi 9 dan n diisi oleh 2 ke dalam rumus</li>
-                    $$\int 9x^2 \, dx = \frac{9}{2+1} x^{2+1} + C$$ <br>
-                  <li>Maka didapatkanlah hasil yakni</li>
-                      $$\int f(x)dx = 3x^3 + C$$<br>
-                  <p><b>Jadi, integral tak tentu dari f(x) adalah 3x<sup>3</sup> + C</b></p>
-                </ul>
+            <div id="ch8-contoh" class="mt-5">
+              <h3 class="subsection-title">Contoh Soal</h3>
+              <div class="card example-card mt-3">
+                <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                    Contoh soal penyelesaian masalah terapan dengan turunan
+                  </div>
+                  <div class="card-body">
+                    <p>Diketahui: Sebuah perusahaan startup teknologi memodelkan keuntungan bersih (dalam juta rupiah) terhadap jumlah fitur yang diluncurkan per kuartal dengan fungsi: P(x) = -x<sup>3</sup> + 9x<sup>2</sup> - 15x + 2 dengan x = jumlah fitur antara 1 hingga 7.</p>
+                    <p>Ditanya: Berikan keputusan matematis </p>
+                    <hr />
+                    <p class="fw-semibold">Penyelesaian:</p>
+                    <p><b>Pengambilan Keputusan Matematis</b></p>
+                      <ul>
+                        <li>Implikasi terhadap pemodelan sistem perangkat lunak</li>
+                        <ul>
+                          <li>Perencanaan roadmap: Tim produk sebaiknya merilis 5 fitur per kuartal. Lebih dari itu justru menurunkan keuntungan akibat kompleksitas, biaya maintenance, dan penurunan fokus pengguna.</li>
+                          <li>Risiko over-engineering: Model menunjukkan P(7) = -5 (rugi). Meluncurkan 7 fitur sekaligus berpotensi merugikan perusahaan — validasi matematis ini mendukung keputusan bisnis yang lebih konservatif.</li>
+                        </ul>
+                      </ul>
+                  </div>
               </div>
             </div>
           </div>
 
+          <!-- Integral Tak Tentu -->
+          <div id="ch8-integral_tak_tentu" class="mt-5">
+            <h3 class="subsection-title">8.4 Integral Tak Tentu</h3>
+
+            <p>Secara sederhana, integral adalah salah satu konsep utama dalam kalkulus yang merupakan kebalikan dari turunan (diferensial). Jika turunan berfungsi untuk mencari laju perubahan atau kemiringan suatu fungsi, maka integral berfungsi untuk mengembalikan fungsi tersebut ke bentuk aslinya.</p>
+
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Definisi Integral Tak Tentu</em></li>
+              <p>Integral tak tentu adalah proses untuk mencari fungsi asal (antiturunan) dari suatu fungsi yang telah diturunkan. Hasil dari integral tak tentu masih berupa fungsi dan selalu diakhiri dengan konstanta + C.</p>
+            </blockquote>
+
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Integral Tak Tentu</div>
+                <div class="concept-card-body">
+                  <code class="formula-display">∫f(x) dx = F(x) + C</code>
+                  <p class="mt-2"><b>keterangan:</b></p>
+                  <ul>
+                      <li>∫ -> Simbol integral, menunjukkan proses pengintegralan.</li>
+                      <li>f(x) -> Fungsi integran, menunjukkan fungsi yang akan diintegralkan.</li>
+                      <li>dx -> Deferensial/Turunan, menunjukkan perubahan kecil pada x.</li>
+                      <li>F(x) -> Fungsi hasil integral, menunjukkan total hasil pengumpulan.</li>
+                      <li>C -> Konstanta, menunjukkan bahwa ada nilai tetap yang ditambahkan pada hasil integral.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="ch8-contoh" class="mt-5">
+              <h3 class="subsection-title">Contoh Soal</h3>
+              <div class="card example-card mt-3">
+                <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                  Contoh Soal Integral Tak Tentu
+                </div>
+                <div class="card-body">
+                  <p class="fw-semibold">Diketahui: Sebuah fungsi f(x) memiliki nilai f(x) = 9x<sup>2</sup></p>
+                  <p class="fw-semibold">Ditanya: Tentukan bentuk integral tak tentu dari f(x)</p>
+                  <hr />
+                  <p class="fw-semibold">Penyelesaian:</p>
+                  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                  <p>Gunakan Rumus: </p>
+                  $$\int ax^n \, dx = \frac{a}{n+1} x^{n+1} + C$$ <br>
+                  <ul>
+                    <li>Ubah fungsi tersebut ke bentuk integral</li>
+                      $$\int f(x)dx = \int 9x^2 \, dx$$ <br>
+                    <li>Lalu kita subtitusikan nilai a diisi 9 dan n diisi oleh 2 ke dalam rumus</li>
+                      $$\int 9x^2 \, dx = \frac{9}{2+1} x^{2+1} + C$$ <br>
+                    <li>Maka didapatkanlah hasil yakni</li>
+                        $$\int f(x)dx = 3x^3 + C$$<br>
+                    <p><b>Jadi, integral tak tentu dari f(x) adalah 3x<sup>3</sup> + C</b></p>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div id="ch8-hubungan_integral_dan_turunan" class="mt-5">
-            <h3 class="subsection-title">8.B.2 Hubungan antara integral dan turunan</h3>
-          </div>
-          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
-            <li><em>Hubungan antara integral dan turunan</em></li>
-            <p>Hubungan antara integral dan turunan adalah salah satu penemuan paling penting dalam sejarah matematika. Hubungan ini disebut sebagai Hubungan Invers (Berkebalikan).</p>
-            <p>Jika turunan adalah proses "memecah" atau mencari laju perubahan dari suatu fungsi, maka integral adalah proses "menggabungkan kembali" atau mengonstruksi ulang fungsi asal dari laju perubahannya. Karena sifat berkebalikan ini, integral sering disebut sebagai Antiturunan.</p>
-          </blockquote>
+            <h3 class="subsection-title">8.5 Hubungan antara integral dan turunan</h3>
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Hubungan antara integral dan turunan</em></li>
+              <p>Hubungan antara integral dan turunan adalah salah satu penemuan paling penting dalam sejarah matematika. Hubungan ini disebut sebagai Hubungan Invers (Berkebalikan).</p>
+              <p>Jika turunan adalah proses "memecah" atau mencari laju perubahan dari suatu fungsi, maka integral adalah proses "menggabungkan kembali" atau mengonstruksi ulang fungsi asal dari laju perubahannya. Karena sifat berkebalikan ini, integral sering disebut sebagai Antiturunan.</p>
+            </blockquote>
 
-          <div class="concept-card mt-3">
-            <div class="concept-card-header">Hubungan antara integral dan turunan</div>
-            <div class="concept-card-body">
-              <p class="mt-2"><b>Misalkan:</b></p>
-              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-              $$
-              \begin{array}{ccc}
-              & \xrightarrow{\text{Integral}} & \\
-              f(x) = 9x^2 & & F(x) = 3x^3 + C \\
-              & \xleftarrow{\text{Turunan}} & 
-              \end{array}
-              $$
-              <p class="mt-2"><b>keterangan: </b></p>
-              <p>Jika f(x) = 9x<sup>2</sup> kita integralkan, maka akan mendapatkan F(x) = 3x<sup>3</sup> + C. begitu juga sebaliknya jika kita turunkan F(x) = 3x<sup>3</sup> + C, maka akan kembali menjadi f(x) = 9x<sup>2</sup>.</p>
-              <p>Ini menggambarkan sifat dasar dari integral dan turunan sebagai operasi yang saling membalikkan.</p>
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Hubungan antara integral dan turunan</div>
+              <div class="concept-card-body">
+                <p class="mt-2"><b>Misalkan:</b></p>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                $$
+                \begin{array}{ccc}
+                & \xrightarrow{\text{Integral}} & \\
+                f(x) = 9x^2 & & F(x) = 3x^3 + C \\
+                & \xleftarrow{\text{Turunan}} & 
+                \end{array}
+                $$
+                <p class="mt-2"><b>keterangan: </b></p>
+                <p>Jika f(x) = 9x<sup>2</sup> kita integralkan, maka akan mendapatkan F(x) = 3x<sup>3</sup> + C. begitu juga sebaliknya jika kita turunkan F(x) = 3x<sup>3</sup> + C, maka akan kembali menjadi f(x) = 9x<sup>2</sup>.</p>
+                <p>Ini menggambarkan sifat dasar dari integral dan turunan sebagai operasi yang saling membalikkan.</p>
+              </div>
             </div>
           </div>
 
 
           <div id="ch8-interpretasi_konstanta_integrasi" class="mt-5">
-            <h3 class="subsection-title">8.B.3 Interpretasi Konstanta Integrasi (C)</h3>
-          </div>
-          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
-            <li><em>Definisi Konstanta (C)</em></li>
-            <p>Konstanta integrasi (C) muncul dalam integral tak tentu karena adanya ketidakpastian dalam proses pengintegralan. Ketika kita mencari antiturunan dari suatu fungsi, kita sebenarnya mencari semua fungsi yang memiliki turunan yang sama dengan fungsi tersebut. Oleh karena itu, kita menambahkan konstanta C untuk mencakup semua kemungkinan fungsi yang berbeda.</p>
-          </blockquote>
+            <h3 class="subsection-title">8.6 Interpretasi Konstanta Integrasi (C)</h3>
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Definisi Konstanta (C)</em></li>
+              <p>Konstanta integrasi (C) muncul dalam integral tak tentu karena adanya ketidakpastian dalam proses pengintegralan. Ketika kita mencari antiturunan dari suatu fungsi, kita sebenarnya mencari semua fungsi yang memiliki turunan yang sama dengan fungsi tersebut. Oleh karena itu, kita menambahkan konstanta C untuk mencakup semua kemungkinan fungsi yang berbeda.</p>
+            </blockquote>
 
-          <div class="concept-card mt-3">
-            <div class="concept-card-header">Konstanta (C)</div>
-            <div class="concept-card-body">
-              <p class="mt-2"><b>Misalkan:</b></p>
-              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-              $$
-              \begin{array}{rcccl}
-              f(x) = 3x^2 + 2 & \searrow & & & \\
-              \\
-              f(x) = 3x^2 + 10 & \longrightarrow & f'(x) = 9x^2 & \longrightarrow & F(x) = 3x^3 + C \\
-              \\
-              f(x) = 3x^2 + 100 & \nearrow & & &
-              \end{array}
-              $$
-              <p class="mt-2"><b>keterangan: </b></p>
-              <p>Setiap fungsi f(x) yang berbeda tidak peduli berapa besar nilainya pasti memiliki turunan yang sama, yaitu f'(x) = 9x<sup>2</sup>.</p>
-              <p>Maka, antiturunan dari f'(x) adalah F(x) = 3x<sup>3</sup> + C, di mana C mewakili setiap kemungkinan konstanta yang ditambahkan pada fungsi.</p>
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Konstanta (C)</div>
+              <div class="concept-card-body">
+                <p class="mt-2"><b>Misalkan:</b></p>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                $$
+                \begin{array}{rcccl}
+                f(x) = 3x^2 + 2 & \searrow & & & \\
+                \\
+                f(x) = 3x^2 + 10 & \longrightarrow & f'(x) = 9x^2 & \longrightarrow & F(x) = 3x^3 + C \\
+                \\
+                f(x) = 3x^2 + 100 & \nearrow & & &
+                \end{array}
+                $$
+                <p class="mt-2"><b>keterangan: </b></p>
+                <p>Setiap fungsi f(x) yang berbeda tidak peduli berapa besar nilainya pasti memiliki turunan yang sama, yaitu f'(x) = 9x<sup>2</sup>.</p>
+                <p>Maka, antiturunan dari f'(x) adalah F(x) = 3x<sup>3</sup> + C, di mana C mewakili setiap kemungkinan konstanta yang ditambahkan pada fungsi.</p>
+              </div>
             </div>
           </div>
 
-
           <div id="ch8-integral_tak_tentu_Konsep_akumulasi_perubahan" class="mt-5">
-            <h3 class="subsection-title">8.B.4 Integral Tak Tentu dalam konsep akumulasi perubahan</h3>
-          </div>
-          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
-            <li><em>Definisi Konsep Akumulasi Perubahan</em></li>
-            <p>Akumulasi perubahan adalah menghitung hasil total dari perubahan yang terjadi terus-menerus. Jika kita tahu seberapa cepat sesuatu bertambah atau berkurang setiap saat (laju perubahan), kita bisa menggunakan Integral Tak Tentu untuk menghitung berapa jumlah total yang terkumpul (akumulasi) dari waktu ke waktu.</p>
-          </blockquote>
+            <h3 class="subsection-title">8.7 Integral Tak Tentu dalam konsep akumulasi perubahan</h3>
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Definisi Konsep Akumulasi Perubahan</em></li>
+              <p>Akumulasi perubahan adalah menghitung hasil total dari perubahan yang terjadi terus-menerus. Jika kita tahu seberapa cepat sesuatu bertambah atau berkurang setiap saat (laju perubahan), kita bisa menggunakan Integral Tak Tentu untuk menghitung berapa jumlah total yang terkumpul (akumulasi) dari waktu ke waktu.</p>
+            </blockquote>
 
-          <div id="ch8-contoh" class="mt-5">
-            <h3 class="subsection-title">Contoh Soal</h3>
-            <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
-                Contoh Soal Integral Tak Tentu dalam Konsep Akumulasi Perubahan
-              </div>
-              <div class="card-body">
-                <p class="fw-semibold">Soal:</p>
-                <p class="fw-semibold">Diketahui: Sebuah perusahaan menyimpan data pengguna yang terus bertambah. Laju pertumbuhan data (dalam Gigabyte per hari) terhadap waktu t (dalam hari) dimodelkan oleh fungsi f(t) = 3t<sup>2</sup>  + 4t + 10. Jika pada hari ke-0 total data awal yang tersimpan adalah 100GB.</p>
-                <p class="fw-semibold">Ditanya: <ul><li><b>Tentukan bentuk fungsi akumulasi data secara umum!</b></li><li><b>Tentukan kapasitas data hari ke-5!</b></li></ul></p>
-                <hr />
-                <p class="fw-semibold">Penyelesaian:</p>
-                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-                  <ol> 
-                    <li>Menentukan bentuk fungsi akumulasi data secara umum</li>
+            <div id="ch8-contoh" class="mt-5">
+              <h3 class="subsection-title">Contoh Soal</h3>
+              <div class="card example-card mt-3">
+                <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                  Contoh Soal Integral Tak Tentu dalam Konsep Akumulasi Perubahan
+                </div>
+                <div class="card-body">
+                  <p class="fw-semibold">Soal:</p>
+                  <p class="fw-semibold">Diketahui: Sebuah perusahaan menyimpan data pengguna yang terus bertambah. Laju pertumbuhan data (dalam Gigabyte per hari) terhadap waktu t (dalam hari) dimodelkan oleh fungsi f(t) = 3t<sup>2</sup>  + 4t + 10. Jika pada hari ke-0 total data awal yang tersimpan adalah 100GB.</p>
+                  <p class="fw-semibold">Ditanya: <ul><li><b>Tentukan bentuk fungsi akumulasi data secara umum!</b></li><li><b>Tentukan kapasitas data hari ke-5!</b></li></ul></p>
+                  <hr />
+                  <p class="fw-semibold">Penyelesaian:</p>
+                  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                    <ol> 
+                      <li>Menentukan bentuk fungsi akumulasi data secara umum</li>
+                        <ul>
+                          <li>Ubah fungsi tersebut ke bentuk integral</li>
+                            $$\int f(t)dt = \int (3t^2 + 4t + 10) \, dt$$ <br>
+                          <li>Lalu kita subtitusikan nilai a diisi 3, 4, 10 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
+                            $$\int (3t^2 + 4t + 10) \, dt = \left( \frac{3}{2+1} t^{2+1} + \frac{4}{1+1} t^{1+1} + \frac{10}{0+1} t^{0+1} \right) + C$$ <br>
+                          <li>maka, didapatkanlah f(t)</li>
+                            $$f(t) = t^3 + 2t^2 + 10t + C$$ <br>
+                          <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni f(0) = 100</li>
+                            $$f(0) = 0^3 + 2(0)^2 + 10(0) + C$$
+                            $$100 = C$$
+                            $$\Longleftrightarrow$$
+                            $$C = 100$$ <br>
+                          <li>lalu kita subtitusikan konstanta(C) = 100 ke dalam fungsi f(t)</li>
+                            $$f(t) = t^3 + 2t^2 + 10t + 100$$ <br>
+                          <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi data tersebut yakni</b></p>
+                          <p><b>f(t) = t <sup>3</sup> + 2t <sup>2</sup> + 10t + 100</b></p>
+                        </ul>
+                      <hr>
+
+                      <li>Menentukan kapasitas data hari ke-5</li>
                       <ul>
-                        <li>Ubah fungsi tersebut ke bentuk integral</li>
-                          $$\int f(t)dt = \int (3t^2 + 4t + 10) \, dt$$ <br>
-                        <li>Lalu kita subtitusikan nilai a diisi 3, 4, 10 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
-                          $$\int (3t^2 + 4t + 10) \, dt = \left( \frac{3}{2+1} t^{2+1} + \frac{4}{1+1} t^{1+1} + \frac{10}{0+1} t^{0+1} \right) + C$$ <br>
-                        <li>maka, didapatkanlah f(t)</li>
-                          $$f(t) = t^3 + 2t^2 + 10t + C$$ <br>
-                        <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni f(0) = 100</li>
-                          $$f(0) = 0^3 + 2(0)^2 + 10(0) + C$$
-                          $$100 = C$$
-                          $$\Longleftrightarrow$$
-                          $$C = 100$$ <br>
-                        <li>lalu kita subtitusikan konstanta(C) = 100 ke dalam fungsi f(t)</li>
-                          $$f(t) = t^3 + 2t^2 + 10t + 100$$ <br>
-                        <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi data tersebut yakni</b></p>
-                        <p><b>f(t) = t <sup>3</sup> + 2t <sup>2</sup> + 10t + 100</b></p>
+                        <li>Substitusikan t = 5 ke dalam fungsi f(t)</li>
+                          $$f(5) = 5^3 + 2(5)^2 + 10(5) + 100$$ <br>
+                        <li>Hitung nilai f(5)</li>
+                          $$f(5) = 125 + 50 + 50 + 100$$ <br>
+                          $$f(5) = 325$$ <br>
+                        <p><b>Jadi, kapasitas data hari ke-5 adalah 325GB</b></p>
                       </ul>
-                    <hr>
-
-                    <li>Menentukan kapasitas data hari ke-5</li>
-                    <ul>
-                      <li>Substitusikan t = 5 ke dalam fungsi f(t)</li>
-                        $$f(5) = 5^3 + 2(5)^2 + 10(5) + 100$$ <br>
-                      <li>Hitung nilai f(5)</li>
-                        $$f(5) = 125 + 50 + 50 + 100$$ <br>
-                        $$f(5) = 325$$ <br>
-                      <p><b>Jadi, kapasitas data hari ke-5 adalah 325GB</b></p>
-                    </ul>
-                  </ol>
+                    </ol>
+                </div>
               </div>
             </div>
           </div>
@@ -532,307 +574,417 @@
           <div id="ch8-videoPenerapanTurunan" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran - Evaluasi Penggunaan Turunan</h3>
             <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 8" allowfullscreen style="border:0;"></iframe>
+              <iframe src="https://www.youtube.com/embed/z35Z9DTZQtU?si=vDb6lphllVSFzTXk" allowfullscreen style="border:0;"></iframe>
             </div>
           </div>
 
           <div id="ch8-videoIntegralTakTentu" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran - Integral Tak Tentu</h3>
             <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe src="https://youtu.be/1IdJ4T82HLM?si=R83eWa3xIaL7YPbi" title="Video Pembelajaran Bab 8" allowfullscreen style="border:0;"></iframe>
+              <iframe src="https://www.youtube.com/embed/1IdJ4T82HLM?si=iTrsvjMPujwgkogD" allowfullscreen style="border:0;"></iframe>
             </div>
           </div>
 
           <!-- Soal -->
           <div id="ch8-latihan" class="mt-5">
             <h3 class="subsection-title">Latihan Soal</h3>
-            <div class="card"
-              style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
+            <div class="card" style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
               <div class="card-body">
                 <ol class="mb-0">
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 1</p>
-                    <p><em>[Evaluasi Turunan - Optimasi Kinerja Server]</em><br>
-                    Sebuah sistem server memiliki kapasitas pemrosesan <em>request</em> API per milidetik yang dimodelkan dengan fungsi P(x) = -5x<sup>2</sup> + 100x + 50, di mana x adalah jumlah <em>thread</em> CPU yang dialokasikan. Berapa banyak <em>thread</em> yang harus dialokasikan untuk mencapai jumlah pemrosesan maksimal?</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Untuk mencari pemrosesan maksimal, kita mencari titik di mana turunan pertama P'(x) = 0.</p>
-                        <p>$$P'(x) = -10x + 100$$</p>
-                        <p>$$-10x + 100 = 0$$</p>
-                        <p>$$10x = 100$$</p>
-                        <p>$$x = 10$$</p>
-                        <p>Jadi, untuk mendapatkan kapasitas pemrosesan maksimal, sistem harus mengalokasikan <strong>10 thread</strong>.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 1-->
+                    <p>Sebuah sistem server memiliki kapasitas pemrosesan <em>request</em> API per milidetik yang dimodelkan dengan fungsi P(x) = -5x<sup>2</sup> + 100x + 50, di mana x adalah jumlah <em>thread</em> CPU yang dialokasikan. Berapa banyak <em>thread</em> yang harus dialokasikan untuk mencapai jumlah pemrosesan maksimal?</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1a" value="A">
+                        <label class="form-check-label" for="q1a">A. 5 thread</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1b" value="B">
+                        <label class="form-check-label" for="q1b">B. 10 thread</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1c" value="C">
+                        <label class="form-check-label" for="q1c">C. 15 thread</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1d" value="D">
+                        <label class="form-check-label" for="q1d">D. 20 thread</label>
+                      </div>
+                    </div>
+                    
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(1, 'B')">Jawab</button>
+                    
+                    <div id="feedback-1" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-1" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Untuk mencari pemrosesan maksimal, kita mencari titik di mana turunan pertama P'(x) = 0.</p>
+                      <p>$$P'(x) = -10x + 100$$</p>
+                      <p>$$-10x + 100 = 0$$</p>
+                      <p>$$10x = 100$$</p>
+                      <p>$$x = 10$$</p>
+                      <p>Jadi, sistem harus mengalokasikan <strong>10 thread</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 2</p>
-                    <p><em>[Evaluasi Turunan - Efisiensi Biaya Cloud]</em><br>
-                    Biaya operasional server cloud per jam bergantung pada jumlah <em>instance</em> n yang aktif, dengan fungsi biaya C(n) = 2n<sup>2</sup> - 40n + 500 (dalam ribuan rupiah). Berapa jumlah <em>instance</em> yang harus diaktifkan agar biaya operasional minimum, dan berapakah biaya minimum tersebut?</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Syarat biaya minimum adalah turunan pertama fungsi biaya sama dengan nol (C'(n) = 0).</p>
-                        <p>$$C'(n) = 4n - 40$$</p>
-                        <p>$$4n - 40 = 0$$</p>
-                        <p>$$4n = 40$$</p>
-                        <p>$$n = 10$$</p>
-                        <p>Substitusikan n = 10 ke fungsi awal:</p>
-                        <p>$$C(10) = 2(10)^2 - 40(10) + 500$$</p>
-                        <p>$$C(10) = 200 - 400 + 500 = 300$$</p>
-                        <p>Jadi, biaya akan minimum dengan mengaktifkan <strong>10 instance</strong> dengan biaya sebesar <strong>300 ribu rupiah</strong>.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 2-->
+                    <p>Biaya operasional server cloud per jam bergantung pada jumlah <em>instance</em> n yang aktif, dengan fungsi biaya C(n) = 2n<sup>2</sup> - 40n + 500 (dalam ribuan rupiah). Berapa jumlah <em>instance</em> yang harus diaktifkan agar biaya operasional minimum, dan berapakah biaya minimum tersebut?</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2a" value="A">
+                        <label class="form-check-label" for="q2a">A. 5 instance, 200 ribu rupiah</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2b" value="B">
+                        <label class="form-check-label" for="q2b">B. 20 instance, 500 ribu rupiah</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2c" value="C">
+                        <label class="form-check-label" for="q2c">C. 10 instance, 300 ribu rupiah</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2d" value="D">
+                        <label class="form-check-label" for="q2d">D. 15 instance, 400 ribu rupiah</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(2, 'C')">Jawab</button>
+
+                    <div id="feedback-2" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-2" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Syarat biaya minimum adalah turunan pertama fungsi biaya sama dengan nol (C'(n) = 0).</p>
+                      <p>$$C'(n) = 4n - 40$$</p>
+                      <p>$$4n - 40 = 0 \implies n = 10$$</p>
+                      <p>Substitusikan n = 10 ke fungsi awal:</p>
+                      <p>$$C(10) = 2(10)^2 - 40(10) + 500$$</p>
+                      <p>$$C(10) = 200 - 400 + 500 = 300$$</p>
+                      <p>Jadi, minimum dengan mengaktifkan <strong>10 instance</strong> dengan biaya <strong>300 ribu rupiah</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 3</p>
-                    <p><em>[Evaluasi Turunan - Model Machine Learning]</em><br>
-                    Dalam pelatihan sebuah model algoritma, fungsi tingkat kerugian (<em>Loss Function</em>) terhadap penyesuaian bobot w dinyatakan sebagai L(w) = w <sup>4</sup> - 8w <sup>3</sup> + 18w <sup>2</sup>. Tentukan nilai bobot w yang membuat gradien (turunan pertama) bernilai nol (berpotensi menjadi titik minimum kerugian)!</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Tentukan turunan pertama dan samakan dengan nol (L'(w) = 0).</p>
-                        <p>$$L'(w) = 4w^3 - 24w^2 + 36w$$</p>
-                        <p>$$4w^3 - 24w^2 + 36w = 0$$</p>
-                        <p>Faktorkan dengan mengeluarkan 4w:</p>
-                        <p>$$4w(w^2 - 6w + 9) = 0$$</p>
-                        <p>$$4w(w - 3)^2 = 0$$</p>
-                        <p>Maka diperoleh nilai w = 0 atau w = 3.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 3-->
+                    <p>Dalam pelatihan sebuah model algoritma, fungsi tingkat kerugian (<em>Loss Function</em>) terhadap penyesuaian bobot w dinyatakan sebagai L(w) = w<sup>4</sup> - 8w<sup>3</sup> + 18w<sup>2</sup>. Tentukan nilai bobot w yang membuat gradien (turunan pertama) bernilai nol!</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3a" value="A">
+                        <label class="form-check-label" for="q3a">A. w = 0 atau w = 3</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3b" value="B">
+                        <label class="form-check-label" for="q3b">B. w = 1 atau w = 2</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3c" value="C">
+                        <label class="form-check-label" for="q3c">C. w = 0 atau w = -3</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3d" value="D">
+                        <label class="form-check-label" for="q3d">D. w = 2 atau w = 4</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(3, 'A')">Jawab</button>
+
+                    <div id="feedback-3" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-3" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Tentukan turunan pertama dan samakan dengan nol (L'(w) = 0).</p>
+                      <p>$$L'(w) = 4w^3 - 24w^2 + 36w = 0$$</p>
+                      <p>Faktorkan dengan mengeluarkan 4w:</p>
+                      <p>$$4w(w^2 - 6w + 9) = 0$$</p>
+                      <p>$$4w(w - 3)^2 = 0$$</p>
+                      <p>Maka diperoleh nilai <strong>w = 0 atau w = 3</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 4</p>
-                    <p><em>[Evaluasi Turunan - Laju Pertumbuhan Memori]</em><br>
-                    Penggunaan memori dari sebuah algoritma pengurutan terhadap ukuran input x (dalam ribuan data) didefinisikan sebagai $$M(x) = \frac{1}{3}x^3 + 2x^2 + 5x$$ (dalam MB). Berapakah laju perubahan (pertumbuhan) memori seketika pada saat ukuran input x = 3?</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Laju perubahan seketika adalah turunan pertama M'(x).</p>
-                        <p>$$M'(x) = x^2 + 4x + 5$$</p>
-                        <p>Substitusi x = 3 ke dalam turunan pertama:</p>
-                        <p>$$M'(3) = (3)^2 + 4(3) + 5$$</p>
-                        <p>$$M'(3) = 9 + 12 + 5 = 26$$</p>
-                        <p>Jadi, laju pertumbuhan memorinya adalah <strong>26 MB per ribu data</strong>.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 4-->
+                    <p>Penggunaan memori dari sebuah algoritma pengurutan terhadap ukuran input x (dalam ribuan data) didefinisikan sebagai $$M(x) = \frac{1}{3}x^3 + 2x^2 + 5x$$ (dalam MB). Berapakah laju perubahan (pertumbuhan) memori seketika pada saat ukuran input x = 3?</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4a" value="A">
+                        <label class="form-check-label" for="q4a">A. 12 MB per ribu data</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4b" value="B">
+                        <label class="form-check-label" for="q4b">B. 17 MB per ribu data</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4c" value="C">
+                        <label class="form-check-label" for="q4c">C. 20 MB per ribu data</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4d" value="D">
+                        <label class="form-check-label" for="q4d">D. 26 MB per ribu data</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(4, 'D')">Jawab</button>
+
+                    <div id="feedback-4" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-4" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Laju perubahan seketika adalah turunan pertama M'(x).</p>
+                      <p>$$M'(x) = x^2 + 4x + 5$$</p>
+                      <p>Substitusi x = 3 ke dalam turunan pertama:</p>
+                      <p>$$M'(3) = (3)^2 + 4(3) + 5$$</p>
+                      <p>$$M'(3) = 9 + 12 + 5 = 26$$</p>
+                      <p>Jadi, laju pertumbuhan memorinya adalah <strong>26 MB per ribu data</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 5</p>
-                    <p><em>[Evaluasi Turunan - Fluktuasi Transfer Jaringan]</em><br>
-                    Kecepatan transfer data pada sebuah <em>router</em> di waktu t detik dimodelkan dengan V(t) = t<sup>3</sup> - 9t<sup>2</sup> + 24t + 10 (dalam Mbps). Pada detik ke berapa kurva kecepatan mengalami titik belok (percepatan transfer sama dengan nol)?</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Titik belok dicari dengan menyamakan turunan kedua dengan nol (V''(t) = 0).</p>
-                        <p>Turunan pertama (percepatan/perlambatan kecepatan):</p>
-                        <p>$$V'(t) = 3t^2 - 18t + 24$$</p>
-                        <p>Turunan kedua (perubahan percepatan):</p>
-                        <p>$$V''(t) = 6t - 18$$</p>
-                        <p>$$6t - 18 = 0$$</p>
-                        <p>$$6t = 18$$</p>
-                        <p>$$t = 3$$</p>
-                        <p>Jadi, titik belok transfer jaringan terjadi pada <strong>detik ke-3</strong>.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 5-->
+                    <p>Kecepatan transfer data pada sebuah <em>router</em> di waktu t detik dimodelkan dengan V(t) = t<sup>3</sup> - 9t<sup>2</sup> + 24t + 10 (dalam Mbps). Pada detik ke berapa kurva kecepatan mengalami titik belok (percepatan transfer sama dengan nol)?</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5a" value="A">
+                        <label class="form-check-label" for="q5a">A. Detik ke-2</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5b" value="B">
+                        <label class="form-check-label" for="q5b">B. Detik ke-3</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5c" value="C">
+                        <label class="form-check-label" for="q5c">C. Detik ke-4</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5d" value="D">
+                        <label class="form-check-label" for="q5d">D. Detik ke-6</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(5, 'B')">Jawab</button>
+
+                    <div id="feedback-5" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-5" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Titik belok dicari dengan menyamakan turunan kedua dengan nol (V''(t) = 0).</p>
+                      <p>Turunan pertama:</p>
+                      <p>$$V'(t) = 3t^2 - 18t + 24$$</p>
+                      <p>Turunan kedua:</p>
+                      <p>$$V''(t) = 6t - 18$$</p>
+                      <p>$$6t - 18 = 0 \implies 6t = 18 \implies t = 3$$</p>
+                      <p>Jadi, titik belok transfer jaringan terjadi pada <strong>detik ke-3</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 6</p>
-                    <p><em>[Integral Tak Tentu - Fungsi Bug Fixing]</em><br>
-                    Tim Quality Assurance (QA) mendeteksi bahwa laju perbaikan <em>bug</em> harian dalam sebuah proyek <em>software</em> dinyatakan dengan r(t) = 6t<sup>2</sup> + 4t (dalam <em>bug</em>/hari). Tentukan fungsi umum akumulasi <em>bug</em> yang telah diperbaiki B(t) menggunakan integral tak tentu!</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Fungsi total B(t) adalah antiturunan (integral tak tentu) dari r(t).</p>
-                        <p>$$B(t) = ∫ (6t² + 4t) dt$$</p>
-                        <p>$$B(t) = (6/3)t³ + (4/2)t² + C$$</p>
-                        <p>$$B(t) = 2t³ + 2t² + C$$</p>
-                        <p>Jadi, fungsi akumulasinya adalah <strong>B(t) = 2t³ + 2t² + C</strong>.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 6-->
+                    <p>Tim Quality Assurance (QA) mendeteksi bahwa laju perbaikan <em>bug</em> harian dalam sebuah proyek <em>software</em> dinyatakan dengan r(t) = 6t<sup>2</sup> + 4t (dalam <em>bug</em>/hari). Tentukan fungsi umum akumulasi <em>bug</em> yang telah diperbaiki B(t) menggunakan integral tak tentu!</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6a" value="A">
+                        <label class="form-check-label" for="q6a">A. B(t) = 3t³ + 2t² + C</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6b" value="B">
+                        <label class="form-check-label" for="q6b">B. B(t) = 2t³ + 4t² + C</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6c" value="C">
+                        <label class="form-check-label" for="q6c">C. B(t) = 2t³ + 2t² + C</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6d" value="D">
+                        <label class="form-check-label" for="q6d">D. B(t) = 6t³ + 4t² + C</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(6, 'C')">Jawab</button>
+
+                    <div id="feedback-6" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-6" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Fungsi total B(t) adalah antiturunan (integral tak tentu) dari r(t).</p>
+                      <p>$$B(t) = \int (6t^2 + 4t) \, dt$$</p>
+                      <p>$$B(t) = \left(\frac{6}{3}\right)t^3 + \left(\frac{4}{2}\right)t^2 + C$$</p>
+                      <p>Jadi, fungsi akumulasinya adalah <strong>B(t) = 2t³ + 2t² + C</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 7</p>
-                    <p><em>[Integral Tak Tentu - Akumulasi Baris Kode]</em><br>
-                    Laju penulisan kode oleh seorang <em>developer</em> (dalam baris kode per jam) dinyatakan dengan persamaan P'(x) = 3x<sup>2</sup> - 2x + 15. Jika pada jam ke-0 belum ada kode yang ditulis (P(0) = 0), tentukan fungsi P(x) yang menyatakan total akumulasi baris kode yang diselesaikan!</p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p><strong>Penyelesaian:</strong></p>
-                        <p>Cari fungsi integral tak tentu terlebih dahulu:</p>
-                        <p>$$P(x) = \int (3x^2 - 2x + 15) \, dx$$</p>
-                        <p>$$P(x) = x^3 - x^2 + 15x + C$$</p>
-                        <p>Gunakan syarat awal $$P(0) = 0$$ untuk mencari nilai konstanta C:</p>
-                        <p>$$P(0) = (0)^3 - (0)^2 + 15(0) + C = 0 \implies C = 0$$</p>
-                        <p>Jadi, fungsi akumulasi total kodenya adalah <strong>P(x) = x<sup>3</sup> - x<sup>2</sup> + 15x</strong>.</p>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 7-->
+                    <p>Laju penulisan kode oleh seorang <em>developer</em> (dalam baris kode per jam) dinyatakan dengan persamaan P'(x) = 3x<sup>2</sup> - 2x + 15. Jika pada jam ke-0 belum ada kode yang ditulis (P(0) = 0), tentukan fungsi P(x) yang menyatakan total akumulasi baris kode yang diselesaikan!</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7a" value="A">
+                        <label class="form-check-label" for="q7a">A. P(x) = x³ - x² + 15x</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7b" value="B">
+                        <label class="form-check-label" for="q7b">B. P(x) = 3x³ - 2x² + 15x</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7c" value="C">
+                        <label class="form-check-label" for="q7c">C. P(x) = x³ - 2x² + 15x</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7d" value="D">
+                        <label class="form-check-label" for="q7d">D. P(x) = x³ + x² + 15x</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(7, 'A')">Jawab</button>
+
+                    <div id="feedback-7" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-7" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Cari fungsi integral tak tentu terlebih dahulu:</p>
+                      <p>$$P(x) = \int (3x^2 - 2x + 15) \, dx$$</p>
+                      <p>$$P(x) = x^3 - x^2 + 15x + C$$</p>
+                      <p>Gunakan syarat awal $$P(0) = 0$$ untuk mencari nilai konstanta C:</p>
+                      <p>$$P(0) = (0)^3 - (0)^2 + 15(0) + C = 0 \implies C = 0$$</p>
+                      <p>Jadi, fungsi akumulasi total kodenya adalah <strong>P(x) = x³ - x² + 15x</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 8</p>
-                    <p><em>[Integral Tak Tentu - Akumulasi Request API]</em></p>
-                    <p><strong>Diketahui:</strong> Sebuah server API menerima request yang terus bertambah saat jam sibuk. Laju masuknya <em>request</em> (dalam ribu <em>request</em> per jam) terhadap waktu t (dalam jam) dimodelkan oleh fungsi r(t) = 6t<sup>2</sup> + 2t + 5. Pada jam ke-0 (saat server baru di-<em>restart</em>), sudah terdapat antrean sebanyak 50 ribu <em>request</em> yang belum diproses dari sesi sebelumnya.</p>
-                    <p><strong>Ditanya:</strong> 
-                      <ul>
-                        <li><b>Tentukan bentuk fungsi akumulasi <em>request</em> secara umum!</b></li>
-                        <li><b>Tentukan total akumulasi <em>request</em> pada jam ke-4!</b></li>
-                      </ul>
-                    </p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p class="fw-semibold">Penyelesaian:</p>
-                        <ol> 
-                          <li>Menentukan bentuk fungsi akumulasi <em>request</em> secara umum</li>
-                            <ul>
-                              <li>Ubah fungsi tersebut ke bentuk integral</li>
-                                $$R(t) = \int (6t^2 + 2t + 5) \, dt$$ <br>
-                              <li>Lalu kita subtitusikan nilai a diisi 6, 2, 5 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
-                                $$R(t) = \left( \frac{6}{2+1} t^{2+1} + \frac{2}{1+1} t^{1+1} + \frac{5}{0+1} t^{0+1} \right) + C$$ <br>
-                              <li>maka, didapatkanlah R(t)</li>
-                                $$R(t) = 2t^3 + t^2 + 5t + C$$ <br>
-                              <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni R(0) = 50</li>
-                                $$R(0) = 2(0)^3 + (0)^2 + 5(0) + C$$
-                                $$50 = C$$
-                                $$\Longleftrightarrow$$
-                                $$C = 50$$ <br>
-                              <li>lalu kita subtitusikan konstanta (C) = 50 ke dalam fungsi R(t)</li>
-                                $$R(t) = 2t^3 + t^2 + 5t + 50$$ <br>
-                              <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi <em>request</em> tersebut yakni</b></p>
-                              <p><b>R(t) = 2t<sup>3</sup> + t<sup>2</sup> + 5t + 50</b></p>
-                            </ul>
-                          <hr>
-                          <li>Menentukan total akumulasi <em>request</em> pada jam ke-4</li>
-                          <ul>
-                            <li>Substitusikan t = 4 ke dalam fungsi R(t)</li>
-                              $$R(4) = 2(4)^3 + (4)^2 + 5(4) + 50$$ <br>
-                            <li>Hitung nilai R(4)</li>
-                              $$R(4) = 2(64) + 16 + 20 + 50$$ <br>
-                              $$R(4) = 128 + 16 + 20 + 50$$ <br>
-                              $$R(4) = 214$$ <br>
-                            <p><b>Jadi, total akumulasi <em>request</em> pada jam ke-4 adalah 214 ribu <em>request</em>.</b></p>
-                          </ul>
-                        </ol>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 8-->
+                    <p>Sebuah server API menerima request yang terus bertambah. Laju masuknya <em>request</em> (dalam ribu per jam) terhadap waktu t dimodelkan oleh fungsi r(t) = 6t<sup>2</sup> + 2t + 5. Pada jam ke-0, terdapat antrean 50 ribu <em>request</em>. Berapakah total akumulasi <em>request</em> pada jam ke-4?</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8a" value="A">
+                        <label class="form-check-label" for="q8a">A. 150 ribu request</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8b" value="B">
+                        <label class="form-check-label" for="q8b">B. 214 ribu request</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8c" value="C">
+                        <label class="form-check-label" for="q8c">C. 250 ribu request</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q8" id="q8d" value="D">
+                        <label class="form-check-label" for="q8d">D. 314 ribu request</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(8, 'B')">Jawab</button>
+
+                    <div id="feedback-8" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-8" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Bentuk fungsi akumulasi R(t):</p>
+                      <p>$$R(t) = \int (6t^2 + 2t + 5) \, dt = 2t^3 + t^2 + 5t + C$$</p>
+                      <p>Gunakan R(0) = 50 untuk mencari C, sehingga C = 50.</p>
+                      <p>$$R(t) = 2t^3 + t^2 + 5t + 50$$</p>
+                      <p>Substitusi t = 4:</p>
+                      <p>$$R(4) = 2(4)^3 + (4)^2 + 5(4) + 50$$</p>
+                      <p>$$R(4) = 2(64) + 16 + 20 + 50 = 128 + 16 + 20 + 50 = 214$$</p>
+                      <p>Total pada jam ke-4 adalah <strong>214 ribu request</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 9</p>
-                    <p><em>[Integral Tak Tentu - Akumulasi Penggunaan Memori Cache]</em></p>
-                    <p><strong>Diketahui:</strong> Sebuah sistem <em>database</em> Redis mengalami peningkatan penggunaan memori <em>cache</em>. Laju pertumbuhan memori (dalam Megabyte per menit) terhadap waktu t (dalam menit) dimodelkan oleh fungsi m(t) = 9t<sup>2</sup> + 8t + 15. Jika pada menit ke-0 sistem sudah memiliki memori awal (<em>base cache</em>) sebesar 200MB.</p>
-                    <p><strong>Ditanya:</strong> 
-                      <ul>
-                        <li><b>Tentukan bentuk fungsi akumulasi memori secara umum!</b></li>
-                        <li><b>Tentukan total kapasitas memori pada menit ke-3!</b></li>
-                      </ul>
-                    </p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p class="fw-semibold">Penyelesaian:</p>
-                        <ol> 
-                          <li>Menentukan bentuk fungsi akumulasi memori secara umum</li>
-                            <ul>
-                              <li>Ubah fungsi tersebut ke bentuk integral</li>
-                                $$M(t) = \int (9t^2 + 8t + 15) \, dt$$ <br>
-                              <li>Lalu kita subtitusikan nilai a diisi 9, 8, 15 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
-                                $$M(t) = \left( \frac{9}{2+1} t^{2+1} + \frac{8}{1+1} t^{1+1} + \frac{15}{0+1} t^{0+1} \right) + C$$ <br>
-                              <li>maka, didapatkanlah M(t)</li>
-                                $$M(t) = 3t^3 + 4t^2 + 15t + C$$ <br>
-                              <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni M(0) = 200</li>
-                                $$M(0) = 3(0)^3 + 4(0)^2 + 15(0) + C$$
-                                $$200 = C$$
-                                $$\Longleftrightarrow$$
-                                $$C = 200$$ <br>
-                              <li>lalu kita subtitusikan konstanta (C) = 200 ke dalam fungsi M(t)</li>
-                                $$M(t) = 3t^3 + 4t^2 + 15t + 200$$ <br>
-                              <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi memori tersebut yakni</b></p>
-                              <p><b>M(t) = 3t<sup>3</sup> + 4t<sup>2</sup> + 15t + 200</b></p>
-                            </ul>
-                          <hr>
-                          <li>Menentukan total kapasitas memori pada menit ke-3</li>
-                          <ul>
-                            <li>Substitusikan t = 3 ke dalam fungsi M(t)</li>
-                              $$M(3) = 3(3)^3 + 4(3)^2 + 15(3) + 200$$ <br>
-                            <li>Hitung nilai M(3)</li>
-                              $$M(3) = 3(27) + 4(9) + 45 + 200$$ <br>
-                              $$M(3) = 81 + 36 + 45 + 200$$ <br>
-                              $$M(3) = 362$$ <br>
-                            <p><b>Jadi, total kapasitas memori pada menit ke-3 adalah 362MB.</b></p>
-                          </ul>
-                        </ol>
+                  <li class="mb-4 border-bottom pb-3"> <!-- soal 9-->
+                    <p>Laju pertumbuhan memori <em>cache</em> sistem Redis (MB per menit) dimodelkan m(t) = 9t<sup>2</sup> + 8t + 15. Jika pada menit ke-0 sistem memiliki <em>base cache</em> 200MB. Tentukan total kapasitas memori pada menit ke-3!</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9a" value="A">
+                        <label class="form-check-label" for="q9a">A. 285 MB</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9b" value="B">
+                        <label class="form-check-label" for="q9b">B. 315 MB</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9c" value="C">
+                        <label class="form-check-label" for="q9c">C. 362 MB</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q9" id="q9d" value="D">
+                        <label class="form-check-label" for="q9d">D. 462 MB</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(9, 'C')">Jawab</button>
+
+                    <div id="feedback-9" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-9" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Fungsi akumulasi memori M(t):</p>
+                      <p>$$M(t) = \int (9t^2 + 8t + 15) \, dt = 3t^3 + 4t^2 + 15t + C$$</p>
+                      <p>Mengingat M(0) = 200, maka C = 200.</p>
+                      <p>$$M(t) = 3t^3 + 4t^2 + 15t + 200$$</p>
+                      <p>Substitusikan t = 3:</p>
+                      <p>$$M(3) = 3(3)^3 + 4(3)^2 + 15(3) + 200$$</p>
+                      <p>$$M(3) = 3(27) + 4(9) + 45 + 200 = 81 + 36 + 45 + 200 = 362$$</p>
+                      <p>Total kapasitas memori pada menit ke-3 adalah <strong>362 MB</strong>.</p>
+                    </div>
                   </li>
 
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 10</p>
-                    <p><em>[Integral Tak Tentu - Akumulasi Baris Log Error]</em></p>
-                    <p><strong>Diketahui:</strong> Pada saat melakukan <em>load testing</em> pada sebuah perangkat lunak, sistem menghasilkan catatan <em>log error</em>. Laju penambahan <em>log error</em> (dalam baris per detik) terhadap waktu t (dalam detik) dimodelkan oleh fungsi e(t) = 12t<sup>2</sup> + 10t + 2. Jika pada detik ke-0 file log sudah berisi 500 baris error dari pengujian sebelumnya.</p>
-                    <p><strong>Ditanya:</strong> 
-                      <ul>
-                        <li><b>Tentukan bentuk fungsi akumulasi baris <em>log error</em> secara umum!</b></li>
-                        <li><b>Tentukan total baris <em>log error</em> pada detik ke-5!</b></li>
-                      </ul>
-                    </p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
-                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
-                        <p class="fw-semibold">Penyelesaian:</p>
-                        <ol> 
-                          <li>Menentukan bentuk fungsi akumulasi baris <em>log error</em> secara umum</li>
-                            <ul>
-                              <li>Ubah fungsi tersebut ke bentuk integral</li>
-                                $$E(t) = \int (12t^2 + 10t + 2) \, dt$$ <br>
-                              <li>Lalu kita subtitusikan nilai a diisi 12, 10, 2 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
-                                $$E(t) = \left( \frac{12}{2+1} t^{2+1} + \frac{10}{1+1} t^{1+1} + \frac{2}{0+1} t^{0+1} \right) + C$$ <br>
-                              <li>maka, didapatkanlah E(t)</li>
-                                $$E(t) = 4t^3 + 5t^2 + 2t + C$$ <br>
-                              <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni E(0) = 500</li>
-                                $$E(0) = 4(0)^3 + 5(0)^2 + 2(0) + C$$
-                                $$500 = C$$
-                                $$\Longleftrightarrow$$
-                                $$C = 500$$ <br>
-                              <li>lalu kita subtitusikan konstanta (C) = 500 ke dalam fungsi E(t)</li>
-                                $$E(t) = 4t^3 + 5t^2 + 2t + 500$$ <br>
-                              <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi baris <em>log error</em> tersebut yakni</b></p>
-                              <p><b>E(t) = 4t<sup>3</sup> + 5t<sup>2</sup> + 2t + 500</b></p>
-                            </ul>
-                          <hr>
-                          <li>Menentukan total baris <em>log error</em> pada detik ke-5</li>
-                          <ul>
-                            <li>Substitusikan t = 5 ke dalam fungsi E(t)</li>
-                              $$E(5) = 4(5)^3 + 5(5)^2 + 2(5) + 500$$ <br>
-                            <li>Hitung nilai E(5)</li>
-                              $$E(5) = 4(125) + 5(25) + 10 + 500$$ <br>
-                              $$E(5) = 500 + 125 + 10 + 500$$ <br>
-                              $$E(5) = 1135$$ <br>
-                            <p><b>Jadi, total baris <em>log error</em> pada detik ke-5 adalah 1.135 baris.</b></p>
-                          </ul>
-                        </ol>
+                  <li class="mb-2"> <!-- soal 10-->
+                    <p>Laju penambahan <em>log error</em> (baris per detik) dimodelkan e(t) = 12t<sup>2</sup> + 10t + 2. Pada detik ke-0 file log sudah berisi 500 baris. Berapakah total baris <em>log error</em> pada detik ke-5?</p>
+                    
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q10" id="q10a" value="A">
+                        <label class="form-check-label" for="q10a">A. 1035 baris</label>
                       </div>
-                    </details>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q10" id="q10b" value="B">
+                        <label class="form-check-label" for="q10b">B. 1135 baris</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q10" id="q10c" value="C">
+                        <label class="form-check-label" for="q10c">C. 1235 baris</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q10" id="q10d" value="D">
+                        <label class="form-check-label" for="q10d">D. 1500 baris</label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-primary mb-2" onclick="cekJawaban(10, 'B')">Jawab</button>
+
+                    <div id="feedback-10" class="d-none mb-2 fw-bold"></div>
+                    <div id="penjelasan-10" class="d-none p-3" style="background:#eef2f7; border-radius:8px; font-size:.85rem;">
+                      <p><strong>Penyelesaian:</strong></p>
+                      <p>Fungsi akumulasi baris E(t):</p>
+                      <p>$$E(t) = \int (12t^2 + 10t + 2) \, dt = 4t^3 + 5t^2 + 2t + C$$</p>
+                      <p>Karena E(0) = 500, maka C = 500.</p>
+                      <p>$$E(t) = 4t^3 + 5t^2 + 2t + 500$$</p>
+                      <p>Substitusikan t = 5:</p>
+                      <p>$$E(5) = 4(5)^3 + 5(5)^2 + 2(5) + 500$$</p>
+                      <p>$$E(5) = 4(125) + 5(25) + 10 + 500 = 500 + 125 + 10 + 500 = 1135$$</p>
+                      <p>Total pada detik ke-5 adalah <strong>1.135 baris</strong>.</p>
+                    </div>
                   </li>
                 </ol>
               </div>
             </div>
           </div>
+
+          <script>
+            function cekJawaban(nomorSoal, jawabanBenar) {
+              const radioDipilih = document.querySelector(`input[name="q${nomorSoal}"]:checked`);
+              
+              if (!radioDipilih) {
+                alert("Silakan pilih salah satu jawaban terlebih dahulu!");
+                return;
+              }
+
+              const divFeedback = document.getElementById(`feedback-${nomorSoal}`);
+              const divPenjelasan = document.getElementById(`penjelasan-${nomorSoal}`);
+
+              if (radioDipilih.value === jawabanBenar) {
+                divFeedback.innerHTML = `<span style="color: green;">✔ Jawaban Anda Benar!</span>`;
+              } 
+              else {
+                divFeedback.innerHTML = `<span style="color: red;">✖ Jawaban Anda Salah. (Kunci: ${jawabanBenar})</span>`;
+              }
+
+              divFeedback.classList.remove("d-none");
+              divPenjelasan.classList.remove("d-none");
+            }
+          </script>
 
           <!-- kalkulator -->
           <div id="ch8-kalkulatorPenerapanTurunan" class="mt-5">
@@ -842,11 +994,12 @@
                 Kalkulator Interaktif — Penerapan Turunan
               </div>
               <div class="calc-body">
-                <p class="text-muted small mb-3">Hitung nilai fungsi <strong>f(x) = x<sup>2</sup> + x + c</strong></p>
-                <div class="row g-2 align-items-end">
+                <p class="text-muted small mb-3">Hitung nilai fungsi <strong>f(x) = ax<sup>2</sup> + bx + c</strong></p>
+                
+                <div class="row g-2 align-items-end mb-3">
                   <div class="col-sm-3">
                     <label class="form-label small">Koefisien a (x<sup>2</sup>)</label>
-                    <input type="number" class="form-control form-control-sm" id="ch1-m" value="2" step="0.1"/>
+                    <input type="number" class="form-control form-control-sm" id="ch1-a" value="2" step="0.1"/>
                   </div>
                   <div class="col-sm-3">
                     <label class="form-label small">Koefisien b (x)</label>
@@ -856,15 +1009,18 @@
                     <label class="form-label small">Koefisien c (konstanta)</label>
                     <input type="number" class="form-control form-control-sm" id="ch1-c" value="1" step="0.1"/>
                   </div>
-                  <div class="col-sm-3">
-                    <button class="btn btn-calc w-100" onclick="calcImplementasiTurunan()">Hitung</button>
+                  <div class="col-sm-3 d-flex gap-2">
+                    <button class="btn btn-primary btn-sm w-100" onclick="calcImplementasiTurunan()">Hitung</button>
+                    <button class="btn btn-secondary btn-sm w-100" onclick="resetForm()">Reset</button>
                   </div>
                 </div>
-                <div class="calc-result mt-3" id="ch8_1-result">
+
+                <div class="calc-result mt-4 p-3 border rounded bg-light" id="ch8_1-result">
                   Masukkan nilai ditiap kotak input, lalu klik <strong>Hitung</strong>
                 </div>
-                <div class="calc-note">
-                  💡 Kalkulator ini menghitung f(x) = ax^2 + bx + c.
+
+                <div class="calc-note mt-3">
+                  💡 Kalkulator ini menghitung uji turunan pertama dan kedua untuk f(x) = ax^2 + bx + c.
                 </div>
               </div>
             </div>
@@ -927,74 +1083,139 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../script.js"></script>
-
   <script>
     function calcImplementasiTurunan() {
-      // 1. Mengambil nilai input berdasarkan ID dari HTML
-      const inputA = document.getElementById('ch1-m').value;
+      const inputA = document.getElementById('ch1-a').value;
       const inputB = document.getElementById('ch1-b').value;
       const inputC = document.getElementById('ch1-c').value;
       const resultDiv = document.getElementById('ch8_1-result');
 
-      // Mengubah input menjadi tipe float/desimal
       const a = parseFloat(inputA);
       const b = parseFloat(inputB);
       const c = parseFloat(inputC);
 
-      // 2. Validasi input: Pastikan semua kotak terisi angka yang benar
       if (isNaN(a) || isNaN(b) || isNaN(c)) {
-        resultDiv.innerHTML = "<span class='text-danger'><strong>Error:</strong> Harap masukkan angka yang valid untuk koefisien a, b, dan c.</span>";
+        resultDiv.innerHTML = "<div class='alert alert-danger mb-0'><strong>Error:</strong> Harap masukkan angka yang valid untuk koefisien a, b, dan c.</div>";
         return;
       }
 
-      // Jika a = 0, fungsi bukan lagi fungsi kuadrat
       if (a === 0) {
-        resultDiv.innerHTML = "<span class='text-danger'><strong>Error:</strong> Nilai koefisien 'a' tidak boleh 0 untuk kurva parabola/kuadrat.</span>";
+        resultDiv.innerHTML = "<div class='alert alert-warning mb-0'><strong>Peringatan:</strong> Nilai koefisien 'a' tidak boleh 0 untuk kurva parabola/kuadrat.</div>";
         return;
       }
 
-      // Helper function untuk format tanda plus minus agar rapi (+ 3 atau - 3)
       const formatTanda = (num) => (num >= 0 ? `+ ${num}` : `- ${Math.abs(num)}`);
+      const formatAngka = (num) => Number.isInteger(num) ? num : parseFloat(num.toFixed(4));
 
-      // --- PERHITUNGAN MATEMATIKA --- //
-
-      // a. Fungsi Asal: f(x) = ax^2 + bx + c
+      const x = -b / (2 * a);
+      const y = (a * Math.pow(x, 2)) + (b * x) + c;
       const fungsiAsal = `${a}x<sup>2</sup> ${formatTanda(b)}x ${formatTanda(c)}`;
+      
+      const turunan1 = `${2 * a}x ${formatTanda(b)}`;
+      const turunan2 = 2 * a;
 
-      // b. Turunan Pertama: f'(x) = 2ax + b
-      const koefX = 2 * a;
-      const turunanPertama = `${koefX}x ${formatTanda(b)}`;
+      const kiri = x - 1;
+      const kanan = x + 1;
+      const nilaiKiri = (2 * a * kiri) + b;
+      const nilaiKanan = (2 * a * kanan) + b;
 
-      // c. Titik Kritis: didapat saat f'(x) = 0 -> 2ax + b = 0 -> x = -b / 2a
-      const titikKritis = -b / (2 * a);
+      const tandaKiri = nilaiKiri > 0 ? "<span class='badge bg-success'>Positif</span>" : "<span class='badge bg-danger'>Negatif</span>";
+      const tandaKanan = nilaiKanan > 0 ? "<span class='badge bg-success'>Positif</span>" : "<span class='badge bg-danger'>Negatif</span>";
 
-      // d. Turunan Kedua: f''(x) = 2a
-      const turunanKedua = 2 * a;
-      let jenisEkstrem = "";
-      if (turunanKedua > 0) {
-        jenisEkstrem = "(Fungsi Terbuka ke Atas / Titik Minimum)";
-      } else if (turunanKedua < 0) {
-        jenisEkstrem = "(Fungsi Terbuka ke Bawah / Titik Maksimum)";
+      let perubahan = "";
+      let kesimpulan1 = "";
+      if (nilaiKiri < 0 && nilaiKanan > 0) {
+        perubahan = "Negatif &rarr; Positif";
+        kesimpulan1 = "Minimum";
+      } else if (nilaiKiri > 0 && nilaiKanan < 0) {
+        perubahan = "Positif &rarr; Negatif";
+        kesimpulan1 = "Maksimum";
+      } else {
+        perubahan = "Tidak berubah";
+        kesimpulan1 = "Bukan Titik Ekstrem";
       }
 
-      // e. Hasil Substitusi Titik Kritis (Nilai y ekstrem): f(x_kritis) = a(x)^2 + b(x) + c
-      const nilaiFungsi = (a * Math.pow(titikKritis, 2)) + (b * titikKritis) + c;
+      let kesimpulan2 = "";
+      if (turunan2 > 0) {
+        kesimpulan2 = "Minimum";
+      } 
+      else if (turunan2 < 0) {
+        kesimpulan2 = "Maksimum";
+      } 
+      else {
+        kesimpulan2 = "Tidak dapat ditentukan";
+      }
 
-      // Helper untuk membersihkan angka desimal yang terlalu panjang
-      const formatAngka = (num) => Number.isInteger(num) ? num : num.toFixed(4).replace(/\.?0+$/, '');
-
-      // 3. Menampilkan Hasil ke layar (Inject ke HTML)
+      const jenis = (turunan2 > 0) ? "Minimum" : "Maksimum";
       resultDiv.innerHTML = `
-        <div class="text-start mt-2">
-          <ul class="list-unstyled mb-0" style="line-height: 1.8;">
-            <li><strong>Fungsi Asal:</strong> f(x) = ${fungsiAsal}</li>
-            <li><strong>Turunan Pertama (f'(x)):</strong> ${turunanPertama}</li>
-            <li><strong>Titik Kritis (x):</strong> ${formatAngka(titikKritis)} <span class="text-muted small"><em>(didapat saat f'(x) = 0)</em></span></li>
-            <li><strong>Turunan Kedua (f''(x)):</strong> ${turunanKedua} <span class="text-primary small"><strong>${jenisEkstrem}</strong></span></li>
-            <li><strong>Nilai Ekstrem f(${formatAngka(titikKritis)}):</strong> ${formatAngka(nilaiFungsi)} <span class="text-muted small"><em>(substitusi titik kritis ke fungsi asal)</em></span></li>
+        <div class="text-start">
+          <h5 class="text-primary border-bottom pb-2">HASIL ANALISIS</h5>
+          <ul class="list-unstyled mb-4" style="line-height: 1.8;">
+            <li><strong>Fungsi:</strong> f(x) = ${fungsiAsal}</li>
+            <li><strong>Turunan Pertama:</strong> f'(x) = ${turunan1}</li>
+            <li><strong>Turunan Kedua:</strong> f''(x) = ${turunan2}</li>
+            <li><strong>Titik Kritis (x):</strong> ${formatAngka(x)}</li>
+            <li><strong>Nilai Ekstrem (y):</strong> ${formatAngka(y)}</li>
+            <li><strong>Jenis Ekstrem:</strong> <span class="fw-bold">${jenis}</span></li>
           </ul>
+
+          <h5 class="text-primary border-bottom pb-2">UJI TURUNAN PERTAMA</h5>
+          <table class="table table-bordered table-sm text-center mb-3">
+            <thead class="table-light">
+              <tr>
+                <th>Posisi</th>
+                <th>Perhitungan f'(x)</th>
+                <th>Tanda</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>x < ${formatAngka(x)}</td>
+                <td>f'(${formatAngka(kiri)}) = ${formatAngka(nilaiKiri)}</td>
+                <td>${tandaKiri}</td>
+              </tr>
+              <tr>
+                <td>x > ${formatAngka(x)}</td>
+                <td>f'(${formatAngka(kanan)}) = ${formatAngka(nilaiKanan)}</td>
+                <td>${tandaKanan}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mb-4">
+            <strong>Perubahan:</strong> ${perubahan} <br>
+            <strong>Kesimpulan:</strong> ${kesimpulan1}
+          </p>
+
+          <h5 class="text-primary border-bottom pb-2">UJI TURUNAN KEDUA</h5>
+          <div class="mb-4">
+            f''(${formatAngka(x)}) = ${turunan2} <br>
+            Karena ${turunan2} <strong>${turunan2 > 0 ? '>' : '<'}</strong> 0 <br>
+            <strong>Kesimpulan:</strong> ${kesimpulan2}
+          </div>
+
+          <h5 class="text-primary border-bottom pb-2">LANGKAH PENYELESAIAN</h5>
+          <ol class="mb-0" style="line-height: 1.8;">
+            <li><strong>Menentukan fungsi:</strong> f(x) = ${fungsiAsal}</li>
+            <li><strong>Menghitung turunan pertama:</strong> f'(x) = ${turunan1}</li>
+            <li><strong>Menentukan titik kritis (f'(x) = 0):</strong> <br> ${2 * a}x ${formatTanda(b)} = 0 &rarr; x = ${formatAngka(x)}</li>
+            <li><strong>Menghitung turunan kedua:</strong> f''(x) = ${turunan2}</li>
+            <li><strong>Uji Turunan Pertama:</strong> Terjadi perubahan tanda ${perubahan}</li>
+            <li><strong>Uji Turunan Kedua:</strong> Nilai f''(x) ${turunan2 > 0 ? '> 0 (Positif)' : '< 0 (Negatif)'}</li>
+            <li><strong>Nilai Ekstrem:</strong> Substitusi x = ${formatAngka(x)} ke fungsi awal menghasilkan f(${formatAngka(x)}) = ${formatAngka(y)}</li>
+          </ol>
+          
+          <div class="alert alert-success mt-3 mb-0">
+            <strong>Kesimpulan Akhir:</strong> Fungsi memiliki <strong>${kesimpulan2}</strong> pada <strong>x = ${formatAngka(x)}</strong> dengan nilai ekstrem <strong>y = ${formatAngka(y)}</strong>.
+          </div>
         </div>
       `;
+    }
+
+    function resetForm() {
+      document.getElementById('ch1-a').value = "";
+      document.getElementById('ch1-b').value = "";
+      document.getElementById('ch1-c').value = "";
+      document.getElementById('ch8_1-result').innerHTML = "Masukkan nilai ditiap kotak input, lalu klik <strong>Hitung</strong>";
     }
   </script>
 
