@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bab 5 — Aplikasi Turunan | Kalkulus 1</title>
+  <title>Bab 5 — Pendekatan Numerik | Kalkulus 1</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link
@@ -46,54 +46,113 @@
   </div>
   <div class="main-wrapper">
     <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
-      <div class="sidebar-inner" id="sidebarInnerDesktop">
-        <div class="sidebar-section-label">Navigasi</div>
-        <nav id="sidebar-nav">
-          <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
-            <li class="sidebar-item"><a href="../index.html#pengantar" class="sidebar-link"><i
-                  class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a></li>
-            <li class="sidebar-item has-submenu"><a href="kelompok1.html" class="sidebar-link"><i
-                  class="bi bi-1-circle sidebar-link-icon"></i>Bab 1 — Bilangan Real &amp; Fungsi</a>
+    <div class="sidebar-inner" id="sidebarInnerDesktop">
+      <div class="sidebar-section-label">Navigasi</div>
+      <nav id="sidebar-nav">
+        <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
+          <li class="sidebar-item"><a href="../index.html#pengantar" class="sidebar-link"><i class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a></li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok1.html" class="sidebar-link"><i class="bi bi-1-circle sidebar-link-icon"></i>
+                Bab 1 — Fungsi Pemetaan
+              </a>
               <ul class="submenu list-unstyled">
-                <li><a href="kelompok1.html#ch1-bilangan" class="submenu-link">1.1 Sistem Bilangan Real</a></li>
-                <li><a href="kelompok1.html#ch1-fungsi" class="submenu-link">1.2 Konsep Fungsi</a></li>
-                <li><a href="kelompok1.html#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok1.html#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok1.html#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+                <li><a href="#ch1-bilangan" class="submenu-link">1.1 Konsep Fungsi</a></li>
+                <li><a href="#ch1-fungsi" class="submenu-link">1.2 Contoh Domain, Kodomain, dan Range</a></li>
+                <li><a href="#ch1-representasi" class="submenu-link">1.3 Representasi Fungsi</a></li>
+                <li><a href="#ch1-linear" class="submenu-link">1.4 Fungsi Linear dan Nonlinear</a></li>
+                <li><a href="#ch1-komposisi" class="submenu-link">1.5 Komposisi Fungsi</a></li>
+                <li><a href="#ch1-perubahan-input" class="submenu-link">1.6 Perubahan Input</a></li>
+                <li><a href="#ch1-laju-perubahan" class="submenu-link">1.7 Laju Perubahan</a></li>
+                <li><a href="#ch1-sensitivitas" class="submenu-link">1.8 Sensitivitas Fungsi Linear dan Kuadrat</a></li>
+                <li><a href="#ch1-analisis" class="submenu-link">1.9 Analisis Numerik Sederhana</a></li>
+                <li><a href="#ch1-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok2.html" class="sidebar-link"><i
-                  class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
-              <ul class="submenu list-unstyled">
-                <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
-                <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
-                <li><a href="kelompok2.html#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok2.html#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-              </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok3.html" class="sidebar-link"><i
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok2.html" class="sidebar-link"><i class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
+            <ul class="submenu list-unstyled overflow-auto pe-2 ">
+              <li><a href="#ch2-Fungsi1" class="submenu-link">2.1 Fungsi Linear</a></li>
+          
+              <li><a href="#ch2-Fungsi2" class="submenu-link">2.2 Fungsi Kuadrat</a></li>
+             
+              <li><a href="#ch2-Fungsi3" class="submenu-link">2.3 Fungsi Eksponensial</a></li>
+
+              <li><a href="#ch2-Pertumbuhan" class="submenu-link">2.4 Pertumbuhan Fungsi</a></li>
+            
+              <li><a href="#ch2-Meningkat" class="submenu-link">2.5 Fungsi Meningkat</a></li>
+
+              <li><a href="#ch2-Menurun" class="submenu-link">2.6 Fungsi Menurun</a></li>
+
+              <li><a href="#ch2-Stabilitas" class="submenu-link">2.7 Stabilitas Fungsi</a></li>
+
+              <li><a href="#ch2-Stabil" class="submenu-link">2.8 Perubahan Stabil</a></li>
+              
+              <li><a href="#ch2-Tidak-stabil" class="submenu-link">2.9 Perubahan Tidak Stabil</a></li>
+
+              <li><a href="#ch2-Kecil" class="submenu-link">2.10 Interpretasi Input Kecil</a></li>
+              
+              <li><a href="#ch2-Besar" class="submenu-link">2.11 Interprestasi lnput Besar</a></li>
+              
+              <li><a href="#ch2-Maksimum" class="submenu-link">2.12 Titik Kritis Maksimum</a></li>
+
+              <li><a href="#ch2-Minimum" class="submenu-link">2.13 Titik Kritis Minimum</a></li>
+
+              <li><a href="#ch2-Belok" class="submenu-link">2.14 Titik Belok</a></li>
+
+              <li><a href="#ch2-Definisi" class="submenu-link">2.15 Definisi Limit</a></li>
+
+              <li><a href="#ch2-Kiri" class="submenu-link">2.16 Limit Kiri dan Limit Kanan</a></li>
+
+              <li><a href="#ch2-Sifat" class="submenu-link">2.17 Sifat-Sifat Limit</a></li>
+
+              <li><a href="#ch2-Hingga" class="submenu-link">2.18 Limit Hingga dan Limit Tak HIngga</a></li>
+
+              <li><a href="#ch2-Titik" class="submenu-link">2.19 Titik Kritis Fungsi dan Karakteristik Drafik</a></li>
+
+              <li><a href="#ch2-Representasi" class="submenu-link">2.20 Representasi dan Metodologi Penentuan Limit</a></li>
+
+              <li><a href="#ch2-interpretasi-perilaku" class="submenu-link">2.21 Interpretasi Perilaku Fungsi di Sekitar Titik Kritis</a></li>
+              
+              <li><a href="#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok3.html" class="sidebar-link"><i
                   class="bi bi-3-circle sidebar-link-icon"></i>Bab 3 — Kekontinuan Fungsi</a>
               <ul class="submenu list-unstyled">
-                <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
-                <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
-                <li><a href="kelompok3.html#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok3.html#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+                <li><a href="#ch3-definisi" class="submenu-link">3.1 Limit Rasional & Irasional</a></li>
+                <li><a href="#ch3-limit-tak-hingga" class="submenu-link">3.2 Limit Tak Hingga</a></li>
+                <li><a href="#ch3-diskontinuitas" class="submenu-link">3.3 Diskontinuitas</a></li>
+                <li><a href="#ch3-perilaku" class="submenu-link">3.4 Perilaku Limit sebagai Indikator Kestabilan</a></li>
+                <li><a href="#ch3-stabilitas" class="submenu-link">3.5 Stabilitas Model Matematis</a></li>
+                <li><a href="#ch3-evaluasi-limit-pada-titik-kritis" class="submenu-link">3.6 Evaluasi Limit pada Titik Kritis</a></li>
+                <li><a href="#ch3-interpretasi-limit" class="submenu-link">3.7 Interpretasi dalam Permodelan</a></li>
+                <li><a href="#ch3-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok4.html" class="sidebar-link"><i
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok4.html" class="sidebar-link"><i
                   class="bi bi-4-circle sidebar-link-icon"></i>Bab 4 — Turunan (Diferensial)</a>
               <ul class="submenu list-unstyled">
-                <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
-                <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
-                <li><a href="kelompok4.html#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok4.html#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+                <li><a href="#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
+                <li><a href="#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
+                <li><a href="#ch4-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu open"><a href="kelompok5.html" class="sidebar-link active"><i
-                  class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Aplikasi Turunan</a>
+          </li>
+          <li class="sidebar-item has-submenu open">
+            <a href="kelompok5.html" class="sidebar-link active"><i
+                  class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Pendekatan Numerik</a>
               <ul class="submenu list-unstyled">
                 <li><a href="#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
                 <li><a href="#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
@@ -102,85 +161,91 @@
                 <li><a href="#ch5-latihan" class="submenu-link">📝 Latihan Soal</a></li>
                 <li><a href="#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok6.html" class="sidebar-link"><i
-                  class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
-              <ul class="submenu list-unstyled">
-                <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
-                <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
-                <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-              </ul>
-            </li>
-            <!-- chapter 7 -->
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok6.html" class="sidebar-link"><i class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
+              <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
+              <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <!-- chapter 7 -->
           <li class="sidebar-item has-submenu">
             <a href="kelompok7.html" class="sidebar-link">
-              <i class="bi bi-7-circle sidebar-link-icon"></i>
-              Bab 7 — Aplikasi Integral
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
-              <li><a href="kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
-              <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
+              
+                <i class="bi bi-7-circle sidebar-link-icon"></i>
+                Bab 7 — Aplikasi Integral
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok7.html#ch7-max-min" class="submenu-link">7.1 Menentukan titik maksimum dan minimum</a></li>
+                <li><a href="kelompok7.html#ch7-optimasi" class="submenu-link">7.2 Menentukan titik stasioner</a></li>
+                <li><a href="kelompok7.html#ch7-optimasi2" class="submenu-link">7.3 Penerapan Optimasi</a></li>
+                <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
           </li>
 
           <!-- chapter 8 -->
           <li class="sidebar-item has-submenu">
-            <a href="kelompok8.html" class="sidebar-link">
-              <i class="bi bi-8-circle sidebar-link-icon"></i>
-              Bab 8 — Deret Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
-              <li><a href="kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
-              <li><a href="kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+              <a href="kelompok8.html" class="sidebar-link"><i class="bi bi-8-circle sidebar-link-icon"></i>Bab 8 — Penerapan Turunan dan Integral Tak Tentu</a>
+              <ul class="submenu list-unstyled overflow-auto pe-2 ">
+                <li><a href="#ch8-penerapan_turunan" class="submenu-link">8.1 Penerapan Turunan</a></li>
+                <li><a href="#ch8-evaluasi_dengan_metode_berbeda" class="submenu-link">8.2 Evaluasi Dengan Metode Berbeda</a></li>
+                <li><a href="#ch8-pengambilan_keputusan" class="submenu-link">8.3 Pengambilan Keputusan Matematis</a></li>
+                <li><a href="#ch8-integral_tak_tentu" class="submenu-link">8.4 Integral Tak Tentu</a></li>
+                <li><a href="#ch8-hubungan_integral_dan_turunan" class="submenu-link">8.5 Hubungan Integral dan Turunan</a></li>
+                <li><a href="#ch8-interpretasi_konstanta_integrasi" class="submenu-link">8.6 Interpretasi Konstanta Integrasi</a></li>
+                <li><a href="#ch8-integral_tak_tentu_Konsep_akumulasi_perubahan" class="submenu-link">8.7 Integral Tak Tentu Dalam Konsep Akumulasi Perubahan</a></li>
+                <li><a href="#ch8-videoPenerapanTurunan" class="submenu-link">🎬 Video Materi Penerapan Turunan</a></li>
+                <li><a href="#ch8-videoIntegralTakTentu" class="submenu-link">🎬 Video Materi Integral Tak Tentu</a></li>
+                <li><a href="#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch8-kalkulatorPenerapanTurunan" class="submenu-link">🧮 Kalkulator Penerapan Turunan</a></li>
+                <li><a href="#ch8-kalkulatorIntegralTakTentu" class="submenu-link">🧮 Kalkulator Integral Tak Tentu</a></li>
+              </ul>
+            </li>
 
           <!-- chapter 9 -->
           <li class="sidebar-item has-submenu">
             <a href="kelompok9.html" class="sidebar-link">
               <i class="bi bi-9-circle sidebar-link-icon"></i>
-              Bab 9 — Integral Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
-              <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
-              <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
+                Bab 9 — Integral Tentu dan Tak Tentu
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Integral Tentu dan Tak Tentu</a>
+                </li>
+                <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Pendekatan Data Kontinu</a>
+                </li>
+                <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
           </li>
-          </ul>
-        </nav>
-        <div class="sidebar-footer">
-          <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
-          <div class="progress sidebar-progress mt-2">
-            <div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div>
-          </div>
-          <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
-        </div>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
+        <div class="progress sidebar-progress mt-2"><div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div></div>
+        <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
       </div>
-    </aside>
+    </div>
+  </aside>
 
     <main class="content-area" id="mainContent">
       <div class="content-inner">
         <section id="chapter-5" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
           <div class="chapter-header">
             <div class="chapter-number">Bab 5</div>
-            <h2 class="chapter-title">Aplikasi Turunan</h2>
+            <h2 class="chapter-title">Pendekatan Numerik Dan Turunan</h2>
             <p class="chapter-meta">
               <span class="chapter-group-badge">Kelompok 5</span>
-              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Optimasi</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Penjelasan</span>
             </p>
-            <p class="chapter-desc">Turunan memiliki berbagai aplikasi nyata: mencari nilai ekstrem, menganalisis gerak,
-              hingga memecahkan masalah optimasi.</p>
+            <p class="chapter-desc">Pendekatan numerik adalah metode untuk menyelesaikan masalah matematika menggunakan perhitungan angka 
+              secara bertahap (aproksimasi) ketika solusi eksak sulit atau tidak dapat diperoleh secara langsung.</p>
           </div>
 
           <div class="card mb-4"
@@ -191,37 +256,638 @@
                 style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 5</strong>
             </div>
             <div class="card-body py-3">
-              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 5</strong> — Isi nama
-                anggota kelompok di sini.</div>
-            </div>
-          </div>
-
-          <div id="ch5-max-min">
-            <h3 class="subsection-title">5.1 Nilai Maksimum &amp; Minimum</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                5</strong><br>Isi dengan definisi titik kritis, uji turunan pertama, uji turunan kedua, nilai ekstrem
-              lokal dan global.</div>
-            <p><em>[Kelompok 5: isi penjelasan tentang nilai maksimum dan minimum]</em></p>
-            <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
-              <p><em>[Kelompok 5: Tambahkan teorema atau definisi penting di sini]</em></p>
-              <footer>— Teorema</footer>
-            </blockquote>
-            <div class="concept-card mt-3">
-              <div class="concept-card-header">Uji Turunan Pertama</div>
-              <div class="concept-card-body">
-                <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 5</strong>
+              <br>
+                <li>Tessar Febriansyah</li>
+                <li>Luis Marwin</li>
+                <li>Wilson Fernando</li>
               </div>
             </div>
           </div>
 
-          <div id="ch5-optimasi" class="mt-5">
-            <h3 class="subsection-title">5.2 Optimasi</h3>
+          <div id="ch5-max-min">
+            <h3 class="subsection-title">5.1 Pendekatan Numerik Nilai Approx</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Apa Itu Pendekatan Numerik?
+                </strong><br>Pendekatan numerik adalah cara menghitung suatu nilai (misalnya turunan) dengan menggunakan angka-angka pendekatan, bukan hasil rumus yang pasti. Disini terdapat 3 cara 
+                             mementukan nilai approx/aproksimasi yaitu dengan Forward Difference, Backward Difference, dan Central Difference
+                            </div>
+            <p>
+              <em><strong>1. Metode Fordward  :</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
+
+               $$f'(x) \approx \frac{f(x + h) - f(x)}{h}$$
+            </p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f'(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Turunan Pertama Fungsi f terhadap x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>h</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Perubahan kecil pada x (misalnya 0.001)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x + h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x + h</td>
+                  </tr>
+                  
+                </table>
+              </em>
+            </p>
+          </blockquote>
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Contoh Soal Latihan Forward Difference</div>
+              <div class="concept-card-body">
+                <p class="mb-0"><em>
+                  <tr>
+                    <td> Kerjakanlah Contoh Soal Dengan </td>
+                  </tr>
+                  <br>
+                
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X³     ||</td>
+                   
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>1     ||</td>
+
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>H</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>0.2</td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>Cara Pengerjaan</td> 
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(1) = 1³ = "1" </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x + h) = 1 + 2 = 1,2 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f(1,2) = 1,2³ = "1,728" </td>
+                  </tr>
+                  <br>
+
+                  $$f'(x) \approx \frac{f(1,728) - f(1)}{0,2}$$
+                  $$f'(x) = 3,64 $$
+                  
+                </em></p>
+              </div>
+            </div><br><br>         
+
+          <p>
+              <em><strong>2. Metode Backward  :</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
+
+               $$f'(x) \approx \frac{f(x) - f(x - h)}{h}$$
+            </p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f'(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Turunan Pertama Fungsi f terhadap x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>h</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Perubahan kecil pada x (misalnya 0.001)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x - h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x - h</td>
+                  </tr>
+                  
+                </table>
+              </em>
+            </p>
+          </blockquote>
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Contol Soal Latihan Backward Difference</div>
+              <div class="concept-card-body">
+                <p class="mb-0"><em>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X⁴     ||
+                  </td>
+                   
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>3     ||</td>
+
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>H</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>0.1</td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>Cara Pengerjaan</td> 
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(1) = 3⁴ = "81" </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x - h) = 3 - 0,1 = 2,9 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f(2,9) = 2,9⁴ = "70,7281" </td>
+                  </tr>
+                  <br>
+
+                  $$f'(x) \approx \frac{f(81) - f(70,7281)}{0,1}$$
+                  $$f'(x) = 102,719 $$
+                </em></p>
+              </div>
+            </div><br><br>
+          
+            <p>
+              <em><strong>3. Metode Central  :</em>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              
+
+               $$f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}$$
+            </p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f'(x)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Turunan Pertama Fungsi f terhadap x</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>h</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Perubahan kecil pada x (misalnya 0.001)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x + h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x + h</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(x - h)</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai fungsi f di titik x - h</td>
+                  </tr>
+
+                  
+                </table>
+              </em>
+            </p>
+              </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Contoh Soal Latihan Central Difference</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>
+                    <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X³ + 2X     ||</td>
+                   
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>X</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>2     ||</td>
+
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>H</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>0.1</td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>Cara Pengerjaan</td> 
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x + h) = 2 + 0,1 = 2,1 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f(2,1) = 2,1³ + 2 x 2,1 = "13,461" </td>
+                  </tr>
+                  <br>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong> f (x - h) = 2 - 0,1 = 1,9 </td>
+                  </tr>
+                  <br>
+
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>f(1,9) = 1,9³ + 2 x 1,9 = "10,659" </td>
+                  </tr>
+                  <br>
+
+                  $$f'(x) \approx \frac{f(13,461) - f(10,659)}{2 x 0,1}$$
+                  
+                  $$f'(x) \approx \frac{2,802}{2 x 0,1}$$
+
+                  $$ \approx 14,01 $$
+                </em></p>
+                </div>
+              </div>
+            </div><br><br>
+
+          <div id="ch5-max-min">
+            <h3 class="subsection-title">5.2 Pendekatan Numerik Nilai True dan Galat (Error)</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                5</strong><br>Isi dengan langkah-langkah penyelesaian masalah optimasi, contoh kasus nyata (luas,
-              volume, biaya).</div>
-            <p><em>[Kelompok 5: isi penjelasan langkah-langkah optimasi]</em></p>
-          </div>
+                5</strong><br>Metode analitik adalah cara menyelesaikan masalah
+                matematika menggunakan rumus dan aturan
+                matematika secara langsung untuk mendapatkan
+                hasil yang tepat (eksak) tanpa perkiraan. <br><br>Galat (error) adalah selisih antara nilai eksak (true
+value) dengan nilai pendekatan (approximation)</div>
+            <p><em>
+              
+              Rumus Numerik Nilai True
+              $$x^n \rightarrow n x^{n-1}$$
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>x</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Titik di mana turunan dihitung</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>n</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Bilangan Pangkat</td>
+                  </tr>
+      
+
+                  
+                </table>
+              </em>
+            </p>
+              </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div><br><br>
+
+              <p><em>
+              
+              Rumus Error (Galat)
+              $$\text{Error} = |x_{\text{true}} - x_{\text{approx}}|$$
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              <em>
+                <strong>Keterangan</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>$$\text{Error}$$</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai galat/kesalahan mutlak (selisih murni)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>$$x_{\text{true}} $$</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai Sebenarnya</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;"><strong>$$x_{\text{approx}}$$</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai Aproksimasi</td>
+                  </tr>
+      
+
+                  
+                </table>
+              </em>
+            </p>
+              </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div><br><br>
+
+              <div id="ch5-max-min">
+            <h3 class="subsection-title">5.3 Kriteria metode numerik yang baik</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                5</strong><br>Kriteria metode numerik yang baik adalah ukuran untuk menilai apakah suatu metode pendekatan dalam perhitungan sudah layak digunakan atau tidak. suatu metode dikatakan baik jika memenuhi tiga hal utama yaitu akurat, stabil, dan efisien.
+</div>
+            <p><em>
+              
+                          
+            Akurat
+               $$\text{Error} = |x_{\text{true}} - x_{\text{approx}}|$$
+
+            
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+            <i class="bi bi-quote quote-icon"></i>
+            <p>
+              Akurat adalah ukuran yang menunjukkan “Seberapa dekat hasil perhitungan dengan nilai sebenarnya”. 
+              Semakin kecil selisih (Error) antara hasil pendekatan dan nilai asli, maka hasil tersebut semakin akurat.
+              <br><br>
+              
+              <em>
+                <strong>Keterangan Komponen:</strong>
+                <table style="border: none; margin-top: 5px; font-style: italic;">
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">Error</td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai galat mutlak (selisih murni antara nilai asli dan pendekatan)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">x<sub>approx</sub></td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai hasil pendekatan / hasil perhitungan metode numerik</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-right: 15px; vertical-align: top;">x<sub>true</sub></td>
+                    <td style="padding-right: 10px; vertical-align: top;">=</td>
+                    <td>Nilai asli / eksak dari perhitungan matematika murni</td>
+                  </tr>
+                </table>
+              </em>
+            </p>
+          </blockquote>
+              <div class="concept-card mt-3">
+                <div class="concept-card-header">Uji Turunan Pertama</div>
+                <div class="concept-card-body">
+                  <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                </div>
+              </div><br><br>
+
+              <p><em>
+              
+              Stabil
+              $$h \downarrow \implies \text{hasil mendekati nilai asli secara konsisten}$$
+            
+            
+            </em></p>
+
+            <blockquote class="blockquote-def">
+              <i class="bi bi-quote quote-icon"></i>
+              <p>
+                Stabil adalah ukuran yang menunjukkan seberapa konsisten hasil perhitungan ketika terjadi perubahan kecil pada input atau langkah (seperti nilai <em>h</em>). Jika perubahan kecil tidak menyebabkan hasil berubah drastis, maka metode tersebut dikatakan stabil.
+                <br><br>
+                
+                <em>
+                  <strong>Kesimpulan Logika:</strong>
+                  <table style="border: none; margin-top: 5px; font-style: italic;">
+                    <tr>
+                      <td style="padding-right: 15px; vertical-align: top;">Perubahan kecil input</td>
+                      <td style="padding-right: 10px; vertical-align: top;">&rarr;</td>
+                      <td>Perubahan kecil hasil</td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 15px; vertical-align: top;">Nilai h diperkecil (h &darr;)</td>
+                      <td style="padding-right: 10px; vertical-align: top;">&rArr;</td>
+                      <td>Hasil mendekati nilai asli secara konsisten</td>
+                    </tr>
+                  </table>
+                </em>
+              </p>
+            </blockquote>
+                <div class="concept-card mt-3">
+                  <div class="concept-card-header">Uji Turunan Pertama</div>
+                  <div class="concept-card-body">
+                    <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                  </div>
+                </div>
+
+                <p><em><br><br>
+              
+              Efisiensi
+              $$\text{Efisiensi} = \frac{\text{hasil (akurasi)}}{\text{waktu / langkah}}$$
+            
+            
+            </em></p>
+
+           <blockquote class="blockquote-def">
+          <i class="bi bi-quote quote-icon"></i>
+          <p>
+            Efisien adalah ukuran yang menunjukkan seberapa hemat suatu metode dalam penggunaan waktu dan jumlah perhitungan. Metode dikatakan efisien jika dapat memberikan hasil yang cukup baik dengan langkah yang lebih sedikit atau proses yang lebih cepat.
+            <br><br>
+            
+            <em>
+              <strong>Secara Konsep Komputasi:</strong>
+              <table style="border: none; margin-top: 5px; font-style: italic;">
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top;">Langkah Perhitungan</td>
+                  <td style="padding-right: 10px; vertical-align: top;">=</td>
+                  <td>Sedikit / minimal</td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top;">Waktu Eksekusi</td>
+                  <td style="padding-right: 10px; vertical-align: top;">=</td>
+                  <td>Cepat (Running time singkat)</td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top;">Hasil Pendekatan</td>
+                  <td style="padding-right: 10px; vertical-align: top;">=</td>
+                  <td>Cukup baik dan memenuhi toleransi</td>
+                </tr>
+              </table>
+            </em>
+          </p>
+        </blockquote>
+                        <div class="concept-card mt-3">
+                  <div class="concept-card-header">Uji Turunan Pertama</div>
+                  <div class="concept-card-body">
+                    <p class="mb-0"><em>[Kelompok 5: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                  </div>
+                </div>
+
+
+                
+
+            </div><br><br>
+
+            <div id="ch5-max-min">
+            <h3 class="subsection-title">5.4 Interpretasi hasil
+turunan sebagai
+laju perubahan</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                5</strong><br>Interpretasi hasil turunan sebagai laju perubahan adalah cara memahami
+nilai turunan sebagai ukuran seberapa cepat suatu besaran berubah
+terhadap variabelnya. Nilai turunan menunjukkan perubahan kecil pada
+nilai fungsi ketika variabel inputnya berubah sedikit, sehingga dapat
+digunakan untuk menggambarkan kecepatan perubahan suatu fenomena,
+seperti kecepatan, pertumbuhan, atau penurunan dalam berbagai konteks.</div>
+            <p>
+              
+            </p>
+
+          <blockquote class="blockquote-def">
+  <i class="bi bi-quote quote-icon"></i>
+  <p>
+    
+    
+    <strong>A. Tiga Skema Rumus Pendekatan Numerik:</strong><br>
+    $$\text{1. Beda Maju (Forward): } f'(x) \approx \frac{f(x + h) - f(x)}{h}$$
+    $$\text{2. Beda Mundur (Backward): } f'(x) \approx \frac{f(x) - f(x - h)}{h}$$
+    $$\text{3. Beda Pusat (Central): } f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}$$
+    <br>
+    
+    <em>
+      <strong>Pengertian Variabel Simbol:</strong>
+      <table style="border: none; margin-top: 5px; font-style: italic;">
+        <tr>
+          <td style="padding-right: 15px; vertical-align: top;">f'(x)</td>
+          <td style="padding-right: 10px; vertical-align: top;">&approx;</td>
+          <td>Nilai laju perubahan sesaat (turunan pertama) hasil pendekatan komputer.</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 15px; vertical-align: top;">x</td>
+          <td style="padding-right: 10px; vertical-align: top;">=</td>
+          <td>Titik evaluasi utama atau posisi kondisi saat ini.</td>
+        </tr>
+        <tr>
+          <td style="padding-right: 15px; vertical-align: top;">h</td>
+          <td style="padding-right: 10px; vertical-align: top;">=</td>
+          <td>Ukuran langkah (step size) atau interval perubahan kecil pada input.</td>
+        </tr>
+      </table>
+    </em>
+    <br>
+    
+    <strong>B. Panduan Universal Interpretasi Hasil:</strong>
+    <br>
+    Untuk mengartikan angka hasil hitungan:
+    $$f'(x) = L$$
+    gunakan kalimat baku di bawah ini:
+    <br>
+    <table style="border: none; margin-top: 5px; font-weight: bold; background-color: rgba(0,0,0,0.03); padding: 12px; border-radius: 5px; width: 100%;">
+      <tr>
+        <td>"Pada saat variabel input berada di titik (x), maka setiap kenaikan 1 satuan pada input akan menyebabkan variabel output (f(x)) bertambah/berubah sebesar (L) satuan."</td>
+      </tr>
+    </table>
+  </p>
+</blockquote><br><br>
+
+
+<div id="ch5-max-min">
+            <h3 class="subsection-title">5.5 Penerapan Turunan Numerik Dalam Bidang IT </h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
+                5</strong><br>
+  Di bidang IT, turunan numerik sangat penting karena komputer tidak dapat memproses persamaan kalkulus analitis yang kompleks secara langsung, melainkan harus menggunakan pendekatan algoritma aritmatika untuk menghitung laju perubahan data secara real-time. Konsep ini menjadi fondasi utama dalam kecerdasan buatan (Machine Learning) untuk memperbarui bobot algoritma lewat perhitungan gradien error, dalam pengembangan game untuk memproses pergerakan animasi serta simulasi fisika yang mulus, hingga dalam pengolahan citra digital untuk mendeteksi tepi objek berdasarkan perubahan intensitas warna pixel. Melalui pendekatan numerik, sistem komputasi mampu melakukan jutaan kalkulasi perubahan data yang masif secara akurat, stabil, dan efisien hanya dalam hitungan milidetik.
+</p></div>
+            <p>
+              
+            </p>
+
+          <blockquote class="blockquote-def">
+  <i class="bi bi-quote quote-icon"></i>
+  <p>
+    <strong>Penerapan Turunan dalam Bidang IT: Pentingnya Turunan Numerik Di Bidang IT</strong>
+    <br><br>
+    Turunan numerik memegang peranan krusial dalam pengembangan perangkat lunak dan teknologi informasi melalui tiga pilar kriteria utama:
+    <br><br>
+
+    <table style="border: none; width: 100%; font-size: 0.95em; border-collapse: collapse;">
+      <tr style="background-color: rgba(0,0,0,0.03);">
+        <td style="padding: 10px; font-weight: bold; width: 20%; vertical-align: top; color: #00BCD4;">🎯 Akurat</td>
+        <td style="padding: 10px; vertical-align: top;">
+          Turunan numerik memungkinkan perangkat lunak untuk mencapai tingkat presisi yang tinggi. Turunan juga digunakan untuk menghitung error skala terkecil hingga terbesar.
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; font-weight: bold; width: 20%; vertical-align: top; color: #2196F3;">⚓ Stabil</td>
+        <td style="padding: 10px; vertical-align: top;">
+          Sifat stabil ini sering kali dipakai dalam Simulasi Fisika Game, atau pun animasi seperti karakter melakukan gerakan yang cepat. Perhitungan kecepatannya tetap sehingga tidak terlihat patah-patah.
+          <br>
+          <span style="font-style: italic; font-size: 0.9em; color: #666;">
+            Logika fisis: $$h \downarrow \implies \text{hasil mendekati nilai asli secara konsisten}$$ (perubahan kecil input &rarr; perubahan kecil hasil).
+          </span>
+        </td>
+      </tr>
+      <tr style="background-color: rgba(0,0,0,0.03);">
+        <td style="padding: 10px; font-weight: bold; width: 20%; vertical-align: top; color: #FFEB3B;">⚡ Efisien</td>
+        <td style="padding: 10px; vertical-align: top;">
+          Turunan numerik dirancangkan agar dapat diproses oleh komputer dengan sangat cepat. Dengan Turunan Numerik ini juga komputer bisa melakukan jutaan perhitungan perubahan dalam hitungan milidetik.
+        </td>
+      </tr>
+    </table>
+  </p>
+</blockquote>
+
+          
+          
+          
 
           <div id="ch5-contoh" class="mt-5">
             <h3 class="subsection-title">Contoh Soal</h3>
@@ -255,7 +921,7 @@
               pembelajaran Aplikasi Turunan di sini.</div>
             <div class="ratio ratio-16x9 mt-3"
               style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 5" allowfullscreen
+              <iframe src="https://www.youtube.com/embed/" title="Video Pembelajaran Bab 5" allowfullscreen
                 style="border:0;"></iframe>
             </div>
             <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video

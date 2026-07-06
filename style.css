@@ -936,3 +936,10 @@ code, pre, kbd, .formula-display {
   color: white;
   border-radius: 6px;
 }
+
+main p,
+main li {
+    text-align: justify;
+    line-height: 1.8;
+    text-justify: inter-word;
+}

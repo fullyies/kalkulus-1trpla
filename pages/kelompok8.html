@@ -4,30 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bab 5 — Aplikasi Turunan | Kalkulus 1</title>
+  <title>Bab 8 — Evaluasi Turunan & Integral Tak Tentu | Kalkulus 1</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
+
   <nav class="navbar navbar-expand-lg top-navbar sticky-top" id="topNavbar">
     <div class="container-fluid px-3 px-lg-4">
-      <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#sidebarOffcanvas"><i class="bi bi-list"></i></button>
+      <button class="btn btn-sm sidebar-toggle me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"data-bs-target="#sidebarOffcanvas">
+        <i class="bi bi-list"></i>
+      </button>
+
       <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
         <span class="brand-icon"><i class="bi bi-journal-text"></i></span>
-        <span class="brand-text"><span class="brand-title">Kalkulus 1</span><span
-            class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span></span>
+        <span class="brand-text">
+          <span class="brand-title">Kalkulus 1</span>
+          <span class="brand-sub d-none d-md-inline">Modul Pembelajaran Digital</span>
+        </span>
       </a>
+
       <div class="ms-auto d-flex align-items-center gap-2">
-        <div class="search-wrap d-none d-md-flex"><i class="bi bi-search search-icon"></i><input type="search"
-            id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..." /></div>
-        <button class="btn btn-sm theme-toggle" id="themeToggle"><i class="bi bi-moon-stars-fill"
-            id="themeIcon"></i></button>
+        <div class="search-wrap d-none d-md-flex"><i class="bi bi-search search-icon"></i>
+          <input type="search" id="sidebarSearch" class="form-control form-control-sm search-input" placeholder="Cari topik..." />
+        </div>
+        <button class="btn btn-sm theme-toggle" id="themeToggle"><i class="bi bi-moon-stars-fill" id="themeIcon"></i></button>
+        
         <div class="d-none d-lg-flex gap-1">
           <button class="btn btn-sm nav-arrow" id="prevChapterBtn"><i class="bi bi-chevron-left"></i></button>
           <button class="btn btn-sm nav-arrow" id="nextChapterBtn"><i class="bi bi-chevron-right"></i></button>
@@ -35,65 +41,127 @@
       </div>
     </div>
   </nav>
+
   <div class="offcanvas offcanvas-start sidebar-offcanvas" tabindex="-1" id="sidebarOffcanvas">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title"><i class="bi bi-journal-text me-2"></i>Kalkulus 1</h6><button type="button"
         class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
+
     <div class="offcanvas-body p-0">
       <div class="sidebar-inner" id="sidebarInnerMobile"></div>
     </div>
   </div>
+
   <div class="main-wrapper">
     <aside class="sidebar d-none d-lg-flex flex-column" id="mainSidebar">
-      <div class="sidebar-inner" id="sidebarInnerDesktop">
-        <div class="sidebar-section-label">Navigasi</div>
-        <nav id="sidebar-nav">
-          <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
-            <li class="sidebar-item"><a href="../index.html#pengantar" class="sidebar-link"><i
-                  class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a></li>
-            <li class="sidebar-item has-submenu"><a href="kelompok1.html" class="sidebar-link"><i
-                  class="bi bi-1-circle sidebar-link-icon"></i>Bab 1 — Bilangan Real &amp; Fungsi</a>
+    <div class="sidebar-inner" id="sidebarInnerDesktop">
+      <div class="sidebar-section-label">Navigasi</div>
+      <nav id="sidebar-nav">
+        <ul class="sidebar-menu list-unstyled mb-0" id="sidebarMenuDesktop">
+          <li class="sidebar-item"><a href="../index.html#pengantar" class="sidebar-link"><i class="bi bi-book-half sidebar-link-icon"></i>Kata Pengantar</a></li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok1.html" class="sidebar-link"><i class="bi bi-1-circle sidebar-link-icon"></i>
+                Bab 1 — Fungsi Pemetaan
+              </a>
               <ul class="submenu list-unstyled">
-                <li><a href="kelompok1.html#ch1-bilangan" class="submenu-link">1.1 Sistem Bilangan Real</a></li>
-                <li><a href="kelompok1.html#ch1-fungsi" class="submenu-link">1.2 Konsep Fungsi</a></li>
-                <li><a href="kelompok1.html#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok1.html#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok1.html#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+                <li><a href="#ch1-bilangan" class="submenu-link">1.1 Konsep Fungsi</a></li>
+                <li><a href="#ch1-fungsi" class="submenu-link">1.2 Contoh Domain, Kodomain, dan Range</a></li>
+                <li><a href="#ch1-representasi" class="submenu-link">1.3 Representasi Fungsi</a></li>
+                <li><a href="#ch1-linear" class="submenu-link">1.4 Fungsi Linear dan Nonlinear</a></li>
+                <li><a href="#ch1-komposisi" class="submenu-link">1.5 Komposisi Fungsi</a></li>
+                <li><a href="#ch1-perubahan-input" class="submenu-link">1.6 Perubahan Input</a></li>
+                <li><a href="#ch1-laju-perubahan" class="submenu-link">1.7 Laju Perubahan</a></li>
+                <li><a href="#ch1-sensitivitas" class="submenu-link">1.8 Sensitivitas Fungsi Linear dan Kuadrat</a></li>
+                <li><a href="#ch1-analisis" class="submenu-link">1.9 Analisis Numerik Sederhana</a></li>
+                <li><a href="#ch1-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch1-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch1-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch1-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok2.html" class="sidebar-link"><i
-                  class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
-              <ul class="submenu list-unstyled">
-                <li><a href="kelompok2.html#ch2-definisi" class="submenu-link">2.1 Definisi Limit</a></li>
-                <li><a href="kelompok2.html#ch2-sifat" class="submenu-link">2.2 Sifat-Sifat Limit</a></li>
-                <li><a href="kelompok2.html#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok2.html#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok2.html#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-              </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok3.html" class="sidebar-link"><i
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok2.html" class="sidebar-link"><i class="bi bi-2-circle sidebar-link-icon"></i>Bab 2 — Limit Fungsi</a>
+            <ul class="submenu list-unstyled overflow-auto pe-2 ">
+              <li><a href="#ch2-Fungsi1" class="submenu-link">2.1 Fungsi Linear</a></li>
+          
+              <li><a href="#ch2-Fungsi2" class="submenu-link">2.2 Fungsi Kuadrat</a></li>
+             
+              <li><a href="#ch2-Fungsi3" class="submenu-link">2.3 Fungsi Eksponensial</a></li>
+
+              <li><a href="#ch2-Pertumbuhan" class="submenu-link">2.4 Pertumbuhan Fungsi</a></li>
+            
+              <li><a href="#ch2-Meningkat" class="submenu-link">2.5 Fungsi Meningkat</a></li>
+
+              <li><a href="#ch2-Menurun" class="submenu-link">2.6 Fungsi Menurun</a></li>
+
+              <li><a href="#ch2-Stabilitas" class="submenu-link">2.7 Stabilitas Fungsi</a></li>
+
+              <li><a href="#ch2-Stabil" class="submenu-link">2.8 Perubahan Stabil</a></li>
+              
+              <li><a href="#ch2-Tidak-stabil" class="submenu-link">2.9 Perubahan Tidak Stabil</a></li>
+
+              <li><a href="#ch2-Kecil" class="submenu-link">2.10 Interpretasi Input Kecil</a></li>
+              
+              <li><a href="#ch2-Besar" class="submenu-link">2.11 Interprestasi lnput Besar</a></li>
+              
+              <li><a href="#ch2-Maksimum" class="submenu-link">2.12 Titik Kritis Maksimum</a></li>
+
+              <li><a href="#ch2-Minimum" class="submenu-link">2.13 Titik Kritis Minimum</a></li>
+
+              <li><a href="#ch2-Belok" class="submenu-link">2.14 Titik Belok</a></li>
+
+              <li><a href="#ch2-Definisi" class="submenu-link">2.15 Definisi Limit</a></li>
+
+              <li><a href="#ch2-Kiri" class="submenu-link">2.16 Limit Kiri dan Limit Kanan</a></li>
+
+              <li><a href="#ch2-Sifat" class="submenu-link">2.17 Sifat-Sifat Limit</a></li>
+
+              <li><a href="#ch2-Hingga" class="submenu-link">2.18 Limit Hingga dan Limit Tak HIngga</a></li>
+
+              <li><a href="#ch2-Titik" class="submenu-link">2.19 Titik Kritis Fungsi dan Karakteristik Drafik</a></li>
+
+              <li><a href="#ch2-Representasi" class="submenu-link">2.20 Representasi dan Metodologi Penentuan Limit</a></li>
+
+              <li><a href="#ch2-interpretasi-perilaku" class="submenu-link">2.21 Interpretasi Perilaku Fungsi di Sekitar Titik Kritis</a></li>
+              
+              <li><a href="#ch2-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="#ch2-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="#ch2-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok3.html" class="sidebar-link"><i
                   class="bi bi-3-circle sidebar-link-icon"></i>Bab 3 — Kekontinuan Fungsi</a>
               <ul class="submenu list-unstyled">
-                <li><a href="kelompok3.html#ch3-definisi" class="submenu-link">3.1 Fungsi Kontinu</a></li>
-                <li><a href="kelompok3.html#ch3-teorema" class="submenu-link">3.2 Teorema Nilai Antara</a></li>
-                <li><a href="kelompok3.html#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok3.html#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok3.html#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+                <li><a href="#ch3-definisi" class="submenu-link">3.1 Limit Rasional & Irasional</a></li>
+                <li><a href="#ch3-limit-tak-hingga" class="submenu-link">3.2 Limit Tak Hingga</a></li>
+                <li><a href="#ch3-diskontinuitas" class="submenu-link">3.3 Diskontinuitas</a></li>
+                <li><a href="#ch3-perilaku" class="submenu-link">3.4 Perilaku Limit sebagai Indikator Kestabilan</a></li>
+                <li><a href="#ch3-stabilitas" class="submenu-link">3.5 Stabilitas Model Matematis</a></li>
+                <li><a href="#ch3-evaluasi-limit-pada-titik-kritis" class="submenu-link">3.6 Evaluasi Limit pada Titik Kritis</a></li>
+                <li><a href="#ch3-interpretasi-limit" class="submenu-link">3.7 Interpretasi dalam Permodelan</a></li>
+                <li><a href="#ch3-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch3-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch3-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch3-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok4.html" class="sidebar-link"><i
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok4.html" class="sidebar-link"><i
                   class="bi bi-4-circle sidebar-link-icon"></i>Bab 4 — Turunan (Diferensial)</a>
               <ul class="submenu list-unstyled">
-                <li><a href="kelompok4.html#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
-                <li><a href="kelompok4.html#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
-                <li><a href="kelompok4.html#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok4.html#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok4.html#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+                <li><a href="#ch4-definisi" class="submenu-link">4.1 Definisi Turunan</a></li>
+                <li><a href="#ch4-aturan" class="submenu-link">4.2 Aturan Diferensiasi</a></li>
+                <li><a href="#ch4-contoh" class="submenu-link">💡 Contoh Soal</a></li>
+                <li><a href="#ch4-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="#ch4-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch4-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok5.html" class="sidebar-link"><i
-                  class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Aplikasi Turunan</a>
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok5.html" class="sidebar-link"><i
+                  class="bi bi-5-circle sidebar-link-icon"></i>Bab 5 — Pendekatan Numerik</a>
               <ul class="submenu list-unstyled">
                 <li><a href="#ch5-max-min" class="submenu-link">5.1 Nilai Maksimum &amp; Minimum</a></li>
                 <li><a href="#ch5-optimasi" class="submenu-link">5.2 Optimasi</a></li>
@@ -102,205 +170,728 @@
                 <li><a href="#ch5-latihan" class="submenu-link">📝 Latihan Soal</a></li>
                 <li><a href="#ch5-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
               </ul>
-            </li>
-            <li class="sidebar-item has-submenu"><a href="kelompok6.html" class="sidebar-link"><i
-                  class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
-              <ul class="submenu list-unstyled">
-                <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
-                <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
-                <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-                <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-                <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-              </ul>
-            </li>
-            <!-- chapter 7 -->
+          </li>
+          <li class="sidebar-item has-submenu">
+            <a href="kelompok6.html" class="sidebar-link"><i class="bi bi-6-circle sidebar-link-icon"></i>Bab 6 — Integral</a>
+            <ul class="submenu list-unstyled">
+              <li><a href="kelompok6.html#ch6-antiturunan" class="submenu-link">6.1 Antiturunan</a></li>
+              <li><a href="kelompok6.html#ch6-integral-tentu" class="submenu-link">6.2 Integral Tentu</a></li>
+              <li><a href="kelompok6.html#ch6-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+              <li><a href="kelompok6.html#ch6-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+              <li><a href="kelompok6.html#ch6-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+            </ul>
+          </li>
+          <!-- chapter 7 -->
           <li class="sidebar-item has-submenu">
             <a href="kelompok7.html" class="sidebar-link">
-              <i class="bi bi-7-circle sidebar-link-icon"></i>
-              Bab 7 — Aplikasi Integral
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok7.html#ch7-luas" class="submenu-link">7.1 Luas Daerah</a></li>
-              <li><a href="kelompok7.html#ch7-volume" class="submenu-link">7.2 Volume Benda Putar</a></li>
-              <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
+              
+                <i class="bi bi-7-circle sidebar-link-icon"></i>
+                Bab 7 — Aplikasi Integral
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok7.html#ch7-max-min" class="submenu-link">7.1 Menentukan titik maksimum dan minimum</a></li>
+                <li><a href="kelompok7.html#ch7-optimasi" class="submenu-link">7.2 Menentukan titik stasioner</a></li>
+                <li><a href="kelompok7.html#ch7-optimasi2" class="submenu-link">7.3 Penerapan Optimasi</a></li>
+                <li><a href="kelompok7.html#ch7-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok7.html#ch7-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok7.html#ch7-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
           </li>
 
           <!-- chapter 8 -->
           <li class="sidebar-item has-submenu open">
-            <a href="kelompok8.html" class="sidebar-link active">
-              <i class="bi bi-8-circle sidebar-link-icon"></i>
-              Bab 8 — Deret Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok8.html#ch8-deret" class="submenu-link">8.1 Konsep Deret</a></li>
-              <li><a href="kelompok8.html#ch8-uji-kekonvergenan" class="submenu-link">8.2 Uji Kekonvergenan</a></li>
-              <li><a href="kelompok8.html#ch8-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok8.html#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok8.html#ch8-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
-          </li>
+              <a href="kelompok8.html" class="sidebar-link active"><i class="bi bi-8-circle sidebar-link-icon"></i>Bab 8 — Penerapan Turunan dan Integral Tak Tentu</a>
+              <ul class="submenu list-unstyled overflow-auto pe-2 ">
+                <li><a href="#ch8-penerapan_turunan" class="submenu-link">8.1 Penerapan Turunan</a></li>
+                <li><a href="#ch8-evaluasi_dengan_metode_berbeda" class="submenu-link">8.2 Evaluasi Dengan Metode Berbeda</a></li>
+                <li><a href="#ch8-pengambilan_keputusan" class="submenu-link">8.3 Pengambilan Keputusan Matematis</a></li>
+                <li><a href="#ch8-integral_tak_tentu" class="submenu-link">8.4 Integral Tak Tentu</a></li>
+                <li><a href="#ch8-hubungan_integral_dan_turunan" class="submenu-link">8.5 Hubungan Integral dan Turunan</a></li>
+                <li><a href="#ch8-interpretasi_konstanta_integrasi" class="submenu-link">8.6 Interpretasi Konstanta Integrasi</a></li>
+                <li><a href="#ch8-integral_tak_tentu_Konsep_akumulasi_perubahan" class="submenu-link">8.7 Integral Tak Tentu Dalam Konsep Akumulasi Perubahan</a></li>
+                <li><a href="#ch8-videoPenerapanTurunan" class="submenu-link">🎬 Video Materi Penerapan Turunan</a></li>
+                <li><a href="#ch8-videoIntegralTakTentu" class="submenu-link">🎬 Video Materi Integral Tak Tentu</a></li>
+                <li><a href="#ch8-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="#ch8-kalkulatorPenerapanTurunan" class="submenu-link">🧮 Kalkulator Penerapan Turunan</a></li>
+                <li><a href="#ch8-kalkulatorIntegralTakTentu" class="submenu-link">🧮 Kalkulator Integral Tak Tentu</a></li>
+              </ul>
+            </li>
 
           <!-- chapter 9 -->
           <li class="sidebar-item has-submenu">
             <a href="kelompok9.html" class="sidebar-link">
               <i class="bi bi-9-circle sidebar-link-icon"></i>
-              Bab 9 — Integral Tak Hingga
-            </a>
-            <ul class="submenu list-unstyled">
-              <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Antiturunan</a></li>
-              <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Integral Tentu</a></li>
-              <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
-              <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
-              <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
-            </ul>
+                Bab 9 — Integral Tentu dan Tak Tentu
+              </a>
+              <ul class="submenu list-unstyled">
+                <li><a href="kelompok9.html#ch9-antiturunan" class="submenu-link">9.1 Integral Tentu dan Tak Tentu</a>
+                </li>
+                <li><a href="kelompok9.html#ch9-integral-tentu" class="submenu-link">9.2 Pendekatan Data Kontinu</a>
+                </li>
+                <li><a href="kelompok9.html#ch9-video" class="submenu-link">🎬 Video Pembelajaran</a></li>
+                <li><a href="kelompok9.html#ch9-latihan" class="submenu-link">📝 Latihan Soal</a></li>
+                <li><a href="kelompok9.html#ch9-kalkulator" class="submenu-link">🧮 Kalkulator</a></li>
+              </ul>
           </li>
-          </ul>
-        </nav>
-        <div class="sidebar-footer">
-          <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
-          <div class="progress sidebar-progress mt-2">
-            <div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div>
-          </div>
-          <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
-        </div>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
+        <div class="progress sidebar-progress mt-2"><div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div></div>
+        <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
       </div>
-    </aside>
+    </div>
+  </aside>
 
+    <!-- Begin page -->
     <main class="content-area" id="mainContent">
       <div class="content-inner">
         <section id="chapter-8" class="content-section chapter-section" style="border-top:none; padding-top:2rem;">
+          
           <div class="chapter-header">
             <div class="chapter-number">Bab 8</div>
-            <h2 class="chapter-title">Deret Tak Hingga</h2>
+            <h2 class="chapter-title">Evaluasi Turunan & Integral Tak Tentu</h2>
             <p class="chapter-meta">
               <span class="chapter-group-badge">Kelompok 8</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Laju Perubahan</span>
               <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Optimasi</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Titik Ekstrim</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Evaluasi</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Integral Tak Tentu</span>
+              <span class="chapter-topic-badge"><i class="bi bi-tag-fill me-1"></i>Akumulasi</span>
             </p>
-            <p class="chapter-desc">Turunan memiliki berbagai aplikasi nyata: mencari nilai ekstrem, menganalisis gerak,
-              hingga memecahkan masalah optimasi.</p>
+            <p class="chapter-desc">Turunan memiliki berbagai aplikasi nyata: mencari nilai ekstrem, menganalisis laju perubahan, hingga memecahkan masalah optimasi.</p><br>
+            <p class="chapter-desc">Integral tak tentu juga memiliki banyak aplikasi, terutama dalam menghitung luas daerah di bawah kurva dan dalam pemecahan masalah akumulasi.</p>
           </div>
 
-          <div class="card mb-4"
-            style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
-            <div class="card-header"
-              style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
-              <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i><strong
-                style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 8</strong>
+          <div class="card mb-4" style="border-color: var(--clr-border); border-radius:12px; background: var(--clr-surface);">
+            <div class="card-header" style="background: var(--clr-primary-light); border-radius:12px 12px 0 0; padding:.65rem 1.1rem;">
+              <i class="bi bi-people-fill me-2" style="color:var(--clr-primary);"></i><strong style="font-size:.85rem; color:var(--clr-text);">Anggota Kelompok 8</strong>
             </div>
             <div class="card-body py-3">
-              <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 8</strong> — Isi nama
-                anggota kelompok di sini.</div>
+              <ol>
+                <li>Briyan</li>
+                <li>M. Fadhil</li>
+                <li>Reyhanizzan</li>
+              </ol>
             </div>
           </div>
-
-          <div id="ch8-max-min">
-            <h3 class="subsection-title">8.1 Nilai Maksimum &amp; Minimum</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                8</strong><br>Isi dengan definisi titik kritis, uji turunan pertama, uji turunan kedua, nilai ekstrem
-              lokal dan global.</div>
-            <p><em>[Kelompok 8: isi penjelasan tentang nilai maksimum dan minimum]</em></p>
-            <blockquote class="blockquote-def">
-              <i class="bi bi-quote quote-icon"></i>
-              <p><em>[Kelompok 8: Tambahkan teorema atau definisi penting di sini]</em></p>
-              <footer>— Teorema</footer>
+          
+          <!-- Materi -->
+          <div id="ch8-penyelesaian_masalah_terapan">
+            <h3 class="subsection-title">8.A.1 Penyelesaian Masalah Terapan</h3>
+            <p>Penyelesaian Masalah Terapan mencakup tiga sub-topik. Laju perubahan diselesaikan dengan mencari f'(x) lalu substitusi nilai x yang ditanyakan. Optimisasi diselesaikan dengan mencari titik kritis (f'= 0) lalu uji turunan kedua. Penentuan ekstrem memerlukan keduanya untuk membedakan titik maksimum dan minimum lokal.</p>
+            
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Definisi Laju Perubahan</em></li>
+              <p><em>Laju perubahan adalah ukuran seberapa cepat suatu nilai berubah terhadap nilai lain. Sederhananya: jika sesuatu berubah, laju perubahan memberitahu kita seberapa besar perubahan itu terjadi setiap satuan waktu atau variabel.</em></p>
             </blockquote>
+
             <div class="concept-card mt-3">
-              <div class="concept-card-header">Uji Turunan Pertama</div>
+              <div class="concept-card-header">Laju Perubahan</div>
               <div class="concept-card-body">
-                <p class="mb-0"><em>[Kelompok 8: jelaskan uji turunan pertama untuk menentukan titik ekstrem]</em></p>
+                <code class="formula-display">f(x) -> f'(x)</code>
+                <p class="mt-2"><b>keterangan:</b></p>
+                <p>Laju perubahan fungsi f(x) pada titik tertentu dapat ditemukan dengan menghitung turunan pertama f'(x) pada titik tersebut.</p>
               </div>
             </div>
+
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Definisi Titik Ekstrem</em></li>
+              <p><em>Penentuan ekstrem adalah proses menemukan titik puncak dan titik lembah dari sebuah fungsi. Titik puncak disebut maksimum dan titik lembah disebut minimum.</em></p>
+            </blockquote>
+
+            <div class="concept-card mt-3">
+              <div class="concept-card-header">Syarat titik ekstrem</div>
+              <div class="concept-card-body">
+                <code class="formula-display">f'(x) = 0</code>
+                <p class="mt-2"><b>keterangan:</b></p>
+                <p>Untuk mencari titik ekstrem, kita perlu mencari nilai x dari turunan pertama sama dengan nol. Ini menunjukkan bahwa fungsi mungkin memiliki nilai maksimum atau minimum di titik tersebut.</p>
+              </div>
+            </div>
+
+            <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+              <li><em>Definisi Optimisasi</em></li>
+              <p><em>Optimisasi adalah proses mencari nilai maksimum atau minimum dari suatu fungsi. Dalam konteks laju perubahan, kita dapat menggunakan turunan pertama untuk menentukan titik-titik kritis yang dapat menjadi kandidat untuk nilai maksimum atau minimum.</em></p>
+            </blockquote>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="concept-card">
+                  <div class="concept-card-header">Syarat Optimasi Maksimum</div>
+                  <div class="concept-card-body">
+                    <code class="formula-display">f''(x) < 0</code>
+                    <p class="mt-2"><em>Keterangan</em></p>
+                    <p>Nilai Maksimum harus memiliki nilai lebih kecil dari nol (0)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="concept-card">
+                  <div class="concept-card-header">Syarat Optimasi Minimum</div>
+                  <div class="concept-card-body">
+                    <code class="formula-display">f''(x) > 0</code>
+                    <p class="mt-2"><em>Keterangan</em></p>
+                    <p>Nilai Minimum harus memiliki nilai lebih besar dari nol (0)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ch8-contoh" class="mt-5">
+              <h3 class="subsection-title">Contoh Soal</h3>
+              <div class="card example-card mt-3">
+                <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                  Contoh soal penyelesaian masalah terapan dengan turunan
+                </div>
+                <div class="card-body">
+                  <p>Diketahui: Sebuah perusahaan startup teknologi memodelkan keuntungan bersih (dalam juta rupiah) terhadap jumlah fitur yang diluncurkan per kuartal dengan fungsi: P(x) = -x<sup>3</sup> + 9x<sup>2</sup> - 15x + 2 dengan x = jumlah fitur antara 1 hingga 7.</p>
+                  <p>Ditanya: Tentukan jumlah fitur yang menghasilkan keuntungan maksimum menggunakan: <ul><li>(a) Metode turunan</li> <li>(b) Metode numerik dengan tabel nilai</li></ul></p>
+                  <p>Kemudian lakukan pengambilan keputusan matematis: evaluasi ketepatan metode, bandingkan hasilnya, dan rumuskan implikasinya terhadap sistem perangkat lunak.</p>
+                  <hr />
+                  <p class="fw-semibold">Penyelesaian:</p>
+                  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                  <ol>
+                    <li><b>Metode Turunan</b></li>
+                    <p>Untuk mencari jumlah fitur yang menghasilkan keuntungan maksimum, kita perlu mencari turunan pertama dari fungsi P(x).</p>
+                    $$P(x) = -x^3 + 9x^2 - 15x + 2$$
+                    $$P'(x) = -3x^2 + 18x - 15$$
+                    <p>lalu menentukan titik kritisnya</p>
+                    $$P'(x) = 0$$
+                    $$-3x^2 + 18x - 15 = 0$$
+                    <p>setiap nilai dapat dibagi 3, maka hasilnya:</p>
+                    $$x^2 - 6x + 5 = 0$$
+                    $$(x - 5)(x - 1) = 0$$
+                    <p>maka, didapatkanlah titik</p>
+                    $$x = 5 \quad \text{atau} \quad x = 1$$ 
+                    <br>
+                    <p>Sekarang, kita perlu menentukan apakah titik-titik ini adalah maksimum atau minimum.</p>
+                    <p>Hitung turunan kedua P''(x):</p>
+                    $$P''(x) = -6x + 18$$
+                    <p>Evaluasi P''(x) di titik-titik kritis:</p>
+                    $$P''(1) = -6(1) + 18 = 12 > 0 \quad \text{(minimum)}$$
+                    $$P''(5) = -6(5) + 18 = -12 < 0 \quad \text{(maksimum)}$$
+                    <p>jadi, x = 1 adalah titik minimum dan x = 5 adalah titik maksimum.</p>
+                    <p>Selanjutnya, kita perlu menentukan nilai maksimum dan minimum dari fungsi P(x) pada titik-titik tersebut.</p>
+                    <p>Hitung P(1) dan P(5):</p>
+                    $$P(1) = -(1)^3 + 9(1)^2 - 15(1) + 2 = -1 + 9 - 15 + 2 = -5$$
+                    $$P(5) = -(5)^3 + 9(5)^2 - 15(5) + 2 = -125 + 225 - 75 + 2 = 27$$
+                    <p>Dan juga batas interval diujung kanan = 7</p>
+                    $$P(7) = -(7)^3 + 9(7)^2 - 15(7) + 2 = -343 + 441 - 105 + 2 = -5$$
+                    <p>Jadi, keuntungan maksimum yang akan didapatkan pada fitur berjumlah 5 adalah 27 juta Rp.</p>
+                    <hr/>
+
+                    <li><b>Metode Numerik dengan Tabel</b></li>
+                    <p>Metode numerik dengan tabel dapat digunakan untuk mendekati nilai maksimum dan minimum dari fungsi P(x) dengan cara menghitung nilai P(x) pada beberapa titik dalam interval [1 hingga 7].</p>
+                    <table class="table table-bordered table-sm concept-table">
+                      <thead>
+                        <tr>
+                          <th>X</th><th>Perhitungan</th><th>P(x) hasil</th><th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>1</td><td>P(1) = -(1)^3 + 9(1)^2 - 15(1) + 2 = -1 + 18 - 13</td><td>-5</td><td>Turun</td></tr>
+                        <tr><td>2</td><td>P(2) = -(2)^3 + 9(2)^2 - 15(2) + 2 = -8 + 36 - 30 + 2</td><td>0</td><td>Naik</td></tr>
+                        <tr><td>3</td><td>P(3) = -(3)^3 + 9(3)^2 - 15(3) + 2 = -27 + 81 - 45 + 2</td><td>11</td><td>Naik</td></tr>
+                        <tr><td>4</td><td>P(4) = -(4)^3 + 9(4)^2 - 15(4) + 2 = -64 + 144 - 60 + 2</td><td>22</td><td>Naik</td></tr>
+                        <tr><td>5</td><td>P(5) = -(5)^3 + 9(5)^2 - 15(5) + 2 = -125 + 225 - 75 + 2</td><td><b>27</b></td><td><b>Maksimum</b></td></tr>
+                        <tr><td>6</td><td>P(6) = -(6)^3 + 9(6)^2 - 15(6) + 2 = -216 + 324 - 90 + 2</td><td>20</td><td>Turun</td></tr>
+                        <tr><td>7</td><td>P(7) = -(7)^3 + 9(7)^2 - 15(7) + 2 = -343 + 441 - 105 + 2</td><td>-5</td><td>Turun</td></tr>
+                      </tbody>
+                    </table>
+                    <p>jadi, pada metode numerik dengan tabel, kita dapat melihat bahwa nilai maksimum P(x) terjadi pada x = 5 dengan P(5) = 27 menyatakan bahwa hasilnya sama dengan metode turunan.</p>
+                  </ol>
+                  <hr/>
+                  <p><b>Evaluasi Metode Penyelesaian</b></p>
+                  <ul>
+                    <li>
+                      <p>Metode turunan memberikan hasil yang lebih cepat dan langsung untuk menemukan titik maksimum. hasil didapatkan dalam 4 langkah. Turunan memberikan solusi eksak sekaligus membuktikan bahwa titik x = 5 adalah maksimum melalui uji turunan kedua P''(x)</p>
+                    </li>
+                    <li>
+                      <p>Metode numerik dengan tabel memberikan pendekatan yang lebih intuitif dan mudah dipahami, tetapi kurang akurat dibandingkan metode turunan jika intervalnya terlalu besar. Numerik hanya menunjukkan P(5) lebih besar dari titik-titik yang diuji. Tanpa cukup titik, bisa saja melewatkan titik kritis lain jika fungsi lebih kompleks.</p>
+                    </li>
+                  </ul>
+                  <hr>
+                  <p><b>Pengambilan Keputusan Matematis</b></p>
+                  <ol>
+                    <li>Implikasi terhadap pemodelan sistem perangkat lunak</li>
+                    <ul>
+                      <li>Perencanaan roadmap: Tim produk sebaiknya merilis 5 fitur per kuartal. Lebih dari itu justru menurunkan keuntungan akibat kompleksitas, biaya maintenance, dan penurunan fokus pengguna.</li>
+                      <li>Risiko over-engineering: Model menunjukkan P(7) = -5 (rugi). Meluncurkan 7 fitur sekaligus berpotensi merugikan perusahaan — validasi matematis ini mendukung keputusan bisnis yang lebih konservatif.</li>
+                    </ul>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div> <br>
+
+          <!-- Integral Tak Tentu -->
+          <div id="ch8-integral_tak_tentu" class="mt-5">
+            <h3 class="subsection-title">8.B.1 Integral Tak Tentu</h3>
           </div>
 
-          <div id="ch8-optimasi" class="mt-5">
-            <h3 class="subsection-title">8.2 Optimasi</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Area Materi — Kelompok
-                8</strong><br>Isi dengan langkah-langkah penyelesaian masalah optimasi, contoh kasus nyata (luas,
-              volume, biaya).</div>
-            <p><em>[Kelompok 8: isi penjelasan langkah-langkah optimasi]</em></p>
+          <p>Secara sederhana, integral adalah salah satu konsep utama dalam kalkulus yang merupakan kebalikan dari turunan (diferensial). Jika turunan berfungsi untuk mencari laju perubahan atau kemiringan suatu fungsi, maka integral berfungsi untuk mengembalikan fungsi tersebut ke bentuk aslinya.</p>
+
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Definisi Integral Tak Tentu</em></li>
+            <p>Integral tak tentu adalah proses untuk mencari fungsi asal (antiturunan) dari suatu fungsi yang telah diturunkan. Hasil dari integral tak tentu masih berupa fungsi dan selalu diakhiri dengan konstanta + C.</p>
+          </blockquote>
+
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Integral Tak Tentu</div>
+              <div class="concept-card-body">
+                <code class="formula-display">∫f(x) dx = F(x) + C</code>
+                <p class="mt-2"><b>keterangan:</b></p>
+                <ul>
+                    <li>∫ -> Simbol integral, menunjukkan proses pengintegralan.</li>
+                    <li>f(x) -> Fungsi integran, menunjukkan fungsi yang akan diintegralkan.</li>
+                    <li>dx -> Deferensial/Turunan, menunjukkan perubahan kecil pada x.</li>
+                    <li>F(x) -> Fungsi hasil integral, menunjukkan total hasil pengumpulan.</li>
+                    <li>C -> Konstanta, menunjukkan bahwa ada nilai tetap yang ditambahkan pada hasil integral.</li>
+                  </ul>
+              </div>
           </div>
 
           <div id="ch8-contoh" class="mt-5">
             <h3 class="subsection-title">Contoh Soal</h3>
             <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 8.1 —
-                Nilai Ekstrem</div>
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                Contoh Soal Integral Tak Tentu
+              </div>
               <div class="card-body">
-                <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 8: isi contoh soal nilai ekstrem]</em></p>
+                <p class="fw-semibold">Diketahui: Sebuah fungsi f(x) memiliki nilai f(x) = 9x<sup>2</sup></p>
+                <p class="fw-semibold">Ditanya: Tentukan bentuk integral tak tentu dari f(x)</p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 8: isi langkah-langkah]</em></p>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                <p>Gunakan Rumus: </p>
+                $$\int ax^n \, dx = \frac{a}{n+1} x^{n+1} + C$$ <br>
+                <ul>
+                  <li>Ubah fungsi tersebut ke bentuk integral</li>
+                    $$\int f(x)dx = \int 9x^2 \, dx$$ <br>
+                  <li>Lalu kita subtitusikan nilai a diisi 9 dan n diisi oleh 2 ke dalam rumus</li>
+                    $$\int 9x^2 \, dx = \frac{9}{2+1} x^{2+1} + C$$ <br>
+                  <li>Maka didapatkanlah hasil yakni</li>
+                      $$\int f(x)dx = 3x^3 + C$$<br>
+                  <p><b>Jadi, integral tak tentu dari f(x) adalah 3x<sup>3</sup> + C</b></p>
+                </ul>
               </div>
             </div>
+          </div>
+
+
+          <div id="ch8-hubungan_integral_dan_turunan" class="mt-5">
+            <h3 class="subsection-title">8.B.2 Hubungan antara integral dan turunan</h3>
+          </div>
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Hubungan antara integral dan turunan</em></li>
+            <p>Hubungan antara integral dan turunan adalah salah satu penemuan paling penting dalam sejarah matematika. Hubungan ini disebut sebagai Hubungan Invers (Berkebalikan).</p>
+            <p>Jika turunan adalah proses "memecah" atau mencari laju perubahan dari suatu fungsi, maka integral adalah proses "menggabungkan kembali" atau mengonstruksi ulang fungsi asal dari laju perubahannya. Karena sifat berkebalikan ini, integral sering disebut sebagai Antiturunan.</p>
+          </blockquote>
+
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Hubungan antara integral dan turunan</div>
+            <div class="concept-card-body">
+              <p class="mt-2"><b>Misalkan:</b></p>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              $$
+              \begin{array}{ccc}
+              & \xrightarrow{\text{Integral}} & \\
+              f(x) = 9x^2 & & F(x) = 3x^3 + C \\
+              & \xleftarrow{\text{Turunan}} & 
+              \end{array}
+              $$
+              <p class="mt-2"><b>keterangan: </b></p>
+              <p>Jika f(x) = 9x<sup>2</sup> kita integralkan, maka akan mendapatkan F(x) = 3x<sup>3</sup> + C. begitu juga sebaliknya jika kita turunkan F(x) = 3x<sup>3</sup> + C, maka akan kembali menjadi f(x) = 9x<sup>2</sup>.</p>
+              <p>Ini menggambarkan sifat dasar dari integral dan turunan sebagai operasi yang saling membalikkan.</p>
+            </div>
+          </div>
+
+
+          <div id="ch8-interpretasi_konstanta_integrasi" class="mt-5">
+            <h3 class="subsection-title">8.B.3 Interpretasi Konstanta Integrasi (C)</h3>
+          </div>
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Definisi Konstanta (C)</em></li>
+            <p>Konstanta integrasi (C) muncul dalam integral tak tentu karena adanya ketidakpastian dalam proses pengintegralan. Ketika kita mencari antiturunan dari suatu fungsi, kita sebenarnya mencari semua fungsi yang memiliki turunan yang sama dengan fungsi tersebut. Oleh karena itu, kita menambahkan konstanta C untuk mencakup semua kemungkinan fungsi yang berbeda.</p>
+          </blockquote>
+
+          <div class="concept-card mt-3">
+            <div class="concept-card-header">Konstanta (C)</div>
+            <div class="concept-card-body">
+              <p class="mt-2"><b>Misalkan:</b></p>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+              $$
+              \begin{array}{rcccl}
+              f(x) = 3x^2 + 2 & \searrow & & & \\
+              \\
+              f(x) = 3x^2 + 10 & \longrightarrow & f'(x) = 9x^2 & \longrightarrow & F(x) = 3x^3 + C \\
+              \\
+              f(x) = 3x^2 + 100 & \nearrow & & &
+              \end{array}
+              $$
+              <p class="mt-2"><b>keterangan: </b></p>
+              <p>Setiap fungsi f(x) yang berbeda tidak peduli berapa besar nilainya pasti memiliki turunan yang sama, yaitu f'(x) = 9x<sup>2</sup>.</p>
+              <p>Maka, antiturunan dari f'(x) adalah F(x) = 3x<sup>3</sup> + C, di mana C mewakili setiap kemungkinan konstanta yang ditambahkan pada fungsi.</p>
+            </div>
+          </div>
+
+
+          <div id="ch8-integral_tak_tentu_Konsep_akumulasi_perubahan" class="mt-5">
+            <h3 class="subsection-title">8.B.4 Integral Tak Tentu dalam konsep akumulasi perubahan</h3>
+          </div>
+          <blockquote class="blockquote-def"><i class="bi bi-quote quote-icon"></i>
+            <li><em>Definisi Konsep Akumulasi Perubahan</em></li>
+            <p>Akumulasi perubahan adalah menghitung hasil total dari perubahan yang terjadi terus-menerus. Jika kita tahu seberapa cepat sesuatu bertambah atau berkurang setiap saat (laju perubahan), kita bisa menggunakan Integral Tak Tentu untuk menghitung berapa jumlah total yang terkumpul (akumulasi) dari waktu ke waktu.</p>
+          </blockquote>
+
+          <div id="ch8-contoh" class="mt-5">
+            <h3 class="subsection-title">Contoh Soal</h3>
             <div class="card example-card mt-3">
-              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 8.2 —
-                Optimasi</div>
+              <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>
+                Contoh Soal Integral Tak Tentu dalam Konsep Akumulasi Perubahan
+              </div>
               <div class="card-body">
                 <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 8: isi contoh soal optimasi]</em></p>
+                <p class="fw-semibold">Diketahui: Sebuah perusahaan menyimpan data pengguna yang terus bertambah. Laju pertumbuhan data (dalam Gigabyte per hari) terhadap waktu t (dalam hari) dimodelkan oleh fungsi f(t) = 3t<sup>2</sup>  + 4t + 10. Jika pada hari ke-0 total data awal yang tersimpan adalah 100GB.</p>
+                <p class="fw-semibold">Ditanya: <ul><li><b>Tentukan bentuk fungsi akumulasi data secara umum!</b></li><li><b>Tentukan kapasitas data hari ke-5!</b></li></ul></p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 8: isi langkah-langkah]</em></p>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+                  <ol> 
+                    <li>Menentukan bentuk fungsi akumulasi data secara umum</li>
+                      <ul>
+                        <li>Ubah fungsi tersebut ke bentuk integral</li>
+                          $$\int f(t)dt = \int (3t^2 + 4t + 10) \, dt$$ <br>
+                        <li>Lalu kita subtitusikan nilai a diisi 3, 4, 10 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
+                          $$\int (3t^2 + 4t + 10) \, dt = \left( \frac{3}{2+1} t^{2+1} + \frac{4}{1+1} t^{1+1} + \frac{10}{0+1} t^{0+1} \right) + C$$ <br>
+                        <li>maka, didapatkanlah f(t)</li>
+                          $$f(t) = t^3 + 2t^2 + 10t + C$$ <br>
+                        <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni f(0) = 100</li>
+                          $$f(0) = 0^3 + 2(0)^2 + 10(0) + C$$
+                          $$100 = C$$
+                          $$\Longleftrightarrow$$
+                          $$C = 100$$ <br>
+                        <li>lalu kita subtitusikan konstanta(C) = 100 ke dalam fungsi f(t)</li>
+                          $$f(t) = t^3 + 2t^2 + 10t + 100$$ <br>
+                        <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi data tersebut yakni</b></p>
+                        <p><b>f(t) = t <sup>3</sup> + 2t <sup>2</sup> + 10t + 100</b></p>
+                      </ul>
+                    <hr>
+
+                    <li>Menentukan kapasitas data hari ke-5</li>
+                    <ul>
+                      <li>Substitusikan t = 5 ke dalam fungsi f(t)</li>
+                        $$f(5) = 5^3 + 2(5)^2 + 10(5) + 100$$ <br>
+                      <li>Hitung nilai f(5)</li>
+                        $$f(5) = 125 + 50 + 50 + 100$$ <br>
+                        $$f(5) = 325$$ <br>
+                      <p><b>Jadi, kapasitas data hari ke-5 adalah 325GB</b></p>
+                    </ul>
+                  </ol>
               </div>
             </div>
           </div>
 
-          <div id="ch8-video" class="mt-5">
-            <h3 class="subsection-title">Video Pembelajaran</h3>
-            <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 8</strong> — Embed video
-              pembelajaran Aplikasi Turunan di sini.</div>
-            <div class="ratio ratio-16x9 mt-3"
-              style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 8" allowfullscreen
-                style="border:0;"></iframe>
+          <!-- Video -->
+          <div id="ch8-videoPenerapanTurunan" class="mt-5">
+            <h3 class="subsection-title">Video Pembelajaran - Evaluasi Penggunaan Turunan</h3>
+            <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/" title="Video Pembelajaran Bab 8" allowfullscreen style="border:0;"></iframe>
             </div>
-            <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video
-              pembelajaran yang sesuai.</p>
           </div>
 
+          <div id="ch8-videoIntegralTakTentu" class="mt-5">
+            <h3 class="subsection-title">Video Pembelajaran - Integral Tak Tentu</h3>
+            <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/1IdJ4T82HLM" title="Video Pembelajaran Bab 8" allowfullscreen style="border:0;"></iframe>
+            </div>
+          </div>
+
+          <!-- Soal -->
           <div id="ch8-latihan" class="mt-5">
             <h3 class="subsection-title">Latihan Soal</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 8</strong> — Isi latihan
-              soal di bawah ini.</div>
             <div class="card"
               style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
               <div class="card-body">
                 <ol class="mb-0">
+
                   <li class="mb-3">
                     <p class="fw-semibold mb-1">Soal 1</p>
-                    <p><em>[Kelompok 8: isi soal latihan 1]</em></p>
+                    <p><em>[Evaluasi Turunan - Optimasi Kinerja Server]</em><br>
+                    Sebuah sistem server memiliki kapasitas pemrosesan <em>request</em> API per milidetik yang dimodelkan dengan fungsi P(x) = -5x<sup>2</sup> + 100x + 50, di mana x adalah jumlah <em>thread</em> CPU yang dialokasikan. Berapa banyak <em>thread</em> yang harus dialokasikan untuk mencapai jumlah pemrosesan maksimal?</p>
                     <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 1]</em></div>
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Untuk mencari pemrosesan maksimal, kita mencari titik di mana turunan pertama P'(x) = 0.</p>
+                        <p>$$P'(x) = -10x + 100$$</p>
+                        <p>$$-10x + 100 = 0$$</p>
+                        <p>$$10x = 100$$</p>
+                        <p>$$x = 10$$</p>
+                        <p>Jadi, untuk mendapatkan kapasitas pemrosesan maksimal, sistem harus mengalokasikan <strong>10 thread</strong>.</p>
+                      </div>
                     </details>
                   </li>
+
                   <li class="mb-3">
                     <p class="fw-semibold mb-1">Soal 2</p>
-                    <p><em>[Kelompok 8: isi soal latihan 2]</em></p>
+                    <p><em>[Evaluasi Turunan - Efisiensi Biaya Cloud]</em><br>
+                    Biaya operasional server cloud per jam bergantung pada jumlah <em>instance</em> n yang aktif, dengan fungsi biaya C(n) = 2n<sup>2</sup> - 40n + 500 (dalam ribuan rupiah). Berapa jumlah <em>instance</em> yang harus diaktifkan agar biaya operasional minimum, dan berapakah biaya minimum tersebut?</p>
                     <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 2]</em></div>
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Syarat biaya minimum adalah turunan pertama fungsi biaya sama dengan nol (C'(n) = 0).</p>
+                        <p>$$C'(n) = 4n - 40$$</p>
+                        <p>$$4n - 40 = 0$$</p>
+                        <p>$$4n = 40$$</p>
+                        <p>$$n = 10$$</p>
+                        <p>Substitusikan n = 10 ke fungsi awal:</p>
+                        <p>$$C(10) = 2(10)^2 - 40(10) + 500$$</p>
+                        <p>$$C(10) = 200 - 400 + 500 = 300$$</p>
+                        <p>Jadi, biaya akan minimum dengan mengaktifkan <strong>10 instance</strong> dengan biaya sebesar <strong>300 ribu rupiah</strong>.</p>
+                      </div>
                     </details>
                   </li>
+
                   <li class="mb-3">
                     <p class="fw-semibold mb-1">Soal 3</p>
-                    <p><em>[Kelompok 8: isi soal latihan 3]</em></p>
+                    <p><em>[Evaluasi Turunan - Model Machine Learning]</em><br>
+                    Dalam pelatihan sebuah model algoritma, fungsi tingkat kerugian (<em>Loss Function</em>) terhadap penyesuaian bobot w dinyatakan sebagai L(w) = w <sup>4</sup> - 8w <sup>3</sup> + 18w <sup>2</sup>. Tentukan nilai bobot w yang membuat gradien (turunan pertama) bernilai nol (berpotensi menjadi titik minimum kerugian)!</p>
                     <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 3]</em></div>
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Tentukan turunan pertama dan samakan dengan nol (L'(w) = 0).</p>
+                        <p>$$L'(w) = 4w^3 - 24w^2 + 36w$$</p>
+                        <p>$$4w^3 - 24w^2 + 36w = 0$$</p>
+                        <p>Faktorkan dengan mengeluarkan 4w:</p>
+                        <p>$$4w(w^2 - 6w + 9) = 0$$</p>
+                        <p>$$4w(w - 3)^2 = 0$$</p>
+                        <p>Maka diperoleh nilai w = 0 atau w = 3.</p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 4</p>
+                    <p><em>[Evaluasi Turunan - Laju Pertumbuhan Memori]</em><br>
+                    Penggunaan memori dari sebuah algoritma pengurutan terhadap ukuran input x (dalam ribuan data) didefinisikan sebagai $$M(x) = \frac{1}{3}x^3 + 2x^2 + 5x$$ (dalam MB). Berapakah laju perubahan (pertumbuhan) memori seketika pada saat ukuran input x = 3?</p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Laju perubahan seketika adalah turunan pertama M'(x).</p>
+                        <p>$$M'(x) = x^2 + 4x + 5$$</p>
+                        <p>Substitusi x = 3 ke dalam turunan pertama:</p>
+                        <p>$$M'(3) = (3)^2 + 4(3) + 5$$</p>
+                        <p>$$M'(3) = 9 + 12 + 5 = 26$$</p>
+                        <p>Jadi, laju pertumbuhan memorinya adalah <strong>26 MB per ribu data</strong>.</p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 5</p>
+                    <p><em>[Evaluasi Turunan - Fluktuasi Transfer Jaringan]</em><br>
+                    Kecepatan transfer data pada sebuah <em>router</em> di waktu t detik dimodelkan dengan V(t) = t<sup>3</sup> - 9t<sup>2</sup> + 24t + 10 (dalam Mbps). Pada detik ke berapa kurva kecepatan mengalami titik belok (percepatan transfer sama dengan nol)?</p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Titik belok dicari dengan menyamakan turunan kedua dengan nol (V''(t) = 0).</p>
+                        <p>Turunan pertama (percepatan/perlambatan kecepatan):</p>
+                        <p>$$V'(t) = 3t^2 - 18t + 24$$</p>
+                        <p>Turunan kedua (perubahan percepatan):</p>
+                        <p>$$V''(t) = 6t - 18$$</p>
+                        <p>$$6t - 18 = 0$$</p>
+                        <p>$$6t = 18$$</p>
+                        <p>$$t = 3$$</p>
+                        <p>Jadi, titik belok transfer jaringan terjadi pada <strong>detik ke-3</strong>.</p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 6</p>
+                    <p><em>[Integral Tak Tentu - Fungsi Bug Fixing]</em><br>
+                    Tim Quality Assurance (QA) mendeteksi bahwa laju perbaikan <em>bug</em> harian dalam sebuah proyek <em>software</em> dinyatakan dengan r(t) = 6t<sup>2</sup> + 4t (dalam <em>bug</em>/hari). Tentukan fungsi umum akumulasi <em>bug</em> yang telah diperbaiki B(t) menggunakan integral tak tentu!</p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Fungsi total B(t) adalah antiturunan (integral tak tentu) dari r(t).</p>
+                        <p>$$B(t) = ∫ (6t² + 4t) dt$$</p>
+                        <p>$$B(t) = (6/3)t³ + (4/2)t² + C$$</p>
+                        <p>$$B(t) = 2t³ + 2t² + C$$</p>
+                        <p>Jadi, fungsi akumulasinya adalah <strong>B(t) = 2t³ + 2t² + C</strong>.</p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 7</p>
+                    <p><em>[Integral Tak Tentu - Akumulasi Baris Kode]</em><br>
+                    Laju penulisan kode oleh seorang <em>developer</em> (dalam baris kode per jam) dinyatakan dengan persamaan P'(x) = 3x<sup>2</sup> - 2x + 15. Jika pada jam ke-0 belum ada kode yang ditulis (P(0) = 0), tentukan fungsi P(x) yang menyatakan total akumulasi baris kode yang diselesaikan!</p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p><strong>Penyelesaian:</strong></p>
+                        <p>Cari fungsi integral tak tentu terlebih dahulu:</p>
+                        <p>$$P(x) = \int (3x^2 - 2x + 15) \, dx$$</p>
+                        <p>$$P(x) = x^3 - x^2 + 15x + C$$</p>
+                        <p>Gunakan syarat awal $$P(0) = 0$$ untuk mencari nilai konstanta C:</p>
+                        <p>$$P(0) = (0)^3 - (0)^2 + 15(0) + C = 0 \implies C = 0$$</p>
+                        <p>Jadi, fungsi akumulasi total kodenya adalah <strong>P(x) = x<sup>3</sup> - x<sup>2</sup> + 15x</strong>.</p>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 8</p>
+                    <p><em>[Integral Tak Tentu - Akumulasi Request API]</em></p>
+                    <p><strong>Diketahui:</strong> Sebuah server API menerima request yang terus bertambah saat jam sibuk. Laju masuknya <em>request</em> (dalam ribu <em>request</em> per jam) terhadap waktu t (dalam jam) dimodelkan oleh fungsi r(t) = 6t<sup>2</sup> + 2t + 5. Pada jam ke-0 (saat server baru di-<em>restart</em>), sudah terdapat antrean sebanyak 50 ribu <em>request</em> yang belum diproses dari sesi sebelumnya.</p>
+                    <p><strong>Ditanya:</strong> 
+                      <ul>
+                        <li><b>Tentukan bentuk fungsi akumulasi <em>request</em> secara umum!</b></li>
+                        <li><b>Tentukan total akumulasi <em>request</em> pada jam ke-4!</b></li>
+                      </ul>
+                    </p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p class="fw-semibold">Penyelesaian:</p>
+                        <ol> 
+                          <li>Menentukan bentuk fungsi akumulasi <em>request</em> secara umum</li>
+                            <ul>
+                              <li>Ubah fungsi tersebut ke bentuk integral</li>
+                                $$R(t) = \int (6t^2 + 2t + 5) \, dt$$ <br>
+                              <li>Lalu kita subtitusikan nilai a diisi 6, 2, 5 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
+                                $$R(t) = \left( \frac{6}{2+1} t^{2+1} + \frac{2}{1+1} t^{1+1} + \frac{5}{0+1} t^{0+1} \right) + C$$ <br>
+                              <li>maka, didapatkanlah R(t)</li>
+                                $$R(t) = 2t^3 + t^2 + 5t + C$$ <br>
+                              <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni R(0) = 50</li>
+                                $$R(0) = 2(0)^3 + (0)^2 + 5(0) + C$$
+                                $$50 = C$$
+                                $$\Longleftrightarrow$$
+                                $$C = 50$$ <br>
+                              <li>lalu kita subtitusikan konstanta (C) = 50 ke dalam fungsi R(t)</li>
+                                $$R(t) = 2t^3 + t^2 + 5t + 50$$ <br>
+                              <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi <em>request</em> tersebut yakni</b></p>
+                              <p><b>R(t) = 2t<sup>3</sup> + t<sup>2</sup> + 5t + 50</b></p>
+                            </ul>
+                          <hr>
+                          <li>Menentukan total akumulasi <em>request</em> pada jam ke-4</li>
+                          <ul>
+                            <li>Substitusikan t = 4 ke dalam fungsi R(t)</li>
+                              $$R(4) = 2(4)^3 + (4)^2 + 5(4) + 50$$ <br>
+                            <li>Hitung nilai R(4)</li>
+                              $$R(4) = 2(64) + 16 + 20 + 50$$ <br>
+                              $$R(4) = 128 + 16 + 20 + 50$$ <br>
+                              $$R(4) = 214$$ <br>
+                            <p><b>Jadi, total akumulasi <em>request</em> pada jam ke-4 adalah 214 ribu <em>request</em>.</b></p>
+                          </ul>
+                        </ol>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 9</p>
+                    <p><em>[Integral Tak Tentu - Akumulasi Penggunaan Memori Cache]</em></p>
+                    <p><strong>Diketahui:</strong> Sebuah sistem <em>database</em> Redis mengalami peningkatan penggunaan memori <em>cache</em>. Laju pertumbuhan memori (dalam Megabyte per menit) terhadap waktu t (dalam menit) dimodelkan oleh fungsi m(t) = 9t<sup>2</sup> + 8t + 15. Jika pada menit ke-0 sistem sudah memiliki memori awal (<em>base cache</em>) sebesar 200MB.</p>
+                    <p><strong>Ditanya:</strong> 
+                      <ul>
+                        <li><b>Tentukan bentuk fungsi akumulasi memori secara umum!</b></li>
+                        <li><b>Tentukan total kapasitas memori pada menit ke-3!</b></li>
+                      </ul>
+                    </p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p class="fw-semibold">Penyelesaian:</p>
+                        <ol> 
+                          <li>Menentukan bentuk fungsi akumulasi memori secara umum</li>
+                            <ul>
+                              <li>Ubah fungsi tersebut ke bentuk integral</li>
+                                $$M(t) = \int (9t^2 + 8t + 15) \, dt$$ <br>
+                              <li>Lalu kita subtitusikan nilai a diisi 9, 8, 15 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
+                                $$M(t) = \left( \frac{9}{2+1} t^{2+1} + \frac{8}{1+1} t^{1+1} + \frac{15}{0+1} t^{0+1} \right) + C$$ <br>
+                              <li>maka, didapatkanlah M(t)</li>
+                                $$M(t) = 3t^3 + 4t^2 + 15t + C$$ <br>
+                              <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni M(0) = 200</li>
+                                $$M(0) = 3(0)^3 + 4(0)^2 + 15(0) + C$$
+                                $$200 = C$$
+                                $$\Longleftrightarrow$$
+                                $$C = 200$$ <br>
+                              <li>lalu kita subtitusikan konstanta (C) = 200 ke dalam fungsi M(t)</li>
+                                $$M(t) = 3t^3 + 4t^2 + 15t + 200$$ <br>
+                              <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi memori tersebut yakni</b></p>
+                              <p><b>M(t) = 3t<sup>3</sup> + 4t<sup>2</sup> + 15t + 200</b></p>
+                            </ul>
+                          <hr>
+                          <li>Menentukan total kapasitas memori pada menit ke-3</li>
+                          <ul>
+                            <li>Substitusikan t = 3 ke dalam fungsi M(t)</li>
+                              $$M(3) = 3(3)^3 + 4(3)^2 + 15(3) + 200$$ <br>
+                            <li>Hitung nilai M(3)</li>
+                              $$M(3) = 3(27) + 4(9) + 45 + 200$$ <br>
+                              $$M(3) = 81 + 36 + 45 + 200$$ <br>
+                              $$M(3) = 362$$ <br>
+                            <p><b>Jadi, total kapasitas memori pada menit ke-3 adalah 362MB.</b></p>
+                          </ul>
+                        </ol>
+                      </div>
+                    </details>
+                  </li>
+
+                  <li class="mb-3">
+                    <p class="fw-semibold mb-1">Soal 10</p>
+                    <p><em>[Integral Tak Tentu - Akumulasi Baris Log Error]</em></p>
+                    <p><strong>Diketahui:</strong> Pada saat melakukan <em>load testing</em> pada sebuah perangkat lunak, sistem menghasilkan catatan <em>log error</em>. Laju penambahan <em>log error</em> (dalam baris per detik) terhadap waktu t (dalam detik) dimodelkan oleh fungsi e(t) = 12t<sup>2</sup> + 10t + 2. Jika pada detik ke-0 file log sudah berisi 500 baris error dari pengujian sebelumnya.</p>
+                    <p><strong>Ditanya:</strong> 
+                      <ul>
+                        <li><b>Tentukan bentuk fungsi akumulasi baris <em>log error</em> secara umum!</b></li>
+                        <li><b>Tentukan total baris <em>log error</em> pada detik ke-5!</b></li>
+                      </ul>
+                    </p>
+                    <details class="mt-2">
+                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">Lihat Jawaban</summary>
+                      <div class="mt-2 p-3" style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;">
+                        <p class="fw-semibold">Penyelesaian:</p>
+                        <ol> 
+                          <li>Menentukan bentuk fungsi akumulasi baris <em>log error</em> secara umum</li>
+                            <ul>
+                              <li>Ubah fungsi tersebut ke bentuk integral</li>
+                                $$E(t) = \int (12t^2 + 10t + 2) \, dt$$ <br>
+                              <li>Lalu kita subtitusikan nilai a diisi 12, 10, 2 dan n diisi oleh 2, 1, 0 ke dalam rumus</li>
+                                $$E(t) = \left( \frac{12}{2+1} t^{2+1} + \frac{10}{1+1} t^{1+1} + \frac{2}{0+1} t^{0+1} \right) + C$$ <br>
+                              <li>maka, didapatkanlah E(t)</li>
+                                $$E(t) = 4t^3 + 5t^2 + 2t + C$$ <br>
+                              <li>Kemudian kita hitung nilai C dengan menggunakan kondisi awal yakni E(0) = 500</li>
+                                $$E(0) = 4(0)^3 + 5(0)^2 + 2(0) + C$$
+                                $$500 = C$$
+                                $$\Longleftrightarrow$$
+                                $$C = 500$$ <br>
+                              <li>lalu kita subtitusikan konstanta (C) = 500 ke dalam fungsi E(t)</li>
+                                $$E(t) = 4t^3 + 5t^2 + 2t + 500$$ <br>
+                              <p><b>Maka, didapatkanlah Bentuk umum dari fungsi akumulasi baris <em>log error</em> tersebut yakni</b></p>
+                              <p><b>E(t) = 4t<sup>3</sup> + 5t<sup>2</sup> + 2t + 500</b></p>
+                            </ul>
+                          <hr>
+                          <li>Menentukan total baris <em>log error</em> pada detik ke-5</li>
+                          <ul>
+                            <li>Substitusikan t = 5 ke dalam fungsi E(t)</li>
+                              $$E(5) = 4(5)^3 + 5(5)^2 + 2(5) + 500$$ <br>
+                            <li>Hitung nilai E(5)</li>
+                              $$E(5) = 4(125) + 5(25) + 10 + 500$$ <br>
+                              $$E(5) = 500 + 125 + 10 + 500$$ <br>
+                              $$E(5) = 1135$$ <br>
+                            <p><b>Jadi, total baris <em>log error</em> pada detik ke-5 adalah 1.135 baris.</b></p>
+                          </ul>
+                        </ol>
+                      </div>
                     </details>
                   </li>
                 </ol>
@@ -308,36 +899,210 @@
             </div>
           </div>
 
-          <div id="ch8-kalkulator" class="mt-5">
+          <!-- kalkulator -->
+          <div id="ch8-kalkulatorPenerapanTurunan" class="mt-5">
             <div class="calc-section">
-              <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>Kalkulator — Template Kelompok 8</div>
+              <div class="calc-header">
+                <i class="bi bi-calculator-fill me-2"></i>
+                Kalkulator Interaktif — Penerapan Turunan
+              </div>
               <div class="calc-body">
-                <div class="placeholder-notice"><i class="bi bi-tools"></i><strong>Kelompok 8</strong> — Kembangkan
-                  kalkulator untuk menyelesaikan masalah optimasi.</div>
+                <p class="text-muted small mb-3">Hitung nilai fungsi <strong>f(x) = x<sup>2</sup> + x + c</strong></p>
+                <div class="row g-2 align-items-end">
+                  <div class="col-sm-3">
+                    <label class="form-label small">Koefisien a (x<sup>2</sup>)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch1-m" value="2" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label small">Koefisien b (x)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch1-b" value="3" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label small">Koefisien c (konstanta)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch1-c" value="1" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <button class="btn btn-calc w-100" onclick="calcImplementasiTurunan()">Hitung</button>
+                  </div>
+                </div>
+                <div class="calc-result mt-3" id="ch8_1-result">
+                  Masukkan nilai ditiap kotak input, lalu klik <strong>Hitung</strong>
+                </div>
+                <div class="calc-note">
+                  💡 Kalkulator ini menghitung f(x) = ax^2 + bx + c.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="ch8-kalkulatorIntegralTakTentu" class="mt-5">
+            <div class="calc-section">
+              <div class="calc-header">
+                <i class="bi bi-calculator-fill me-2"></i>
+                Kalkulator Interaktif — Integral Tak Tentu
+              </div>
+              <div class="calc-body">
+                <p class="text-muted small mb-3">Hitung nilai fungsi <strong>∫ ax <sup>n</sup> dx = F(X) + C</strong></p>
+                <div class="row g-2 align-items-end">
+                  <div class="col-sm-3">
+                    <label class="form-label small">Angka (a)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch8_2-a" value="2" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label small">Pangkat (n)</label>
+                    <input type="number" class="form-control form-control-sm" id="ch8_2-n" value="3" step="0.1"/>
+                  </div>
+                  <div class="col-sm-3">
+                    <button class="btn btn-calc w-100" onclick="calcIntegralTakTentu()">Hitung</button>
+                  </div>
+                </div>
+                <div class="calc-result mt-3" id="ch8_2-result">
+                  Masukkan nilai ditiap kotak input, lalu klik <strong>Hitung</strong>
+                </div>
+                <div class="calc-note">
+                  💡 Kalkulator ini menghitung ∫ ax<sup>n</sup> dx = ax<sup>n</sup> + C
+                </div>
               </div>
             </div>
           </div>
 
           <div class="chapter-nav-bottom">
-            <a href="kelompok6.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 6</a>
-            <a href="kelompok8.html" class="btn btn-chapter-nav">Bab 8 <i class="bi bi-arrow-right ms-1"></i></a>
+            <a href="kelompok7.html" class="btn btn-chapter-nav-outline"><i class="bi bi-arrow-left me-1"></i> Bab 7</a>
+            <a href="kelompok9.html" class="btn btn-chapter-nav">Bab 9 <i class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </section>
+
         <footer class="content-footer">
           <div class="row g-3 align-items-center">
             <div class="col-md-8">
               <div class="footer-title">Kalkulus 1 — Modul Pembelajaran Digital</div>
-              <div class="footer-meta">Disusun oleh 6 Kelompok Mahasiswa · Tahun Akademik 2024/2025</div>
+              <div class="footer-meta">Disusun oleh 9 Kelompok Mahasiswa · Tahun Akademik 2025/2026</div>
             </div>
-            <div class="col-md-4 text-md-end"><a href="#chapter-8" class="btn btn-sm btn-outline-secondary"><i
-                  class="bi bi-arrow-up me-1"></i>Kembali ke Atas</a></div>
+            <div class="col-md-4 text-md-end">
+              <a href="#chapter-8" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-up me-1"></i>Kembali ke Atas
+              </a>
+            </div>
           </div>
         </footer>
       </div>
     </main>
+    <!-- End page -->
+
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../script.js"></script>
+
+  <script>
+    function calcImplementasiTurunan() {
+      // 1. Mengambil nilai input berdasarkan ID dari HTML
+      const inputA = document.getElementById('ch1-m').value;
+      const inputB = document.getElementById('ch1-b').value;
+      const inputC = document.getElementById('ch1-c').value;
+      const resultDiv = document.getElementById('ch8_1-result');
+
+      // Mengubah input menjadi tipe float/desimal
+      const a = parseFloat(inputA);
+      const b = parseFloat(inputB);
+      const c = parseFloat(inputC);
+
+      // 2. Validasi input: Pastikan semua kotak terisi angka yang benar
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        resultDiv.innerHTML = "<span class='text-danger'><strong>Error:</strong> Harap masukkan angka yang valid untuk koefisien a, b, dan c.</span>";
+        return;
+      }
+
+      // Jika a = 0, fungsi bukan lagi fungsi kuadrat
+      if (a === 0) {
+        resultDiv.innerHTML = "<span class='text-danger'><strong>Error:</strong> Nilai koefisien 'a' tidak boleh 0 untuk kurva parabola/kuadrat.</span>";
+        return;
+      }
+
+      // Helper function untuk format tanda plus minus agar rapi (+ 3 atau - 3)
+      const formatTanda = (num) => (num >= 0 ? `+ ${num}` : `- ${Math.abs(num)}`);
+
+      // --- PERHITUNGAN MATEMATIKA --- //
+
+      // a. Fungsi Asal: f(x) = ax^2 + bx + c
+      const fungsiAsal = `${a}x<sup>2</sup> ${formatTanda(b)}x ${formatTanda(c)}`;
+
+      // b. Turunan Pertama: f'(x) = 2ax + b
+      const koefX = 2 * a;
+      const turunanPertama = `${koefX}x ${formatTanda(b)}`;
+
+      // c. Titik Kritis: didapat saat f'(x) = 0 -> 2ax + b = 0 -> x = -b / 2a
+      const titikKritis = -b / (2 * a);
+
+      // d. Turunan Kedua: f''(x) = 2a
+      const turunanKedua = 2 * a;
+      let jenisEkstrem = "";
+      if (turunanKedua > 0) {
+        jenisEkstrem = "(Fungsi Terbuka ke Atas / Titik Minimum)";
+      } else if (turunanKedua < 0) {
+        jenisEkstrem = "(Fungsi Terbuka ke Bawah / Titik Maksimum)";
+      }
+
+      // e. Hasil Substitusi Titik Kritis (Nilai y ekstrem): f(x_kritis) = a(x)^2 + b(x) + c
+      const nilaiFungsi = (a * Math.pow(titikKritis, 2)) + (b * titikKritis) + c;
+
+      // Helper untuk membersihkan angka desimal yang terlalu panjang
+      const formatAngka = (num) => Number.isInteger(num) ? num : num.toFixed(4).replace(/\.?0+$/, '');
+
+      // 3. Menampilkan Hasil ke layar (Inject ke HTML)
+      resultDiv.innerHTML = `
+        <div class="text-start mt-2">
+          <ul class="list-unstyled mb-0" style="line-height: 1.8;">
+            <li><strong>Fungsi Asal:</strong> f(x) = ${fungsiAsal}</li>
+            <li><strong>Turunan Pertama (f'(x)):</strong> ${turunanPertama}</li>
+            <li><strong>Titik Kritis (x):</strong> ${formatAngka(titikKritis)} <span class="text-muted small"><em>(didapat saat f'(x) = 0)</em></span></li>
+            <li><strong>Turunan Kedua (f''(x)):</strong> ${turunanKedua} <span class="text-primary small"><strong>${jenisEkstrem}</strong></span></li>
+            <li><strong>Nilai Ekstrem f(${formatAngka(titikKritis)}):</strong> ${formatAngka(nilaiFungsi)} <span class="text-muted small"><em>(substitusi titik kritis ke fungsi asal)</em></span></li>
+          </ul>
+        </div>
+      `;
+    }
+  </script>
+
+  <script>
+    function calcIntegralTakTentu() {
+      const inputA = document.getElementById('ch8_2-a').value;
+      const inputN = document.getElementById('ch8_2-n').value;
+      const resultDiv = document.getElementById('ch8_2-result');
+      const a = parseFloat(inputA);
+      const n = parseFloat(inputN);
+
+      if (isNaN(a) || isNaN(n)) {
+        resultDiv.innerHTML = "<span class='text-danger'><strong>Error:</strong> Harap masukkan angka yang valid untuk (a) dan (n).</span>";
+        return;
+      }
+      if (a === 0) {
+        resultDiv.innerHTML = "<strong>Hasil Integral:</strong> C";
+        return;
+      }
+      let hasilTeks = "";
+
+      if (n === -1) {
+        let formatA = (a === 1) ? "" : (a === -1) ? "-" : a;
+        hasilTeks = `${formatA}ln|x|`;
+      } else {
+        let nBaru = n + 1;
+        let aBaru = a / nBaru;
+        aBaru = Number.isInteger(aBaru) ? aBaru : parseFloat(aBaru.toFixed(4));
+
+        let formatKoefisien = aBaru;
+        if (aBaru === 1 && nBaru !== 0) formatKoefisien = "";
+        if (aBaru === -1 && nBaru !== 0) formatKoefisien = "-";
+        if (nBaru === 0) {
+          hasilTeks = `${aBaru}`;
+        } else if (nBaru === 1) {
+          hasilTeks = `${formatKoefisien}x`;
+        } else {
+          hasilTeks = `${formatKoefisien}x<sup>${nBaru}</sup>`;
+        }
+      }
+      resultDiv.innerHTML = `<strong>Hasil Integral:</strong> ${hasilTeks} + C`;
+    }
+  </script>
 </body>
 
 </html>
