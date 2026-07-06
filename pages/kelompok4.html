@@ -11,6 +11,10 @@
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
@@ -227,7 +231,7 @@
         </ul>
       </nav>
       <div class="sidebar-footer">
-        <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika — Semester 1</div>
+        <div class="sidebar-footer-text"><i class="bi bi-mortarboard-fill me-1"></i>Matematika Kalkulus — Semester 2</div>
         <div class="progress sidebar-progress mt-2"><div class="progress-bar" id="readingProgress" role="progressbar" style="width: 0%"></div></div>
         <div class="sidebar-footer-text mt-1" id="progressLabel">0% dibaca</div>
       </div>
@@ -262,15 +266,371 @@
 
           <div id="ch4-definisi">
             <h3 class="subsection-title">4.1 Definisi Turunan</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Turunan merupakan salah satu konsep penting dalam kalkulus yang digunakan untuk mengukur laju perubahan suatu fungsi terhadap variabelnya. Secara sederhana, turunan menunjukkan seberapa cepat suatu nilai berubah ketika nilai lainnya mengalami perubahan. Dalam matematika, turunan sering digunakan untuk menentukan kemiringan garis singgung pada suatu kurva di titik tertentu.</strong><br>Dengan demikian, dapat disimpulkan bahwa turunan adalah alat matematika yang digunakan untuk mengetahui laju perubahan suatu fungsi dan kemiringan kurva pada titik tertentu, sehingga sangat penting dalam analisis berbagai permasalahan matematika maupun penerapannya di dunia nyata.</div>
-            <div class="concept-card mt-3">
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i>pernah lihat rumus ini<strong>  
               <div class="concept-card-header">Definisi Turunan (Limit)</div>
               <div class="concept-card-body">
                 <code class="formula-display">f'(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h</code>
-                <p class="mt-2"><em>[Kelompok 4: jelaskan arti dan derivasi rumus ini]</em></p>
+                <p class="mt-2"><em>Bagian 
+𝑓
+(
+𝑥
++
+ℎ
+)
+−
+𝑓
+(
+𝑥
+)
+ℎ
+ disebut selisih rata-rata (average rate of change), yaitu perubahan nilai fungsi dibandingkan dengan perubahan input.
+
+Ketika 
+ℎ
+→
+0
+, kita tidak lagi melihat perubahan rata-rata, tapi perubahan sesaat tepat di titik 
+𝑥
+.
+
+Hasil limit ini disebut turunan 
+𝑓
+′
+(
+𝑥
+)
+, yang menggambarkan kemiringan garis singgung grafik fungsi di titik 
+𝑥
+.</em></p>
               </div>
             </div>
           </div>
+
+          <!--
+  ============================================================
+  KOMPONEN SIMULASI TURUNAN (disesuaikan dengan tema kelompok4.html)
+  Cara pakai: copy semua kode di bawah ini, paste ke kelompok4.html
+  (misalnya di bawah materi 4.2 "Turunan sebagai Laju Perubahan",
+  atau di mana saja di dalam <body>).
+  Tidak ada dependency eksternal tambahan — font & CSS variable
+  diambil otomatis dari style.css yang sudah dimuat halaman.
+  ============================================================
+-->
+
+<div id="sim-turunan"></div>
+
+<script>
+(function() {
+
+  // ── 1. INJECT STYLE (scoped dengan prefix #sim-turunan, pakai var(--clr-*) dari style.css) ──
+  const css = `
+    #sim-turunan {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--clr-surface, #ffffff);
+      color: var(--clr-text, #1a1a1a);
+      border: 1px solid var(--clr-border, #e2e2e2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      max-width: 660px;
+      margin: 1.5rem auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      box-sizing: border-box;
+    }
+    #sim-turunan *, #sim-turunan *::before, #sim-turunan *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    #sim-turunan .sim-header { text-align: center; margin-bottom: 1.25rem; }
+    #sim-turunan .sim-header h2 {
+      font-family: 'Lora', serif;
+      font-size: 18px; font-weight: 600;
+      color: var(--clr-text, #1a1a1a);
+      margin-bottom: 4px;
+    }
+    #sim-turunan .sim-header p  { font-size: 13px; color: #6b7280; }
+
+    #sim-turunan canvas {
+      display: block;
+      width: 100%;
+      border-radius: 10px;
+      background: var(--clr-bg, #f7f8fa);
+      border: 1px solid var(--clr-border, #e2e2e2);
+    }
+
+    #sim-turunan .sim-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 1rem 0;
+    }
+    #sim-turunan .sim-slider-row label { font-size: 13px; color: #6b7280; white-space: nowrap; }
+    #sim-turunan .sim-slider-row input[type=range] {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--clr-border, #e2e2e2);
+      outline: none;
+      cursor: pointer;
+    }
+    #sim-turunan .sim-slider-row input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--clr-primary, #2563eb);
+      border: 2px solid var(--clr-surface, #fff);
+      box-shadow: 0 0 0 1px var(--clr-border, #e2e2e2);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    #sim-turunan .sim-slider-row input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+    #sim-turunan .sim-slider-row input[type=range]::-moz-range-thumb {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--clr-primary, #2563eb);
+      border: 2px solid var(--clr-surface, #fff);
+      cursor: pointer;
+    }
+
+    #sim-turunan .sim-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    #sim-turunan .sim-card {
+      background: var(--clr-bg, #f7f8fa);
+      border: 1px solid var(--clr-border, #e2e2e2);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+    }
+    #sim-turunan .sim-card .lbl {
+      font-size: 11px; color: #6b7280;
+      text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px;
+    }
+    #sim-turunan .sim-card .val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; font-weight: 500;
+      color: var(--clr-text, #1a1a1a);
+      transition: color .3s;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #sim-turunan .sim-status {
+      margin-top: 1rem;
+      padding: .75rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--clr-border, #e2e2e2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .3s, border-color .3s;
+    }
+    #sim-turunan .sim-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; transition: background .3s; }
+    #sim-turunan .sim-stxt { font-size: 14px; font-weight: 600; transition: color .3s; }
+    #sim-turunan .sim-ssub { font-size: 12px; color: #6b7280; margin-top: 2px; }
+
+    #sim-turunan .sim-legend {
+      display: flex; gap: 16px; margin-top: 1rem; flex-wrap: wrap;
+    }
+    #sim-turunan .sim-leg-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #6b7280; }
+    #sim-turunan .sim-leg-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  `;
+  const styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
+
+  // ── 2. INJECT HTML ───────────────────────────────────────────────────────
+  document.getElementById('sim-turunan').innerHTML = `
+    <div class="sim-header">
+      <h2>Konsep Turunan — Mobil Pendaki Bukit</h2>
+      <p>Geser slider untuk melihat bagaimana nilai f′(x) berubah mengikuti bentuk kurva</p>
+    </div>
+
+    <canvas id="sim-canvas" height="260"></canvas>
+
+    <div class="sim-slider-row">
+      <label>Posisi mobil</label>
+      <input type="range" id="sim-pos" min="30" max="570" value="80" step="1">
+    </div>
+
+    <div class="sim-cards">
+      <div class="sim-card"><div class="lbl">Nilai x</div><div class="val" id="sim-vx">—</div></div>
+      <div class="sim-card"><div class="lbl">Ketinggian f(x)</div><div class="val" id="sim-vf">—</div></div>
+      <div class="sim-card"><div class="lbl">Turunan f′(x)</div><div class="val" id="sim-vd">—</div></div>
+    </div>
+
+    <div class="sim-status" id="sim-status">
+      <div class="sim-dot" id="sim-dot"></div>
+      <div>
+        <div class="sim-stxt" id="sim-stxt">—</div>
+        <div class="sim-ssub" id="sim-ssub">—</div>
+      </div>
+    </div>
+
+    <div class="sim-legend">
+      <div class="sim-leg-item"><div class="sim-leg-dot" style="background:#0ea5e9"></div>Fungsi f(x)</div>
+      <div class="sim-leg-item"><div class="sim-leg-dot" style="background:#a78bfa"></div>Garis singgung</div>
+      <div class="sim-leg-item"><div class="sim-leg-dot" style="background:#2563eb"></div>Mobil</div>
+    </div>
+  `;
+
+  // ── 3. LOGIKA CANVAS ─────────────────────────────────────────────────────
+  const canvas = document.getElementById('sim-canvas');
+  const ctx    = canvas.getContext('2d');
+  const W = 600, H = 260;
+  canvas.width = W; canvas.height = H;
+
+  // Fungsi bukit dan turunannya (domain piksel internal: 0–600)
+  function f(x)  { return 130 + 55 * Math.sin(x * 0.013) + 20 * Math.sin(x * 0.031 + 1); }
+  function fp(x) { return 55 * 0.013 * Math.cos(x * 0.013) + 20 * 0.031 * Math.cos(x * 0.031 + 1); }
+
+  // Memetakan posisi piksel slider (30–570) ke skala nilai-x "0 sampai 10"
+  // supaya yang ditampilkan ke pengguna adalah nilai x matematis, bukan piksel mentah.
+  // Ganti angka 0 dan 10 di bawah ini kalau mau rentang lain (misal -5 sampai 5).
+  const X_MIN = 0, X_MAX = 10;
+  function pixelToX(px) {
+    return X_MIN + (px - 30) / (570 - 30) * (X_MAX - X_MIN);
+  }
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function getTheme(s) {
+    if (s > 0.25)  return { color:'#dc2626', bg:'rgba(220,38,38,0.07)',  border:'rgba(220,38,38,0.25)',  label:'Menanjak tajam', sub:"f′(x) > 0 — fungsi sedang naik" };
+    if (s < -0.25) return { color:'#7c3aed', bg:'rgba(124,58,237,0.07)', border:'rgba(124,58,237,0.25)', label:'Turun gunung',   sub:"f′(x) < 0 — fungsi sedang turun" };
+    return           { color:'#16a34a', bg:'rgba(22,163,74,0.07)',   border:'rgba(22,163,74,0.25)',   label: s > 0.05 ? 'Hampir di puncak' : s < -0.05 ? 'Hampir di lembah' : 'Titik stasioner', sub:"f′(x) ≈ 0 — kemiringan mendekati nol" };
+  }
+
+  // Gambar bentuk persegi dengan sudut membulat (helper untuk badan mobil)
+  function roundRectPath(c, x, y, w, h, r) {
+    c.moveTo(x + r, y);
+    c.arcTo(x + w, y, x + w, y + h, r);
+    c.arcTo(x + w, y + h, x, y + h, r);
+    c.arcTo(x, y + h, x, y, r);
+    c.arcTo(x, y, x + w, y, r);
+    c.closePath();
+  }
+
+  // Gambar mobil (bukan cuma titik) di posisi (x,y), dimiringkan sesuai sudut kemiringan kurva
+  function drawCar(x, y, angle, color) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+
+    // glow lembut di bawah mobil
+    const glow = ctx.createRadialGradient(0, 3, 2, 0, 3, 22);
+    glow.addColorStop(0, color + '33');
+    glow.addColorStop(1, 'transparent');
+    ctx.beginPath(); ctx.fillStyle = glow; ctx.arc(0, 3, 22, 0, Math.PI * 2); ctx.fill();
+
+    // badan mobil
+    ctx.beginPath();
+    roundRectPath(ctx, -13, -9, 26, 10, 3);
+    ctx.fillStyle = color;
+    ctx.fill();
+
+    // kabin / atap mobil
+    ctx.beginPath();
+    roundRectPath(ctx, -7, -15, 15, 8, 3);
+    ctx.fillStyle = color;
+    ctx.fill();
+
+    // kaca jendela
+    ctx.beginPath();
+    roundRectPath(ctx, -5, -13, 11, 5, 2);
+    ctx.fillStyle = 'rgba(255,255,255,0.65)';
+    ctx.fill();
+
+    // roda
+    ctx.beginPath(); ctx.fillStyle = '#1f2937'; ctx.arc(-7, 2, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.fillStyle = '#1f2937'; ctx.arc(7, 2, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.fillStyle = '#9ca3af'; ctx.arc(-7, 2, 1.6, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.fillStyle = '#9ca3af'; ctx.arc(7, 2, 1.6, 0, Math.PI * 2); ctx.fill();
+
+    ctx.restore();
+  }
+
+  function draw(carX) {
+    ctx.clearRect(0, 0, W, H);
+
+    // Grid
+    ctx.strokeStyle = 'rgba(0,0,0,0.045)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x <= W; x += 60) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for (let y = 0; y <= H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+    // Area bawah kurva
+    ctx.beginPath();
+    ctx.moveTo(0, H);
+    for (let x = 0; x <= W; x++) ctx.lineTo(x, f(x));
+    ctx.lineTo(W, H); ctx.closePath();
+    const gr = ctx.createLinearGradient(0,60,0,H);
+    gr.addColorStop(0, 'rgba(14,165,233,0.16)');
+    gr.addColorStop(1, 'rgba(14,165,233,0.02)');
+    ctx.fillStyle = gr; ctx.fill();
+
+    // Kurva f(x)
+    ctx.beginPath(); ctx.strokeStyle = '#0ea5e9'; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
+    for (let x = 0; x <= W; x++) x === 0 ? ctx.moveTo(x, f(x)) : ctx.lineTo(x, f(x));
+    ctx.stroke();
+
+    const carY = f(carX);
+    const slope = fp(carX);
+    const angle = Math.atan(slope);
+    const theme = getTheme(slope);
+
+    // Garis singgung
+    const tlen = 70, dx2 = tlen / Math.sqrt(1 + slope * slope), dy2 = slope * dx2;
+    ctx.beginPath(); ctx.strokeStyle = '#a78bfa'; ctx.lineWidth = 1.5; ctx.setLineDash([6,4]);
+    ctx.moveTo(carX - dx2, carY - dy2); ctx.lineTo(carX + dx2, carY + dy2); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Garis vertikal ke sumbu-x
+    ctx.beginPath(); ctx.strokeStyle = 'rgba(0,0,0,0.08)'; ctx.lineWidth = 1; ctx.setLineDash([3,3]);
+    ctx.moveTo(carX, carY); ctx.lineTo(carX, H); ctx.stroke(); ctx.setLineDash([]);
+
+    // Mobil (menggantikan titik), dimiringkan sesuai kemiringan kurva
+    drawCar(carX, carY, angle, theme.color);
+
+    // Busur kecil penunjuk sudut kemiringan
+    ctx.beginPath(); ctx.strokeStyle = theme.color + '88'; ctx.lineWidth = 1;
+    ctx.arc(carX, carY, 20, -0.01, angle > 0 ? angle : 2*Math.PI+angle, angle < 0); ctx.stroke();
+
+    // Update UI
+    document.getElementById('sim-vx').textContent = pixelToX(carX).toFixed(2);
+    document.getElementById('sim-vf').textContent = ((H - carY) / 10).toFixed(2);
+    document.getElementById('sim-vd').textContent = slope.toFixed(3);
+    document.getElementById('sim-vd').style.color  = theme.color;
+    document.getElementById('sim-dot').style.background  = theme.color;
+    document.getElementById('sim-stxt').textContent      = theme.label;
+    document.getElementById('sim-stxt').style.color      = theme.color;
+    document.getElementById('sim-ssub').textContent      = theme.sub;
+    const st = document.getElementById('sim-status');
+    st.style.background  = theme.bg;
+    st.style.borderColor = theme.border;
+  }
+
+  // Animasi lerp
+  let animX = 80, targetX = 80, rafId;
+  function animate() {
+    animX = lerp(animX, targetX, 0.14);
+    draw(animX);
+    Math.abs(animX - targetX) > 0.3
+      ? (rafId = requestAnimationFrame(animate))
+      : draw(animX);
+  }
+
+  document.getElementById('sim-pos').addEventListener('input', function(e) {
+    targetX = parseFloat(e.target.value);
+    cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(animate);
+  });
+
+  draw(animX);
+
+})(); // IIFE — semua variabel terisolasi, tidak bocor ke global
+</script>
 
           <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.2 TURUNAN SEBAGAI LAJU PERUBAHAN</h3>
@@ -302,7 +662,7 @@
                               perubahan dihitung berdasarkan arah maju
                               cocok jika hanya data ke depan yang tersedia
                               Namun karena hanya melihat satu arah, hasilnya kurang merepresentasikan kondisi sebenarnya
-                            <br>RUMUS:
+                            <br>RUMUS:<br> $$f'(x) \approx \frac{f(x+h) - f(x)}{h}$$ 
 h = perubahan kecil pada variabel x.
 Bagian f(x+h)−f(x)h = laju perubahan rata-rata.
 Limit saat h→0 = laju perubahan sesaat.
@@ -312,6 +672,9 @@ Limit saat h→0 = laju perubahan sesaat.
             <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.6 LIMIT SELISIH MUNDUR</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>lIMIT SELISISH MUNDUR</strong><br>
+                            <br>rumus <p>
+                            $$\frac{f(x)-f(x-h)}{h}$$
+                             </p>
                             Selisih mundur melihat perubahan dengan membandingkan titik sekarang dengan titik sebelumnya
                             Kalau selisih maju melihat “ke depan” Maka selisih mundur melihat “ke belakang”
                             Artinya perubahan ditentukan dari apa yang sudah terjadi sebelumnya
@@ -326,7 +689,9 @@ Limit saat h→0 = laju perubahan sesaat.
                            Selisih pusat melihat keseimbangan dari dua arah.
                            Selisih pusat menggambarkan perubahan yang paling mendekati kondisi sebenarnya
                            Karena mempertimbangkan apa yang terjadi sebelum
-dan apa yang terjadi setelah<br>RUMUS:<br>
+dan apa yang terjadi setelah<br>RUMUS:<br><br><p>
+    $$\frac{f(x+h) - f(x-h)}{2h}$$
+  </p>
 a. f(x + h)<br>
 → nilai fungsi sedikit di depan<br>
  b. f(x - h)<br>
@@ -374,32 +739,50 @@ d. Dibagi 2h
          <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.8 ATURAN KONSTANTA</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN KONSTANTA</strong><br>
-                             aturan konstan menyatakan bahwa turunan dari suatu fungsi yang bernilai tetap(konstanta), adalah 0, karena konstanta tidak mengalami perubahan terhadap variabel.
+                             aturan konstan menyatakan bahwa turunan dari suatu fungsi yang bernilai tetap(konstanta), adalah 0, karena konstanta tidak mengalami perubahan terhadap variabel.<br><br><p>
+                             $$\frac{d}{dx}(c) = 0$$
+                             </p>
+                             contoh: Turunan dari f(x) = 5 adalah 0
                             </div>
         <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.9 ATURAN PERPANGKATAN </h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PERPANGKATAN</strong><br>
                              Aturan perpangkatan (power rule) dalam turunan kalkulus adalah aturan untuk menentukan turunan dari fungsi yang berbentuk pangkat.
                              syaratnya: -pangkatnya akan kite turunkan ke depan (menjadi koefisien) 
-                                        -lalu pangkatnya akan kita kurangi 1    
+                                        -lalu pangkatnya akan kita kurangi 1  <br><br> Rumusnya:  <p>
+                             $$\frac{d}{dx}(x^n) = n x^{n-1}$$
+                             </p> 
                             </div>
           <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.10 CHAIN RULE </h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>CHAIN RULE</strong><br>
-                             Aturan rantai adalah aturan turunan yang digunakan untuk menurunkan fungsi komposisi, atau secara garis besar menurunkan fungsi luar terlebih dahulu, kemudian dikalikan dengan turunan fungsi dalam. 
+                             Aturan rantai adalah aturan turunan yang digunakan untuk menurunkan fungsi komposisi, atau secara garis besar menurunkan fungsi luar terlebih dahulu, kemudian dikalikan dengan turunan fungsi dalam.<br><br> Rumusnya:  <p>
+                             $$\frac{d}{dx}(f(g(x))) = f'(g(x)) \cdot g'(x)$$
+                             </p> 
 
                             </div>
           <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.11 Aturan perkalian (product rule) </h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PERKALIAN</strong><br>
-                            aturan perkalian adalah aturan dalam turunan yang menyatakan bahwa turunan dari hasil dua fungsi merupakan penjumlahan dari kali turunan. maka: turunan pertama dikalikan fungsi kedua, dan fungsi pertama dikalikan turunan fungsi kedua
+                            aturan perkalian adalah aturan dalam turunan yang menyatakan bahwa turunan dari hasil dua fungsi merupakan penjumlahan dari kali turunan. maka: turunan pertama dikalikan fungsi kedua, dan fungsi pertama dikalikan turunan fungsi kedua<br><br> Rumusnya:  <p>
+                             $$\frac{d}{dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$$
+                             </p> 
 
                             </div>     
              
           <div id="ch4-aturan" class="mt-5">
             <h3 class="subsection-title">4.12 ATURAN PENJUMLAHAN DAN PENGURANGAN</h3>
             <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PENJUMLAHAN DAN PENGURANGAN</strong><br>
-                    aturan penjumlahan dan pengurangan menyatakan bahwa jika suatu fungsi terdiri dari beberapa bagian yang dijumlahkan atau dikurangkan maka: setiap bagian dapat diturunkan secara terpisah, kemudian hasilnya dijumlahkan atau dikurangkan
+                    aturan penjumlahan dan pengurangan menyatakan bahwa jika suatu fungsi terdiri dari beberapa bagian yang dijumlahkan atau dikurangkan maka: setiap bagian dapat diturunkan secara terpisah, kemudian hasilnya dijumlahkan atau dikurangkan<br><br> Rumusnya:  <p>
+                             $$\frac{d}{dx}(f(x) \pm g(x)) = f'(x) \pm g'(x)$$
+                             </p> 
+                            </div> 
+          <div id="ch4-aturan" class="mt-5">
+            <h3 class="subsection-title">4.13 ATURAN PEMBAGIAN (QUOTIENT RULE)</h3>
+            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>ATURAN PEMBAGIAN</strong><br>
+                    aturan pembagian (quotient rule) digunakan ketika kita perlu menurunkan fungsi yang berbentuk pecahan, yaitu ketika sebuah fungsi dibagi dengan fungsi lainnya<br><br> Rumusnya:  <p>
+                             $$\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}$$
+                             </p> 
                             </div> 
           
                 
@@ -411,83 +794,455 @@ d. Dibagi 2h
               </div>
               <div class="card-body">
                 <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 4: isi contoh soal turunan]</em></p>
+                
+                <p><em>Diketahui:f(x) = 3x² - 2x + 1
+Hitung pendekatan turunan menggunakan selisih maju.</em></p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 4: isi langkah-langkah]</em></p>
+                <p><em>Diketahui:<br>
+
+f(x) = 3x² - 2x + 1<br>
+
+Rumus:<br>
+
+f(x+h)-f(x) h<br>
+
+Langkah 1
+
+Cari f (x + h)<br>
+
+= 3 * (x + h) ^ 2 - 2(x + h) + 1<br>
+
+= 3(x ^ 2 + 2xh + h ^ 2) - 2x - 2h + 1<br>
+
+= 3x ^ 2 + 6xh + 3h ^ 2 - 2x - 2h + 1<br>
+
+Langkah 2<br>
+
+(3x²+6xh+3h²-2x-2h+1)-(3x²-2x+1) h<br>
+
+Langkah 3<br>
+
+6xh+3h-2h h
+
+Langkah 4
+
+Faktorkan h
+
+h(6x+3h-2) h<br>
+
+Jawaban<br>
+
+6x+3h-2</em></p>
               </div>
             </div>
-            <div class="card example-card mt-3">
+        <div class="card example-card mt-3">
               <div class="card-header example-card-header"><i class="bi bi-lightbulb-fill me-2"></i>Contoh Soal 4.2
               </div>
               <div class="card-body">
                 <p class="fw-semibold">Soal:</p>
-                <p><em>[Kelompok 4: isi contoh soal kedua]</em></p>
+                <p><em>Diketahui f(x) = (2x² + 3x)⁵.<br>
+                  Tentukan f'(x) menggunakan <strong>aturan rantai (chain rule)</strong>, kemudian hitung nilai
+                  f'(1).</em></p>
                 <hr />
                 <p class="fw-semibold">Penyelesaian:</p>
-                <p><em>[Kelompok 4: isi langkah-langkah]</em></p>
+                <p><em>
+                  <strong>Langkah 1 — Identifikasi fungsi luar dan fungsi dalam</strong><br>
+                  Misalkan u = g(x) = 2x² + 3x &nbsp;(fungsi dalam)<br>
+                  maka f(x) = u⁵ &nbsp;(fungsi luar)<br>
+                  <br>
+                  <strong>Langkah 2 — Turunkan fungsi luar terhadap u</strong><br>
+                  d/du (u⁵) = 5u⁴<br>
+                  <br>
+                  <strong>Langkah 3 — Turunkan fungsi dalam terhadap x</strong><br>
+                  g'(x) = d/dx (2x² + 3x) = 4x + 3<br>
+                  <br>
+                  <strong>Langkah 4 — Gabungkan dengan aturan rantai</strong><br>
+                  f'(x) = f'(g(x)) × g'(x) = 5u⁴ × g'(x)<br>
+                  f'(x) = 5(2x² + 3x)⁴ × (4x + 3)<br>
+                  <br>
+                  <strong>Jawaban:</strong><br>
+                  f'(x) = 5(2x² + 3x)⁴(4x + 3)<br>
+                  <br>
+                  <strong>Langkah 5 — Evaluasi pada x = 1</strong><br>
+                  g(1) = 2(1)² + 3(1) = 2 + 3 = 5<br>
+                  g'(1) = 4(1) + 3 = 7<br>
+                  f'(1) = 5 × (5)⁴ × 7 = 5 × 625 × 7 = <strong>21.875</strong>
+                </em></p>
               </div>
             </div>
-          </div>
 
           <div id="ch4-video" class="mt-5">
             <h3 class="subsection-title">Video Pembelajaran</h3>
-            <div class="placeholder-notice"><i class="bi bi-camera-video"></i><strong>Kelompok 4</strong> — Embed video
-              pembelajaran Turunan di sini.</div>
-            <div class="ratio ratio-16x9 mt-3"
-              style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Pembelajaran Bab 4" allowfullscreen
+
+
+            <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/a21Z1bDHLE8"  title="Video Pembelajaran Bab 4" allowfullscreen
+                style="border:0;"></iframe>
+            </div>
+
+            <div id="ch4-video" class="mt-5">
+            <h3 class="subsection-title">Video Pembelajaran</h3>
+
+            <div class="ratio ratio-16x9 mt-3" style="border-radius:12px; overflow:hidden; border:1px solid var(--clr-border);">
+              <iframe src="https://www.youtube.com/embed/eYGuMDeVllk"  title="Video Pembelajaran Bab 4" allowfullscreen
+
                 style="border:0;"></iframe>
             </div>
             <p class="text-muted small mt-2"><i class="bi bi-info-circle me-1"></i>Ganti link video di atas dengan video
               pembelajaran yang sesuai.</p>
           </div>
 
-          <div id="ch4-latihan" class="mt-5">
-            <h3 class="subsection-title">Latihan Soal</h3>
-            <div class="placeholder-notice"><i class="bi bi-pencil-square"></i><strong>Kelompok 4</strong> — Isi latihan
-              soal di bawah ini.</div>
-            <div class="card"
-              style="border-color:var(--clr-border); border-radius:12px; background:var(--clr-surface);">
-              <div class="card-body">
-                <ol class="mb-0">
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 1</p>
-                    <p><em>[Kelompok 4: isi soal latihan 1]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 1]</em></div>
-                    </details>
-                  </li>
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 2</p>
-                    <p><em>[Kelompok 4: isi soal latihan 2]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 2]</em></div>
-                    </details>
-                  </li>
-                  <li class="mb-3">
-                    <p class="fw-semibold mb-1">Soal 3</p>
-                    <p><em>[Kelompok 4: isi soal latihan 3]</em></p>
-                    <details class="mt-2">
-                      <summary style="cursor:pointer; color:var(--clr-primary); font-size:.85rem; font-weight:600;">
-                        Lihat Jawaban</summary>
-                      <div class="mt-2 p-3"
-                        style="background:var(--clr-primary-light); border-radius:8px; font-size:.85rem;"><em>[Jawaban
-                          soal 3]</em></div>
-                    </details>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
+          <!--
+  ============================================================
+  LATIHAN SOAL — Pilihan ganda interaktif + animasi benar/salah
+  PENGGANTI blok placeholder lama:
+  <div id="ch4-latihan" class="mt-5"> ... </div>
+
+  Langkah:
+  1. Di kelompok4.html, cari (Ctrl+F) "ch4-latihan".
+  2. Hapus seluruh blok lama: dari <div id="ch4-latihan" class="mt-5">
+     sampai </div> penutupnya (termasuk placeholder-notice dan
+     <ol> dengan 3 soal kosongnya).
+  3. Paste seluruh isi file ini di posisi yang sama.
+
+  8 soal mencakup: definisi turunan, interpretasi geometris,
+  dan 6 aturan diferensiasi (konstanta, perpangkatan,
+  penjumlahan/pengurangan, perkalian, pembagian, rantai).
+  Semua jawaban sudah diverifikasi numerik sebelum dipakai.
+  ============================================================
+-->
+
+<div id="ch4-latihan" class="mt-5">
+  <h3 class="subsection-title">📝 Latihan Soal</h3>
+  <p class="text-muted small mb-4">Pilih salah satu jawaban di setiap soal. Jawaban benar akan berwarna hijau,
+    jawaban salah berwarna merah — beserta penjelasan singkatnya.</p>
+
+  <div class="quiz-wrap" id="quizWrap">
+
+    <!-- SOAL 1 — Definisi Turunan -->
+    <div class="quiz-card" data-explain="Definisi limit selisih: f'(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h — selisih nilai fungsi dibagi h, dengan h mendekati nol.">
+      <p class="quiz-question"><span class="quiz-num">1</span> Menurut definisi limit selisih, turunan f(x) dirumuskan sebagai ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">lim<sub>h→0</sub> [f(x) − f(x+h)] / h</button>
+        <button class="quiz-option">lim<sub>h→0</sub> [f(x) + f(h)] / h</button>
+        <button class="quiz-option">lim<sub>x→0</sub> [f(x+h) − f(x)] / x</button>
+        <button class="quiz-option" data-correct="true">lim<sub>h→0</sub> [f(x+h) − f(x)] / h</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 2 — Interpretasi Geometris -->
+    <div class="quiz-card" data-explain="f'(a) adalah kemiringan (gradien) garis singgung kurva y = f(x) tepat di titik x = a.">
+      <p class="quiz-question"><span class="quiz-num">2</span> Secara geometris, nilai f'(a) menyatakan ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">Nilai fungsi f di titik x = a</button>
+        <button class="quiz-option">Titik potong kurva dengan sumbu-x</button>
+        <button class="quiz-option" data-correct="true">Gradien garis singgung kurva f(x) di titik (a, f(a))</button>
+        <button class="quiz-option">Luas daerah di bawah kurva pada interval [0, a]</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 3 — Aturan Konstanta -->
+    <div class="quiz-card" data-explain="Aturan konstanta: turunan dari fungsi bernilai tetap selalu 0, karena nilainya tidak berubah terhadap x.">
+      <p class="quiz-question"><span class="quiz-num">3</span> Jika f(x) = 9, maka f'(x) = ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">9</button>
+        <button class="quiz-option" data-correct="true">0</button>
+        <button class="quiz-option">1</button>
+        <button class="quiz-option">x</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 4 — Aturan Perpangkatan -->
+    <div class="quiz-card" data-explain="Power rule: f'(x) = a·n·x<sup>n−1</sup> = 4 × 5 × x⁴ = 20x⁴.">
+      <p class="quiz-question"><span class="quiz-num">4</span> Turunan dari f(x) = 4x⁵ adalah ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">4x⁴</button>
+        <button class="quiz-option">5x⁴</button>
+        <button class="quiz-option" data-correct="true">20x⁴</button>
+        <button class="quiz-option">20x⁵</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 5 — Aturan Penjumlahan & Pengurangan -->
+    <div class="quiz-card" data-explain="Setiap suku diturunkan terpisah: (3x²)' = 6x, (−5x)' = −5, (2)' = 0 → hasil 6x − 5.">
+      <p class="quiz-question"><span class="quiz-num">5</span> Turunan dari f(x) = 3x² − 5x + 2 adalah ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">6x² − 5x</button>
+        <button class="quiz-option">6x + 5</button>
+        <button class="quiz-option">3x − 5</button>
+        <button class="quiz-option" data-correct="true">6x − 5</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 6 — Aturan Perkalian -->
+    <div class="quiz-card" data-explain="Product rule: (fg)' = f'g + fg' = (2x)(x³) + (x²)(3x²) = 2x⁴ + 3x⁴ = 5x⁴.">
+      <p class="quiz-question"><span class="quiz-num">6</span> Jika f(x) = x² dan g(x) = x³, maka turunan dari f(x)·g(x) adalah ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option" data-correct="true">5x⁴</button>
+        <button class="quiz-option">2x⁴</button>
+        <button class="quiz-option">6x⁴</button>
+        <button class="quiz-option">5x⁵</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 7 — Aturan Pembagian -->
+    <div class="quiz-card" data-explain="Quotient rule: (f/g)' = (f'g − fg')/g² = (3x²·x − x³·1)/x² = 2x³/x² = 2x. (Bisa juga disederhanakan dulu: x³/x = x², lalu diturunkan menjadi 2x.)">
+      <p class="quiz-question"><span class="quiz-num">7</span> Turunan dari f(x) = x³ / x adalah ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">3x²</button>
+        <button class="quiz-option">x²</button>
+        <button class="quiz-option" data-correct="true">2x</button>
+        <button class="quiz-option">2x²</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <!-- SOAL 8 — Aturan Rantai -->
+    <div class="quiz-card" data-explain="Chain rule: h'(x) = f'(g(x)) · g'(x) = 4(2x+3)³ × 2 = 8(2x+3)³.">
+      <p class="quiz-question"><span class="quiz-num">8</span> Turunan dari f(x) = (2x + 3)⁴ adalah ...</p>
+      <div class="quiz-options">
+        <button class="quiz-option">4(2x + 3)³</button>
+        <button class="quiz-option">(2x + 3)³</button>
+        <button class="quiz-option">8(2x + 3)⁴</button>
+        <button class="quiz-option" data-correct="true">8(2x + 3)³</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+  </div>
+
+  <div class="quiz-summary" id="quizSummary" style="display:none;">
+    <i class="bi bi-trophy-fill me-1"></i> Skor kamu: <span id="quizScore">0</span> / <span id="quizTotal">8</span>
+    <button class="quiz-retry-btn" id="quizRetryBtn"><i class="bi bi-arrow-counterclockwise me-1"></i>Ulangi</button>
+  </div>
+</div>
+
+<style>
+  #ch4-latihan .quiz-wrap { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  #ch4-latihan .quiz-card {
+    background: var(--clr-surface, #ffffff);
+    border: 1px solid var(--clr-border, #e2e2e2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  #ch4-latihan .quiz-question {
+    font-weight: 600;
+    margin-bottom: .9rem;
+    display: flex;
+    gap: .6rem;
+    align-items: flex-start;
+    color: var(--clr-text, #1a1a1a);
+  }
+
+  #ch4-latihan .quiz-num {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--clr-primary, #2563eb);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .8rem;
+  }
+
+  #ch4-latihan .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+  }
+  @media (max-width: 560px) {
+    #ch4-latihan .quiz-options { grid-template-columns: 1fr; }
+  }
+
+  #ch4-latihan .quiz-option {
+    position: relative;
+    text-align: left;
+    padding: .65rem .9rem;
+    border-radius: 8px;
+    border: 1px solid var(--clr-border, #e2e2e2);
+    background: var(--clr-bg, #f7f8fa);
+    color: var(--clr-text, #1a1a1a);
+    font-size: .85rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, transform .15s;
+  }
+  #ch4-latihan .quiz-option:hover:not(.disabled) {
+    border-color: var(--clr-primary, #2563eb);
+    transform: translateY(-1px);
+  }
+  #ch4-latihan .quiz-option.disabled { cursor: default; }
+
+  #ch4-latihan .quiz-option.correct {
+    background: rgba(22, 163, 74, 0.12);
+    border-color: #16a34a;
+    color: #15803d;
+    font-weight: 600;
+    animation: quizPulse .35s ease;
+  }
+  #ch4-latihan .quiz-option.wrong {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: #dc2626;
+    color: #b91c1c;
+    animation: quizShake .4s ease;
+  }
+
+  #ch4-latihan .quiz-icon {
+    margin-left: .5rem;
+    animation: quizPop .3s ease;
+  }
+  #ch4-latihan .quiz-option.correct .quiz-icon { color: #16a34a; }
+  #ch4-latihan .quiz-option.wrong .quiz-icon { color: #dc2626; }
+
+  @keyframes quizShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+  @keyframes quizPop {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.3); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes quizPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+
+  #ch4-latihan .quiz-feedback {
+    margin-top: .75rem;
+    font-size: .82rem;
+    min-height: 1px;
+  }
+  #ch4-latihan .quiz-feedback-correct { color: #15803d; }
+  #ch4-latihan .quiz-feedback-wrong { color: #b91c1c; }
+
+  #ch4-latihan .quiz-summary {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    background: var(--clr-primary-light, #e8f0fe);
+    border: 1px solid var(--clr-border, #e2e2e2);
+    font-weight: 600;
+    text-align: center;
+    color: var(--clr-text, #1a1a1a);
+    animation: quizPop .35s ease;
+  }
+  #ch4-latihan .quiz-retry-btn {
+    margin-left: .75rem;
+    border: 1px solid var(--clr-border, #e2e2e2);
+    background: var(--clr-surface, #fff);
+    color: var(--clr-primary, #2563eb);
+    border-radius: 6px;
+    padding: .3rem .7rem;
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #ch4-latihan .quiz-retry-btn:hover { background: var(--clr-bg, #f7f8fa); }
+</style>
+
+<script>
+(function () {
+  const wrap = document.getElementById('quizWrap');
+  if (!wrap) return;
+
+  const cards = wrap.querySelectorAll('.quiz-card');
+  const summaryEl = document.getElementById('quizSummary');
+  const scoreEl = document.getElementById('quizScore');
+  const totalEl = document.getElementById('quizTotal');
+  const retryBtn = document.getElementById('quizRetryBtn');
+
+  let answered = 0;
+  let correctCount = 0;
+
+  function lockCard(card, chosenBtn) {
+    const options = card.querySelectorAll('.quiz-option');
+    options.forEach(o => {
+      o.disabled = true;
+      o.classList.add('disabled');
+      if (o.dataset.correct === 'true') o.classList.add('correct');
+    });
+
+    const feedback = card.querySelector('.quiz-feedback');
+    const explain = card.dataset.explain || '';
+    const isCorrect = chosenBtn.dataset.correct === 'true';
+
+    if (isCorrect) {
+      chosenBtn.insertAdjacentHTML('beforeend', '<i class="bi bi-check-circle-fill quiz-icon"></i>');
+      feedback.innerHTML = `<span class="quiz-feedback-correct"><i class="bi bi-check-circle-fill me-1"></i>Benar! ${explain}</span>`;
+    } else {
+      chosenBtn.classList.add('wrong');
+      chosenBtn.insertAdjacentHTML('beforeend', '<i class="bi bi-x-circle-fill quiz-icon"></i>');
+      feedback.innerHTML = `<span class="quiz-feedback-wrong"><i class="bi bi-x-circle-fill me-1"></i>Kurang tepat. ${explain}</span>`;
+    }
+  }
+
+  function safeScrollIntoView(el) {
+    if (el && typeof el.scrollIntoView === 'function') {
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function showSummaryIfDone() {
+    if (answered === cards.length) {
+      scoreEl.textContent = correctCount;
+      totalEl.textContent = cards.length;
+      summaryEl.style.display = 'block';
+      safeScrollIntoView(summaryEl);
+    }
+  }
+
+  function bindCard(card) {
+    const options = card.querySelectorAll('.quiz-option');
+    let locked = false;
+
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        if (locked) return;
+        locked = true;
+        answered++;
+        if (opt.dataset.correct === 'true') correctCount++;
+        lockCard(card, opt);
+        showSummaryIfDone();
+      });
+    });
+
+    card._quizLocked = () => locked;
+    card._quizReset = () => {
+      locked = false;
+      options.forEach(o => {
+        o.disabled = false;
+        o.classList.remove('disabled', 'correct', 'wrong');
+        const icon = o.querySelector('.quiz-icon');
+        if (icon) icon.remove();
+      });
+      card.querySelector('.quiz-feedback').innerHTML = '';
+    };
+  }
+
+  cards.forEach(bindCard);
+
+  retryBtn.addEventListener('click', () => {
+    answered = 0;
+    correctCount = 0;
+    cards.forEach(c => c._quizReset());
+    summaryEl.style.display = 'none';
+    safeScrollIntoView(wrap);
+  });
+})();
+</script>
 
           <div id="ch4-kalkulator" class="mt-5">
             <div class="calc-section">
@@ -513,6 +1268,410 @@ d. Dibagi 2h
             </div>
           </div>
 
+
+          <!--
+  ============================================================
+  KALKULATOR ATURAN TURUNAN (6 aturan)
+  Cara pakai: file ini PENGGANTI kedua blok duplikat
+  <div id="ch4-kalkulator">...</div> yang sudah ada di
+  kelompok4.html (yang isinya cuma 1 kalkulator power rule,
+  ke-copy 2x dengan ID input yang sama).
+
+  Langkah:
+  1. Di kelompok4.html, hapus KEDUA blok lama:
+     <div id="ch4-kalkulator" class="mt-5"> ... </div>
+     (ada 2 — cari lewat Ctrl+F "ch4-kalkulator")
+  2. Paste seluruh isi file ini di posisi yang sama.
+
+  Tidak perlu CSS tambahan — semua class (calc-section,
+  calc-header, calc-body, calc-result, calc-note, btn-calc)
+  sudah didefinisikan di style.css kamu.
+  ============================================================
+-->
+
+<div id="ch4-kalkulator" class="mt-5">
+  <h3 class="subsection-title">🧮 Kalkulator Aturan-Aturan Turunan</h3>
+  <p class="text-muted small mb-4">Enam kalkulator di bawah ini masing-masing mendemonstrasikan satu aturan
+    diferensiasi. Semua fungsi ditulis dalam bentuk suku pangkat <strong>a·xⁿ</strong> agar mudah dihitung manual
+    sebagai pembanding.</p>
+
+  <!-- 1. ATURAN KONSTANTA -->
+  <div class="calc-section">
+    <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>1. Aturan Konstanta</div>
+    <div class="calc-body">
+      <p class="text-muted small mb-3">Turunan fungsi konstan: <strong>f(x) = c → f'(x) = 0</strong></p>
+      <div class="row g-2 align-items-end">
+        <div class="col-sm-8"><label class="form-label small">Konstanta (c)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-konst-c" value="7" step="0.1" /></div>
+        <div class="col-sm-4"><button class="btn btn-calc w-100" onclick="calcKonstanta()">Hitung</button></div>
+      </div>
+      <div class="calc-result mt-3" id="ch4-konst-result">Masukkan nilai, lalu klik <strong>Hitung</strong></div>
+    </div>
+  </div>
+
+  <!-- 2. ATURAN PERPANGKATAN -->
+  <div class="calc-section mt-4">
+    <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>2. Aturan Perpangkatan (Power Rule)</div>
+    <div class="calc-body">
+      <p class="text-muted small mb-3">Hitung turunan <strong>f(x) = a·xⁿ</strong> menggunakan power rule:
+        <strong>f'(x) = a·n·xⁿ⁻¹</strong></p>
+      <div class="row g-2 align-items-end">
+        <div class="col-sm-3"><label class="form-label small">Koefisien (a)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-pangkat-a" value="3" step="0.1" /></div>
+        <div class="col-sm-3"><label class="form-label small">Pangkat (n)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-pangkat-n" value="4" step="1" /></div>
+        <div class="col-sm-3"><label class="form-label small">Nilai x</label><input type="number"
+            class="form-control form-control-sm" id="ch4-pangkat-x" value="2" step="0.1" /></div>
+        <div class="col-sm-3"><button class="btn btn-calc w-100" onclick="calcPerpangkatan()">Hitung</button></div>
+      </div>
+      <div class="calc-result mt-3" id="ch4-pangkat-result">Masukkan nilai, lalu klik <strong>Hitung</strong></div>
+    </div>
+  </div>
+
+  <!-- 3. ATURAN PENJUMLAHAN & PENGURANGAN -->
+  <div class="calc-section mt-4">
+    <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>3. Aturan Penjumlahan & Pengurangan</div>
+    <div class="calc-body">
+      <p class="text-muted small mb-3">Hitung turunan <strong>f(x) = a₁x<sup>n₁</sup> ± a₂x<sup>n₂</sup></strong> —
+        setiap suku diturunkan terpisah, lalu dijumlah/dikurangkan.</p>
+      <div class="row g-2 align-items-end">
+        <div class="col-sm-2"><label class="form-label small">a₁</label><input type="number"
+            class="form-control form-control-sm" id="ch4-sp-a1" value="2" step="0.1" /></div>
+        <div class="col-sm-2"><label class="form-label small">n₁</label><input type="number"
+            class="form-control form-control-sm" id="ch4-sp-n1" value="3" step="1" /></div>
+        <div class="col-sm-2"><label class="form-label small">Operator</label>
+          <select class="form-select form-select-sm" id="ch4-sp-op">
+            <option value="+">+ (tambah)</option>
+            <option value="-">− (kurang)</option>
+          </select>
+        </div>
+        <div class="col-sm-2"><label class="form-label small">a₂</label><input type="number"
+            class="form-control form-control-sm" id="ch4-sp-a2" value="5" step="0.1" /></div>
+        <div class="col-sm-2"><label class="form-label small">n₂</label><input type="number"
+            class="form-control form-control-sm" id="ch4-sp-n2" value="1" step="1" /></div>
+        <div class="col-sm-2"><label class="form-label small">Nilai x</label><input type="number"
+            class="form-control form-control-sm" id="ch4-sp-x" value="2" step="0.1" /></div>
+      </div>
+      <button class="btn btn-calc w-100 mt-2" onclick="calcPenjumlahanPengurangan()">Hitung</button>
+      <div class="calc-result mt-3" id="ch4-sp-result">Masukkan nilai, lalu klik <strong>Hitung</strong></div>
+    </div>
+  </div>
+
+  <!-- 4. ATURAN PERKALIAN -->
+  <div class="calc-section mt-4">
+    <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>4. Aturan Perkalian (Product Rule)</div>
+    <div class="calc-body">
+      <p class="text-muted small mb-3">Hitung turunan <strong>(f·g)' = f'·g + f·g'</strong> untuk
+        <strong>f(x) = a₁x<sup>n₁</sup></strong> dan <strong>g(x) = a₂x<sup>n₂</sup></strong></p>
+      <div class="row g-2 align-items-end">
+        <div class="col-sm-3"><label class="form-label small">a₁ (koef. f)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-mul-a1" value="2" step="0.1" /></div>
+        <div class="col-sm-3"><label class="form-label small">n₁ (pangkat f)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-mul-n1" value="3" step="1" /></div>
+        <div class="col-sm-3"><label class="form-label small">a₂ (koef. g)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-mul-a2" value="1" step="0.1" /></div>
+        <div class="col-sm-3"><label class="form-label small">n₂ (pangkat g)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-mul-n2" value="1" step="1" /></div>
+      </div>
+      <div class="row g-2 align-items-end mt-2">
+        <div class="col-sm-6"><label class="form-label small">Nilai x</label><input type="number"
+            class="form-control form-control-sm" id="ch4-mul-x" value="2" step="0.1" /></div>
+        <div class="col-sm-6"><button class="btn btn-calc w-100" onclick="calcPerkalian()">Hitung</button></div>
+      </div>
+      <div class="calc-result mt-3" id="ch4-mul-result">Masukkan nilai, lalu klik <strong>Hitung</strong></div>
+    </div>
+  </div>
+
+  <!-- 5. ATURAN PEMBAGIAN -->
+  <div class="calc-section mt-4">
+    <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>5. Aturan Pembagian (Quotient Rule)</div>
+    <div class="calc-body">
+      <p class="text-muted small mb-3">Hitung turunan <strong>(f/g)' = (f'·g − f·g') / g²</strong> untuk
+        <strong>f(x) = a₁x<sup>n₁</sup></strong> dan <strong>g(x) = a₂x<sup>n₂</sup></strong></p>
+      <div class="row g-2 align-items-end">
+        <div class="col-sm-3"><label class="form-label small">a₁ (koef. f)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-div-a1" value="1" step="0.1" /></div>
+        <div class="col-sm-3"><label class="form-label small">n₁ (pangkat f)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-div-n1" value="2" step="1" /></div>
+        <div class="col-sm-3"><label class="form-label small">a₂ (koef. g)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-div-a2" value="1" step="0.1" /></div>
+        <div class="col-sm-3"><label class="form-label small">n₂ (pangkat g)</label><input type="number"
+            class="form-control form-control-sm" id="ch4-div-n2" value="1" step="1" /></div>
+      </div>
+      <div class="row g-2 align-items-end mt-2">
+        <div class="col-sm-6"><label class="form-label small">Nilai x</label><input type="number"
+            class="form-control form-control-sm" id="ch4-div-x" value="2" step="0.1" /></div>
+        <div class="col-sm-6"><button class="btn btn-calc w-100" onclick="calcPembagian()">Hitung</button></div>
+      </div>
+      <div class="calc-result mt-3" id="ch4-div-result">Masukkan nilai, lalu klik <strong>Hitung</strong></div>
+    </div>
+  </div>
+
+  <!-- 6. ATURAN RANTAI (CHAIN RULE) -->
+  <div class="calc-section mt-4">
+    <div class="calc-header"><i class="bi bi-calculator-fill me-2"></i>6. Aturan Rantai (Chain Rule)</div>
+    <div class="calc-body">
+      <p class="text-muted small mb-3">Hitung turunan <strong>h(x) = a·(m·x + b)ⁿ</strong> — turunan fungsi luar
+        dikali turunan fungsi dalam: <strong>h'(x) = f'(g(x)) · g'(x)</strong></p>
+      <div class="row g-2 align-items-end">
+        <div class="col-sm-2"><label class="form-label small">a</label><input type="number"
+            class="form-control form-control-sm" id="ch4-chain-a" value="1" step="0.1" /></div>
+        <div class="col-sm-2"><label class="form-label small">m</label><input type="number"
+            class="form-control form-control-sm" id="ch4-chain-m" value="2" step="0.1" /></div>
+        <div class="col-sm-2"><label class="form-label small">b</label><input type="number"
+            class="form-control form-control-sm" id="ch4-chain-b" value="1" step="0.1" /></div>
+        <div class="col-sm-2"><label class="form-label small">n</label><input type="number"
+            class="form-control form-control-sm" id="ch4-chain-n" value="3" step="1" /></div>
+        <div class="col-sm-2"><label class="form-label small">Nilai x</label><input type="number"
+            class="form-control form-control-sm" id="ch4-chain-x" value="2" step="0.1" /></div>
+        <div class="col-sm-2"><button class="btn btn-calc w-100" onclick="calcRantai()">Hitung</button></div>
+      </div>
+      <div class="calc-result mt-3" id="ch4-chain-result">Masukkan nilai, lalu klik <strong>Hitung</strong></div>
+      <div class="calc-note">💡 Contoh default: h(x) = (2x+1)³ — fungsi luar f(u)=u³, fungsi dalam g(x)=2x+1</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ─────────────────────────────────────────
+     HELPER (dipakai bersama semua kalkulator).
+     Hanya didefinisikan kalau belum ada di script.js,
+     supaya tidak konflik kalau script.js-mu sudah jalan.
+  ───────────────────────────────────────── */
+  if (typeof window.formatNum !== 'function') {
+    window.formatNum = function (n) {
+      if (!isFinite(n)) return 'Tidak terdefinisi';
+      const rounded = parseFloat(n.toPrecision(8));
+      return rounded.toString();
+    };
+  }
+
+  if (typeof window.showCalcError !== 'function') {
+    window.showCalcError = function (el, msg) {
+      el.className = 'calc-result';
+      el.style.background = '#fff2f0';
+      el.style.borderColor = '#fca5a5';
+      el.style.color = '#b91c1c';
+      el.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-1"></i>${msg}`;
+      setTimeout(() => {
+        el.style.background = '';
+        el.style.borderColor = '';
+        el.style.color = '';
+      }, 3000);
+    };
+  }
+
+  /* ─────────────────────────────────────────
+     1. ATURAN KONSTANTA
+     f(x) = c  →  f'(x) = 0
+  ───────────────────────────────────────── */
+  function calcKonstanta() {
+    const c = parseFloat(document.getElementById('ch4-konst-c').value);
+    const resultEl = document.getElementById('ch4-konst-result');
+
+    if (isNaN(c)) {
+      showCalcError(resultEl, 'Masukkan nilai konstanta yang valid.');
+      return;
+    }
+
+    resultEl.className = 'calc-result success';
+    resultEl.innerHTML = `
+      <strong>f(x) = ${c}</strong> (fungsi konstan)<br>
+      Karena nilai konstanta tidak berubah terhadap x, maka:<br>
+      f'(x) = <strong>0</strong>
+    `;
+  }
+
+  /* ─────────────────────────────────────────
+     2. ATURAN PERPANGKATAN (Power Rule)
+     f(x) = a·xⁿ  →  f'(x) = a·n·x^(n-1)
+  ───────────────────────────────────────── */
+  function calcPerpangkatan() {
+    const a = parseFloat(document.getElementById('ch4-pangkat-a').value);
+    const n = parseFloat(document.getElementById('ch4-pangkat-n').value);
+    const x = parseFloat(document.getElementById('ch4-pangkat-x').value);
+    const resultEl = document.getElementById('ch4-pangkat-result');
+
+    if ([a, n, x].some(isNaN)) {
+      showCalcError(resultEl, 'Masukkan angka yang valid untuk semua field.');
+      return;
+    }
+
+    if (n === 0) {
+      resultEl.className = 'calc-result success';
+      resultEl.innerHTML = `f(x) = ${a} (konstanta)<br>f'(x) = <strong>0</strong>`;
+      return;
+    }
+
+    const newCoeff = a * n;
+    const newPow = n - 1;
+    const fPrimeX = newCoeff * Math.pow(x, newPow);
+
+    resultEl.className = 'calc-result success';
+    resultEl.innerHTML = `
+      <strong>f(x) = ${a}x<sup>${n}</sup></strong><br>
+      f'(x) = ${a} × ${n} × x<sup>${n}−1</sup> = <strong>${newCoeff}x<sup>${newPow}</sup></strong><br>
+      <br>
+      Pada x = ${x}:<br>
+      f'(${x}) = ${newCoeff} × (${x})<sup>${newPow}</sup> = <strong>${formatNum(fPrimeX)}</strong>
+    `;
+  }
+
+  /* ─────────────────────────────────────────
+     3. ATURAN PENJUMLAHAN & PENGURANGAN
+     f(x) = a₁x^n₁ ± a₂x^n₂  →  f'(x) = a₁n₁x^(n₁-1) ± a₂n₂x^(n₂-1)
+  ───────────────────────────────────────── */
+  function calcPenjumlahanPengurangan() {
+    const a1 = parseFloat(document.getElementById('ch4-sp-a1').value);
+    const n1 = parseFloat(document.getElementById('ch4-sp-n1').value);
+    const op = document.getElementById('ch4-sp-op').value;
+    const a2 = parseFloat(document.getElementById('ch4-sp-a2').value);
+    const n2 = parseFloat(document.getElementById('ch4-sp-n2').value);
+    const x = parseFloat(document.getElementById('ch4-sp-x').value);
+    const resultEl = document.getElementById('ch4-sp-result');
+
+    if ([a1, n1, a2, n2, x].some(isNaN)) {
+      showCalcError(resultEl, 'Masukkan angka yang valid untuk semua field.');
+      return;
+    }
+
+    const d1Coeff = a1 * n1, d1Pow = n1 - 1;
+    const d2Coeff = a2 * n2, d2Pow = n2 - 1;
+    const sign = op === '-' ? -1 : 1;
+
+    const fpx = (d1Coeff * Math.pow(x, d1Pow)) + sign * (d2Coeff * Math.pow(x, d2Pow));
+
+    resultEl.className = 'calc-result success';
+    resultEl.innerHTML = `
+      <strong>f(x) = ${a1}x<sup>${n1}</sup> ${op} ${a2}x<sup>${n2}</sup></strong><br>
+      f'(x) = (${a1}×${n1})x<sup>${n1}-1</sup> ${op} (${a2}×${n2})x<sup>${n2}-1</sup><br>
+            = <strong>${d1Coeff}x<sup>${d1Pow}</sup> ${op} ${d2Coeff}x<sup>${d2Pow}</sup></strong><br>
+      <br>
+      Pada x = ${x}:<br>
+      f'(${x}) = <strong>${formatNum(fpx)}</strong>
+    `;
+  }
+
+  /* ─────────────────────────────────────────
+     4. ATURAN PERKALIAN (Product Rule)
+     f(x)=a₁x^n₁, g(x)=a₂x^n₂  →  (fg)' = f'g + fg'
+  ───────────────────────────────────────── */
+  function calcPerkalian() {
+    const a1 = parseFloat(document.getElementById('ch4-mul-a1').value);
+    const n1 = parseFloat(document.getElementById('ch4-mul-n1').value);
+    const a2 = parseFloat(document.getElementById('ch4-mul-a2').value);
+    const n2 = parseFloat(document.getElementById('ch4-mul-n2').value);
+    const x = parseFloat(document.getElementById('ch4-mul-x').value);
+    const resultEl = document.getElementById('ch4-mul-result');
+
+    if ([a1, n1, a2, n2, x].some(isNaN)) {
+      showCalcError(resultEl, 'Masukkan angka yang valid untuk semua field.');
+      return;
+    }
+
+    const fx = a1 * Math.pow(x, n1);
+    const fpx = a1 * n1 * Math.pow(x, n1 - 1);
+    const gx = a2 * Math.pow(x, n2);
+    const gpx = a2 * n2 * Math.pow(x, n2 - 1);
+    const hasil = fpx * gx + fx * gpx;
+
+    resultEl.className = 'calc-result success';
+    resultEl.innerHTML = `
+      <strong>f(x) = ${a1}x<sup>${n1}</sup></strong>, <strong>g(x) = ${a2}x<sup>${n2}</sup></strong><br>
+      (fg)'(x) = f'(x)·g(x) + f(x)·g'(x)<br>
+      <br>
+      Pada x = ${x}:<br>
+      f(${x}) = ${formatNum(fx)}, f'(${x}) = ${formatNum(fpx)}<br>
+      g(${x}) = ${formatNum(gx)}, g'(${x}) = ${formatNum(gpx)}<br>
+      <br>
+      (fg)'(${x}) = (${formatNum(fpx)} × ${formatNum(gx)}) + (${formatNum(fx)} × ${formatNum(gpx)})<br>
+                = <strong>${formatNum(hasil)}</strong>
+    `;
+  }
+
+  /* ─────────────────────────────────────────
+     5. ATURAN PEMBAGIAN (Quotient Rule)
+     f(x)=a₁x^n₁, g(x)=a₂x^n₂  →  (f/g)' = (f'g − fg') / g²
+  ───────────────────────────────────────── */
+  function calcPembagian() {
+    const a1 = parseFloat(document.getElementById('ch4-div-a1').value);
+    const n1 = parseFloat(document.getElementById('ch4-div-n1').value);
+    const a2 = parseFloat(document.getElementById('ch4-div-a2').value);
+    const n2 = parseFloat(document.getElementById('ch4-div-n2').value);
+    const x = parseFloat(document.getElementById('ch4-div-x').value);
+    const resultEl = document.getElementById('ch4-div-result');
+
+    if ([a1, n1, a2, n2, x].some(isNaN)) {
+      showCalcError(resultEl, 'Masukkan angka yang valid untuk semua field.');
+      return;
+    }
+
+    const fx = a1 * Math.pow(x, n1);
+    const fpx = a1 * n1 * Math.pow(x, n1 - 1);
+    const gx = a2 * Math.pow(x, n2);
+    const gpx = a2 * n2 * Math.pow(x, n2 - 1);
+
+    if (gx === 0) {
+      showCalcError(resultEl, `g(${x}) = 0 — f/g tidak terdefinisi di titik ini (pembagian dengan nol).`);
+      return;
+    }
+
+    const hasil = (fpx * gx - fx * gpx) / (gx * gx);
+
+    resultEl.className = 'calc-result success';
+    resultEl.innerHTML = `
+      <strong>f(x) = ${a1}x<sup>${n1}</sup></strong>, <strong>g(x) = ${a2}x<sup>${n2}</sup></strong><br>
+      (f/g)'(x) = [f'(x)·g(x) − f(x)·g'(x)] / g(x)²<br>
+      <br>
+      Pada x = ${x}:<br>
+      f(${x}) = ${formatNum(fx)}, f'(${x}) = ${formatNum(fpx)}<br>
+      g(${x}) = ${formatNum(gx)}, g'(${x}) = ${formatNum(gpx)}<br>
+      <br>
+      (f/g)'(${x}) = [(${formatNum(fpx)} × ${formatNum(gx)}) − (${formatNum(fx)} × ${formatNum(gpx)})] / ${formatNum(gx)}²<br>
+                 = <strong>${formatNum(hasil)}</strong>
+    `;
+  }
+
+  /* ─────────────────────────────────────────
+     6. ATURAN RANTAI (Chain Rule)
+     h(x) = a·(m·x+b)ⁿ  →  h'(x) = a·n·(m·x+b)^(n-1) · m
+  ───────────────────────────────────────── */
+  function calcRantai() {
+    const a = parseFloat(document.getElementById('ch4-chain-a').value);
+    const m = parseFloat(document.getElementById('ch4-chain-m').value);
+    const b = parseFloat(document.getElementById('ch4-chain-b').value);
+    const n = parseFloat(document.getElementById('ch4-chain-n').value);
+    const x = parseFloat(document.getElementById('ch4-chain-x').value);
+    const resultEl = document.getElementById('ch4-chain-result');
+
+    if ([a, m, b, n, x].some(isNaN)) {
+      showCalcError(resultEl, 'Masukkan angka yang valid untuk semua field.');
+      return;
+    }
+
+    const gx = m * x + b;                       // fungsi dalam
+    const gpx = m;                                // turunan fungsi dalam
+    const fpu = a * n * Math.pow(gx, n - 1);      // turunan fungsi luar, dievaluasi di u = g(x)
+    const hasil = fpu * gpx;
+
+    const signB = b >= 0 ? '+' : '−';
+    const absB = Math.abs(b);
+
+    resultEl.className = 'calc-result success';
+    resultEl.innerHTML = `
+      <strong>h(x) = ${a}(${m}x ${signB} ${absB})<sup>${n}</sup></strong><br>
+      Misal: u = g(x) = ${m}x ${signB} ${absB} (fungsi dalam), f(u) = ${a}u<sup>${n}</sup> (fungsi luar)<br>
+      h'(x) = f'(g(x)) · g'(x)<br>
+      <br>
+      Pada x = ${x}:<br>
+      g(${x}) = ${formatNum(gx)}, g'(x) = ${formatNum(gpx)}<br>
+      f'(u) pada u = ${formatNum(gx)}: ${a}×${n}×(${formatNum(gx)})<sup>${n - 1}</sup> = ${formatNum(fpu)}<br>
+      <br>
+      h'(${x}) = ${formatNum(fpu)} × ${formatNum(gpx)} = <strong>${formatNum(hasil)}</strong>
+    `;
+  }
+</script>
+
           
 
           <div class="chapter-nav-bottom">
@@ -533,6 +1692,354 @@ d. Dibagi 2h
       </div>
     </main>
   </div>
+  <script>
+/* ═══════════════════════════════════════════════════
+   CHATBOT MATERI — Widget melayang (floating widget)
+   Knowledge base DIAMBIL OTOMATIS dari konten materi
+   pada halaman (".chapter-section"), bukan di-hardcode.
+   Karena script.js ini dipakai di semua halaman bab,
+   chatbot ini otomatis menyesuaikan materi bab manapun
+   yang sedang dibuka.
+═══════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', initMateriChatbot);
+ 
+function initMateriChatbot() {
+  const knowledgeBase = buildKnowledgeBaseFromMateri();
+  injectChatbotStyles();
+  injectChatbotWidget();
+  bindChatbotEvents(knowledgeBase);
+}
+ 
+ 
+/* ─────────────────────────────────────────
+   1. AMBIL KNOWLEDGE BASE DARI MATERI HTML
+   Menyusuri elemen di dalam ".chapter-section"
+   sesuai urutan dokumen. Setiap heading materi
+   (h3.subsection-title, header kartu, dll) jadi
+   judul topik baru; teks setelahnya jadi isi topik
+   sampai heading berikutnya ditemukan.
+───────────────────────────────────────── */
+function buildKnowledgeBaseFromMateri() {
+  const container = document.querySelector('.chapter-section');
+  if (!container) return [];
+ 
+  const HEADING_SELECTOR =
+    'h3.subsection-title, .calc-header, .example-card-header, .concept-card-header, .card-header';
+ 
+  const topics = [];
+  let current = null;
+ 
+  // Topik awal = judul & deskripsi singkat bab (chapter-header),
+  // supaya pertanyaan umum seperti "apa itu turunan" tetap terjawab.
+  const introTitle = container.querySelector('.chapter-title')?.textContent?.trim() || 'Pengantar';
+  current = { title: introTitle, parts: [] };
+  topics.push(current);
+ 
+  function startTopic(titleText) {
+    const title = titleText.replace(/\s+/g, ' ').trim();
+    if (!title) return;
+    current = { title, parts: [] };
+    topics.push(current);
+  }
+ 
+  function walk(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent.replace(/\s+/g, ' ').trim();
+      if (text && current) current.parts.push(text);
+      return;
+    }
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+ 
+    // Lewati kontrol interaktif & navigasi (bukan konten materi)
+    if (node.matches('input, button, select, textarea, script, style, .chapter-nav-bottom')) {
+      return;
+    }
+ 
+    if (node.matches(HEADING_SELECTOR)) {
+      startTopic(node.textContent);
+      return; // teks heading jadi judul saja, jangan ikut sebagai isi
+    }
+ 
+    node.childNodes.forEach(walk);
+  }
+ 
+  container.childNodes.forEach(walk);
+ 
+  let result = topics.map(t => ({
+    title: t.title,
+    text: t.parts.join(' ').replace(/\s+/g, ' ').trim()
+  }));
+ 
+  // Gabungkan topik yang isinya nyaris kosong (sisa heading yang
+  // terpecah karena HTML-nya bersarang tidak rapi) ke topik berikutnya.
+  const merged = [];
+  for (let i = 0; i < result.length; i++) {
+    const t = result[i];
+    if (t.text.length <= 25 && i + 1 < result.length) {
+      result[i + 1] = {
+        title: result[i + 1].title,
+        text: (t.title + ' ' + t.text + ' ' + result[i + 1].text).replace(/\s+/g, ' ').trim()
+      };
+      continue;
+    }
+    merged.push(t);
+  }
+ 
+  // Hilangkan topik duplikat (judul & isi identik)
+  const seen = new Set();
+  return merged.filter(t => {
+    const key = t.title + '|' + t.text;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return t.text.length > 8;
+  });
+}
+ 
+ 
+/* ─────────────────────────────────────────
+   2. CSS WIDGET CHATBOT (disuntik via <style>)
+───────────────────────────────────────── */
+function injectChatbotStyles() {
+  if (document.getElementById('materiChatbotStyles')) return;
+ 
+  const style = document.createElement('style');
+  style.id = 'materiChatbotStyles';
+  style.textContent = `
+    #materiChatFab {
+      position: fixed; right: 22px; bottom: 22px; z-index: 1080;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--clr-primary, #2563eb); color: #fff; border: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; cursor: pointer; transition: transform .2s ease;
+    }
+    #materiChatFab:hover { transform: scale(1.07); }
+ 
+    #materiChatPanel {
+      position: fixed; right: 22px; bottom: 90px; z-index: 1080;
+      width: 340px; height: 460px;
+      background: var(--clr-surface, #fff);
+      border: 1px solid var(--clr-border, #e2e2e2);
+      border-radius: 16px; box-shadow: 0 12px 32px rgba(0,0,0,.25);
+      display: none; flex-direction: column; overflow: hidden;
+      font-family: 'DM Sans', sans-serif;
+    }
+    #materiChatPanel.open { display: flex; }
+ 
+    #materiChatHeader {
+      background: var(--clr-primary, #2563eb); color: #fff;
+      padding: .75rem 1rem; display: flex; align-items: center;
+      justify-content: space-between; font-weight: 600; font-size: .9rem;
+      flex-shrink: 0;
+    }
+    #materiChatClose {
+      background: none; border: none; color: #fff;
+      font-size: 1rem; cursor: pointer; opacity: .85;
+    }
+    #materiChatClose:hover { opacity: 1; }
+ 
+    #materiChatBody {
+      flex: 1; overflow-y: auto; padding: .85rem;
+      display: flex; flex-direction: column; gap: .5rem;
+      background: var(--clr-bg, #f5f6f8);
+    }
+    .mc-msg {
+      max-width: 85%; padding: .55rem .75rem; border-radius: 12px;
+      font-size: .82rem; line-height: 1.45; white-space: pre-line;
+      word-break: break-word;
+    }
+    .mc-msg.bot {
+      align-self: flex-start; background: var(--clr-primary-light, #e8f0fe);
+      color: var(--clr-text, #1a1a1a); border-bottom-left-radius: 4px;
+    }
+    .mc-msg.user {
+      align-self: flex-end; background: var(--clr-primary, #2563eb);
+      color: #fff; border-bottom-right-radius: 4px;
+    }
+ 
+    #materiChatFormRow {
+      display: flex; gap: .4rem; padding: .6rem;
+      border-top: 1px solid var(--clr-border, #e2e2e2);
+      background: var(--clr-surface, #fff); flex-shrink: 0;
+    }
+    #materiChatInput {
+      flex: 1; border: 1px solid var(--clr-border, #e2e2e2); border-radius: 20px;
+      padding: .45rem .85rem; font-size: .82rem; outline: none;
+      background: var(--clr-bg, #fff); color: var(--clr-text, #1a1a1a);
+    }
+    #materiChatInput:focus { border-color: var(--clr-primary, #2563eb); }
+    #materiChatSend {
+      width: 36px; height: 36px; border-radius: 50%; border: none;
+      background: var(--clr-primary, #2563eb); color: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    #materiChatSend:hover { opacity: .9; }
+ 
+    @media (max-width: 480px) {
+      #materiChatPanel { width: calc(100vw - 28px); right: 14px; bottom: 84px; height: 60vh; }
+      #materiChatFab { right: 14px; bottom: 14px; }
+    }
+  `;
+  document.head.appendChild(style);
+}
+ 
+ 
+/* ─────────────────────────────────────────
+   3. BANGUN ELEMEN WIDGET (FAB + Panel Chat)
+───────────────────────────────────────── */
+function injectChatbotWidget() {
+  if (document.getElementById('materiChatFab')) return;
+ 
+  const fab = document.createElement('button');
+  fab.id = 'materiChatFab';
+  fab.setAttribute('aria-label', 'Buka Chatbot Materi');
+  fab.innerHTML = '<i class="bi bi-chat-dots-fill"></i>';
+  document.body.appendChild(fab);
+ 
+  const panel = document.createElement('div');
+  panel.id = 'materiChatPanel';
+  panel.innerHTML = `
+    <div id="materiChatHeader">
+      <span><i class="bi bi-robot me-2"></i>Tanya Materi</span>
+      <button id="materiChatClose" aria-label="Tutup chat"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div id="materiChatBody"></div>
+    <div id="materiChatFormRow">
+      <input type="text" id="materiChatInput" placeholder="Tulis pertanyaan tentang materi..." autocomplete="off" />
+      <button id="materiChatSend" aria-label="Kirim"><i class="bi bi-send-fill"></i></button>
+    </div>
+  `;
+  document.body.appendChild(panel);
+}
+ 
+ 
+/* ─────────────────────────────────────────
+   4. EVENT HANDLING (buka/tutup, kirim pesan)
+───────────────────────────────────────── */
+function bindChatbotEvents(knowledgeBase) {
+  const fab      = document.getElementById('materiChatFab');
+  const panel    = document.getElementById('materiChatPanel');
+  const closeBtn = document.getElementById('materiChatClose');
+  const body     = document.getElementById('materiChatBody');
+  const input    = document.getElementById('materiChatInput');
+  const sendBtn  = document.getElementById('materiChatSend');
+ 
+  let greeted = false;
+ 
+  fab.addEventListener('click', () => {
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open') && !greeted) {
+      greeted = true;
+      addBotMessage(
+        'Hai! 👋 Saya bisa bantu jawab pertanyaan seputar materi di halaman ini.\n\n' +
+        'Coba tanya, misalnya: "apa itu turunan?" atau ketik "daftar topik" untuk melihat semua topik yang saya kenal.'
+      );
+    }
+  });
+ 
+  closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+ 
+  function addMessage(text, sender) {
+    const div = document.createElement('div');
+    div.className = `mc-msg ${sender}`;
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+  function addBotMessage(text)  { addMessage(text, 'bot'); }
+  function addUserMessage(text) { addMessage(text, 'user'); }
+ 
+  function handleSend() {
+    const question = input.value.trim();
+    if (!question) return;
+    addUserMessage(question);
+    input.value = '';
+    setTimeout(() => {
+      addBotMessage(answerQuestion(question, knowledgeBase));
+    }, 250);
+  }
+ 
+  sendBtn.addEventListener('click', handleSend);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+}
+ 
+ 
+/* ─────────────────────────────────────────
+   5. MESIN PENCOCOKAN PERTANYAAN (rule-based)
+   Mencocokkan kata kunci pertanyaan user dengan
+   judul & isi topik dari knowledge base.
+───────────────────────────────────────── */
+function answerQuestion(question, knowledgeBase) {
+  const q = question.toLowerCase().trim();
+ 
+  if (!knowledgeBase || knowledgeBase.length === 0) {
+    return 'Maaf, saya belum menemukan materi di halaman ini untuk dijadikan sumber jawaban.';
+  }
+ 
+  // Intent: sapaan
+  if (/^(hai|halo|hello|hi|pagi|siang|sore|malam)\b/.test(q)) {
+    return 'Halo! Silakan tanya apa saja seputar materi di halaman ini 😊';
+  }
+ 
+  // Intent: ucapan terima kasih
+  if (/(terima ?kasih|makasih|thanks)/.test(q)) {
+    return 'Sama-sama! Senang bisa membantu 🙌';
+  }
+ 
+  // Intent: minta daftar topik
+  if (/(daftar topik|topik apa|materi apa|^menu$|bantuan|^help$)/.test(q)) {
+    const list = knowledgeBase.map(t => `• ${t.title}`).join('\n');
+    return `Berikut topik yang saya kenal dari materi ini:\n\n${list}\n\nKetik salah satu topik di atas untuk melihat penjelasannya.`;
+  }
+ 
+  // Stopwords sederhana Bahasa Indonesia agar pencocokan lebih relevan
+  const stopwords = new Set([
+    'apa', 'itu', 'adalah', 'yang', 'dan', 'di', 'ke', 'dari', 'untuk', 'pada',
+    'bagaimana', 'jelaskan', 'tolong', 'dong', 'ya', 'sih', 'apakah', 'tentang',
+    'cara', 'contoh', 'bisa', 'tuliskan', 'kak', 'min', 'gimana'
+  ]);
+ 
+  const queryWords = q
+    .replace(/[^a-z0-9\s]/gi, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !stopwords.has(w));
+ 
+  if (queryWords.length === 0) {
+    return 'Bisa diperjelas pertanyaannya? Coba sebutkan kata kunci materinya, misalnya "chain rule" atau "limit selisih".';
+  }
+ 
+  let best = null;
+  let bestScore = 0;
+ 
+  knowledgeBase.forEach(topic => {
+    const titleLower = topic.title.toLowerCase();
+    const textLower  = topic.text.toLowerCase();
+    let score = 0;
+ 
+    queryWords.forEach(word => {
+      if (titleLower.includes(word)) score += 3; // cocok di judul = bobot besar
+      if (textLower.includes(word))  score += 1; // cocok di isi   = bobot kecil
+    });
+ 
+    if (score > bestScore) {
+      bestScore = score;
+      best = topic;
+    }
+  });
+ 
+  if (!best || bestScore === 0) {
+    return 'Maaf, saya belum menemukan jawaban yang cocok di materi halaman ini. Coba gunakan kata kunci lain, atau ketik "daftar topik" untuk melihat topik yang tersedia.';
+  }
+ 
+  const snippet = best.text.length > 480
+    ? best.text.slice(0, 480).trim() + '...'
+    : best.text;
+ 
+  return `📘 ${best.title}\n\n${snippet}`;
+}
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../script.js"></script>
 </body>
